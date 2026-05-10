@@ -82,6 +82,14 @@ const SERIES_NAPOLES = {
   icon: null,
 };
 
+const SERIES_LA_PAZ = {
+  id: "la-paz",
+  name: "La Paz — 80 Tacos",
+  short_name: "LP",
+  color: "#0EAEC1",
+  icon: null,
+};
+
 const now = new Date().toISOString();
 
 export const restaurants: Restaurant[] = [
@@ -1207,6 +1215,15 @@ export const restaurants: Restaurant[] = [
     viral_score: 9, notes: "Origen del producto. Granjas certificadas DOP en zona Caserta-Mondragone-Sele. Ordeno + filatura en directo: el hook visual mas potente del producto. Por confirmar granja especifica con visita guiada.", content_links: [], visited_at: null,
     created_at: now, updated_at: now, series: [SERIES_NAPOLES], has_dossier: true,
   },
+
+  // === LA PAZ, BCS ===
+  {
+    id: "lp-01", name: "Mariscos El Tigre", slug: "mariscos-el-tigre", zone: "Col. Guerrero", city: "La Paz",
+    cuisine: "Mariscos / carreta callejera", status: "pendiente",
+    image_url: null,
+    viral_score: 9, notes: "Carreta callejera de mariscos en La Paz BCS. Ostiones de piedra GIGANTES, almejas chocolatas, pata de mula, abulon, ceviche del Tigre. Producto del Mar de Cortes cosechado el mismo dia. El duenio se llama 'El Tigre' — personaje carismatico documentado en reviews TikTok virales. Anti-fine-dining: $200-300 MXN/persona. Cerrado lunes y martes. Mie-Sab 9-16h, Dom 10-16h.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_LA_PAZ], has_dossier: true,
+  },
 ];
 
 export const dossiers: Record<string, Dossier> = {
@@ -1974,5 +1991,25 @@ export const dossiers: Record<string, Dossier> = {
     candidatura_status: "si", candidatura_razon: "Farm-to-table real (no marketing). Pionero del Valle de Guadalupe. Maridaje con vinos mexicanos del territorio.",
     angulo: "La huerta como sala del restaurante. Hook visual: cosecha al amanecer + plato emplatado + copa con vino del Valle al fondo. Formato 90-120s, narrativa de territorio.",
     alertas: ["Reservacion 2-3 semanas antes (especialmente fines de semana de vendimia agosto-octubre).", "Valle de Guadalupe esta a ~30 min en coche de Ensenada — coche propio o transporte privado.", "Llevar abrigo: el menu es largo (3-4h), cae la noche con frescor."],
+  },
+
+  // === LA PAZ, BCS ===
+  "lp-01": {
+    id: "dlp-01", restaurant_id: "lp-01",
+    historia: "Mariscos El Tigre es una carreta callejera en la esquina Francisco Javier Mina con 5 de Mayo, Col. Guerrero, La Paz BCS. NO es un restaurante con paredes — son mesas en la calle. El duenio se llama 'El Tigre' (su nombre civil no aparece publicado). Reviewers en TikTok lo describen como 'un tipazo'. Sirve los ostiones de piedra mas grandes que veras en tu vida (cita Marco Beteta y Guia Comidista), almejas chocolatas gigantes, pata de mula y abulon — todo del Mar de Cortes, cosechado el mismo dia que se sirve. Su firma esta en dos productos: el 'Ceviche del Tigre' y la 'Salsita del Tigre'. La identidad del lugar se prueba en el plato. Anti-fine-dining: $200-300 MXN por persona vs $800-1500 de cualquier marisqueria de Polanco. Carreta sencilla, mesas al aire libre, estacionamiento gratuito, accesible para sillas de ruedas.",
+    hooks: ["Una carreta en La Paz sirve los ostiones mas grandes de Mexico. Los pesca el mismo dia.", "El duenio se llama El Tigre. Tambien el ceviche.", "Productos del Mar de Cortes que no existen en otra parte de Mexico. Y un puesto callejero por 200 pesos.", "Anti-fine-dining marisquero. Lo opuesto de Contramar. La Paz, Col. Guerrero, mesas en la calle."],
+    datos: ["Google 4.6/5 con 477 votos. Posicion #37 de 766 mariscos en La Paz.", "Cheque promedio $200-300 MXN/persona.", "Mie-Sab 9-16h, Dom 10-16h. CERRADO LUNES Y MARTES.", "Telefono +52 612 238 0017.", "Productos del Mar de Cortes (no Pacifico, no Atlantico) — ostion de piedra, pata de mula, abulon."],
+    pedir: [{ name: "Ostiones de piedra", why: "El producto irrepetible. 'Los ostiones mas grandes que veras en tu vida' segun Marco Beteta. Plano cenital + limon = GN visual." }, { name: "Almeja chocolata", why: "Tamanio gigante segun reviewers. Plano de mano sosteniendo la concha = escala visual brutal." }, { name: "Ceviche del Tigre", why: "El ceviche que lleva el nombre del duenio. La firma humana en el plato. Pregunta off-camera obvia: 'por que se llama del Tigre?'" }, { name: "Pata de mula", why: "Molusco bivalvo del Mar de Cortes raro de encontrar fuera de BCS." }, { name: "Empanada de camaron y queso", why: "Plato mas elogiado en reviews recientes ('sublime')." }],
+    preguntas: [{ role: "A El Tigre", texto: "Por que te llaman El Tigre? — la pregunta nuclear, el reel se construye sobre la respuesta." }, { role: "A El Tigre", texto: "Cuantos anios llevas con la carreta aqui en Francisco Javier Mina?" }, { role: "A El Tigre", texto: "De donde vienen los ostiones? Quien te los trae cada manana?" }, { role: "A El Tigre", texto: "Que diferencia hay entre el ceviche del Tigre y un ceviche normal?" }, { role: "A El Tigre", texto: "Si tuvieras que elegir un solo producto del Mar de Cortes, cual seria?" }],
+    candidatura_status: "si", candidatura_razon: "Producto irrepetible (ostion de piedra Mar de Cortes) + personaje carismatico documentado + anti-fine-dining + precio accesible. Encaja perfecto con tesis 'lo recomendaria a mi mejor amigo' del Pasaporte/AntiGuia.",
+    angulo: "El producto irrepetible primero (ostion de piedra gigante en plano cenital), el personaje despues (El Tigre saluda en sala), la firma cierra (ceviche del Tigre + salsita del Tigre — su nombre esta en el plato). Frase nuclear: 'Una carreta en La Paz sirve los ostiones mas grandes de Mexico. Los pesca el mismo dia. Y el duenio se llama El Tigre — el ceviche tambien.' Emocion target: asombro con cola de orgullo regional. Mostrar la espera (cocina lenta) como parte del oficio, no como friccion.",
+    alertas: ["CERRADO LUNES Y MARTES — confirmar dia de visita antes de viajar.", "Es carreta callejera, no restaurante. No reservar — primero que llega.", "Tiempos de preparacion lentos segun reviews. La espera es parte del trato.", "Audio ambiente puede tener mucho ruido (calle, autos). Considerar mic externo.", "Validacion previa con El Tigre antes de filmar — el reel necesita su OK."],
+    audio_url: "/audio/mariscos-el-tigre-preparacion-mental.mp3",
+    audio_duration_s: 951,
+    notebook_url: "https://notebooklm.google.com/notebook/7d1dd563-c8a9-4b61-a336-d782e7003dc1",
+    emocion_target: "asombro",
+    frase_ancla: "Una carreta en La Paz sirve los ostiones mas grandes de Mexico. Los pesca el mismo dia.",
+    tesis_central: "Mariscos El Tigre parece una carreta improvisada en una calle de La Paz. Pero sirve los ostiones de piedra mas grandes que veras en tu vida y las almejas chocolatas mas espectaculares de Mexico, cosechados ese mismo dia del Mar de Cortes. La razon: el duenio se llama El Tigre, lleva anios trayendo lo que el Mar de Cortes da, y trabaja contra el fine dining marisquero con una carreta en la calle por 200 pesos.",
+    prepared_at: "2026-05-10",
   },
 };
