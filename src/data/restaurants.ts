@@ -1252,6 +1252,20 @@ export const restaurants: Restaurant[] = [
     viral_score: 8, notes: "Mercado municipal con 60 anios de historia (fundado 1965). Doña Margarita lleva ~30 anios cocinando en el mismo puesto - 'me gusta atender a la gente y mas que nada cocinar'. Natalia (4ta generacion) atiende negocio familiar de 45 anios. Mientras los mercados del pais son sustituidos por food halls, aqui sigue prendiendo el comal cada manana.", content_links: [], visited_at: null,
     created_at: now, updated_at: now, series: [SERIES_LA_PAZ], has_dossier: true,
   },
+  {
+    id: "lp-06", name: "La Garita El Chilpa", slug: "la-garita-el-chilpa", zone: "Carretera Todos Santos km 29", city: "La Paz",
+    cuisine: "Lonchera carretera / cocina rancho sudcaliforniano", status: "pendiente",
+    image_url: null,
+    viral_score: 8, notes: "Loncheria de carretera fundada noviembre 1988 por la trinidad: Rosario Murillo Gastelum (abuela), Gilberto Marquez Murillo (padre), Carlota Cota Lucero (madre). El nombre 'La Garita' viene de una caseta de madera que les regalo un hermano de la abuela cuando este gano la loteria. 38 anios despues, esa primera caseta dio nacimiento a 4 loncherias de la misma familia (El Chilpa, Cheko's, Lluvia, Pueblo Nuevo de Elena). Empanadas paceñas con aceitunas y pasas, cafe colado en talega. Km 29 carretera La Paz - Todos Santos.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_LA_PAZ], has_dossier: true,
+  },
+  {
+    id: "lp-07", name: "Mariscos Las Iguanas", slug: "las-iguanas", zone: "Cerca Hotel Pekin, Malecon", city: "La Paz",
+    cuisine: "Mariscos / puesto informal", status: "pendiente",
+    image_url: null,
+    viral_score: 7, notes: "Puesto informal de mariscos cerca del malecon de La Paz. 4.9/5 TripAdvisor (poco habitual). Almejas chocolatas + ceviches. Producto del Mar de Cortes del dia. @soyelarturito lo cubrio con 1.45M views FB - 'de los puestos de mariscos que mas me recomendaron, espectacular'. Familia operadora documentada en fuentes secundarias - verificar in-situ.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_LA_PAZ], has_dossier: true,
+  },
 ];
 
 export const dossiers: Record<string, Dossier> = {
@@ -2112,5 +2126,41 @@ export const dossiers: Record<string, Dossier> = {
     frase_ancla: "Doña Margarita lleva treinta anios en el mismo puesto. Le gusta atender a la gente y mas que nada cocinar.",
     tesis_central: "El Mercado Bravo parece un mercado municipal mas. Pero es la memoria alimentaria de La Paz: 60 anios de tradicion, donde Doña Margarita lleva 30 anios cocinando en el mismo puesto y Natalia, joven, atiende un negocio familiar de 45 anios. Mientras los mercados del pais son sustituidos por food halls fotogenicos, en el centro de La Paz hay personas que siguen en su puesto despues de tres decadas. El mercado se inauguro en 1965 y nunca se modernizo.",
     prepared_at: "2026-05-10",
+  },
+
+  "lp-06": {
+    id: "dlp-06", restaurant_id: "lp-06",
+    historia: "Loncheria de carretera en el km 29 La Paz - Todos Santos, fundada noviembre 1988 por una trinidad familiar paceña: Rosario Murillo Gastelum (abuela), Gilberto Marquez Murillo (padre) y Carlota Guadalupe Cota Lucero (madre). El nombre 'La Garita' tiene origen anecdotico documentado: un hermano de la abuela gano la loteria y les regalo una caseta de madera. Esa caseta fue el primer puesto. 38 anios despues, La Garita es una dinastia: existen 4 sucursales familiares (Chilpa origen rural, Cheko's, Lluvia, Pueblo Nuevo de Elena). Producto signature: empanadas paceñas con carne molida + aceitunas + pasas (huella sudcaliforniana), empanadas dulces de frijol, quesadillas de harina con machaca, cafe colado en talega de tela.",
+    hooks: ["Una caseta de madera que les regalaron por la loteria. Hoy son cuatro loncherias.", "Empanadas paceñas con aceitunas y pasas - huella sudcaliforniana sobre la cocina del rancho.", "Sabor del rancho sudcaliforniano en el km 29 de la carretera a Todos Santos."],
+    datos: ["Fundacion noviembre 1988 por Rosario Murillo Gastelum + Gilberto Marquez Murillo + Carlota Cota Lucero.", "Nombre 'La Garita' viene de una caseta regalada cuando un hermano de la abuela gano la loteria.", "Dinastia familiar: 4 sucursales hoy (Chilpa rural + Cheko's + Lluvia + Pueblo Nuevo Elena).", "Producto: empanadas con aceitunas y pasas, quesadillas con machaca, cafe de talega."],
+    pedir: [{ name: "Empanada de carne molida con aceitunas y pasas", why: "Plato con huella historica de la cocina paceña." }, { name: "Quesadilla de harina con machaca", why: "Cocina del rancho sudcaliforniano. Machaca con aceite de oliva." }, { name: "Cafe de talega", why: "Cafe colado en filtro de tela - tradicion sudcaliforniana en extincion." }],
+    preguntas: [{ role: "A los duenios actuales", texto: "Cuanto de la receta original de 1988 sigue exactamente igual?" }, { role: "A los duenios", texto: "Como funciona la 'dinastia La Garita'? Las 4 sucursales hacen lo mismo o cada una agrega algo?" }, { role: "A un cliente local", texto: "Cuantos anios llevas viniendo aqui?" }],
+    candidatura_status: "si", candidatura_razon: "Historia familiar verificable con detalle anecdotico (la loteria). 38 anios continuidad. Origen de una dinastia (multiplica capitulo a 4 sucursales).",
+    angulo: "Plano de la caseta original o reconstruida. Conversacion sobre la loteria como origen poetico. Plano de las empanadas con aceitunas y pasas (anomalia visual para audiencia mexicana). Cafe de talega como cierre. Emocion target: asombro con cola de ternura.",
+    alertas: ["Requiere coche desde La Paz centro - km 29 carretera a Todos Santos.", "Verificar horario in-situ - sin web oficial actualizada."],
+    audio_url: "/audio/la-garita-el-chilpa-preparacion-mental.mp3",
+    audio_duration_s: 819,
+    emocion_target: "asombro",
+    frase_ancla: "Una caseta de madera que les regalaron por la loteria. Hoy son cuatro loncherias.",
+    tesis_central: "La Garita El Chilpa parece otra paradita de carretera. Pero es el origen de una dinastia entera: en noviembre de 1988 una familia paceña abrio un puesto en el km 29 de la carretera La Paz - Todos Santos. El nombre 'La Garita' vino de una caseta de madera que les regalo un hermano de la abuela cuando este gano la loteria. 38 anios despues, esa primera caseta dio nacimiento a 4 loncherias de la misma familia. La razon: cuando le ganas a la loteria una caseta de madera, esa caseta puede terminar siendo el primer eslabon de una saga familiar gastronomica que define el sabor del rancho sudcaliforniano.",
+    prepared_at: "2026-05-14",
+  },
+
+  "lp-07": {
+    id: "dlp-07", restaurant_id: "lp-07",
+    historia: "Puesto informal de mariscos cerca del Hotel Pekin, malecon de La Paz. Tripadvisor 4.9/5 (rating poco habitual) con 252+ resenas en RestaurantGuru. @soyelarturito lo califico como 'de los puestos de mariscos que mas me recomendaron, espectacular' - su video en FB acumula 1.45M views. La narrativa de 'familia de pescadores' que serviría lo que pescan ese dia esta documentada en fuentes secundarias - requiere verificacion in-situ. Producto signature: almejas chocolatas, ceviches diversos, aguachiles.",
+    hooks: ["Tripadvisor 4.9/5 - rating casi inexistente para un puesto callejero.", "1.45M views FB. Lo que los locales recomiendan primero.", "Producto del Mar de Cortes del dia - cadena pesca-mesa de dos eslabones (si se confirma)."],
+    datos: ["TripAdvisor 4.9/5 - rating excepcional.", "1.45M views Facebook (@soyelarturito feb 2025).", "252+ resenas RestaurantGuru.", "Cerca del Hotel Pekin, malecon La Paz."],
+    pedir: [{ name: "Almejas chocolatas", why: "El producto endemico del Mar de Cortes. Verificar frescura del dia." }, { name: "Ceviche del dia", why: "Lo que ellos mismos pescaron - validar la cadena pesca-mesa." }, { name: "Aguachile", why: "Test de tecnica regional - el aguachile paceño se distingue del sinaloense." }],
+    preguntas: [{ role: "Al duenio o cocinero", texto: "Quien pesca el producto que sirven? Cuantos eslabones hay entre el mar y este puesto?" }, { role: "Al duenio", texto: "Cuantos anios llevan en este punto del malecon?" }, { role: "A clientes locales", texto: "Por que recomiendan aqui y no otro puesto de mariscos del malecon?" }],
+    candidatura_status: "si", candidatura_razon: "Rating 4.9/5 (excepcional) + 1.45M views FB del referente foodie de La Paz 2025. Encaja con filtro 80 Tacos si la familia de pescadores se confirma.",
+    angulo: "Plano cenital de las almejas chocolatas. Conversacion con la familia operadora sobre la cadena pesca-mesa. Si confirman familia pescadora: ese es todo el reel. Si no: producto + ambiente local + filtro de validacion social (4.9/5 + 1.45M).",
+    alertas: ["La 'familia pescadora' no esta verificada en fuente primaria - solo reseñas. Confirmar in-situ.", "Direccion exacta esquina del malecon - verificar antes de ir."],
+    audio_url: "/audio/las-iguanas-preparacion-mental.mp3",
+    audio_duration_s: 1173,
+    emocion_target: "asombro",
+    frase_ancla: "Familia de pescadores. Lo que ellos mismos pescaron por la manana. Una mesa en la banqueta.",
+    tesis_central: "Las Iguanas parece otro puesto de mariscos del malecon paceño. Pero los locales lo recomiendan por encima de los demas: TripAdvisor 4.9/5 (poco habitual), 1.45M views FB. La supuesta historia: familia de pescadores que sirve lo que ellos mismos traen del Mar de Cortes ese dia. Si la historia se confirma in-situ: producto + procedencia + persona, los 3 elementos del filtro mejor amigo, en un puesto al pie del malecon donde la cadena pesca-mesa es de dos eslabones.",
+    prepared_at: "2026-05-14",
   },
 };
