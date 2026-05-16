@@ -1266,6 +1266,13 @@ export const restaurants: Restaurant[] = [
     viral_score: 7, notes: "Puesto informal de mariscos cerca del malecon de La Paz. 4.9/5 TripAdvisor (poco habitual). Almejas chocolatas + ceviches. Producto del Mar de Cortes del dia. @soyelarturito lo cubrio con 1.45M views FB - 'de los puestos de mariscos que mas me recomendaron, espectacular'. Familia operadora documentada en fuentes secundarias - verificar in-situ.", content_links: [], visited_at: null,
     created_at: now, updated_at: now, series: [SERIES_LA_PAZ], has_dossier: true,
   },
+  {
+    id: "lp-08", name: "Oyster House by FISM", slug: "oyster-house", zone: "Malecon, junto Hotel Allende", city: "La Paz",
+    cuisine: "Ostiones / mariscos", status: "pendiente",
+    image_url: null,
+    viral_score: 7, notes: "Restaurante ostriero del malecon. Brazo comercial de granja propia Bendito Mar en la bahia de La Paz. Chef Adan Muro. BCS es uno de los mayores productores de ostion de Mexico (136 cooperativas, ~2400 toneladas anuales). Almeja Coqueta + Curricanes de ostion ahumado como signature. El angulo real esta en visitar la GRANJA Bendito Mar (productor) — el restaurante es la punta de la cadena. Allende 36 esquina Malecon.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_LA_PAZ], has_dossier: true,
+  },
 ];
 
 export const dossiers: Record<string, Dossier> = {
@@ -2161,6 +2168,24 @@ export const dossiers: Record<string, Dossier> = {
     emocion_target: "asombro",
     frase_ancla: "Familia de pescadores. Lo que ellos mismos pescaron por la manana. Una mesa en la banqueta.",
     tesis_central: "Las Iguanas parece otro puesto de mariscos del malecon paceño. Pero los locales lo recomiendan por encima de los demas: TripAdvisor 4.9/5 (poco habitual), 1.45M views FB. La supuesta historia: familia de pescadores que sirve lo que ellos mismos traen del Mar de Cortes ese dia. Si la historia se confirma in-situ: producto + procedencia + persona, los 3 elementos del filtro mejor amigo, en un puesto al pie del malecon donde la cadena pesca-mesa es de dos eslabones.",
+    prepared_at: "2026-05-14",
+  },
+
+  "lp-08": {
+    id: "dlp-08", restaurant_id: "lp-08",
+    historia: "Restaurante ostriero del malecon de La Paz, brazo comercial de la granja propia Bendito Mar en la bahia. Chef Adan Muro como cabeza visible. BCS es uno de los mayores productores de ostion de Mexico: 136 cooperativas, ~2400 toneladas anuales. El ostion filtra el agua de la bahia mientras crece - lo que el agua tiene aqui, hace literalmente la carne que el comensal come. Allende 36 esquina Malecon, junto al Hotel Allende. Tambien tienen sucursal San Jose del Cabo. Pet-friendly. Signature: Almeja Coqueta + Curricanes de ostion ahumado.",
+    hooks: ["El ostion filtra la Bahia de La Paz mientras crece. Te la comes filtrada por sus propios habitantes.", "El restaurante es la PUNTA de un negocio que empieza en el agua: los duenios son productores de ostion.", "BCS produce 2400 toneladas de ostion al ano. Aqui ves la cadena completa - si te dejan acceder a la granja Bendito Mar."],
+    datos: ["Brazo comercial de granja Bendito Mar (@benditomar.mx).", "Allende 36 esquina Malecon, junto Hotel Allende.", "Chef Adan Muro.", "Tambien sucursal San Jose del Cabo. Pet-friendly."],
+    pedir: [{ name: "Almeja Coqueta", why: "Signature documentado. Producto local del Mar de Cortes." }, { name: "Curricanes de ostion ahumado", why: "Tecnica + producto - el ahumado define la cocina FISM." }, { name: "Ostion fresco recien abierto", why: "Test de cadena pesca-mesa. Si vienen de su granja propia, este es el plano del reel." }],
+    preguntas: [{ role: "Al chef Adan Muro", texto: "Cuanto tiempo entre que el ostion sale de Bendito Mar y llega a la mesa aqui?" }, { role: "Al chef Adan Muro", texto: "Pueden filmar la granja? Es la pieza que faltaria al reel." }, { role: "A un cliente local", texto: "Que diferencia este ostion del de Ensenada o Sinaloa?" }],
+    candidatura_status: "watch", candidatura_razon: "Restaurante fine dining - encaja parcialmente con filtro 80 Tacos. El angulo real esta en la GRANJA Bendito Mar (productor + persona + lugar de origen). Si Aniol consigue acceso a la granja, sube a 9/10.",
+    angulo: "Plano del agua de la bahia. Plano del ostion saliendo del agua (granja Bendito Mar). Plano de Adan Muro recibiendolo en cocina. Plano del comensal abriendo el ostion - la cadena pesca-mesa explicita. El reel se construye SOBRE la granja, no el restaurante.",
+    alertas: ["Es fine dining - tono y formato distinto a sitios callejeros de 80 Tacos.", "Conseguir acceso a granja Bendito Mar es lo que duplica el valor del reel."],
+    audio_url: "/audio/oyster-house-preparacion-mental.mp3",
+    audio_duration_s: 649,
+    emocion_target: "asombro",
+    frase_ancla: "El ostion filtra la Bahia de La Paz. Te la comes filtrada por sus propios habitantes.",
+    tesis_central: "Oyster House parece un restaurante de ostiones en el malecon. Pero es la PUNTA de un negocio que empieza en el agua: los duenios son productores de ostion (granja Bendito Mar en la Bahia de La Paz) que abrieron su primer restaurante para cerrar el ciclo de la granja a la mesa. BCS es uno de los mayores productores de ostion de Mexico (136 cooperativas, ~2400 toneladas anuales). La razon: comer un ostion aqui no es solo comer un ostion - es comerte la Bahia de La Paz, porque el bivalvo filtra el agua del mar mientras crece.",
     prepared_at: "2026-05-14",
   },
 };
