@@ -1281,6 +1281,20 @@ export const restaurants: Restaurant[] = [
     viral_score: 7, notes: "Restaurante ostriero del malecon. Brazo comercial de granja propia Bendito Mar en la bahia de La Paz. Chef Adan Muro. BCS es uno de los mayores productores de ostion de Mexico (136 cooperativas, ~2400 toneladas anuales). Almeja Coqueta + Curricanes de ostion ahumado como signature. El angulo real esta en visitar la GRANJA Bendito Mar (productor) — el restaurante es la punta de la cadena. Allende 36 esquina Malecon.", content_links: [], visited_at: null,
     created_at: now, updated_at: now, series: [SERIES_LA_PAZ], has_dossier: true,
   },
+  {
+    id: "lp-09", name: "Nemi", slug: "nemi", zone: "Francisco I. Madero, Centro", city: "La Paz",
+    cuisine: "Fine dining mexicano contemporaneo", status: "pendiente",
+    image_url: null,
+    viral_score: 8, notes: "Restaurante del chef Alejandro Villagomez. 9 anios al lado de Enrique Olvera en Pujol (5 como chef de cuisine) + 3 anios en Celler de Can Roca en Girona (3 estrellas Michelin). Cofundadora chef Nelly Velasco. Abrio octubre 2019 en La Paz - cuando la ciudad aun no era destino gastronomico. Reconocido Food & Wine Espanol 2021, 120 Mejores 2021/2022/2023, Guia Mexico Gastronomico 5 anios seguidos. Madero 565 esq. Hidalgo. La decision de dejar el top mundial para venir a una ciudad sin destino aun es lo que vale la pregunta off-camera.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_LA_PAZ], has_dossier: true,
+  },
+  {
+    id: "lp-10", name: "Tacos El Estadio", slug: "tacos-el-estadio", zone: "Centro - 3 sucursales", city: "La Paz",
+    cuisine: "Tacos de pescado y camaron capeados estilo paceno", status: "pendiente",
+    image_url: null,
+    viral_score: 8, notes: "Familia Diaz. 52 anios desde 1974. Empezaron carreta ambulante, hoy 3 sucursales (Lic. Verdad esq. Independencia + 5 de Mayo esq. Cabildo + Guillermo Prieto). Abren 5 AM, atienden 8 AM. Capeado paceno (masa tempura ligera) vs capeado ensenadense (empanizado) - dos tacos distintos con el mismo nombre. El Estadio lleva 5 decadas manteniendo el lado paceno. 4.8/5 TripAdvisor (#39 de 371). Signature: tacos de pescado + quesadillas + marlin de la casa.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_LA_PAZ], has_dossier: true,
+  },
 
   // === GUADALAJARA, JALISCO ===
   {
@@ -1330,6 +1344,13 @@ export const restaurants: Restaurant[] = [
     cuisine: "Mercado / fondas tapatías", status: "pendiente",
     image_url: null,
     viral_score: 8, notes: "Mercado más grande de Hispanoamérica. 4000 puestos. Origen 1542 (mercado semifijo colonial). Edificio actual 1958 por arq. Alejandro Zohn (Patrimonio Artístico de la Nación). 40+ comerciantes son fundadores - llevan 67 anios en su puesto. Segundo piso fondas con tortas ahogadas, birria, carne en su jugo, pozole, menudo. Caldo michi único de Javier Yutaka (mexicano-japonés). Plaza Tapatía s/n, Calzada Independencia esq Javier Mina.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_GUADALAJARA], has_dossier: true,
+  },
+  {
+    id: "gdl-08", name: "Xokol", slug: "xokol", zone: "Santa Teresita (Herrera y Cairo 1375)", city: "Guadalajara",
+    cuisine: "Antojeria de maiz criollo / nixtamal artesanal", status: "pendiente",
+    image_url: null,
+    viral_score: 9, notes: "Antojeria de maiz criollo dirigida por la pareja Xrysw Ruelas Diaz (Guadalajara) y Oscar Segundo (comunidad Mazahua, Santa Maria Citendeje, Estado de Mexico). Abrieron en 2018 en barrio Polanco vendiendo tlacoyos y quesadillas de maiz criollo a precio accesible. Resistencia inicial: clientes mexicanos rechazaban tortillas azules creyendo que el color significaba menor calidad. Nixtamalizacion propia en molino hermano Nejayote (Herrera y Cairo 1392). El maiz viene de la milpa de la familia de Oscar. Cocina de humo replica metodo de la madre de Oscar en su pueblo. The Best Chef 2024 (Dubai). Recomendacion Michelin. Aforo 42 personas, martes a sabado 18-23h.", content_links: [], visited_at: null,
     created_at: now, updated_at: now, series: [SERIES_GUADALAJARA], has_dossier: true,
   },
 ];
@@ -2248,6 +2269,42 @@ export const dossiers: Record<string, Dossier> = {
     prepared_at: "2026-05-14",
   },
 
+  "lp-09": {
+    id: "dlp-09", restaurant_id: "lp-09",
+    historia: "Nemi es el primer restaurante propio del chef Alejandro Villagomez. Nacido en CDMX, estudio Gastronomia ahi. 9 anios en Pujol (Enrique Olvera) - 5 como chef de cuisine. 3 anios en Celler de Can Roca en Girona (3 estrellas Michelin, durante anios el #1 del mundo). En octubre 2019 abre Nemi en La Paz - cuando la ciudad aun no era destino gastronomico - junto a la cofundadora Nelly Velasco. Reconocimientos: Food & Wine Espanol 2021, 120 Mejores 2021/2022/2023, Guia Mexico Gastronomico 5 anios seguidos. Madero 565 esquina Hidalgo, Centro La Paz.",
+    hooks: ["Cocino 9 anios al lado de Enrique Olvera en Pujol y 3 en Celler de Can Roca. Despues se vino a La Paz a abrir su primer restaurante propio.", "2019 - cuando nadie consideraba La Paz destino gastronomico. Esa es la pregunta off-camera.", "5 anios seguidos en Guia Mexico Gastronomico desde una ciudad que aun no era destino."],
+    datos: ["Chef Alejandro Villagomez (ex-Pujol 9 anios, ex-Celler de Can Roca 3 anios).", "Cofundadora chef Nelly Velasco.", "Abrio octubre 2019.", "Madero 565 esq. Hidalgo, Centro La Paz.", "Reconocido Food & Wine Espanol 2021, 120 Mejores 2021-2023."],
+    pedir: [{ name: "Menu degustacion", why: "Es la forma de ver la sintesis Pujol + Roca aplicada a producto sudcaliforniano." }, { name: "Plato que use producto del Mar de Cortes", why: "Como traduce la tecnica del top mundial a un ingrediente que solo existe aqui." }],
+    preguntas: [{ role: "Al chef Alejandro", texto: "Que pasaba contigo en 2019 que dejaste Pujol/Roca para venir aqui? Que viste en La Paz que no veias en CDMX?" }, { role: "Al chef Alejandro", texto: "Cinco anios despues - La Paz se ha vuelto destino. Eso era parte de la apuesta o ha sido sorpresa?" }, { role: "Al chef Alejandro", texto: "Que de Olvera y que de Roca permanece en Nemi? Que es solo tuyo?" }],
+    candidatura_status: "watch", candidatura_razon: "Fine dining - encaja parcialmente con filtro 80 Tacos. El angulo real es la DECISION del chef (Pujol+Roca a La Paz 2019), no la comida en si. Si Aniol consigue conversacion honesta sobre esa decision, sube a 9/10.",
+    angulo: "Plano del chef en cocina (sin entrevista a camara - Aniol narra). B-roll del Centro de La Paz 2019 vs 2026 si hay imagenes. Plano del producto local del Mar de Cortes pasando por tecnica de fine dining. La pregunta clave es off-camera y se monta en el guion: por que dejar el top para venir a una ciudad que aun no era destino.",
+    alertas: ["Es fine dining - tono y formato distinto al callejero. NO tratar como puesto.", "El angulo no es la comida sino la DECISION del chef. Si la conversacion no llega ahi, el reel se debilita.", "Verificar si Alejandro acepta camara o prefiere solo audio de Aniol narrando."],
+    audio_url: "/audio/nemi-preparacion-mental.mp3",
+    audio_duration_s: 704,
+    emocion_target: "respeto",
+    frase_ancla: "Cocino al lado de Enrique Olvera. Despues se vino a abrir su restaurante a una ciudad que aun no era destino.",
+    tesis_central: "Nemi parece otro fine dining contemporaneo de provincia. Pero es un cocinero que paso 9 anios al lado de Enrique Olvera en Pujol y 3 en Celler de Can Roca, dos de los restaurantes mas importantes del mundo. Y en lugar de quedarse en Mexico City o abrirse algo en una capital, en 2019 decidio venirse a La Paz - cuando nadie consideraba la ciudad destino gastronomico - para abrir su primer restaurante propio. Reconocido por Food & Wine Espanol 2021, 120 Mejores 2021/2022/2023, Guia Mexico Gastronomico 5 anios seguidos. La razon: cuando alguien deja el top mundial para venir a una ciudad que aun no se siente destino, esa decision tiene un porque que vale la pregunta off-camera.",
+    prepared_at: "2026-05-18",
+  },
+
+  "lp-10": {
+    id: "dlp-10", restaurant_id: "lp-10",
+    historia: "Tacos El Estadio empezo en 1974 como una carreta ambulante de la familia Diaz. 52 anios despues son 3 sucursales en el Centro de La Paz: la original en Lic. Verdad esq. Independencia, El Estadio II en 5 de Mayo esq. Cabildo, y la de Guillermo Prieto esq. Independencia. Abren a las 5 AM, atienden clientes desde las 8 AM. La especialidad son tacos capeados estilo paceno - masa tempura ligera y crujiente, NO empanizado como Ensenada. Pescado y camaron del dia. 4.8/5 en TripAdvisor (#39 de 371 restaurantes de La Paz).",
+    hooks: ["Cincuenta y dos anios con la misma receta. La familia Diaz empezo con una carreta en 1974.", "El capeado paceno (masa tempura ligera) frente al ensenadense (empanizado) - dos tacos con el mismo nombre. El Estadio lleva 5 decadas manteniendo el lado paceno.", "Abren a las 5 AM porque el pescado llega entonces. Atienden clientes desde las 8 AM. Producto del dia, sin congelar."],
+    datos: ["Fundado 1974. Familia Diaz. 52 anios continuos.", "3 sucursales en Centro La Paz.", "TripAdvisor 4.8/5, #39 de 371 restaurantes de La Paz.", "Apertura 5 AM, atencion 8 AM.", "Capeado paceno tempura ligera (no empanizado)."],
+    pedir: [{ name: "Tacos de pescado capeados", why: "El signature. Test de la tecnica paceña pura - masa tempura crujiente, pescado del dia." }, { name: "Tacos de camaron", why: "El otro pilar. Verificar frescura del Mar de Cortes." }, { name: "Quesadilla de marlin", why: "Marlin de la casa - producto endemico paceno. Si lo hacen bien aqui es donde se nota." }],
+    preguntas: [{ role: "A un Diaz de la familia (idealmente el patriarca o nieto)", texto: "Quien empezo la carreta en 1974? Donde estaba? Donde se compraba el pescado entonces?" }, { role: "Al duenio actual", texto: "Cual es la diferencia exacta entre el capeado paceno y el ensenadense? Por que aqui es asi y alla diferente?" }, { role: "A un cliente local de muchos anios", texto: "Por que aqui y no en otra taqueria del centro? Hay diferencia con las otras dos sucursales?" }],
+    candidatura_status: "si", candidatura_razon: "Tradicion familiar de 52 anios + tecnica regional diferenciada + 4.8/5 con #39 ranking. Encaja con filtro 80 Tacos por antiguedad y arraigo local. El angulo de la diferencia capeado paceno vs ensenadense es contenido divulgativo unico.",
+    angulo: "Plano de las manos rebozando en masa tempura ligera (no empanizado - hacer visible la diferencia). B-roll del marlin recien partido. Plano del local a las 5 AM si Aniol puede llegar temprano. Conversacion con la familia Diaz sobre la carreta de 1974. La revelacion central del reel: el capeado paceno no es lo mismo que el ensenadense, son dos tecnicas distintas. Documentar esa diferencia es el contenido.",
+    alertas: ["Hay 3 sucursales - decidir cual visitar antes (la original es Lic. Verdad).", "@soyelarturito menciono que los demas platos eran 'muy grasosos' - quedarse en pescado y camaron capeados, no expandir.", "Para ver el capeado en vivo (proceso), llegar antes de las 11 AM."],
+    audio_url: "/audio/tacos-el-estadio-preparacion-mental.mp3",
+    audio_duration_s: 880,
+    emocion_target: "respeto",
+    frase_ancla: "Cincuenta y dos anios con la misma receta. El capeado paceno frente al ensenadense.",
+    tesis_central: "Tacos El Estadio parece otra taqueria de pescado del Centro. Pero son 52 anios continuos haciendo lo mismo: tacos capeados estilo paceno (rebozado en masa tempura ligera, no empanizado como Ensenada), pescado y camaron, capa crujiente afuera, masa ligera adentro. La familia Diaz empezo con una carreta ambulante en 1974, hoy tienen 3 sucursales y abren a las 5 AM. La razon: el capeado paceno tiene una tecnica que casi nadie explica - es DIFERENTE del capeado ensenadense. Lo paceno se rebosa en masa tempura ligera, lo ensenadense se empaniza. Son dos tacos distintos con el mismo nombre. El Estadio lleva 5 decadas manteniendo el lado paceno de esa diferencia.",
+    prepared_at: "2026-05-18",
+  },
+
   "gdl-01": {
     id: "dgdl-01", restaurant_id: "gdl-01",
     historia: "Fundada ca. 1922 por el Coronel Isidoro Torres Hernández en el mercado de Tlaquepaque (vendía birria en bicicleta). Su hijo Javier Torres Ruiz 'El Chololo' la llevó a la fama desde 1960 desde el barrio Las Juntas. Javier inventó (o popularizó) sacar la carne del caldo y exponerla al calor seco para dorarla - asi nació la birria tatemada. Falleció 16 febrero 2016 a los 74 anios. Hoy Hugo Israel Caminos Torres (nieto del Coronel, 3ra gen) dirige el negocio. Vinagre fermentado de pina 3 meses es secreto familiar.",
@@ -2372,5 +2429,23 @@ export const dossiers: Record<string, Dossier> = {
     frase_ancla: "Mercado más grande de Hispanoamérica. Cuatrocientos ochenta y cuatro anios cocinando aqui. Cuarenta puestos llevan los mismos duenios desde 1958.",
     tesis_central: "El Mercado Libertad parece otro mercado más. Pero es el mercado techado MÁS GRANDE de Hispanoamérica - 25,000 m², casi 4000 puestos, tres niveles. Y tiene historia de 484 anios - el sitio funciona como mercado desde 1542. El edificio actual de 1958 es Patrimonio Artístico de la Nación. 40 comerciantes son fundadores - llevan 67 anios en el mismo puesto. Mientras los mercados del país son sustituidos por food halls fotogenicos, aqui se cocina el desayuno tapatío exactamente igual desde 1958.",
     prepared_at: "2026-05-17",
+  },
+
+  "gdl-08": {
+    id: "dgdl-08", restaurant_id: "gdl-08",
+    historia: "Xokol abrio en 2018 en barrio Polanco de Guadalajara como antojeria de maiz criollo. Lo fundaron Xrysw Ruelas Diaz (Guadalajara, considero estudiar medicina antes de la cocina) y Oscar Segundo (Santa Maria Citendeje, Estado de Mexico, comunidad Mazahua). Se conocieron en la escuela de cocina; ambos se formaron en tecnicas francesas y japonesas hasta que se preguntaron por que entregaban su atencion a lo extranjero antes de conocer sus propias raices. La familia de Oscar sigue cultivando maiz en el patio de su casa en Santa Maria Citendeje. Cuando Xrysw visito por primera vez vio a la madre de Oscar cocinar al fuego de lena entre arboles frutales. Eso cambio el proyecto. La mision original fue democratica: demostrar que una buena tortilla de maiz criollo deberia estar al alcance de cualquier persona, no solo de comensales de restaurante de lujo. Resistencia inicial: clientes guadalajarenses rechazaban las tortillas azules creyendo que el color significaba menor calidad. En 2024 figuraron en The Best Chef Awards (Dubai). Hoy operan en Santa Tere (Herrera y Cairo 1375) con molino propio Nejayote (1392) a metros.",
+    hooks: ["El maiz azul que nadie queria comer en Guadalajara es el mismo que la mama de Oscar lleva generaciones sembrando.", "Dentro del restaurante, Oscar cocina exactamente lo mismo que su mama en el patio de su casa.", "Ella queria ser medico. El viene de una comunidad Mazahua. Juntos tienen recomendacion Michelin en una antojeria de barrio."],
+    datos: ["Abrieron 2018 en Polanco (GDL) como antojeria. Hoy operan en Santa Teresita.", "Oscar Segundo es Mazahua. Su familia cultiva el maiz que se cocina aqui en Santa Maria Citendeje, Estado de Mexico.", "Nixtamalizacion propia en molino hermano Nejayote (Herrera y Cairo 1392), a metros del restaurante.", "The Best Chef Awards 2024 (Dubai). Recomendacion Michelin (mencion, no estrella confirmada).", "Cocina de humo replica el metodo de coccion de la madre de Oscar."],
+    pedir: [{ name: "Tortillas de maiz criollo (azul, pinto, negro, blanco)", why: "La tesis hecha comida. Masa propia, nixtamal artesanal, sin harina comercial." }, { name: "Tacos ceremoniales Mazahua", why: "Tortillas estampadas con tinta de acido carminico (cochinilla de nopal). Tecnica de la comunidad de Oscar." }, { name: "Menu de degustacion (~8 tiempos)", why: "Cambia segun cosecha. Pescado con leche de tigre de espirulina, tamales con maiz criollo, mole de temporada." }],
+    preguntas: [{ role: "A Oscar", texto: "Tu mama sigue cocinando en el patio de tu casa en Santa Maria Citendeje. Cuando vienes aqui, que cocina te recuerda mas a la de ella?" }, { role: "A Xrysw", texto: "La primera vez que viste cocinar a la mama de Oscar entre arboles frutales, que pensaste? Que cambio en ese momento?" }, { role: "A Oscar", texto: "Cuando los primeros clientes rechazaban las tortillas azules, que les decias? Tuvieron ganas de cambiar de color?" }],
+    candidatura_status: "si", candidatura_razon: "Score historia 9/10. Pareja real, origen Mazahua verificable, nixtamal propio, cocina de humo, vinculo directo con la milpa familiar. Filtro mejor amigo cumplido. Encaja con tesis HERENCIA (memoria + dignidad oficio + masa = lengua heredada).",
+    angulo: "Angulo B 'La milpa dentro del restaurante'. Plano de masa amasandose en Nejayote. Plano de Oscar trabajando en cocina de humo. Conversacion con Xrysw narrando su primera visita al patio Mazahua. Frase nuclear: 'El maiz azul que nadie queria comer en Guadalajara es el mismo que la mama de Oscar lleva generaciones sembrando.' Zona de silencio narrativo: 15-20s ambiente del molino sin voz.",
+    alertas: ["Confirmar sede exacta antes de rodar: 1375 (restaurante) vs 1392 (molino Nejayote). Misma calle.", "Menu cambia semanal/mensualmente. Ir dispuesto a narrar lo que haya, no lo que aparece en internet.", "Pareja socios. No asumir que ambos estaran disponibles. Coordinar con anticipacion.", "NO usar 'gourmet', 'alta cocina', 'fusion', 'reinterpretacion contemporanea'. Ellos se llaman antojeria.", "Verificar nivel Michelin exacto antes de hablar de ello en camara."],
+    audio_url: null,
+    audio_duration_s: null,
+    emocion_target: "respeto con rabo de melancolia dulce",
+    frase_ancla: "El maiz azul que nadie queria comer en Guadalajara es el mismo que la mama de Oscar lleva generaciones sembrando.",
+    tesis_central: "Xokol parece una antojeria de barrio, y en algun sentido lo es. Pero es el lugar donde Oscar Segundo cocina exactamente lo que su madre hace en el patio de su casa en el Estado de Mexico, solo que ahora lo hacen juntos en Guadalajara, con maiz que la propia familia de Oscar cultiva, sin intermediarios, cosechado una vez al ano. La razon por la que esto importa no es tecnica: es que hay dos personas que tomaron la decision, en pleno siglo XXI, de no separar el restaurante de la milpa, la ciudad del campo, la pareja de la tradicion familiar. La masa que se amasa en Xokol viene de la misma tierra que la que amaso la madre de Oscar. Xrysw lo vio por primera vez en ese patio y entendio algo que no esta en ningun libro de cocina. Eso es lo que se sirve aqui: no un homenaje al maiz nativo, sino el maiz nativo mismo, sin mediacion. En un momento donde muchos restaurantes rescatan ingredientes ancestrales desde una distancia estetica, Xokol los cocina desde adentro, porque uno de los dos chefs es de donde vienen esos ingredientes. Eso no es cuento. Es la diferencia.",
+    prepared_at: "2026-05-19",
   },
 };
