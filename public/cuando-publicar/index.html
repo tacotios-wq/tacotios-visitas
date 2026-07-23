@@ -65,10 +65,17 @@
   .bar{position:relative;border-radius:6px 6px 3px 3px;background:var(--accent);
     transition:height .5s var(--ease),background .3s var(--ease);cursor:default;min-height:3px}
   .bar .lab{position:absolute;bottom:-22px;left:0;right:0;text-align:center;font-size:10px;color:var(--ink-faint)}
+  .bar .lab .n{display:block;font-size:9px;font-weight:700;line-height:1.15;margin-top:1px}
   .bar .val{position:absolute;top:-19px;left:0;right:0;text-align:center;font-size:10px;font-weight:700;color:var(--ink-soft);opacity:0;transition:opacity .2s}
+  .hour-bar .val{opacity:.88;font-size:9px}
+  .hour-bar .lab{bottom:-34px;line-height:1.1}
+  .opp-bar .lab{bottom:-36px;line-height:1.1}
+  .opp-bar.low-evidence .val{opacity:1;top:-24px;font-size:9px;color:var(--ink-faint)}
   .bar:hover .val{opacity:1}
   .bar.now-bar{outline:2px solid var(--ink);outline-offset:2px}
   .curve-legend{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-faint);margin-top:30px}
+  .hour-curve-legend{margin-top:42px}
+  .curve-note{margin:-6px 0 12px;max-width:78ch}
 
   /* --- heatmap --- */
   .heat{overflow-x:auto;margin-top:8px}
@@ -88,11 +95,15 @@
   .g.HIPOTESIS-FUERTE{background:#fdf0e2;color:var(--warn)}
   .g.HIPOTESIS{background:#f0f0f0;color:var(--ink-faint)}
   .g.REFUTADO{background:#fbe9e7;color:var(--bad)}
+  .score-zero-row td:first-child b{color:var(--ink-soft)}
+  .tag.score-zero{background:#fff;color:var(--ink-soft);border:1px solid var(--line);margin-top:5px}
   input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
   .wrow .wval{font-size:12px;color:var(--ink-faint);font-weight:700}
   .reset{margin-top:18px;border:1px solid var(--line);background:#fff;border-radius:var(--r-sm);
     padding:10px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--font);transition:transform .12s var(--ease)}
   .reset:active{transform:scale(.97)}
+  a:focus-visible,.chip:focus-visible,select:focus-visible,input[type=range]:focus-visible,.reset:focus-visible{
+    outline:2px solid var(--accent);outline-offset:3px}
 
   /* --- table nivel dios --- */
   .tbl{overflow-x:auto}
@@ -162,7 +173,7 @@
                 stroke-linecap="round" stroke-dasharray="540" stroke-dashoffset="540"
                 style="transition:stroke-dashoffset .7s var(--ease),stroke .3s"/>
       </svg>
-      <div class="score"><b id="nowScore">—</b><span>score ahora</span></div>
+      <div class="score"><b id="nowScore">—</b><span id="nowScoreLabel">score ahora</span></div>
     </div>
     <div class="now-txt">
       <div class="clock" id="clock">— CDMX</div>
@@ -194,10 +205,11 @@
 
 <!-- CURVA POR HORA -->
 <section>
-  <h2>Score por hora — <span id="curveDayLabel" style="color:var(--ink)"></span></h2>
+  <h2>Score por hora relativo — <span id="curveDayLabel" style="color:var(--ink)"></span></h2>
+  <p class="muted curve-note">Altura = mejor hora relativa para este contenido. Valor = views esperadas; color = score global del slot.</p>
   <div class="controls" id="dayChips"></div>
   <div class="curve-wrap"><div class="curve" id="curve"></div></div>
-  <div class="curve-legend"><span>8h</span><span>La barra marcada es la hora actual</span><span>21h</span></div>
+  <div class="curve-legend hour-curve-legend"><span>8h</span><span>Arriba = mejor hora de este contenido · contorno = hora actual</span><span>21h</span></div>
 </section>
 
 <!-- HEATMAP -->
@@ -292,7 +304,7 @@ const DIAS_FULL={lun:'lunes',mar:'martes',mie:'miércoles',jue:'jueves',vie:'vie
 let W = {
   tipo_platillo: FC.tipo_platillo.peso, hora_cdmx: FC.hora_cdmx.peso,
   dia_cdmx: FC.dia_cdmx.peso, momento_comida: FC.momento_comida.peso,
-  emocion: FC.emocion.peso, indulgencia: FC.indulgencia.peso
+  emocion: FC.emocion.peso
 };
 const W0 = {...W};
 
@@ -300,13 +312,14 @@ let state = { platillo:'mariscos', emocion:'emotivo_humano', momento:'comida', d
 
 // --- scoring (espeja tabulador.py) ---
 function liftHora(h){
-  const c = CFG.por_hora[String(h)]; if(!c) return {lift:1,n:0};
-  const lr = c.mediana/G, n=c.n;
+  const c = CFG.por_hora[String(h)]; if(!c || c.mediana==null) return {lift:1,n:c&&Number.isFinite(c.n)?c.n:0};
+  const lr = c.mediana/G, n=Number.isFinite(c.n)?c.n:0;
   return {lift: 1+(lr-1)*n/(n+K), n};
 }
 function liftCat(factor, nivel){
-  const t = FC[factor].tabla[nivel]; if(!t) return {lift:1,n:0};
-  return {lift:t.lift, n:t.n};
+  const ft = FC[factor], t = ft&&ft.tabla ? ft.tabla[nivel] : null;
+  if(!t || !Number.isFinite(t.lift)) return {lift:1,n:t&&Number.isFinite(t.n)?t.n:0};
+  return {lift:t.lift, n:Number.isFinite(t.n)?t.n:0};
 }
 function contrib(factor, nivel){
   const l = factor==='hora_cdmx' ? liftHora(nivel) : liftCat(factor,nivel);
@@ -337,6 +350,7 @@ function toScore(m,grid){
 
 // --- UI helpers ---
 function opt(sel, keys){ sel.innerHTML = keys.map(k=>`<option value="${k}">${ETIQ[k]||k}</option>`).join(''); }
+function label(k){ return ETIQ[k] || String(k); }
 function scoreColor(s){ if(s>=66)return 'var(--good)'; if(s>=40)return 'var(--warn)'; return 'var(--bad)'; }
 function heatColor(v){ // escala perceptual sobre mediana global
   if(v==null) return null;
@@ -346,6 +360,13 @@ function heatColor(v){ // escala perceptual sobre mediana global
   const c1=[251,247,244], c2=[232,85,45];
   const mix=c1.map((a,i)=>Math.round(a+(c2[i]-a)*t));
   return `rgb(${mix[0]},${mix[1]},${mix[2]})`;
+}
+function formatViews(v){
+  if(!Number.isFinite(v)) return '—';
+  if(v>=1000000){
+    return `${(v/1000000).toFixed(v>=9500000?0:1).replace(/\.0$/,'')}M`;
+  }
+  return `${Math.round(v/1000)}K`;
 }
 
 function nowCDMX(){
@@ -374,8 +395,9 @@ function render(){
   const hh = String(now.getHours()).padStart(2,'0'), mm=String(now.getMinutes()).padStart(2,'0');
   document.getElementById('clock').textContent = `${DIAS_FULL[dNow]} · ${hh}:${mm} CDMX`;
   const inWindow = hNow>=8 && hNow<=21;
+  document.getElementById('nowScoreLabel').textContent = inWindow ? 'score ahora' : `score a las ${clampH}:00`;
   const vtxt = sNow>=66?'Buena ventana para publicar':sNow>=40?'Ventana intermedia':'Ventana floja';
-  document.getElementById('verdict').textContent = inWindow ? vtxt : 'Fuera de horario típico de publicación';
+  document.getElementById('verdict').textContent = inWindow ? vtxt : 'Fuera de horario típico: ahora estás fuera de la franja con datos (8:00-21:00)';
   // próxima mejor hora hoy
   let best={h:null,s:-1};
   for(let h=Math.max(hNow,8);h<=21;h++){
@@ -383,21 +405,30 @@ function render(){
     if(s>best.s){best={h,s};}
   }
   document.getElementById('nextWin').innerHTML = best.h!=null
-    ? `Mejor hora que queda hoy para <b>${ETIQ[state.platillo]}</b>: <b>${best.h}:00</b> (score ${best.s})`
+    ? `Mejor hora que queda hoy para <b>${label(state.platillo)}</b>: <b>${best.h}:00</b> (score ${best.s})`
     : 'Ya pasó la franja fuerte de hoy · mañana temprano rinde más';
-  document.getElementById('pillTxt').textContent = `viendo: ${ETIQ[state.platillo]} · ${ETIQ[state.emocion]}`;
+  document.getElementById('pillTxt').textContent = `viendo: ${label(state.platillo)} · ${label(state.emocion)}`;
 
   // --- curva por hora ---
   const horas=Object.keys(CFG.por_hora).map(Number).sort((a,b)=>a-b);
   const curve=document.getElementById('curve'); curve.innerHTML='';
-  const scores = horas.map(h=>({h,s:toScore(multiplier(state.platillo,h,state.dia,state.momento,state.emocion),GRID),n:CFG.por_hora[h].n}));
-  const maxS=Math.max(...scores.map(x=>x.s),1);
+  const scores = horas.map(h=>{
+    const m = multiplier(state.platillo,h,state.dia,state.momento,state.emocion);
+    return {h,m,s:toScore(m,GRID),views:G*m,n:CFG.por_hora[h].n};
+  });
+  const minM=Math.min(...scores.map(x=>x.m));
+  const maxM=Math.max(...scores.map(x=>x.m));
+  const rangeM=maxM-minM;
   scores.forEach(x=>{
-    const bar=document.createElement('div'); bar.className='bar'+((x.h===hNow&&state.dia===dNow)?' now-bar':'');
-    bar.style.height=Math.max(3,(x.s/100)*180)+'px';
+    const local = rangeM>0 ? (x.m-minM)/rangeM : .5;
+    const h = rangeM>0 ? 14 + local*166 : 90;
+    const views = Math.round(x.views);
+    const bar=document.createElement('div'); bar.className='bar hour-bar'+((x.h===hNow&&state.dia===dNow)?' now-bar':'');
+    bar.style.height=h+'px';
     bar.style.background=`linear-gradient(180deg, ${scoreColor(x.s)}, ${scoreColor(x.s)}bb)`;
-    bar.innerHTML=`<span class="val">${x.s}</span><span class="lab">${x.h}</span>`;
-    bar.title=`${x.h}:00 · score ${x.s} · n=${x.n} reels`;
+    bar.innerHTML=`<span class="val">${formatViews(views)}</span><span class="lab">${x.h}<span class="n">n=${x.n}</span></span>`;
+    bar.title=`${x.h}:00 · ${views.toLocaleString()} views esperadas · ×${x.m.toFixed(3)} · score global ${x.s} · n=${x.n} reels`;
+    bar.setAttribute('aria-label', bar.title);
     curve.appendChild(bar);
   });
   document.getElementById('curveDayLabel').textContent = DIAS_FULL[state.dia];
@@ -413,16 +444,19 @@ function render(){
 
   // --- heatmap ---
   const heat=document.getElementById('heat');
-  const bloques=Object.keys(CFG.heatmap_dia_bloque[DIAS[0]]);
+  const heatRows = CFG.heatmap_dia_bloque || {};
+  const firstHeatDay = DIAS.find(d=>heatRows[d]&&Object.keys(heatRows[d]).length);
+  const bloques=firstHeatDay ? Object.keys(heatRows[firstHeatDay]) : [];
   let html='<thead><tr><th></th>'+bloques.map(b=>`<th>${b}</th>`).join('')+'</tr></thead><tbody>';
   DIAS.forEach(d=>{
     html+=`<tr><th style="text-align:right">${ETIQ[d]}</th>`;
     bloques.forEach(b=>{
-      const cell=CFG.heatmap_dia_bloque[d][b];
-      if(!cell||cell.mediana==null){ html+=`<td class="cell-empty">·</td>`; return; }
-      const bg=heatColor(cell.mediana); const lown=cell.n<3;
+      const cell=(heatRows[d]||{})[b];
+      const n=cell&&Number.isFinite(cell.n)?cell.n:0;
+      if(!cell||cell.mediana==null){ html+=`<td class="cell-empty" title="${DIAS_FULL[d]} ${b} · sin datos · n=${n}">·<span class="cell-n">n=${n}</span></td>`; return; }
+      const bg=heatColor(cell.mediana); const lown=n<3;
       const dark=cell.mediana/G>1.4; const col=dark?'#fff':'var(--ink)';
-      html+=`<td class="${lown?'cell-lown':''}" style="background:${bg};color:${col}" title="${DIAS_FULL[d]} ${b} · mediana ${cell.mediana.toLocaleString()} · n=${cell.n}">${Math.round(cell.mediana/1000)}K<span class="cell-n">n=${cell.n}</span></td>`;
+      html+=`<td class="${lown?'cell-lown':''}" style="background:${bg};color:${col}" title="${DIAS_FULL[d]} ${b} · mediana ${cell.mediana.toLocaleString()} · n=${n}">${Math.round(cell.mediana/1000)}K<span class="cell-n">n=${n}</span></td>`;
     });
     html+='</tr>';
   });
@@ -435,7 +469,7 @@ function buildWeights(){
   const items=[
     ['tipo_platillo',FC.tipo_platillo.evidencia],['hora_cdmx',FC.hora_cdmx.evidencia],
     ['emocion',FC.emocion.evidencia],['momento_comida',FC.momento_comida.evidencia],
-    ['dia_cdmx',FC.dia_cdmx.evidencia],['indulgencia',FC.indulgencia.evidencia]
+    ['dia_cdmx',FC.dia_cdmx.evidencia]
   ];
   items.forEach(([f,ev])=>{
     const d=document.createElement('div'); d.className='wrow';
@@ -465,10 +499,13 @@ function buildGodTable(){
   });
   // numéricos refutados
   Object.entries(CFG.factores_numericos).forEach(([k,o])=>{
-    const ev = o.evidencia==='CANON-DATOS'&&o.peso===0?'REFUTADO':o.evidencia;
-    rows+=`<tr><td><b>${o.etiqueta}</b></td>
-      <td><span class="muted">${o.rho?('ρ='+o.rho.rho):('peso '+o.peso)}</span></td>
-      <td><span class="tag g ${ev==='REFUTADO'?'REFUTADO':o.evidencia}">${ev}</span></td>
+    const zero = o.peso===0;
+    const metric = o.rho&&Number.isFinite(o.rho.rho) ? `ρ=${o.rho.rho}` : `peso ${o.peso}`;
+    const evidence = `<span class="tag g ${o.evidencia}">${o.evidencia}</span>`+
+      (o.evidencia==='CANON-DATOS'&&zero ? ' <span class="tag g REFUTADO">REFUTADO</span>' : '');
+    rows+=`<tr class="${zero?'score-zero-row':''}"><td><b>${o.etiqueta}</b></td>
+      <td><span class="muted">${metric}</span>${zero?'<br><span class="tag score-zero">PESO 0 EN SCORE</span>':''}</td>
+      <td>${evidence}</td>
       <td class="muted">${o.nota}</td></tr>`;
   });
   // señales de resultado
@@ -519,15 +556,16 @@ setInterval(render, 30000); // reloj vivo
   const COMP = el && el.textContent && el.textContent!=='null' ? JSON.parse(el.textContent) : null;
   if(!COMP){ const s=document.getElementById('compSection'); if(s) s.style.display='none'; return; }
   const NOM = { soyelarturito:'El Arturito', chefenproceso:'Chef en Proceso', robegrill:'Robe Grill', calixtoserna_mcc:'Calixto Serna' };
-  const BLKS = Object.keys(COMP.oportunidad_bloque);
-  const cuentas = Object.entries(COMP.cuentas);
+  const OPP = COMP.oportunidad_bloque || {};
+  const BLKS = Object.keys(OPP);
+  const cuentas = Object.entries(COMP.cuentas || {});
 
   document.getElementById('compIntro').innerHTML =
     `De ${cuentas.length} creadores del nicho (${cuentas.map(([h])=>NOM[h]||h).join(', ')}) — ${COMP.n_reels_analizados} reels reales, sus views normalizadas a la base de cada cuenta. `+
     `Cruzo <b>demanda</b> (dónde su audiencia responde por encima de lo normal) contra <b>saturación</b> (dónde ya publican todos). La oportunidad está donde hay apetito pero pocos compiten.`;
 
   // mejor y trampa
-  const scored = BLKS.map(b=>({b, ...COMP.oportunidad_bloque[b]})).filter(x=>x.score!=null);
+  const scored = BLKS.map(b=>({b, ...OPP[b]})).filter(x=>x.score!=null);
   const best = scored.slice().sort((a,b)=>b.score-a.score)[0];
   const trap = scored.slice().sort((a,b)=>b.densidad_pct-a.densidad_pct)[0];
   if(best) document.getElementById('compBestBlock').textContent = best.b;
@@ -537,15 +575,21 @@ setInterval(render, 30000); // reloj vivo
   const bars = document.getElementById('compBars'); bars.innerHTML='';
   const maxScore = Math.max(...scored.map(x=>x.score),0.01);
   BLKS.forEach(b=>{
-    const o = COMP.oportunidad_bloque[b];
-    const bar=document.createElement('div'); bar.className='bar';
-    if(o.score==null){ bar.style.height='6px'; bar.style.background='var(--line)';
-      bar.innerHTML=`<span class="lab">${b}</span>`; bar.title=`${b}: n insuficiente (n=${o.n})`; bars.appendChild(bar); return; }
+    const o = OPP[b];
+    const n = o&&Number.isFinite(o.n)?o.n:0;
+    const bar=document.createElement('div'); bar.className='bar opp-bar';
+    if(!o||o.score==null){ bar.style.height='6px'; bar.style.background='var(--line)';
+      bar.className+=' low-evidence';
+      bar.innerHTML=`<span class="val">n insuf.</span><span class="lab">${b}<span class="n">n=${n}</span></span>`;
+      bar.title=`${b}: n insuficiente (n=${n})`;
+      bar.setAttribute('aria-label', bar.title);
+      bars.appendChild(bar); return; }
     const h=Math.max(6,(o.score/maxScore)*170);
     const col = o.score>=0.8?'var(--good)':o.score>=0.6?'var(--warn)':'var(--bad)';
     bar.style.height=h+'px'; bar.style.background=`linear-gradient(180deg,${col},${col}bb)`;
-    bar.innerHTML=`<span class="val" style="opacity:1;top:-30px;font-size:9px">▲${o.demanda}<br>●${o.densidad_pct}%</span><span class="lab">${b}</span>`;
-    bar.title=`${b}: oportunidad ${o.score} · demanda ${o.demanda} · densidad ${o.densidad_pct}% · n=${o.n}`;
+    bar.innerHTML=`<span class="val" style="opacity:1;top:-30px;font-size:9px">▲${o.demanda}<br>●${o.densidad_pct}%</span><span class="lab">${b}<span class="n">n=${n}</span></span>`;
+    bar.title=`${b}: oportunidad ${o.score} · demanda ${o.demanda} · densidad ${o.densidad_pct}% · n=${n}`;
+    bar.setAttribute('aria-label', bar.title);
     bars.appendChild(bar);
   });
 
@@ -557,14 +601,16 @@ setInterval(render, 30000); // reloj vivo
     const t=Math.max(0,Math.min(1,(v-0.6)/0.9)); // 0.6..1.5
     const c1=[251,247,244], c2=[199,154,59]; // blanco -> oro
     const m=c1.map((a,i)=>Math.round(a+(c2[i]-a)*t)); return `rgb(${m[0]},${m[1]},${m[2]})`; }
+  const compHeatRows = COMP.heatmap_dia_bloque || {};
   let html='<thead><tr><th></th>'+BLKS.map(b=>`<th>${b}</th>`).join('')+'</tr></thead><tbody>';
   dias.forEach(d=>{
     html+=`<tr><th style="text-align:right">${diasF[d]}</th>`;
     BLKS.forEach(b=>{
-      const c=(COMP.heatmap_dia_bloque[d]||{})[b];
-      if(!c||c.demanda==null){ html+=`<td class="cell-empty">·</td>`; return; }
-      const bg=dcolor(c.demanda), lown=c.n<2, dark=c.demanda>1.15;
-      html+=`<td class="${lown?'cell-lown':''}" style="background:${bg};color:${dark?'#fff':'var(--ink)'}" title="${diasF[d]} ${b}: demanda ${c.demanda}, n=${c.n}">${c.demanda}<span class="cell-n">n=${c.n}</span></td>`;
+      const c=(compHeatRows[d]||{})[b];
+      const n=c&&Number.isFinite(c.n)?c.n:0;
+      if(!c||c.demanda==null){ html+=`<td class="cell-empty" title="${diasF[d]} ${b}: sin datos, n=${n}">·<span class="cell-n">n=${n}</span></td>`; return; }
+      const bg=dcolor(c.demanda), lown=n<2, dark=c.demanda>1.15;
+      html+=`<td class="${lown?'cell-lown':''}" style="background:${bg};color:${dark?'#fff':'var(--ink)'}" title="${diasF[d]} ${b}: demanda ${c.demanda}, n=${n}">${c.demanda}<span class="cell-n">n=${n}</span></td>`;
     });
     html+='</tr>';
   });
