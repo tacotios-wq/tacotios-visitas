@@ -25,6 +25,18 @@ export interface Series {
   icon: string | null;
 }
 
+/** Un beat de la escaleta del guion (segundo + descripcion). */
+export interface Beat {
+  t_s: number;
+  desc: string;
+}
+
+/** Zona de silencio narrativo (segundo de inicio + duracion). */
+export interface ZonaSilencio {
+  t_s: number;
+  dur_s: number;
+}
+
 export interface Dossier {
   id: string;
   restaurant_id: string;
@@ -46,6 +58,14 @@ export interface Dossier {
   frase_ancla?: string | null;
   tesis_central?: string | null;
   prepared_at?: string | null;
+  // Campos atlas (todos opcionales — no rompen los dossiers existentes).
+  // El score es HIPOTESIS de potencial (0-100), nunca prediccion.
+  viral_score_predicted?: number | null;
+  guion_escaleta?: string | null;
+  guion_beats?: Beat[];
+  hook_principal?: string | null;
+  zona_silencio_narrativo?: ZonaSilencio[];
+  newsletter_resumen?: string | null;
 }
 
 export type TabKey = "pendiente" | "visitado" | "80tacos";

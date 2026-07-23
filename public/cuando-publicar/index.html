@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reloj de Publicación · @tacotíos</title>
+<style>
+  :root{
+    --bg:#ffffff; --ink:#1a1a1a; --ink-soft:#6b6b6b; --ink-faint:#9a9a9a;
+    --line:#ececec; --line-soft:#f4f4f4; --card:#fafafa;
+    --accent:#e8552d; --accent-soft:#fbe9e3; --gold:#c79a3b;
+    --good:#2f9e6f; --warn:#d98a2b; --bad:#c2463a;
+    --r:16px; --r-sm:10px;
+    --ease:cubic-bezier(.16,1,.3,1);
+    --font:'Helvetica Neue',Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--bg);color:var(--ink);font-family:var(--font);
+    line-height:1.5;-webkit-font-smoothing:antialiased;
+    padding:clamp(18px,4vw,56px);max-width:1120px;margin:0 auto;
+    font-variant-numeric:tabular-nums;
+  }
+  h1{font-size:clamp(26px,5vw,44px);font-weight:700;letter-spacing:-.02em;line-height:1.05}
+  h2{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-faint);margin-bottom:16px}
+  .sub{color:var(--ink-soft);font-size:clamp(14px,2.2vw,17px);margin-top:10px;max-width:56ch}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  section{margin-top:clamp(38px,7vw,72px)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(18px,3vw,30px)}
+
+  /* --- NOW hero --- */
+  .now{display:grid;grid-template-columns:1fr;gap:22px;align-items:center}
+  @media(min-width:760px){.now{grid-template-columns:auto 1fr}}
+  .dial{position:relative;width:200px;height:200px;margin:0 auto}
+  .dial svg{transform:rotate(-90deg)}
+  .dial .score{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .dial .score b{font-size:52px;font-weight:700;letter-spacing:-.03em;line-height:1}
+  .dial .score span{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-faint);margin-top:4px}
+  .now-txt .clock{font-size:15px;color:var(--ink-soft)}
+  .now-txt .verdict{font-size:clamp(20px,3.4vw,28px);font-weight:700;letter-spacing:-.01em;margin:8px 0 4px;line-height:1.15}
+  .now-txt .next{font-size:15px;color:var(--ink-soft)}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:var(--accent-soft);color:var(--accent);
+    padding:7px 13px;border-radius:999px;font-size:13px;font-weight:700;margin-top:14px}
+  .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+
+  /* --- controls --- */
+  .controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .chip{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;
+    padding:9px 15px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font);
+    transition:transform .12s var(--ease),background .18s var(--ease),border-color .18s var(--ease)}
+  .chip:hover{border-color:#d5d5d5}
+  .chip:active{transform:scale(.97)}
+  .chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .row{display:flex;flex-wrap:wrap;gap:26px}
+  .field{flex:1;min-width:200px}
+  .field > label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-faint);margin-bottom:10px}
+  select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-sm);
+    font-size:15px;font-family:var(--font);background:#fff;color:var(--ink);cursor:pointer;appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239a9a9a' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+
+  /* --- hour curve --- */
+  .curve-wrap{position:relative;margin-top:8px;overflow-x:auto}
+  .curve{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;align-items:end;height:190px;min-width:520px}
+  .bar{position:relative;border-radius:6px 6px 3px 3px;background:var(--accent);
+    transition:height .5s var(--ease),background .3s var(--ease);cursor:default;min-height:3px}
+  .bar .lab{position:absolute;bottom:-22px;left:0;right:0;text-align:center;font-size:10px;color:var(--ink-faint)}
+  .bar .val{position:absolute;top:-19px;left:0;right:0;text-align:center;font-size:10px;font-weight:700;color:var(--ink-soft);opacity:0;transition:opacity .2s}
+  .bar:hover .val{opacity:1}
+  .bar.now-bar{outline:2px solid var(--ink);outline-offset:2px}
+  .curve-legend{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-faint);margin-top:30px}
+
+  /* --- heatmap --- */
+  .heat{overflow-x:auto;margin-top:8px}
+  table.heat-t{border-collapse:separate;border-spacing:4px;min-width:560px;width:100%}
+  table.heat-t th{font-size:11px;font-weight:700;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.06em;padding:4px}
+  table.heat-t td{border-radius:8px;text-align:center;padding:10px 4px;font-size:13px;font-weight:700;position:relative;min-width:64px}
+  .cell-n{display:block;font-size:9px;font-weight:600;opacity:.6;margin-top:2px}
+  .cell-lown{outline:1px dashed rgba(0,0,0,.18);outline-offset:-3px}
+  .cell-empty{background:var(--line-soft) !important;color:var(--ink-faint) !important}
+
+  /* --- weights --- */
+  .weights{display:grid;grid-template-columns:1fr;gap:18px;margin-top:8px}
+  @media(min-width:680px){.weights{grid-template-columns:1fr 1fr}}
+  .wrow label{display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:7px}
+  .wrow label .g{font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;letter-spacing:.04em}
+  .g.CANON-DATOS{background:#e6f4ee;color:var(--good)}
+  .g.HIPOTESIS-FUERTE{background:#fdf0e2;color:var(--warn)}
+  .g.HIPOTESIS{background:#f0f0f0;color:var(--ink-faint)}
+  .g.REFUTADO{background:#fbe9e7;color:var(--bad)}
+  input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer}
+  .wrow .wval{font-size:12px;color:var(--ink-faint);font-weight:700}
+  .reset{margin-top:18px;border:1px solid var(--line);background:#fff;border-radius:var(--r-sm);
+    padding:10px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--font);transition:transform .12s var(--ease)}
+  .reset:active{transform:scale(.97)}
+
+  /* --- table nivel dios --- */
+  .tbl{overflow-x:auto}
+  table.god{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+  table.god th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-faint);font-weight:700;padding:10px 12px;border-bottom:2px solid var(--line)}
+  table.god td{padding:12px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+  table.god tr:hover td{background:var(--line-soft)}
+  .barcell{display:flex;align-items:center;gap:8px}
+  .barcell .track{flex:1;height:7px;background:var(--line);border-radius:4px;overflow:hidden;min-width:60px}
+  .barcell .fill{height:100%;border-radius:4px;background:var(--accent)}
+  .barcell .fill.res{background:var(--gold)}
+  .muted{color:var(--ink-soft);font-size:13px}
+  .tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;letter-spacing:.03em;white-space:nowrap}
+
+  .banner{background:var(--ink);color:#fff;border-radius:var(--r);padding:clamp(20px,3vw,30px)}
+  .banner h2{color:rgba(255,255,255,.55)}
+  .banner p{font-size:clamp(15px,2.4vw,18px);line-height:1.55;max-width:70ch}
+  .banner .k{color:var(--accent);font-weight:700}
+  .foot{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-faint);line-height:1.7}
+  .foot b{color:var(--ink-soft)}
+  .two{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:720px){.two{grid-template-columns:1fr 1fr}}
+  .miniStat{background:var(--card);border:1px solid var(--line);border-radius:var(--r-sm);padding:16px}
+  .miniStat b{display:block;font-size:26px;font-weight:700;letter-spacing:-.02em}
+  .miniStat span{font-size:12px;color:var(--ink-soft)}
+  /* --- top bar de conexion con el sitio de visitas --- */
+  .sitebar{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+    gap:12px;margin:calc(-1*clamp(18px,4vw,56px)) calc(-1*clamp(18px,4vw,56px)) 0;
+    padding:12px clamp(18px,4vw,56px);background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(14px);
+    border-bottom:1px solid var(--line)}
+  .sitebar a{text-decoration:none;color:var(--ink)}
+  .sitebar .brand{display:flex;align-items:center;gap:10px}
+  .sitebar .tt{width:30px;height:30px;border-radius:8px;background:var(--ink);color:#fff;display:flex;
+    align-items:center;justify-content:center;font-weight:700;font-size:11px;letter-spacing:-.02em}
+  .sitebar .name{display:flex;flex-direction:column;line-height:1}
+  .sitebar .name b{font-size:15px;font-weight:600;letter-spacing:-.01em}
+  .sitebar .name span{font-size:9px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.16em;margin-top:2px}
+  .sitebar .back{font-size:13px;font-weight:600;color:var(--ink-soft);display:inline-flex;align-items:center;gap:6px;
+    padding:8px 14px;border:1px solid var(--line);border-radius:999px;transition:border-color .18s var(--ease)}
+  .sitebar .back:hover{border-color:#d5d5d5}
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important}}
+</style>
+</head>
+<body>
+
+<nav class="sitebar">
+  <a class="brand" href="/">
+    <span class="tt">TT</span>
+    <span class="name"><b>Tacotíos</b><span>La Anti-Guía · México</span></span>
+  </a>
+  <a class="back" href="/">‹ Volver a las visitas</a>
+</nav>
+
+<header>
+  <div class="eyebrow">Motor de Timing · datos reales @tacotíos</div>
+  <h1>El reloj de publicación</h1>
+  <p class="sub">En función de la hora, el día y qué vas a subir, cuánto rinde publicar ahora. Construido sobre <b id="nreels">—</b> reels reales, no intuición. Todo lo que ves lleva su <b>n</b> a la vista y su grado de evidencia: esto es asociación medida, no una ley.</p>
+</header>
+
+<!-- AHORA -->
+<section>
+  <div class="card now">
+    <div class="dial">
+      <svg width="200" height="200" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="86" fill="none" stroke="#ececec" stroke-width="16"/>
+        <circle id="arc" cx="100" cy="100" r="86" fill="none" stroke="#e8552d" stroke-width="16"
+                stroke-linecap="round" stroke-dasharray="540" stroke-dashoffset="540"
+                style="transition:stroke-dashoffset .7s var(--ease),stroke .3s"/>
+      </svg>
+      <div class="score"><b id="nowScore">—</b><span>score ahora</span></div>
+    </div>
+    <div class="now-txt">
+      <div class="clock" id="clock">— CDMX</div>
+      <div class="verdict" id="verdict">—</div>
+      <div class="next" id="nextWin">—</div>
+      <div class="pill"><span class="dot"></span><span id="pillTxt">viendo: —</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTROLES -->
+<section>
+  <h2>¿Qué vas a publicar?</h2>
+  <div class="row">
+    <div class="field">
+      <label>Tipo de platillo</label>
+      <select id="selPlatillo"></select>
+    </div>
+    <div class="field">
+      <label>Emoción del video</label>
+      <select id="selEmocion"></select>
+    </div>
+    <div class="field">
+      <label>Momento de comida</label>
+      <select id="selMomento"></select>
+    </div>
+  </div>
+</section>
+
+<!-- CURVA POR HORA -->
+<section>
+  <h2>Score por hora — <span id="curveDayLabel" style="color:var(--ink)"></span></h2>
+  <div class="controls" id="dayChips"></div>
+  <div class="curve-wrap"><div class="curve" id="curve"></div></div>
+  <div class="curve-legend"><span>8h</span><span>La barra marcada es la hora actual</span><span>21h</span></div>
+</section>
+
+<!-- HEATMAP -->
+<section>
+  <h2>Mapa de calor · día × franja (mediana de views reales)</h2>
+  <p class="muted" style="margin-bottom:6px">Color = mediana de reproducciones de los reels publicados en esa casilla. El número pequeño es <b>n</b>: una casilla con n bajo (borde punteado) es anécdota, no patrón.</p>
+  <div class="heat"><table class="heat-t" id="heat"></table></div>
+</section>
+
+<!-- PONDERACIÓN EN VIVO -->
+<section>
+  <h2>Ponderación en vivo · mueve los pesos y todo se recalcula</h2>
+  <p class="muted" style="margin-bottom:8px">Los pesos vienen calibrados del análisis (tamaño de efecto real). Puedes moverlos para explorar, pero recuerda: subir el peso de un factor sin evidencia (gris) es volver a la intuición.</p>
+  <div class="weights" id="weights"></div>
+  <button class="reset" id="resetW">Restaurar pesos calibrados</button>
+</section>
+
+<!-- TABLA NIVEL DIOS -->
+<section>
+  <h2>La tabla · % de peso de cada variable</h2>
+  <div class="tbl"><table class="god" id="godTable">
+    <thead><tr><th>Variable</th><th>Peso / correlación</th><th>Evidencia</th><th>Qué dice el dato</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+</section>
+
+<!-- BANNER HONESTIDAD -->
+<section>
+  <div class="banner">
+    <h2>Lo que el dato obliga a decir</h2>
+    <p id="bannerTxt"></p>
+    <div class="two" style="margin-top:22px">
+      <div class="miniStat" style="background:#232323;border-color:#333">
+        <b style="color:#fff" id="r2a">—</b><span style="color:rgba(255,255,255,.6)">R² del modelo solo-timing (negativo = no predice)</span>
+      </div>
+      <div class="miniStat" style="background:#232323;border-color:#333">
+        <b style="color:#fff" id="btlift">—</b><span style="color:rgba(255,255,255,.6)">lift top vs bottom del score, <b style="color:#fff">out-of-sample</b> (in-sample infla a 2.6x)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCIA -->
+<section id="compSection">
+  <div class="eyebrow" style="color:var(--gold)">Competencia · ventana de oportunidad</div>
+  <h2 style="color:var(--ink);font-size:clamp(20px,3.4vw,28px);text-transform:none;letter-spacing:-.01em;font-weight:700;margin-bottom:8px">Dónde hay apetito sin disputar</h2>
+  <p class="muted" id="compIntro" style="max-width:64ch;margin-bottom:18px"></p>
+
+  <div class="two" style="margin-bottom:22px">
+    <div class="miniStat"><b id="compBestBlock" style="color:var(--gold)">—</b><span>mejor ventana (demanda alta × poca competencia)</span></div>
+    <div class="miniStat"><b id="compTrapBlock" style="color:var(--bad)">—</b><span>la trampa (todos publican, retorno solo medio)</span></div>
+  </div>
+
+  <h2>Oportunidad por franja · demanda vs saturación</h2>
+  <div class="curve-wrap"><div class="curve" id="compBars" style="min-width:560px"></div></div>
+  <div class="curve-legend"><span>barra = score de oportunidad</span><span>▲ demanda relativa · ● densidad de competencia</span></div>
+
+  <h2 style="margin-top:38px">Mapa de calor de la competencia · día × franja</h2>
+  <p class="muted" style="margin-bottom:6px">Color = qué tan por encima de su propia base rinden ELLOS en esa casilla (demanda normalizada). Casilla vacía o con borde punteado (n bajo) = poca evidencia. Es su audiencia, no la tuya: léelo como pista, no como ley.</p>
+  <div class="heat"><table class="heat-t" id="compHeat"></table></div>
+
+  <div class="card" style="margin-top:22px">
+    <div class="eyebrow" style="margin-bottom:12px">Auditoría de sesgo (lo que se controló ANTES de concluir)</div>
+    <div id="compBias" class="muted" style="font-size:13px;line-height:1.7"></div>
+  </div>
+</section>
+
+<div class="foot" id="foot"></div>
+
+<script id="cfg" type="application/json">{"version": "1.0", "generado": "2026-07-22", "fuente_datos": "88 reels CSV (retención/shares Liz) + 177 mod.app (hora/día); 172 con views; 184 clasificados", "mediana_global_views": 169949, "K_shrinkage": 8.0, "advertencia_maestra": "El timing por sí solo NO predice el alcance. VALIDACIÓN OUT-OF-SAMPLE (5-fold CV, la prueba honesta): el score compuesto da Spearman ~0.11 (CI cruza 0, NO significativo) y separa el cuartil top del bottom por solo ~1.3x, muy lejos del 2.6x in-sample. Fuera de muestra, la HORA y el DÍA no generalizan; lo único con un susurro de señal es el TIPO DE PLATILLO (rho ~0.14, tampoco significativo a n=172). La palanca real está en QUÉ grabas (mariscos e historia humana > restaurante de autor/postre) y en la RETENCIÓN sostenida, no en el reloj. Usa este motor como instrumento DESCRIPTIVO (qué pasó, con su n) y como desempate fino, nunca como predicción firme. Todo es asociación, no causalidad. El juez final es un A/B real.", "factores_categoricos": {"tipo_platillo": {"etiqueta": "Tipo de platillo (qué grabas)", "clase": "programable", "tabla": {"carnes": {"mediana": 133077, "n": 10, "lift_raw": 0.783, "lift": 0.879}, "dulce_postre": {"mediana": 99608, "n": 5, "lift_raw": 0.586, "lift": 0.841}, "garnacha_antojito": {"mediana": 209959, "n": 23, "lift_raw": 1.235, "lift": 1.175}, "internacional": {"mediana": 162762, "n": 20, "lift_raw": 0.958, "lift": 0.97}, "mariscos": {"mediana": 331555, "n": 12, "lift_raw": 1.951, "lift": 1.571}, "no_comida": {"mediana": 282210, "n": 17, "lift_raw": 1.661, "lift": 1.449}, "otro": {"mediana": 350451, "n": 6, "lift_raw": 2.062, "lift": 1.455}, "restaurante_experiencia": {"mediana": 120550, "n": 44, "lift_raw": 0.709, "lift": 0.754}, "tacos": {"mediana": 142916, "n": 32, "lift_raw": 0.841, "lift": 0.873}}, "eps2": 0.068, "peso": 0.634, "evidencia": "CANON-DATOS", "nota": "El único factor de contenido con soporte estadístico (p<0.05, n=172). Mariscos e historias humanas rinden; restaurante de autor y postre rinden bajo."}, "hora_cdmx": {"etiqueta": "Hora de publicación (CDMX)", "clase": "programable", "tabla": {"8": {"mediana": 247725, "n": 23, "lift_raw": 1.458, "lift": 1.34}, "9": {"mediana": 141888, "n": 19, "lift_raw": 0.835, "lift": 0.884}, "10": {"mediana": 209587, "n": 9, "lift_raw": 1.233, "lift": 1.123}, "11": {"mediana": 165704, "n": 6, "lift_raw": 0.975, "lift": 0.989}, "12": {"mediana": 186468, "n": 3, "lift_raw": 1.097, "lift": 1.027}, "13": {"mediana": 182909, "n": 5, "lift_raw": 1.076, "lift": 1.029}, "14": {"mediana": 98189, "n": 3, "lift_raw": 0.578, "lift": 0.885}, "15": {"mediana": 75964, "n": 1, "lift_raw": 0.447, "lift": 0.939}, "16": {"mediana": 138284, "n": 2, "lift_raw": 0.814, "lift": 0.963}, "17": {"mediana": 281068, "n": 3, "lift_raw": 1.654, "lift": 1.178}, "18": {"mediana": 173739, "n": 24, "lift_raw": 1.022, "lift": 1.017}, "19": {"mediana": 165084, "n": 68, "lift_raw": 0.971, "lift": 0.974}, "20": {"mediana": 61734, "n": 5, "lift_raw": 0.363, "lift": 0.755}, "21": {"mediana": 95571, "n": 1, "lift_raw": 0.562, "lift": 0.951}}, "eps2": 0.055, "peso": 0.528, "evidencia": "HIPOTESIS-FUERTE", "nota": "Señal débil pero real: 8-10h rinde ~1.4x, 20h+ se desploma a ~0.4x. 19h (donde más publica) es solo mediana. Confundido con día y con audiencia conectada."}, "momento_comida": {"etiqueta": "Momento de comida del platillo", "clase": "programable", "tabla": {"antojo_nocturno": {"mediana": 369417, "n": 4, "lift_raw": 2.174, "lift": 1.391}, "cena": {"mediana": 138891, "n": 37, "lift_raw": 0.817, "lift": 0.85}, "comida": {"mediana": 178203, "n": 63, "lift_raw": 1.049, "lift": 1.043}, "desayuno": {"mediana": 126531, "n": 14, "lift_raw": 0.745, "lift": 0.837}, "transversal": {"mediana": 224493, "n": 54, "lift_raw": 1.321, "lift": 1.28}}, "eps2": 0.012, "peso": 0.178, "evidencia": "HIPOTESIS", "nota": "No significativo (p=0.19). Antojo nocturno alto pero n=4. Transversal (se come a cualquier hora) rinde por encima."}, "emocion": {"etiqueta": "Emoción dominante del copy/video", "clase": "programable", "tabla": {"antojo_sensorial": {"mediana": 172659, "n": 13, "lift_raw": 1.016, "lift": 1.01}, "curiosidad_paradoja": {"mediana": 212893, "n": 16, "lift_raw": 1.253, "lift": 1.168}, "emotivo_humano": {"mediana": 208267, "n": 54, "lift_raw": 1.225, "lift": 1.196}, "epico_logro": {"mediana": 121414, "n": 9, "lift_raw": 0.714, "lift": 0.849}, "humor": {"mediana": 334446, "n": 8, "lift_raw": 1.968, "lift": 1.484}, "informativo": {"mediana": 119562, "n": 62, "lift_raw": 0.704, "lift": 0.737}, "polemica_debate": {"mediana": 165084, "n": 10, "lift_raw": 0.971, "lift": 0.984}}, "eps2": 0.012, "peso": 0.178, "evidencia": "HIPOTESIS", "nota": "No significativo global, pero 'informativo' rinde 0.7x consistente (n=62) y la historia humana 1.23x (n=54). Humor n=8 no fiable aún."}, "indulgencia": {"etiqueta": "Nivel de indulgencia del platillo", "clase": "programable", "tabla": {"alta": {"mediana": 142959, "n": 50, "lift_raw": 0.841, "lift": 0.863}, "baja": {"mediana": 257117, "n": 20, "lift_raw": 1.513, "lift": 1.366}, "media": {"mediana": 187430, "n": 102, "lift_raw": 1.103, "lift": 1.095}}, "eps2": 0.0, "peso": 0.08, "evidencia": "HIPOTESIS", "nota": "Sin efecto (p=0.46). El lift de 'baja' lo inflan posts no-comida (Mundial). No usar como palanca."}, "dia_cdmx": {"etiqueta": "Día de la semana", "clase": "programable", "tabla": {"dom": {"mediana": 172659, "n": 33, "lift_raw": 1.016, "lift": 1.013}, "jue": {"mediana": 148364, "n": 25, "lift_raw": 0.873, "lift": 0.904}, "lun": {"mediana": 164568, "n": 21, "lift_raw": 0.968, "lift": 0.977}, "mar": {"mediana": 224493, "n": 22, "lift_raw": 1.321, "lift": 1.235}, "mie": {"mediana": 212567, "n": 26, "lift_raw": 1.251, "lift": 1.192}, "sab": {"mediana": 364274, "n": 25, "lift_raw": 2.143, "lift": 1.866}, "vie": {"mediana": 140389, "n": 20, "lift_raw": 0.826, "lift": 0.876}}, "eps2": 0.0, "peso": 0.08, "evidencia": "HIPOTESIS", "nota": "Efecto independiente ≈ 0 (p=0.77). El sábado 2.1x del crudo está CONFUNDIDO con publicar sábado por la mañana y con el tipo de contenido. No es el día: es la hora + qué subes."}}, "factores_numericos": {"duracion_s": {"etiqueta": "Duración del video", "clase": "programable", "rho": {"rho": 0.022, "ci": [-0.135, 0.175], "n": 172}, "peso": 0.0, "evidencia": "CANON-DATOS", "nota": "REFUTADO: no predice alcance (rho≈0.02, CI cruza 0). Dura lo que la historia aguante. Peso 0 en el score."}, "caption_len": {"etiqueta": "Largo del caption", "clase": "programable", "rho": {"rho": 0.054, "ci": [-0.101, 0.212], "n": 172}, "peso": 0.0, "evidencia": "HIPOTESIS", "nota": "Sin efecto sobre alcance (rho≈0.05). El copy largo servía para shares en data vieja, no replica sobre alcance aquí."}, "n_hashtags": {"etiqueta": "Nº de hashtags", "clase": "programable", "rho": {"rho": 0.122, "ci": [-0.024, 0.276], "n": 172}, "peso": 0.0, "evidencia": "HIPOTESIS", "nota": "Sin efecto (rho≈0.12, CI cruza 0)."}, "es_quincena": {"etiqueta": "Día de quincena (15/30)", "clase": "programable", "eps2": 0.017, "peso": 0.1, "signo": "negativo", "evidencia": "HIPOTESIS", "nota": "Contra-intuitivo: rinde LIGERAMENTE PEOR en quincena (mediana ajustada -0.2). Efecto minúsculo. Sin evidencia externa que sostenga el mito quincena→antojo."}, "frecuencia_momentum": {"etiqueta": "Momentum / frecuencia (posts últimos 7d)", "clase": "programable", "rho": {"rho": 0.004, "ci": [-0.137, 0.158], "n": 172}, "peso": 0.0, "evidencia": "HIPOTESIS", "nota": "Sin efecto directo sobre alcance del post individual (rho≈0). Aparece en el modelo crudo pero es proxy de estacionalidad, no palanca."}}, "senales_resultado": {"pct_noseg": {"etiqueta": "% alcance a no-seguidores", "rho": {"rho": 0.612, "ci": [0.44, 0.73], "n": 72}, "nota": "El correlato #1 del alcance (rho=0.61). Pero es RESULTADO, no palanca: un reel llega a no-seguidores porque ya está volando. Se lee después, no se programa."}, "ret_fin": {"etiqueta": "Retención al final", "rho": {"rho": 0.346, "ci": [0.074, 0.581], "n": 57}, "nota": "rho=0.35. La retención sostenida es la palanca de craft #1 (ya canon INFORME_PRECISION). Se construye en el guión/edición, no en el timing."}, "ret_3s": {"etiqueta": "Retención a 3s (hook)", "rho": {"rho": 0.238, "ci": [-0.044, 0.495], "n": 57}, "nota": "rho=0.24 (CI cruza 0 en crudo; 0.50 ajustado por momentum). El gate de entrada."}, "shares_rate": {"etiqueta": "Tasa de compartidos", "rho": {"rho": 0.319, "ci": [0.126, 0.502], "n": 81}, "nota": "rho=0.32. Compartir = identidad del que ve. Resultado de la historia, no del reloj."}, "saves_rate": {"etiqueta": "Tasa de guardados", "rho": {"rho": 0.228, "ci": [0.013, 0.421], "n": 80}, "nota": "rho=0.23. Guardar = utilidad (dónde comer)."}}, "evidencia_externa": {"antojo_circadiano": {"pico_hora": 20, "valle_hora": 8, "evidencia": "ACADEMICO", "confianza": "alta", "fuente": "Scheer 2013 (Obesity, N=12) + Reichenberger 2018 (Nutrition, N=160)", "nota": "El antojo biológico pica ~20h. OJO: es cuándo la gente tiene HAMBRE, no cuándo mejor rinde publicar. Son dos variables distintas."}, "ventana_engagement_food": {"franja": [11, 13], "dias": "L-V", "evidencia": "INDUSTRIA_N_GRANDE", "confianza": "media", "fuente": "Sprout Social 2026 (~2B engagements, vertical food&bev)", "nota": "Ventana de mayor engagement para comida. Dato poblacional global, sin corte México. La propia fuente dice: tu audiencia manda sobre el promedio."}, "clima_antojo": {"regla": "clima adverso (frío/lluvia) sube antojo de comida reconfortante", "evidencia": "ACADEMICO", "confianza": "media", "fuente": "Govind & Garg 2020 (J. Marketing Research, 7 estudios)", "nota": "Efecto real, más marcado en audiencia femenina. Sin dato mexicano de delivery. Capa opcional del calendarizador si hay pronóstico."}, "quincena_mx": {"regla": "efecto quincena sobre comida/delivery", "evidencia": "NO_ENCONTRADO", "confianza": "nula", "fuente": "sin estudio; solo narrativa cultural (CONDUSEF gasto hormiga ≠ pico en día de pago)", "nota": "No hay dato que sostenga el mito. Además los datos de @tacotios apuntan levemente en contra."}}, "heatmap_dia_bloque": {"lun": {"8-10h": {"mediana": 136027, "n": 1}, "11-13h": {"mediana": null, "n": 0}, "14-16h": {"mediana": null, "n": 0}, "17-19h": {"mediana": 165084, "n": 20}, "20-21h": {"mediana": null, "n": 0}}, "mar": {"8-10h": {"mediana": 173159, "n": 2}, "11-13h": {"mediana": null, "n": 0}, "14-16h": {"mediana": null, "n": 0}, "17-19h": {"mediana": 232025, "n": 19}, "20-21h": {"mediana": 22895, "n": 1}}, "mie": {"8-10h": {"mediana": null, "n": 0}, "11-13h": {"mediana": 311321, "n": 1}, "14-16h": {"mediana": null, "n": 0}, "17-19h": {"mediana": 212567, "n": 24}, "20-21h": {"mediana": 61734, "n": 1}}, "jue": {"8-10h": {"mediana": 287711, "n": 1}, "11-13h": {"mediana": 4747810, "n": 1}, "14-16h": {"mediana": 121414, "n": 1}, "17-19h": {"mediana": 152234, "n": 20}, "20-21h": {"mediana": 45106, "n": 2}}, "vie": {"8-10h": {"mediana": 129461, "n": 8}, "11-13h": {"mediana": 171920, "n": 6}, "14-16h": {"mediana": 155154, "n": 3}, "17-19h": {"mediana": 125911, "n": 3}, "20-21h": {"mediana": null, "n": 0}}, "sab": {"8-10h": {"mediana": 408600, "n": 20}, "11-13h": {"mediana": 101013, "n": 5}, "14-16h": {"mediana": null, "n": 0}, "17-19h": {"mediana": null, "n": 0}, "20-21h": {"mediana": null, "n": 0}}, "dom": {"8-10h": {"mediana": 209587, "n": 19}, "11-13h": {"mediana": 320301, "n": 1}, "14-16h": {"mediana": 83967, "n": 2}, "17-19h": {"mediana": 91144, "n": 9}, "20-21h": {"mediana": 107628, "n": 2}}}, "por_hora": {"8": {"mediana": 247725, "n": 23}, "9": {"mediana": 141888, "n": 19}, "10": {"mediana": 209587, "n": 9}, "11": {"mediana": 165704, "n": 6}, "12": {"mediana": 186468, "n": 3}, "13": {"mediana": 182909, "n": 5}, "14": {"mediana": 98189, "n": 3}, "15": {"mediana": 75964, "n": 1}, "16": {"mediana": 138284, "n": 2}, "17": {"mediana": 281068, "n": 3}, "18": {"mediana": 173739, "n": 24}, "19": {"mediana": 165084, "n": 68}, "20": {"mediana": 61734, "n": 5}, "21": {"mediana": 95571, "n": 1}}, "por_dia": {"dom": {"mediana": 172659, "n": 33}, "jue": {"mediana": 148364, "n": 25}, "lun": {"mediana": 164568, "n": 21}, "mar": {"mediana": 224493, "n": 22}, "mie": {"mediana": 212567, "n": 26}, "sab": {"mediana": 364274, "n": 25}, "vie": {"mediana": 140389, "n": 20}}, "modelo_r2": {"solo_timing_ajustado_momentum": -0.136, "completo_con_resultado": 0.142}, "validacion_modelos_oos": {"nota": "Spearman(score,views) y lift cuartil top/bottom en 5-fold CV. Ninguno significativo a n=172.", "completo_6_factores": {"rho": 0.113, "lift": 1.36}, "solo_platillo": {"rho": 0.137, "lift": 1.29}, "platillo_mas_hora": {"rho": 0.103, "lift": 0.99}, "conclusion": "El platillo solo es el modelo más robusto out-of-sample; añadir hora no ayuda. La señal es real pero débil."}, "hueco_dato_primario": "FALTA la variable más importante: horas/días en que la audiencia de @tacotios está conectada (Meta Business Suite → Audiencia → horarios activos). No existe en ningún dataset local. Cuando Aniol suba esa captura, sustituye a la correlación hora→alcance como señal primaria."}</script>
+<script id="bt" type="application/json">{"n": 172, "in_sample": {"rho": 0.37, "ci": [0.226, 0.5], "lift_top_bottom": 2.6}, "out_of_sample": {"rho": 0.114, "ci": [-0.036, 0.265], "lift_top_bottom": 1.33, "medianas_cuartil": {"Q1": 141888, "Q2": 151362, "Q3": 209959, "Q4": 188392}, "metodo": "5-fold CV, lifts recomputados por fold sobre train; pesos fijos"}, "gate": {"g1_rho": false, "g2_topbottom": true, "veredicto": "FALLA"}, "rho": 0.114, "ci": [-0.036, 0.265], "lift_top_bottom": 1.33}</script>
+<script id="comp" type="application/json">{"generado": "2026-07-22", "fuente": "IG feed API (sesión logueada de Aniol), reels con play_count. Métrica: views.", "cuentas": {"calixtoserna_mcc": {"handle": "calixtoserna_mcc", "followers": 2000000, "n_reels_total": 47, "n_recientes": 45, "outliers_descartados": [{"fecha": "2023-07-02", "views": 46345932}, {"fecha": "2025-03-03", "views": 13052147}], "rango": ["2026-05-18", "2026-07-22"], "mediana_views_reciente": 266257}, "soyelarturito": {"handle": "soyelarturito", "followers": 956120, "n_reels_total": 35, "n_recientes": 34, "outliers_descartados": [{"fecha": "2026-02-15", "views": 2264458}], "rango": ["2026-04-24", "2026-07-21"], "mediana_views_reciente": 513489}, "chefenproceso": {"handle": "chefenproceso", "followers": 3949188, "n_reels_total": 34, "n_recientes": 31, "outliers_descartados": [{"fecha": "2024-02-16", "views": 6588375}, {"fecha": "2025-04-02", "views": 5809118}, {"fecha": "2025-06-24", "views": 6773043}], "rango": ["2026-06-10", "2026-07-22"], "mediana_views_reciente": 726164}, "robegrill": {"handle": "robegrill", "followers": 3934695, "n_reels_total": 30, "n_recientes": 27, "outliers_descartados": [{"fecha": "2022-10-17", "views": 3527463}, {"fecha": "2023-11-02", "views": 11540583}, {"fecha": "2024-06-09", "views": 20822690}], "rango": ["2026-06-23", "2026-07-22"], "mediana_views_reciente": 790786}}, "n_reels_analizados": 137, "sesgos_declarados": ["PINEADOS descartados por ventana de recencia (150d).", "Views normalizadas a la mediana reciente de cada cuenta (view_index): controla escala de seguidores.", "Audiencia de cada competidor puede diferir de la de Aniol (CDMX); su hora óptima no es transferible 1:1.", "n pequeño por celda: shrinkage K=5 y n visible siempre.", "La variación de views la domina el contenido, no la hora: la demanda por franja es una señal débil.", "Muestra = posts recientes visibles en el feed logueado, no censo histórico completo."], "demanda_hora": {"0": {"n": 0, "demanda": null, "demanda_cruda": null}, "1": {"n": 1, "demanda": 0.838, "demanda_cruda": 0.027}, "2": {"n": 0, "demanda": null, "demanda_cruda": null}, "3": {"n": 0, "demanda": null, "demanda_cruda": null}, "4": {"n": 0, "demanda": null, "demanda_cruda": null}, "5": {"n": 0, "demanda": null, "demanda_cruda": null}, "6": {"n": 0, "demanda": null, "demanda_cruda": null}, "7": {"n": 0, "demanda": null, "demanda_cruda": null}, "8": {"n": 1, "demanda": 0.881, "demanda_cruda": 0.287}, "9": {"n": 2, "demanda": 0.875, "demanda_cruda": 0.563}, "10": {"n": 5, "demanda": 1.062, "demanda_cruda": 1.123}, "11": {"n": 10, "demanda": 0.809, "demanda_cruda": 0.714}, "12": {"n": 33, "demanda": 0.977, "demanda_cruda": 0.973}, "13": {"n": 8, "demanda": 0.769, "demanda_cruda": 0.625}, "14": {"n": 12, "demanda": 1.161, "demanda_cruda": 1.228}, "15": {"n": 5, "demanda": 1.094, "demanda_cruda": 1.187}, "16": {"n": 5, "demanda": 1.0, "demanda_cruda": 1.0}, "17": {"n": 5, "demanda": 0.877, "demanda_cruda": 0.754}, "18": {"n": 15, "demanda": 1.0, "demanda_cruda": 1.0}, "19": {"n": 21, "demanda": 1.221, "demanda_cruda": 1.274}, "20": {"n": 8, "demanda": 0.911, "demanda_cruda": 0.855}, "21": {"n": 4, "demanda": 1.148, "demanda_cruda": 1.333}, "22": {"n": 2, "demanda": 1.408, "demanda_cruda": 2.429}, "23": {"n": 0, "demanda": null, "demanda_cruda": null}}, "demanda_dia": {"lun": {"n": 20, "demanda": 0.849, "demanda_cruda": 0.811}, "mar": {"n": 20, "demanda": 0.932, "demanda_cruda": 0.915}, "mie": {"n": 26, "demanda": 1.13, "demanda_cruda": 1.155}, "jue": {"n": 15, "demanda": 1.181, "demanda_cruda": 1.242}, "vie": {"n": 25, "demanda": 1.0, "demanda_cruda": 1.0}, "sab": {"n": 16, "demanda": 0.93, "demanda_cruda": 0.908}, "dom": {"n": 15, "demanda": 1.111, "demanda_cruda": 1.148}}, "demanda_bloque": {"6-8h": {"n": 1, "demanda": 0.881, "demanda_cruda": 0.287}, "8-10h": {"n": 7, "demanda": 0.928, "demanda_cruda": 0.876}, "11-13h": {"n": 51, "demanda": 0.906, "demanda_cruda": 0.897}, "14-16h": {"n": 22, "demanda": 1.117, "demanda_cruda": 1.144}, "17-19h": {"n": 41, "demanda": 1.154, "demanda_cruda": 1.173}, "20-22h": {"n": 14, "demanda": 0.967, "demanda_cruda": 0.955}, "23-5h": {"n": 1, "demanda": 0.838, "demanda_cruda": 0.027}}, "densidad_hora": {"0": {"posts": 0, "densidad_pct": 0.0}, "1": {"posts": 1, "densidad_pct": 0.7}, "2": {"posts": 0, "densidad_pct": 0.0}, "3": {"posts": 0, "densidad_pct": 0.0}, "4": {"posts": 0, "densidad_pct": 0.0}, "5": {"posts": 0, "densidad_pct": 0.0}, "6": {"posts": 0, "densidad_pct": 0.0}, "7": {"posts": 0, "densidad_pct": 0.0}, "8": {"posts": 1, "densidad_pct": 0.7}, "9": {"posts": 2, "densidad_pct": 1.5}, "10": {"posts": 5, "densidad_pct": 3.6}, "11": {"posts": 10, "densidad_pct": 7.3}, "12": {"posts": 33, "densidad_pct": 24.1}, "13": {"posts": 8, "densidad_pct": 5.8}, "14": {"posts": 12, "densidad_pct": 8.8}, "15": {"posts": 5, "densidad_pct": 3.6}, "16": {"posts": 5, "densidad_pct": 3.6}, "17": {"posts": 5, "densidad_pct": 3.6}, "18": {"posts": 15, "densidad_pct": 10.9}, "19": {"posts": 21, "densidad_pct": 15.3}, "20": {"posts": 8, "densidad_pct": 5.8}, "21": {"posts": 4, "densidad_pct": 2.9}, "22": {"posts": 2, "densidad_pct": 1.5}, "23": {"posts": 0, "densidad_pct": 0.0}}, "densidad_bloque": {"6-8h": {"posts": 1, "densidad_pct": 0.7}, "8-10h": {"posts": 7, "densidad_pct": 5.1}, "11-13h": {"posts": 51, "densidad_pct": 37.2}, "14-16h": {"posts": 22, "densidad_pct": 16.1}, "17-19h": {"posts": 41, "densidad_pct": 29.9}, "20-22h": {"posts": 14, "densidad_pct": 10.2}, "23-5h": {"posts": 1, "densidad_pct": 0.7}}, "oportunidad_bloque": {"6-8h": {"score": null, "demanda": 0.881, "densidad_pct": 0.7, "n": 1, "nota": "n insuficiente"}, "8-10h": {"score": 0.864, "demanda": 0.928, "densidad_pct": 5.1, "n": 7, "hueco": 0.86}, "11-13h": {"score": 0.453, "demanda": 0.906, "densidad_pct": 37.2, "n": 51, "hueco": 0.0}, "14-16h": {"score": 0.875, "demanda": 1.117, "densidad_pct": 16.1, "n": 22, "hueco": 0.57}, "17-19h": {"score": 0.69, "demanda": 1.154, "densidad_pct": 29.9, "n": 41, "hueco": 0.2}, "20-22h": {"score": 0.834, "demanda": 0.967, "densidad_pct": 10.2, "n": 14, "hueco": 0.73}, "23-5h": {"score": null, "demanda": 0.838, "densidad_pct": 0.7, "n": 1, "nota": "n insuficiente"}}, "heatmap_dia_bloque": {"lun": {"6-8h": {"n": 0, "demanda": null}, "8-10h": {"n": 0, "demanda": null}, "11-13h": {"n": 7, "demanda": 0.825}, "14-16h": {"n": 1, "demanda": 1.074}, "17-19h": {"n": 12, "demanda": 0.867}, "20-22h": {"n": 0, "demanda": null}, "23-5h": {"n": 0, "demanda": null}}, "mar": {"6-8h": {"n": 0, "demanda": null}, "8-10h": {"n": 0, "demanda": null}, "11-13h": {"n": 9, "demanda": 1.269}, "14-16h": {"n": 3, "demanda": 1.0}, "17-19h": {"n": 6, "demanda": 0.711}, "20-22h": {"n": 2, "demanda": 1.045}, "23-5h": {"n": 0, "demanda": null}}, "mie": {"6-8h": {"n": 0, "demanda": null}, "8-10h": {"n": 2, "demanda": 1.063}, "11-13h": {"n": 8, "demanda": 1.512}, "14-16h": {"n": 4, "demanda": 1.503}, "17-19h": {"n": 7, "demanda": 0.889}, "20-22h": {"n": 5, "demanda": 0.897}, "23-5h": {"n": 0, "demanda": null}}, "jue": {"6-8h": {"n": 0, "demanda": null}, "8-10h": {"n": 0, "demanda": null}, "11-13h": {"n": 6, "demanda": 0.763}, "14-16h": {"n": 3, "demanda": 1.111}, "17-19h": {"n": 4, "demanda": 1.252}, "20-22h": {"n": 2, "demanda": 0.908}, "23-5h": {"n": 0, "demanda": null}}, "vie": {"6-8h": {"n": 0, "demanda": null}, "8-10h": {"n": 1, "demanda": 0.927}, "11-13h": {"n": 9, "demanda": 0.693}, "14-16h": {"n": 6, "demanda": 0.987}, "17-19h": {"n": 6, "demanda": 2.145}, "20-22h": {"n": 3, "demanda": 1.446}, "23-5h": {"n": 0, "demanda": null}}, "sab": {"6-8h": {"n": 1, "demanda": 0.881}, "8-10h": {"n": 1, "demanda": 0.968}, "11-13h": {"n": 6, "demanda": 0.907}, "14-16h": {"n": 4, "demanda": 1.037}, "17-19h": {"n": 3, "demanda": 1.065}, "20-22h": {"n": 1, "demanda": 1.005}, "23-5h": {"n": 0, "demanda": null}}, "dom": {"6-8h": {"n": 0, "demanda": null}, "8-10h": {"n": 3, "demanda": 0.954}, "11-13h": {"n": 6, "demanda": 1.053}, "14-16h": {"n": 1, "demanda": 1.017}, "17-19h": {"n": 3, "demanda": 1.085}, "20-22h": {"n": 1, "demanda": 1.472}, "23-5h": {"n": 1, "demanda": 0.838}}}}</script>
+<script>
+const CFG = JSON.parse(document.getElementById('cfg').textContent);
+const BT  = JSON.parse(document.getElementById('bt').textContent);
+const G = CFG.mediana_global_views, K = CFG.K_shrinkage;
+const FC = CFG.factores_categoricos;
+const ETIQ = {
+  tacos:'Tacos', garnacha_antojito:'Garnacha / antojito', caldo_sopa:'Caldo / birria',
+  mariscos:'Mariscos', carnes:'Carnitas / barbacoa / asada', dulce_postre:'Dulce / postre',
+  bebida:'Bebida', restaurante_experiencia:'Restaurante / experiencia', internacional:'Internacional',
+  no_comida:'No-comida (mundial, personal)', otro:'Otro',
+  desayuno:'Desayuno', comida:'Comida', cena:'Cena', antojo_nocturno:'Antojo nocturno', transversal:'Transversal',
+  antojo_sensorial:'Antojo sensorial', curiosidad_paradoja:'Curiosidad / paradoja', humor:'Humor',
+  emotivo_humano:'Historia humana', epico_logro:'Épico / logro', polemica_debate:'Polémica / debate', informativo:'Informativo',
+  lun:'Lun', mar:'Mar', mie:'Mié', jue:'Jue', vie:'Vie', sab:'Sáb', dom:'Dom'
+};
+const DIAS=['lun','mar','mie','jue','vie','sab','dom'];
+const DIAS_FULL={lun:'lunes',mar:'martes',mie:'miércoles',jue:'jueves',vie:'viernes',sab:'sábado',dom:'domingo'};
+
+// pesos vivos (mutables por sliders)
+let W = {
+  tipo_platillo: FC.tipo_platillo.peso, hora_cdmx: FC.hora_cdmx.peso,
+  dia_cdmx: FC.dia_cdmx.peso, momento_comida: FC.momento_comida.peso,
+  emocion: FC.emocion.peso, indulgencia: FC.indulgencia.peso
+};
+const W0 = {...W};
+
+let state = { platillo:'mariscos', emocion:'emotivo_humano', momento:'comida', dia:null };
+
+// --- scoring (espeja tabulador.py) ---
+function liftHora(h){
+  const c = CFG.por_hora[String(h)]; if(!c) return {lift:1,n:0};
+  const lr = c.mediana/G, n=c.n;
+  return {lift: 1+(lr-1)*n/(n+K), n};
+}
+function liftCat(factor, nivel){
+  const t = FC[factor].tabla[nivel]; if(!t) return {lift:1,n:0};
+  return {lift:t.lift, n:t.n};
+}
+function contrib(factor, nivel){
+  const l = factor==='hora_cdmx' ? liftHora(nivel) : liftCat(factor,nivel);
+  return {c: 1 + W[factor]*(l.lift-1), lift:l.lift, n:l.n};
+}
+function multiplier(platillo,hora,dia,momento,emocion){
+  let m=1;
+  m*=contrib('tipo_platillo',platillo).c;
+  m*=contrib('hora_cdmx',hora).c;
+  if(dia) m*=contrib('dia_cdmx',dia).c;
+  if(momento) m*=contrib('momento_comida',momento).c;
+  if(emocion) m*=contrib('emocion',emocion).c;
+  return m;
+}
+// parrilla para score 0-100
+function gridMuls(){
+  const pls=Object.keys(FC.tipo_platillo.tabla), horas=Object.keys(CFG.por_hora).map(Number),
+        dias=Object.keys(FC.dia_cdmx.tabla), mos=Object.keys(FC.momento_comida.tabla),
+        ems=Object.keys(FC.emocion.tabla), out=[];
+  for(const p of pls)for(const h of horas)for(const d of dias)for(const mo of mos)for(const e of ems)
+    out.push(multiplier(p,h,d,mo,e));
+  return out.sort((a,b)=>a-b);
+}
+function toScore(m,grid){
+  let lo=0,hi=grid.length; while(lo<hi){const mid=(lo+hi)>>1; if(grid[mid]<m)lo=mid+1;else hi=mid;}
+  return Math.round(100*lo/Math.max(1,grid.length-1));
+}
+
+// --- UI helpers ---
+function opt(sel, keys){ sel.innerHTML = keys.map(k=>`<option value="${k}">${ETIQ[k]||k}</option>`).join(''); }
+function scoreColor(s){ if(s>=66)return 'var(--good)'; if(s>=40)return 'var(--warn)'; return 'var(--bad)'; }
+function heatColor(v){ // escala perceptual sobre mediana global
+  if(v==null) return null;
+  const r=v/G; // 0..~4
+  const t=Math.max(0,Math.min(1,(Math.log2(r)+1.2)/2.6));
+  // blanco -> naranja marca
+  const c1=[251,247,244], c2=[232,85,45];
+  const mix=c1.map((a,i)=>Math.round(a+(c2[i]-a)*t));
+  return `rgb(${mix[0]},${mix[1]},${mix[2]})`;
+}
+
+function nowCDMX(){
+  const s = new Date().toLocaleString('en-US',{timeZone:'America/Mexico_City'});
+  return new Date(s);
+}
+
+let GRID = gridMuls();
+
+function render(){
+  GRID = gridMuls();
+  const now = nowCDMX();
+  const hNow = now.getHours();
+  const dNow = DIAS[(now.getDay()+6)%7]; // getDay 0=dom
+  if(!state.dia) state.dia = dNow;
+
+  // --- NOW dial ---
+  const clampH = Math.max(8,Math.min(21,hNow));
+  const mNow = multiplier(state.platillo, clampH, dNow, state.momento, state.emocion);
+  const sNow = toScore(mNow, GRID);
+  const arc = document.getElementById('arc');
+  arc.style.strokeDashoffset = 540*(1-sNow/100);
+  arc.style.stroke = scoreColor(sNow);
+  document.getElementById('nowScore').textContent = sNow;
+  document.getElementById('nowScore').style.color = scoreColor(sNow);
+  const hh = String(now.getHours()).padStart(2,'0'), mm=String(now.getMinutes()).padStart(2,'0');
+  document.getElementById('clock').textContent = `${DIAS_FULL[dNow]} · ${hh}:${mm} CDMX`;
+  const inWindow = hNow>=8 && hNow<=21;
+  const vtxt = sNow>=66?'Buena ventana para publicar':sNow>=40?'Ventana intermedia':'Ventana floja';
+  document.getElementById('verdict').textContent = inWindow ? vtxt : 'Fuera de horario típico de publicación';
+  // próxima mejor hora hoy
+  let best={h:null,s:-1};
+  for(let h=Math.max(hNow,8);h<=21;h++){
+    const s=toScore(multiplier(state.platillo,h,dNow,state.momento,state.emocion),GRID);
+    if(s>best.s){best={h,s};}
+  }
+  document.getElementById('nextWin').innerHTML = best.h!=null
+    ? `Mejor hora que queda hoy para <b>${ETIQ[state.platillo]}</b>: <b>${best.h}:00</b> (score ${best.s})`
+    : 'Ya pasó la franja fuerte de hoy · mañana temprano rinde más';
+  document.getElementById('pillTxt').textContent = `viendo: ${ETIQ[state.platillo]} · ${ETIQ[state.emocion]}`;
+
+  // --- curva por hora ---
+  const horas=Object.keys(CFG.por_hora).map(Number).sort((a,b)=>a-b);
+  const curve=document.getElementById('curve'); curve.innerHTML='';
+  const scores = horas.map(h=>({h,s:toScore(multiplier(state.platillo,h,state.dia,state.momento,state.emocion),GRID),n:CFG.por_hora[h].n}));
+  const maxS=Math.max(...scores.map(x=>x.s),1);
+  scores.forEach(x=>{
+    const bar=document.createElement('div'); bar.className='bar'+((x.h===hNow&&state.dia===dNow)?' now-bar':'');
+    bar.style.height=Math.max(3,(x.s/100)*180)+'px';
+    bar.style.background=`linear-gradient(180deg, ${scoreColor(x.s)}, ${scoreColor(x.s)}bb)`;
+    bar.innerHTML=`<span class="val">${x.s}</span><span class="lab">${x.h}</span>`;
+    bar.title=`${x.h}:00 · score ${x.s} · n=${x.n} reels`;
+    curve.appendChild(bar);
+  });
+  document.getElementById('curveDayLabel').textContent = DIAS_FULL[state.dia];
+
+  // --- day chips ---
+  const dc=document.getElementById('dayChips'); dc.innerHTML='';
+  DIAS.forEach(d=>{
+    const b=document.createElement('button'); b.className='chip'; b.textContent=ETIQ[d];
+    b.setAttribute('aria-pressed', d===state.dia);
+    b.onclick=()=>{state.dia=d; render();};
+    dc.appendChild(b);
+  });
+
+  // --- heatmap ---
+  const heat=document.getElementById('heat');
+  const bloques=Object.keys(CFG.heatmap_dia_bloque[DIAS[0]]);
+  let html='<thead><tr><th></th>'+bloques.map(b=>`<th>${b}</th>`).join('')+'</tr></thead><tbody>';
+  DIAS.forEach(d=>{
+    html+=`<tr><th style="text-align:right">${ETIQ[d]}</th>`;
+    bloques.forEach(b=>{
+      const cell=CFG.heatmap_dia_bloque[d][b];
+      if(!cell||cell.mediana==null){ html+=`<td class="cell-empty">·</td>`; return; }
+      const bg=heatColor(cell.mediana); const lown=cell.n<3;
+      const dark=cell.mediana/G>1.4; const col=dark?'#fff':'var(--ink)';
+      html+=`<td class="${lown?'cell-lown':''}" style="background:${bg};color:${col}" title="${DIAS_FULL[d]} ${b} · mediana ${cell.mediana.toLocaleString()} · n=${cell.n}">${Math.round(cell.mediana/1000)}K<span class="cell-n">n=${cell.n}</span></td>`;
+    });
+    html+='</tr>';
+  });
+  heat.innerHTML=html+'</tbody>';
+}
+
+// --- weights sliders ---
+function buildWeights(){
+  const wrap=document.getElementById('weights'); wrap.innerHTML='';
+  const items=[
+    ['tipo_platillo',FC.tipo_platillo.evidencia],['hora_cdmx',FC.hora_cdmx.evidencia],
+    ['emocion',FC.emocion.evidencia],['momento_comida',FC.momento_comida.evidencia],
+    ['dia_cdmx',FC.dia_cdmx.evidencia],['indulgencia',FC.indulgencia.evidencia]
+  ];
+  items.forEach(([f,ev])=>{
+    const d=document.createElement('div'); d.className='wrow';
+    d.innerHTML=`<label><span>${FC[f].etiqueta}</span><span class="g ${ev}">${ev}</span></label>
+      <input type="range" min="0" max="1" step="0.02" value="${W[f]}" data-f="${f}">
+      <div class="wval"><span data-wv="${f}">${W[f].toFixed(2)}</span> · peso calibrado ${W0[f].toFixed(2)}</div>`;
+    wrap.appendChild(d);
+  });
+  wrap.querySelectorAll('input[type=range]').forEach(inp=>{
+    inp.oninput=()=>{const f=inp.dataset.f; W[f]=parseFloat(inp.value);
+      document.querySelector(`[data-wv="${f}"]`).textContent=W[f].toFixed(2); render();};
+  });
+}
+document.getElementById('resetW').onclick=()=>{W={...W0}; buildWeights(); render();};
+
+// --- tabla nivel dios ---
+function buildGodTable(){
+  const tb=document.querySelector('#godTable tbody'); let rows='';
+  const maxW=Math.max(...Object.values(W0));
+  const order=['tipo_platillo','hora_cdmx','emocion','momento_comida','dia_cdmx','indulgencia'];
+  order.forEach(f=>{
+    const o=FC[f], w=o.peso, pct=Math.round(100*w/maxW);
+    rows+=`<tr><td><b>${o.etiqueta}</b></td>
+      <td><div class="barcell"><div class="track"><div class="fill" style="width:${pct}%"></div></div><span class="muted">${w.toFixed(2)}</span></div></td>
+      <td><span class="tag g ${o.evidencia}">${o.evidencia}</span></td>
+      <td class="muted">${o.nota}</td></tr>`;
+  });
+  // numéricos refutados
+  Object.entries(CFG.factores_numericos).forEach(([k,o])=>{
+    const ev = o.evidencia==='CANON-DATOS'&&o.peso===0?'REFUTADO':o.evidencia;
+    rows+=`<tr><td><b>${o.etiqueta}</b></td>
+      <td><span class="muted">${o.rho?('ρ='+o.rho.rho):('peso '+o.peso)}</span></td>
+      <td><span class="tag g ${ev==='REFUTADO'?'REFUTADO':o.evidencia}">${ev}</span></td>
+      <td class="muted">${o.nota}</td></tr>`;
+  });
+  // señales de resultado
+  rows+=`<tr><td colspan="4" style="padding-top:20px"><span class="tag g HIPOTESIS-FUERTE">SEÑALES DE RESULTADO</span> <span class="muted">— correlacionan fuerte con el alcance pero se miden DESPUÉS; no se calendarizan</span></td></tr>`;
+  Object.entries(CFG.senales_resultado).forEach(([k,o])=>{
+    rows+=`<tr><td><b>${o.etiqueta}</b></td>
+      <td><div class="barcell"><div class="track"><div class="fill res" style="width:${Math.round(100*Math.abs(o.rho.rho))}%"></div></div><span class="muted">ρ=${o.rho.rho}</span></div></td>
+      <td><span class="tag" style="background:#f6efe0;color:var(--gold)">RESULTADO</span></td>
+      <td class="muted">${o.nota}</td></tr>`;
+  });
+  tb.innerHTML=rows;
+}
+
+// --- init ---
+document.getElementById('nreels').textContent = '184';
+document.getElementById('bannerTxt').innerHTML = CFG.advertencia_maestra
+  .replace(/QUÉ grabas/,'<span class="k">QUÉ grabas</span>')
+  .replace(/RETENCIÓN/,'<span class="k">RETENCIÓN</span>');
+document.getElementById('r2a').textContent = CFG.modelo_r2.solo_timing_ajustado_momentum.toFixed(2);
+const oos = BT.out_of_sample || {lift_top_bottom:BT.lift_top_bottom, rho:BT.rho, ci:BT.ci};
+const ins = BT.in_sample || {lift_top_bottom:2.6, rho:0.37};
+document.getElementById('btlift').textContent = oos.lift_top_bottom+'x';
+document.getElementById('foot').innerHTML =
+  `<b>Fuente:</b> ${CFG.fuente_datos}. <b>Mediana global:</b> ${G.toLocaleString()} views. `+
+  `<b>Validación out-of-sample (5-fold CV, la honesta):</b> Spearman ${oos.rho} (CI ${oos.ci[0]}–${oos.ci[1]}, cruza 0 = no significativo), lift ${oos.lift_top_bottom}x. `+
+  `<b>In-sample (optimista):</b> Spearman ${ins.rho}, lift ${ins.lift_top_bottom}x. n=${BT.n}. `+
+  `El score es un instrumento descriptivo y de desempate, no una predicción firme: fuera de muestra la hora y el día apenas separan; lo único con señal es el tipo de platillo. `+
+  `<b>Hueco #1:</b> ${CFG.hueco_dato_primario} `+
+  `<br><b>Evidencia externa (poblacional, no @tacotíos):</b> antojo biológico pica ~20h (Scheer 2013); ventana engagement food 11–13h (Sprout 2026); mito quincena→antojo sin evidencia. `+
+  `Generado ${CFG.generado}. Los % son asociación, no causalidad — el juez final es un A/B real.`;
+
+opt(document.getElementById('selPlatillo'), Object.keys(FC.tipo_platillo.tabla));
+opt(document.getElementById('selEmocion'), Object.keys(FC.emocion.tabla));
+opt(document.getElementById('selMomento'), Object.keys(FC.momento_comida.tabla));
+document.getElementById('selPlatillo').value=state.platillo;
+document.getElementById('selEmocion').value=state.emocion;
+document.getElementById('selMomento').value=state.momento;
+document.getElementById('selPlatillo').onchange=e=>{state.platillo=e.target.value; render();};
+document.getElementById('selEmocion').onchange=e=>{state.emocion=e.target.value; render();};
+document.getElementById('selMomento').onchange=e=>{state.momento=e.target.value; render();};
+
+buildWeights(); buildGodTable(); render();
+setInterval(render, 30000); // reloj vivo
+
+// ============ COMPETENCIA ============
+(function(){
+  const el = document.getElementById('comp');
+  const COMP = el && el.textContent && el.textContent!=='null' ? JSON.parse(el.textContent) : null;
+  if(!COMP){ const s=document.getElementById('compSection'); if(s) s.style.display='none'; return; }
+  const NOM = { soyelarturito:'El Arturito', chefenproceso:'Chef en Proceso', robegrill:'Robe Grill', calixtoserna_mcc:'Calixto Serna' };
+  const BLKS = Object.keys(COMP.oportunidad_bloque);
+  const cuentas = Object.entries(COMP.cuentas);
+
+  document.getElementById('compIntro').innerHTML =
+    `De ${cuentas.length} creadores del nicho (${cuentas.map(([h])=>NOM[h]||h).join(', ')}) — ${COMP.n_reels_analizados} reels reales, sus views normalizadas a la base de cada cuenta. `+
+    `Cruzo <b>demanda</b> (dónde su audiencia responde por encima de lo normal) contra <b>saturación</b> (dónde ya publican todos). La oportunidad está donde hay apetito pero pocos compiten.`;
+
+  // mejor y trampa
+  const scored = BLKS.map(b=>({b, ...COMP.oportunidad_bloque[b]})).filter(x=>x.score!=null);
+  const best = scored.slice().sort((a,b)=>b.score-a.score)[0];
+  const trap = scored.slice().sort((a,b)=>b.densidad_pct-a.densidad_pct)[0];
+  if(best) document.getElementById('compBestBlock').textContent = best.b;
+  if(trap) document.getElementById('compTrapBlock').textContent = trap.b;
+
+  // barras de oportunidad
+  const bars = document.getElementById('compBars'); bars.innerHTML='';
+  const maxScore = Math.max(...scored.map(x=>x.score),0.01);
+  BLKS.forEach(b=>{
+    const o = COMP.oportunidad_bloque[b];
+    const bar=document.createElement('div'); bar.className='bar';
+    if(o.score==null){ bar.style.height='6px'; bar.style.background='var(--line)';
+      bar.innerHTML=`<span class="lab">${b}</span>`; bar.title=`${b}: n insuficiente (n=${o.n})`; bars.appendChild(bar); return; }
+    const h=Math.max(6,(o.score/maxScore)*170);
+    const col = o.score>=0.8?'var(--good)':o.score>=0.6?'var(--warn)':'var(--bad)';
+    bar.style.height=h+'px'; bar.style.background=`linear-gradient(180deg,${col},${col}bb)`;
+    bar.innerHTML=`<span class="val" style="opacity:1;top:-30px;font-size:9px">▲${o.demanda}<br>●${o.densidad_pct}%</span><span class="lab">${b}</span>`;
+    bar.title=`${b}: oportunidad ${o.score} · demanda ${o.demanda} · densidad ${o.densidad_pct}% · n=${o.n}`;
+    bars.appendChild(bar);
+  });
+
+  // heatmap dia x bloque (demanda normalizada)
+  const heat = document.getElementById('compHeat');
+  const dias=['lun','mar','mie','jue','vie','sab','dom'];
+  const diasF={lun:'Lun',mar:'Mar',mie:'Mié',jue:'Jue',vie:'Vie',sab:'Sáb',dom:'Dom'};
+  function dcolor(v){ if(v==null) return null;
+    const t=Math.max(0,Math.min(1,(v-0.6)/0.9)); // 0.6..1.5
+    const c1=[251,247,244], c2=[199,154,59]; // blanco -> oro
+    const m=c1.map((a,i)=>Math.round(a+(c2[i]-a)*t)); return `rgb(${m[0]},${m[1]},${m[2]})`; }
+  let html='<thead><tr><th></th>'+BLKS.map(b=>`<th>${b}</th>`).join('')+'</tr></thead><tbody>';
+  dias.forEach(d=>{
+    html+=`<tr><th style="text-align:right">${diasF[d]}</th>`;
+    BLKS.forEach(b=>{
+      const c=(COMP.heatmap_dia_bloque[d]||{})[b];
+      if(!c||c.demanda==null){ html+=`<td class="cell-empty">·</td>`; return; }
+      const bg=dcolor(c.demanda), lown=c.n<2, dark=c.demanda>1.15;
+      html+=`<td class="${lown?'cell-lown':''}" style="background:${bg};color:${dark?'#fff':'var(--ink)'}" title="${diasF[d]} ${b}: demanda ${c.demanda}, n=${c.n}">${c.demanda}<span class="cell-n">n=${c.n}</span></td>`;
+    });
+    html+='</tr>';
+  });
+  heat.innerHTML=html+'</tbody>';
+
+  // auditoria de sesgo
+  const bias = COMP.sesgos_declarados.map(s=>`• ${s}`).join('<br>');
+  const detalle = cuentas.map(([h,c])=>`<b>${NOM[h]||h}</b>: ${c.n_recientes} reels recientes (${c.outliers_descartados.length} pineados viejos descartados), mediana ${(c.mediana_views_reciente/1000).toFixed(0)}K, ${(c.followers/1e6).toFixed(1)}M seg.`).join('<br>');
+  document.getElementById('compBias').innerHTML = detalle + '<br><br>' + bias;
+})();
+</script>
+</body>
+</html>

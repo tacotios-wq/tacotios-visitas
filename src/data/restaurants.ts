@@ -101,6 +101,80 @@ const SERIES_GUADALAJARA = {
 const now = new Date().toISOString();
 
 export const restaurants: Restaurant[] = [
+  // === VISITA /visita 2026-06-15 (Rufus, Versalles 19, Kasina) ===
+  {
+    id: "ru-01",
+    name: "Rufus",
+    slug: "rufus",
+    zone: "Roma Norte",
+    city: "CDMX",
+    cuisine: "Italiana contemporanea",
+    status: "pendiente",
+    image_url: null,
+    viral_score: 7,
+    notes: null,
+    content_links: [],
+    visited_at: null,
+    created_at: now,
+    updated_at: now,
+    series: [SERIES_OMEGA_CDMX],
+    has_dossier: true,
+  },
+  {
+    id: "ve-01",
+    name: "Versalles 19",
+    slug: "versalles-19",
+    zone: "Juarez",
+    city: "CDMX",
+    cuisine: "Mariscos Sinaloa",
+    status: "visitado",
+    image_url: null,
+    viral_score: 8,
+    notes: null,
+    content_links: ["https://www.tiktok.com/@tacotios/video/7609699782763941140"],
+    visited_at: now,
+    created_at: now,
+    updated_at: now,
+    series: [SERIES_OMEGA_CDMX],
+    has_dossier: true,
+  },
+  {
+    id: "to-01",
+    name: "Taller de Ostiones by FISM",
+    slug: "taller-de-ostiones",
+    zone: "Juarez",
+    city: "CDMX",
+    cuisine: "Ostiones / mariscos",
+    status: "pendiente",
+    image_url: null,
+    viral_score: 8,
+    notes: "Ostioneria de la Juarez (Versalles 113) de la marca FISM, misma casa que Oyster House by FISM en La Paz (lp-08) y la granja Bendito Mar. Fundador Luis Baquedano (Guerrero, buzo desde nino, 10 anos en hoteleria) que se mudo a La Paz y monto ostricultura regenerativa: el ostion filtra y restaura el estero, no lo explota. Cofundador Alan Espinoza Gorozave (hijo de biologo marino, Isla Natividad). Chef Christian Herrera (Valle de Guadalupe). Cocinero Alex Reyna 'El Muneco' (cocina desde los 10). Carta que rota cada 2 dias segun lo que llega del Pacifico. Ronqueo de atun en vivo (miercoles). Lunes ostion a $20 vs ~$650/persona promedio. Bendito Mar gano el premio Pesca y Acuacultura Sustentables 2026. IG @tallerdeostionesbyfism. Tel 55 1038 5788.",
+    content_links: [],
+    visited_at: null,
+    created_at: now,
+    updated_at: now,
+    series: [SERIES_OMEGA_CDMX],
+    has_dossier: true,
+  },
+  {
+    id: "ka-01",
+    name: "Kasina Cafe",
+    slug: "kasina-cafe",
+    zone: "Roma Norte",
+    city: "CDMX",
+    cuisine: "Coreana",
+    status: "pendiente",
+    image_url: null,
+    viral_score: 7,
+    notes: null,
+    content_links: [],
+    visited_at: null,
+    created_at: now,
+    updated_at: now,
+    series: [SERIES_OMEGA_CDMX],
+    has_dossier: true,
+  },
+
   // === CDMX (6) ===
   {
     id: "r-01",
@@ -215,37 +289,37 @@ export const restaurants: Restaurant[] = [
     id: "r-07",
     name: "Tacos Mundo",
     slug: "tacos-mundo",
-    zone: "Centro",
+    zone: "Lomas de Guevara",
     city: "GDL",
-    cuisine: "Tacos",
+    cuisine: "Tacos de cabeza / cuerno (cartílago de bovino)",
     status: "pendiente",
     image_url: null,
-    viral_score: 6,
-    notes: null,
-    content_links: [],
+    viral_score: 8,
+    notes: "Tuk-tuk de tacos de cabeza nocturnos en Lomas de Guevara, GDL. Un solo taquero. Especialidad CUERNO (cartilago base de cuerno bovino, atipico en taquerias urbanas), lengua, labio, carnaza, cabeza. Solo efectivo. M-V 19:30-23h, S 19:30-24h, L y D cerrado (horario irregular real, los habituales le dicen 'loteria'). Tacos 25-40 MXN, ~100-200 MXN/persona. Aniol @tacotios ya documento DOS veces (TikTok 2024 y 2025), top 3 personal GDL lengua/labio/cuerno. Sin Instagram conocido, sin PR, sin entrevistas. Reputacion organica via foodbloggers de barrio.",
+    content_links: ["https://www.tiktok.com/@tacotios/video/7325633460364643590", "https://www.tiktok.com/@tacotios/video/7419454353364241669"],
     visited_at: null,
     created_at: now,
     updated_at: now,
     series: [SERIES_LSDT],
-    has_dossier: false,
+    has_dossier: true,
   },
   {
     id: "r-08",
-    name: "Fonda Dona Mica",
+    name: "Fonda Doña Mica",
     slug: "fonda-dona-mica",
-    zone: "Zapopan",
+    zone: "San Isidro (Zapopan)",
     city: "GDL",
-    cuisine: "Fonda",
+    cuisine: "Fonda de desayunos de rancho / tortillas a mano sobre carbón",
     status: "pendiente",
     image_url: null,
-    viral_score: 7,
-    notes: null,
-    content_links: [],
+    viral_score: 8,
+    notes: "Fonda de desayunos en San Isidro, Zapopan (zona semirural absorbida por la mancha urbana). Tres generaciones de mujeres: Mica (fundadora ya fallecida, llegó hace ~65 años desde un rancho llamado San Cristóbal con su esposo), su hija (segunda generación, sostuvo el sazón), y la nieta al frente hoy. Tortillas hechas a mano en metate con masa de nixtamal cocidas sobre carbón - el toque a carbón en la costra es el detalle que la gente repite. Plato emblema: 'huevos Abelina' (huevo encamisado dentro de una tortilla hecha a mano). Chicharrón emblema (~$130-150 media/entera). Inicio: cenas y menudo de noche para vecinos desde la casa rentada. Premio MUST PLAYERS Restaurant's Choice 2024 (mejores desayunos de GDL) + artículo Culinary Backstreets feb 2025. Aniol @tacotios ya documentó en TikTok del Premio MUST. Sin entrevistas de profundidad en medios. Carretera a San Esteban 115 (algunas fuentes 22, verificar), San Isidro, Zapopan 45133. L-D 7:30-13h. ~$130-200 MXN/persona.",
+    content_links: ["https://www.tiktok.com/@tacotios/video/7472028838432689413"],
     visited_at: null,
     created_at: now,
     updated_at: now,
     series: [SERIES_LSDT],
-    has_dossier: false,
+    has_dossier: true,
   },
   {
     id: "r-09",
@@ -287,19 +361,19 @@ export const restaurants: Restaurant[] = [
     id: "r-11",
     name: 'Tacos Don Jose "Don Panelas"',
     slug: "tacos-don-jose-don-panelas",
-    zone: "Oblatos",
+    zone: "Col. Americana (Argentina 595 esq. Vidrio)",
     city: "GDL",
-    cuisine: "Birria de cerdo",
+    cuisine: "Birria + panela tatemada (res, chivo, cerdo)",
     status: "pendiente",
     image_url: null,
     viral_score: 8,
-    notes: "55 anos de tradicion",
+    notes: "50+ anos de tradicion. Conocido popularmente como 'Don Panela' - el apodo le gano al nombre del fundador. Birria + queso panela tatemada desde rueda entera al comal (raro en birrierias jaliscienses). Top 5 institucional El Informador 2025. Aniol @tacotios visito en TikTok personal 2024 (no contamina serie). Tres versiones de birria. L-S 8-16h, domingo cerrado.",
     content_links: [],
     visited_at: null,
     created_at: now,
     updated_at: now,
     series: [SERIES_LSDT],
-    has_dossier: false,
+    has_dossier: true,
   },
   {
     id: "r-12",
@@ -733,6 +807,13 @@ export const restaurants: Restaurant[] = [
     viral_score: 9, notes: "OMEGA 8.61. Michelin. Lalo Garcia. Chinampas Xochimilco", content_links: [], visited_at: null,
     created_at: now, updated_at: now, series: [SERIES_OMEGA_CDMX], has_dossier: false,
   },
+  {
+    id: "o-20", name: "ARRRCO", slug: "arrrco", zone: "Juarez", city: "CDMX",
+    cuisine: "Taller creativo (residencia artistica + cocina de autor)", status: "pendiente",
+    image_url: null,
+    viral_score: 9, notes: "Taller creativo en Lisboa 3, Col. Juarez. NO es restaurante convencional. Co-fundadores: Alvaro Vasquez (chef limeno ex-Central/Pujol/Astrid y Gaston/Caracol de Mar) y Alex Duran (curador, 15+ anos en arte latinoamericano, colabora con Proyecto H Madrid-CDMX). Cada 7 semanas un artista visual interviene TODO el espacio (paredes, obra, mobiliario, tazas de cafe). El chef crea menu de 4 tiempos como extension comestible de la exposicion. Artista inaugural abril 2025: Andres Monnier con 'Viviendo en Automatico'. Menu Monnier por Alvaro: T1 Origen (tempura negro de papa y hongos, alioli ahumado), T2 El Mar (ceviche de robalo, crema de parmesano, alioli de tinta, chicharron de tinta, aceite verde), T3 La Tierra (cerdo con chile, pure de elote, pure de huitlacoche), T4 Espiritual/Muerte (mousse de chocolate con caramelo de chile pasilla). Tambien desayunos, lunch, vinos naturales, talleres ceramica y cuero. Cita ancla Monnier: 'estamos vivos todos los dias, pero solo morimos una vez'. El nombre ARRRCO viene de ARCO (conexion, transformacion) + (RR) que suena a co-crear. La estructura del nombre es la estructura del menu es la estructura del lugar. El chef no firma: co-firma. Mar-Sab 8-18h y 19-01h, Dom 8-17h, Lun cerrado. Ticket $$$. 4.6 estrellas Google (90 resenas). IG @_arrrco (11.2k seguidores).", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OMEGA_CDMX], has_dossier: true,
+  },
   // === ENSENADA (8) ===
   {
     id: "en-01", name: "Olivea Farm to Table", slug: "olivea-farm-to-table", zone: "Ensenada", city: "Ensenada",
@@ -824,43 +905,101 @@ export const restaurants: Restaurant[] = [
     cuisine: "Contemporanea oaxaquena", status: "pendiente",
     image_url: null,
     viral_score: 9, notes: "OMEGA 94", content_links: [], visited_at: null,
-    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: false,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
   },
   {
     id: "ox-06", name: "Alfonsina", slug: "alfonsina", zone: "Centro", city: "Oaxaca",
     cuisine: "Mar + tierra oaxaquena", status: "pendiente",
     image_url: null,
     viral_score: 9, notes: "OMEGA 93", content_links: [], visited_at: null,
-    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: false,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
   },
   {
     id: "ox-07", name: "Pitiona", slug: "pitiona", zone: "Centro", city: "Oaxaca",
     cuisine: "Alta cocina zapoteca", status: "pendiente",
     image_url: null,
     viral_score: 9, notes: "OMEGA 92", content_links: [], visited_at: null,
-    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: false,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
   },
   {
     id: "ox-08", name: "Los Danzantes", slug: "los-danzantes", zone: "Centro", city: "Oaxaca",
     cuisine: "Oaxaquena Michelin", status: "pendiente",
     image_url: null,
     viral_score: 9, notes: "Michelin + Green Star. OMEGA 91", content_links: [], visited_at: null,
-    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: false,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
   },
   {
     id: "ox-09", name: "Origen", slug: "origen", zone: "Centro", city: "Oaxaca",
     cuisine: "Fine dining oaxaqueno", status: "pendiente",
     image_url: null,
     viral_score: 9, notes: "OMEGA 90", content_links: [], visited_at: null,
-    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: false,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
   },
   {
     id: "ox-10", name: "Nois", slug: "nois", zone: "Centro", city: "Oaxaca",
     cuisine: "Contemporanea creativa", status: "pendiente",
     image_url: null,
     viral_score: 9, notes: "OMEGA 89", content_links: [], visited_at: null,
-    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: false,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
   },
+  // >>> OAXACA-GUELA AUTO (restaurantes) -- generado por wire_oaxaca.py, re-ejecutable
+  {
+    id: "ox-11", name: "Desayunador de la Tia Elvia", slug: "tia-elvia", zone: "San Juan Bautista La Raya", city: "Oaxaca",
+    cuisine: "desayunador casero oaxaqueno", status: "pendiente",
+    image_url: null,
+    viral_score: 8, notes: "madre del chef de Alfonsina, sin menu ni nombre en la puerta", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
+  },
+  {
+    id: "ox-12", name: "Memelas Dona Vale", slug: "memelas-dona-vale", zone: "Central de Abastos, Cosijoeza", city: "Oaxaca",
+    cuisine: "memelas de mercado", status: "pendiente",
+    image_url: null,
+    viral_score: 8, notes: "salio en Netflix Street Food, mas de 30 anos en el mismo comal", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
+  },
+  {
+    id: "ox-13", name: "El Lechoncito de Oro", slug: "lechon-de-oro", zone: "Centro Historico, Libres y Murguia", city: "Oaxaca",
+    cuisine: "taqueria de lechon nocturna", status: "pendiente",
+    image_url: null,
+    viral_score: 8, notes: "un solo producto desde hace decadas, solo de noche, solo lechon", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
+  },
+  {
+    id: "ox-14", name: "Tlayudas La Chinita", slug: "tlayudas-la-chinita", zone: "Centro", city: "Oaxaca",
+    cuisine: "tlayudas oaxaquenas", status: "pendiente",
+    image_url: null,
+    viral_score: 8, notes: "puesto nocturno viral en Netflix Street Food", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
+  },
+  {
+    id: "ox-15", name: "Portozuelo", slug: "portozuelo", zone: "Zimatlan de Alvarez", city: "Oaxaca",
+    cuisine: "cocina de lena oaxaquena", status: "pendiente",
+    image_url: null,
+    viral_score: 8, notes: "huerto rancho familiar del chef Alejandro Ruiz", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
+  },
+  {
+    id: "ox-16", name: "Crudo", slug: "crudo", zone: "Centro", city: "Oaxaca",
+    cuisine: "omakase de autor", status: "pendiente",
+    image_url: null,
+    viral_score: 8, notes: "Barra intima de 6 sillas, tecnica japonesa sobre ingrediente oaxaqueno", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
+  },
+  {
+    id: "ox-17", name: "Tierra Antigua", slug: "tierra-antigua", zone: "Teotitlan del Valle", city: "Oaxaca",
+    cuisine: "cocina oaxaquena, moles", status: "pendiente",
+    image_url: null,
+    viral_score: 8, notes: "Restaurante y galeria de tapetes zapotecos en la misma casa familiar", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
+  },
+  {
+    id: "ox-18", name: "Almu Cocina de Humo", slug: "almu", zone: "San Martin Tilcajete", city: "Oaxaca",
+    cuisine: "cocina de humo, fogon de lena", status: "pendiente",
+    image_url: null,
+    viral_score: 8, notes: "Familia Angeles (alebrijes en Smithsonian y Vaticano), Michelin seleccion 2025. LIAM 75. REVISITA: ya hay TikTok @tacotios (~nov 2025)", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
+  },
+  // <<< OAXACA-GUELA AUTO (restaurantes)
   // === PUEBLA (8) ===
   {
     id: "pu-01", name: "Augurio", slug: "augurio", zone: "Centro", city: "Puebla",
@@ -1353,11 +1492,724 @@ export const restaurants: Restaurant[] = [
     viral_score: 9, notes: "Antojeria de maiz criollo dirigida por la pareja Xrysw Ruelas Diaz (Guadalajara) y Oscar Segundo (comunidad Mazahua, Santa Maria Citendeje, Estado de Mexico). Abrieron en 2018 en barrio Polanco vendiendo tlacoyos y quesadillas de maiz criollo a precio accesible. Resistencia inicial: clientes mexicanos rechazaban tortillas azules creyendo que el color significaba menor calidad. Nixtamalizacion propia en molino hermano Nejayote (Herrera y Cairo 1392). El maiz viene de la milpa de la familia de Oscar. Cocina de humo replica metodo de la madre de Oscar en su pueblo. The Best Chef 2024 (Dubai). Recomendacion Michelin. Aforo 42 personas, martes a sabado 18-23h.", content_links: [], visited_at: null,
     created_at: now, updated_at: now, series: [SERIES_GUADALAJARA], has_dossier: true,
   },
+  {
+    id: "gdl-09", name: "Birrieria David", slug: "birrieria-david", zone: "Mercado Alcalde (Joaquin Angulo 188 E)", city: "Guadalajara",
+    cuisine: "Birria de ternera tatemada", status: "pendiente",
+    image_url: null,
+    viral_score: 9, notes: "Puesto de birria de TERNERA (no de chivo, contrario al canon jalisciense) dentro del Mercado Alcalde, centro historico GDL. Mas de 50 anos. Padre e hijo, ambos llamados David. Empezo callejero ~1965, 20 anos antes de que se construyera el edificio del mercado (1985). Metodo tatemado tradicional en horno de piedra. Caldo limpio (raro en birria de mercado). 4 cortes: carnaza, chamorro, costilla, espaldilla. Machito disponible (descrito 'el mas suave'). Tortillas y salsa ilimitadas sin costo extra. Sin agua de frutas (locales compran jugo de pina en puestos vecinos). Excluido del top 5 El Informador 2025 a pesar de 210 resenas Google con 4.6/5. Cero entrevistas en medios. Locales hacen fila aqui mientras los 2 puestos vecinos del mismo pasillo estan vacios. L-V 10-15h, S-D 10-14h.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_GUADALAJARA], has_dossier: true,
+  },
+  {
+    id: "gdl-10", name: "Tikuun Comedor Local", slug: "tikuun", zone: "Colonia Americana (E. Robles Gil 50)", city: "Guadalajara",
+    cuisine: "Cocina mexicana contemporanea (menu degustacion)", status: "pendiente",
+    image_url: null,
+    viral_score: 9, notes: "Chef Carlos Espinosa, nacido en Guadalajara 1985. Padres uno de Ciudad de Mexico y otro de Oaxaca. Carrera temprana en hoteles grandes (Camino Real, Hilton GDL), italiano fine dining y charcuteria artesanal en Buceras Nayarit. Practicas en Hacienda Benazuza (Sanlucar la Mayor, Sevilla), restaurante del grupo elBullihotels y legado directo de El Bulli de Ferran Adria. Cocino dos veces en Tenerife (2011 y 2014). Festival Mistura Lima 2013. Semifinalista region occidente en Chef of the Year Mexico 2015. En 2016 viajo a Guatemala como chef invitado para cena del Embajador de Mexico en residencia oficial. Proyecto previo: Ayuuk en Santa Tere (palabra mixe, lengua originaria oaxaquena). Tras consolidacion se muda a casa historica de Colonia Americana y abre Tikuun en 2016 (palabra maya que significa reparar / transformar). Menu degustacion 8 tiempos rotativo cada 2 meses. Cocina mexicana contemporanea de raiz con toques asiaticos puntuales. Platos signature mencionados: pulpo, duck flat iron beef, vieiras con salsa de mango, postre de chocolate. 4.7/5 OpenTable, 4.6/5 Tripadvisor #63 de 1236 GDL. Pertenece a La Chaine des Rotisseurs Guadalajara. Espejo invertido con Aniol: mexicano que se fue a Espana y volvio a la memoria de sus padres vs espanol que vino a Mexico a contar lo que su Iaia nunca cocino.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_GUADALAJARA], has_dossier: true,
+  },
+  {
+    id: "gdl-11", name: "Allium", slug: "allium", zone: "Providencia (Av. Providencia 2411, Plaza Leben Local 106)", city: "Guadalajara",
+    cuisine: "Cocina de autor mexicana / huerto propio en azotea", status: "pendiente",
+    image_url: null,
+    viral_score: 9, notes: "Restaurante de cocina de autor abierto en 2014 por el chef Adolfo Galnares en Providencia, Guadalajara. Adolfo se formo en el Culinary Institute of America de Nueva York (2008-2010, graduado con honores), hizo practicas en Akelarre San Sebastian, el tres estrellas Michelin de Pedro Subijana, regreso a Mexico como chef ejecutivo en Bresca CDMX y en 2012 recibio el reconocimiento de 'mejor joven maestro' en Millesime Mexico. En 2014 decidio NO quedarse en CDMX a pesar del perfil y abrir Allium en Guadalajara. Chef-socia Maria Ortega: CESSA Mexico, practicas en NOBU, paso por Huset y Sole antes de llegar como chef y socia paralela (no esposa-que-apoya). Allium lleva mas de 10 anos en la misma posicion sin abrir segunda sede ni convertirse en marca. Sin podcast mediatico ni entrevistas de profundidad. Huerto propio en azotea. Ingredientes 100% mexicanos: quesos QuesArt Atotonilco, verduras de Ajijic, mariscos de Nayarit. Signature: tostadas de escamoles sobre brioche, risotto de huitlacoche, tabla de quesos QuesArt. Filosofia declarada de Adolfo: 'cocina de sabores sencillos pero contundentes basados en el producto'. No habla de tecnica. Habla de producto. 50 Best Discovery + premio Marco Beteta multiples anos. Ticket ~$1,800-2,500 MXN/persona. M-S 14:30-23h, D 14:30-17h, L cerrado. En la jornada GDL (Vuelta 80 Tacos / serie LSDT 2026-05-21) Allium es el contrapeso de 'cocina de autor con tecnica europea' al maiz-criollo de Xokol y al oficio invisible de Birrieria David.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_GUADALAJARA], has_dossier: true,
+  },
+  {
+    id: "gdl-12", name: "Cremería Atemajac de Brizuela", slug: "cremeria-atemajac", zone: "Centro (Av. 8 de Julio 502)", city: "Guadalajara",
+    cuisine: "Cremería-lonchería tapatía / lácteos artesanales", status: "visitado",
+    image_url: null,
+    viral_score: 8, notes: "Cremería-lonchería tapatía en el Centro de Guadalajara. Fundada por la familia León: el padre Heliodoro León Ortega abrió la cremería original en el pueblo Atemajac de Brizuela (sierra del sur de Jalisco) hace ~50 anios. Sucursal en Av. 8 de Julio 502 abierta hace ~30 anios para llegar a la ciudad. Desde 2013 administra el hijo Heliodoro León Castro. Lonches gigantes (hasta ~55 cm) armados con 20+ ingredientes frescos diarios sobre plancha: chuleta, chorizo, salami, lomo, queso porto, milanesa de pollo + mayonesa, aguacate, tomate, cebolla morada, chile serrano. Lonche Revolución (todas las carnes) y Jumbo signature. Fila constante a cualquier hora. Productos lácteos artesanales mandados desde el pueblo: panela doble crema, jocoque, crema, chongos, capulines, duraznos, raíces cocidas. El nombre 'Cremería' es el origen; el lonche es el presente urbano. En la jornada GDL (Vuelta 80 Tacos 2026-05-23) Atemajac es el caso de cremería rural que mutó en templo del lonche urbano sin perder la línea de proveeduría del pueblo.", content_links: [], visited_at: "2026-05-23T10:32:11.597891",
+    created_at: now, updated_at: now, series: [SERIES_GUADALAJARA], has_dossier: true,
+  },
+  {
+    id: "gdl-13", name: "Tortas Ahogadas Don José - El de la Bicicleta", slug: "tortas-ahogadas-don-jose-bicicleta", zone: "Mexicaltzingo (Nicolás Régules 107 esq. Mexicaltzingo)", city: "Guadalajara",
+    cuisine: "Torta ahogada tapatía / cocina callejera", status: "pendiente",
+    image_url: null,
+    viral_score: 9, notes: "Tortas ahogadas históricas fundadas en 1960 por Don José en Guadalajara. 66 años de tradición. Don José no inventó la torta ahogada (eso fue Luis de la Torre 'El Güero' en el Jardín de San Francisco hacia 1920-1930, y su hijo Ignacio Saldaña 'El Güerito' formalizó el local en 1959 en Madero esq. Puerto, San Juan de Dios). Pero Don José trabajó con El Güerito, aprendió el oficio, y luego decidió sacar la torta del local: tomó su bicicleta y empezó a recorrer la Calzada Independencia chiflando para llamar a los trabajadores de las empresas a la hora del desayuno. Para transportar la torta tuvo que envolverla — primero en papel estraza, después en bolsa de plástico. Esa bolsa cambió la torta ahogada para siempre: la convirtió en street food móvil, comible de pie, en cualquier esquina. La forma en que se come torta ahogada en Guadalajara HOY (en bolsa, en la calle, con los dedos llenos de salsa) la inventó Don José en su bicicleta. Cuando Alfaro fue alcalde y lanzó 'Banquetas Libres' para retirar vendedores de calle, Don José abrió local fijo en Mexicaltzingo (Nicolás Régules 107, junto al mercado) y la bicicleta quedó colgada dentro del local como símbolo. Hoy 4 sucursales en GDL. Frase oficial: 'Venir a Guadalajara y no comer una torta ahogada, es no haber venido'. Torta de cachete es la signature. Dos salsas: tomate crudo de selección + chile de Yahualica. Bolillo SALADO (único de GDL). Tortas servidas en bolsa de plástico hasta hoy. Visitantes notables documentados: Adán Augusto López, Eva Longoria, Mick Jagger, La Arrolladora Banda El Limón. Sucursales: Nicolás Régules 107 + Mexicaltzingo 27 (Mexicaltzingo, junto al mercado, la principal/histórica), Gante 150 (Las Conchas), Av. 5 de Febrero 180 (San Carlos). Tel 33-3596-1614. tortaslabicicleta.com.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_GUADALAJARA], has_dossier: true,
+  },
+  {
+    id: "gdl-14", name: "La Tequila - La Cocina de México", slug: "la-tequila", zone: "Ladrón de Guevara / Terranova (Av. México 2830)", city: "Guadalajara",
+    cuisine: "Cocina de México tradicional + contemporánea / mezcalería-museo del agave", status: "pendiente",
+    image_url: null,
+    viral_score: 8, notes: "Restaurante de cocina mexicana abierto en 1995 en Av. México 2830, Col. Ladrón de Guevara, Guadalajara. Negocio familiar de los hermanos Díaz de León (Iñaki + hermano). Chef ejecutivo Julio César Chávez. Primer restaurante del MUNDO en recibir el Distintivo T del Consejo Regulador del Tequila + primer en Jalisco con Tesoros de México. Operan como museo + destilería + huerto propio + restaurante. 'Tertulias del Agave' anuales con expertos académicos y ambientales sobre sustentabilidad del cultivo. 'Noches de cosecha' con ingredientes que solo crecen aqui. Maíz nativo + hormigas chicatanas de reservas naturales con cosecha controlada. Platos signature: mole, barbacoa, caldo de piedra, birria de hongos, chile relleno tres quesos. Sucursal 2: León Plaza Mayor (sede diseñada por León Orraca Arquitectos). 30 años sin abandonar la trinchera del agave como patrimonio biocultural mexicano.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_GUADALAJARA], has_dossier: true,
+  },
+  {
+    id: "gdl-15", name: "Nejayote Molino", slug: "nejayote", zone: "Santa Teresita (Herrera y Cairo 1392)", city: "Guadalajara",
+    cuisine: "Molino de maíz criollo + fonda de desayunos / nixtamalización artesanal", status: "pendiente",
+    image_url: null,
+    viral_score: 9, notes: "Molino hermano de Xokol (gdl-08), a metros en la misma calle (1392 vs 1375). Mismos dueños: Xrysw Ruelas Díaz (Guadalajara) + Oscar Segundo (comunidad Mazahua, Santa María Citendeje, Estado de México). Abrió 2022 al expandirse Xokol. Nixtamalizan de madrugada maíz criollo (azul, rojo, rosa, amarillo, negro) de la familia Casimiro en Santa María Citendeje (familia DIRECTA de Oscar) y de Raúl Gutiérrez en Tuxpan Jalisco. Sin intermediarios. Híbrido molino + fonda de desayunos. Venden masa al kilo, tortillas, tlacoyos, tetelas, tamales, atoles, salsas, gorditas. Xrysw aprendió a nixtamalizar de Juana Segundo (madre de Oscar) en el patio de su casa en Citendeje entre perales y manzanos, con leña y molcajete. Diferencia con molinos de autor CDMX (Maizajo, Molino El Pujol): aquí el vínculo con la milpa NO es 'chef-descubrió-productor' - es comunidad-que-ya-tenía-el-conocimiento-y-lo-trajo-a-la-ciudad. Oscar no encontró a la familia Casimiro: ES su familia. L-S 8:30-13h. Email: contacto@xokol.com.mx.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_GUADALAJARA], has_dossier: true,
+  },
+  // === RICARDO MUNOZ ZURITA — Centro Historico CDMX ===
+  {
+    id: "az-01", name: "Azul Histórico", slug: "azul-historico", zone: "Centro Histórico (Isabel la Católica 30)", city: "CDMX",
+    cuisine: "Cocina mexicana tradicional / investigación gastronómica", status: "pendiente",
+    image_url: null,
+    viral_score: 9, notes: "Chef Ricardo Muñoz Zurita. Ubicado en el patio del Hotel Downtown Mexico. Referente académico de la cocina mexicana tradicional. Autor del Diccionario Enciclopédico de la Gastronomía Mexicana. Cuatro décadas investigando recetas regionales de todo el país.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OMEGA_CDMX], has_dossier: true,
+  },
+  {
+    id: "az-02", name: "Azulísimo", slug: "azulisimo", zone: "Centro (Venustiano Carranza 57)", city: "CDMX",
+    cuisine: "Cocina de la Ciudad de México / antojería tradicional capitalina", status: "pendiente",
+    image_url: null,
+    viral_score: 9, notes: "Chef Ricardo Muñoz Zurita. Propuesta centrada en la cocina tradicional de la Ciudad de México: enchiladas, quesadillas, chalupas, tamales capitalinos. La cocina urbana que desaparece de las mesas. Hermano menor conceptual de Azul Histórico.", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OMEGA_CDMX], has_dossier: true,
+  },
+  {
+    id: "pu-09", name: "Semitas Beto", slug: "mercado-la-acocota", zone: "Barrio de La Luz", city: "Puebla",
+    cuisine: "Cemitas y mercado tradicional", status: "pendiente",
+    image_url: null,
+    viral_score: null, notes: "Viaje nogada 2026", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_PUEBLA], has_dossier: true,
+  },
+  {
+    id: "pu-10", name: "Molotes El Carmen", slug: "molotes-el-carmen", zone: "El Carmen", city: "Puebla",
+    cuisine: "Antojitos poblanos", status: "pendiente",
+    image_url: null,
+    viral_score: null, notes: "Viaje nogada 2026", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_PUEBLA], has_dossier: true,
+  },
+  {
+    id: "pu-11", name: "Tacos Don Pablo", slug: "tacos-don-pablo", zone: "Centro", city: "Puebla",
+    cuisine: "Tacos de tripa y suadero", status: "pendiente",
+    image_url: null,
+    viral_score: null, notes: "Viaje nogada 2026", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_PUEBLA], has_dossier: true,
+  },
+  {
+    id: "pu-12", name: "Calpan", slug: "calpan", zone: "Calpan", city: "Puebla",
+    cuisine: "Chile en nogada de origen", status: "pendiente",
+    image_url: null,
+    viral_score: null, notes: "Viaje nogada 2026", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_PUEBLA], has_dossier: true,
+  },
+  {
+    id: "pu-13", name: "Mercado de Cholula", slug: "mercado-cholula", zone: "Cholula", city: "Puebla",
+    cuisine: "Cecina y guisados de mercado", status: "pendiente",
+    image_url: null,
+    viral_score: null, notes: "Viaje nogada 2026", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_PUEBLA], has_dossier: true,
+  },
+  {
+    id: "pu-14", name: "Macuitl Molino", slug: "macuitl-molino", zone: "Cuautlancingo", city: "Puebla",
+    cuisine: "Cocina de maiz nativo", status: "pendiente",
+    image_url: null,
+    viral_score: null, notes: "Viaje nogada 2026", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_PUEBLA], has_dossier: true,
+  },
+  {
+    id: "pu-15", name: "Salon Mezcalli", slug: "salon-mezcalli", zone: "Analco", city: "Puebla",
+    cuisine: "Cocina poblana y agave", status: "pendiente",
+    image_url: null,
+    viral_score: null, notes: "Viaje nogada 2026", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_PUEBLA], has_dossier: true,
+  },
+  {
+    id: "pu-16", name: "Tacos El Chino", slug: "tacos-el-chino", zone: "Centro", city: "Puebla",
+    cuisine: "Tacos arabes", status: "pendiente",
+    image_url: null,
+    viral_score: null, notes: "Viaje nogada 2026", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_PUEBLA], has_dossier: true,
+  },
+  {
+    id: "pu-17", name: "La Especial de Acuca", slug: "la-especial-de-acuca", zone: "Belisario Dominguez", city: "Puebla",
+    cuisine: "Tacos arabes", status: "pendiente",
+    image_url: null,
+    viral_score: null, notes: "Viaje nogada 2026", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_PUEBLA], has_dossier: true,
+  },
+  {
+    id: "pu-18", name: "Moyuelo", slug: "moyuelo", zone: "Centro", city: "Puebla",
+    cuisine: "Cocina poblana de autor", status: "pendiente",
+    image_url: null,
+    viral_score: null, notes: "Viaje nogada 2026", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_PUEBLA], has_dossier: true,
+  },
 ];
 
 export const dossiers: Record<string, Dossier> = {
+  // >>> OAXACA-GUELA AUTO (dossiers) -- generado por wire_oaxaca.py, re-ejecutable
+  "ox-11": {
+    "id": "dox-11",
+    "restaurant_id": "ox-11",
+    "historia": "Dona Elvia Leon Hernandez se quedo sin madre a los 7 anos en Santo Domingo Nundo, Mixteca, y aprendio a cocinar sola para cuidar a sus hermanos. Ya adulta, en los Valles Centrales, aprendio el otro linaje de sazon, el de su suegra. Su hijo Jorge trabajo con Enrique Olvera en Pujol y volvio a abrir Alfonsina con ella, nombrandolo en honor a la abuela que nunca conocio. De dia ella cocina el desayuno de la casa sin menu ni nombre en la fachada, de noche la misma mesa sirve el menu de degustacion con reservacion de meses.",
+    "hooks": [
+      "Esta senora no tiene menu ni precio fijo. Su hijo, en la misma cocina, tiene reservacion de meses.",
+      "Nadie le enseno a cocinar. Aprendio sola, de nina, para poder darle de comer a sus hermanos. Hoy es la madre del chef con Michelin de Oaxaca."
+    ],
+    "datos": [
+      "San Juan Bautista La Raya, cerca de Santa Cruz Xoxocotlan, 20-30 min al sur del centro de Oaxaca, cerca del aeropuerto",
+      "Sin reservacion formal, confirmar por WhatsApp +55 2659 3941 o Instagram @alfonsinaoax / @desayunadordelatia si abrio ese dia",
+      "Horario aproximado 9am a 12pm [VERIFICAR EN SITIO]",
+      "No hay menu escrito, hay que preguntar el precio de cada plato antes de ordenar"
+    ],
+    "pedir": [
+      {
+        "name": "Huevos en hoja santa",
+        "why": "lo mas pedido segun comensales reales"
+      },
+      {
+        "name": "Tamal de frijol en hoja santa",
+        "why": "textura suave, hoja santa como protagonista"
+      },
+      {
+        "name": "Cafe de olla",
+        "why": "el ancla de la mesa, el ritmo lento antes del dia"
+      }
+    ],
+    "preguntas": [
+      {
+        "role": "A dona Elvia",
+        "texto": "Quien le enseno a cocinar primero, o tuvo que aprender sola?"
+      },
+      {
+        "role": "A dona Elvia",
+        "texto": "Que piensa cuando ve a Jorge cobrando lo que cobra de noche, en la misma cocina donde usted hace el desayuno?"
+      },
+      {
+        "role": "A dona Elvia",
+        "texto": "Que comia usted de nina en la Mixteca que sigue cocinando aqui?"
+      }
+    ],
+    "candidatura_status": "si",
+    "candidatura_razon": "Recomendado sin reservas, aunque el precio se siente alto para ser desayunador sin menu visible",
+    "angulo": "Aniol entra pensando que va a comer donde comio el chef antes de ser chef. Sale entendiendo que la cocina de autor de Oaxaca nacio en una mesa de manana sin pretensiones, con una mujer que aprendio a cocinar sola por necesidad y que sigue ahi mientras el mundo hace fila para la version de noche.",
+    "alertas": [
+      "[VERIFICAR EN SITIO] direccion: dos fuentes dan numeracion distinta en Garcia Vigil, 260 y 183",
+      "[VERIFICAR EN SITIO] rango de precio, resenas dicen que se siente alto para ser desayunador",
+      "[VERIFICAR EN SITIO] horario aproximado 9am a 12pm, no siempre publicado"
+    ],
+    "audio_url": "/audio/tia-elvia-preparacion-mental.mp3",
+    "audio_duration_s": 874,
+    "emocion_target": "reverencia",
+    "frase_ancla": "El restaurante con lista de espera de Oaxaca tiene una version secreta en la manana: el desayuno de la mama, sin menu, sin nombre en la puerta.",
+    "tesis_central": "Dona Elvia aprendio a cocinar sola de nina por necesidad, no por herencia, y hoy es la madre del chef de Alfonsina, Bib Gourmand Michelin. De dia sirve el desayuno de la casa sin menu ni nombre en la fachada, de noche la misma mesa cobra reservacion de meses. Invierte el prestigio: todo mundo hace fila por el hijo, casi nadie sabe que la fila deberia empezar con la madre. [VERIFICAR EN SITIO]",
+    "prepared_at": "2026-07-11"
+  },
+  "ox-12": {
+    "id": "dox-12",
+    "restaurant_id": "ox-12",
+    "historia": "Valentina Hernandez, Dona Vale, lleva mas de 30 anos frente al mismo comal en la Central de Abastos. La version mas repetida de su salsa de chile morita nace de una rivalidad de mercado: otras vendedoras le tiraban chiles secos para molestarla y ella los convirtio en su firma. Madre soltera, saco adelante a su familia pese a las criticas. Netflix la metio en Street Food Latinoamerica y Somebody Feed Phil la busco despues, pero ella nunca dejo de cocinar cada memela con sus propias manos.",
+    "hooks": [
+      "Esta senora lleva mas de 30 anos haciendo lo mismo y Netflix la hizo famosa sin que ella lo pidiera",
+      "Aqui la que manda ya no es la senora que salio en Netflix"
+    ],
+    "datos": [
+      "Central de Abastos, seccion Cosijoeza, lado sur, entrada por el Porton 6, Oaxaca de Juarez",
+      "50 a 150 pesos por persona, sin reservacion, orden de llegada",
+      "Entre semana antes de las 9:30-10am la fila es corta, fin de semana crece mucho",
+      "Cierra domingo segun la mayoria de fuentes [VERIFICAR EN SITIO], checar Instagram @memelasdonavale antes de ir"
+    ],
+    "pedir": [
+      {
+        "name": "Memela con asiento, frijol negro y queso oaxaqueno",
+        "why": "la base de todo, la manteca de cerdo renderizada define el puesto"
+      },
+      {
+        "name": "Memela de tasajo",
+        "why": "la proteina clasica de Oaxaca, carne oreada con caracter"
+      },
+      {
+        "name": "Memela de costilla",
+        "why": "la que todos piden primero, se acaba temprano"
+      }
+    ],
+    "preguntas": [
+      {
+        "role": "A dona Vale",
+        "texto": "Como era de nina, y que se comia en su casa?"
+      },
+      {
+        "role": "A dona Vale",
+        "texto": "Que sintio cuando se vio en Netflix por primera vez?"
+      },
+      {
+        "role": "A Zarah, la hija",
+        "texto": "Alguna vez penso en no seguir con esto? Que le dijo su mama cuando decidio quedarse?"
+      }
+    ],
+    "candidatura_status": "watch",
+    "candidatura_razon": "Recomendado con matiz: puesto de mercado sin mesas comodas, resenas reportan mal servicio y costilla fria en horas saturadas",
+    "angulo": "Aniol ya conto el momento de los asientos de la olla en una visita anterior. Ahora el angulo es la sucesion: Zarah tomando el relevo de su mama antes de la Guelaguetza, con su propio momento de peso en el reel, no como B-roll.",
+    "alertas": [
+      "[VERIFICAR EN SITIO] direccion exacta dentro del mercado, confirmar rotulo de Cosijoeza",
+      "[VERIFICAR EN SITIO] cifra de mas de 30 anos, confirmar con ella en sitio",
+      "[VERIFICAR EN SITIO] nombre de la hija: el handle registra Zarah Pacheco Hernandez pero una resena la llama Rosi",
+      "[VERIFICAR EN SITIO] los asientos de la olla como dato insider, no confirmado en ninguna fuente; al menos una resena reporta mal servicio y costilla fria en horas saturadas"
+    ],
+    "audio_url": "/audio/memelas-dona-vale-preparacion-mental.mp3",
+    "audio_duration_s": 1029,
+    "emocion_target": "continuidad vs fragilidad",
+    "frase_ancla": "Aqui la que manda ya no es la senora que salio en Netflix",
+    "tesis_central": "Dona Vale lleva mas de 30 anos en el mismo comal de la Central de Abastos, y su salsa de chile morita nacio, segun la version mas repetida, de una rivalidad entre vendedoras. Netflix y Somebody Feed Phil la hicieron famosa, pero la historia que falta contar es la sucesion: su hija Zarah tomando el relevo antes de la Guelaguetza. [VERIFICAR EN SITIO]",
+    "prepared_at": "2026-07-11"
+  },
+  "ox-13": {
+    "id": "dox-13",
+    "restaurant_id": "ox-13",
+    "historia": "Llevan varias decadas vendiendo una sola cosa cada noche en la misma esquina del Centro Historico: lechon, salsa y una banca de plastico si hay suerte. El numero exacto de anos varia segun la fuente, entre 30 y mas de 40, y el nombre de quien esta detras tambien es incierto, entre un apellido Chavez, Mr. Apolinar o El Guero. Nadie ha resuelto quien empezo esto ni por que nunca metieron mas platillos al menu.",
+    "hooks": [
+      "Lleva decadas vendiendo UNA sola cosa. Ni una carta. Solo esto.",
+      "Este senor no ha cambiado su menu en decadas. Y la fila sigue creciendo."
+    ],
+    "datos": [
+      "Calle de los Libres esquina Murguia, Centro Historico de Oaxaca",
+      "Tacos como 15-16 MXN, tostada como 40 MXN, gasto total 100-200 MXN por persona, solo efectivo",
+      "Abre como 8pm, mejor ir 10-11pm cuando esta en su punto [VERIFICAR EN SITIO horario de cierre exacto]",
+      "Hay una sucursal de dia en Av. Ferrocarril, Santa Lucia del Camino, pero es otra operacion, no forma parte del ritual nocturno"
+    ],
+    "pedir": [
+      {
+        "name": "Tostada de lechon con chicharron y salsa verde",
+        "why": "el plato mas recomendado por mucho"
+      },
+      {
+        "name": "Taco de lechon con pierna",
+        "why": "la version mas jugosa, carne deshebrada"
+      },
+      {
+        "name": "Taco de lechon con chicharron",
+        "why": "el contraste crujiente-suave que define el lugar"
+      }
+    ],
+    "preguntas": [
+      {
+        "role": "Al cocinero",
+        "texto": "Cuantos anos llevas haciendo esto, aqui, a esta hora?"
+      },
+      {
+        "role": "Al cocinero",
+        "texto": "Por que nunca metieron mas platillos al menu? Lo intentaron alguna vez?"
+      },
+      {
+        "role": "Al cocinero",
+        "texto": "Hay una noche que nunca se te olvida de todos estos anos?"
+      }
+    ],
+    "candidatura_status": "si",
+    "candidatura_razon": "Recomendado sin reservas: el matiz de que el taco aislado no es el mas fino tecnicamente ya esta integrado como beat honesto en la escaleta",
+    "angulo": "Aniol entra pensando que va a grabar el mejor taco de Oaxaca. Sale entendiendo que el verdadero plato es el ritual: decadas de pie, en la calle, de noche, vendiendo una sola cosa, mientras todo el mundo le dice que deberia crecer.",
+    "alertas": [
+      "[VERIFICAR EN SITIO] numero exacto de anos, entre 30 y mas de 40 segun la fuente, confirmar con la respuesta del cocinero en camara",
+      "[VERIFICAR EN SITIO] nombre real de quien atiende, entre apellido Chavez, Mr. Apolinar o El Guero",
+      "[VERIFICAR EN SITIO] horario de cierre, entre 2am y 3-4am segun la fuente",
+      "Resenas minoritarias dicen que el taco aislado es ordinario y la tortilla es de fabrica, matiz que se dice de frente en el reel"
+    ],
+    "audio_url": "/audio/lechon-de-oro-preparacion-mental.mp3",
+    "audio_duration_s": 679,
+    "emocion_target": "devocion",
+    "frase_ancla": "Le dicen que deberia crecer, meter mas platillos, abrir de dia. El sigue vendiendo lo mismo, a la misma hora, en la misma esquina.",
+    "tesis_central": "El Lechoncito de Oro vende una sola cosa desde hace decadas, en la misma esquina del Centro Historico, de noche, sin carta ni mesas. El numero exacto de anos y el nombre de quien esta detras siguen siendo inciertos entre las fuentes. El punto no es la tecnica del taco, es el ritual completo: decadas de oficio resistiendo la logica de crecer y diversificar. [VERIFICAR EN SITIO]",
+    "prepared_at": "2026-07-11"
+  },
+  "ox-14": {
+    "id": "dox-14",
+    "restaurant_id": "ox-14",
+    "historia": "Dona Brigida Manzano Rincon, La Chinita, lleva casi tres decadas parada sola frente a un comal de carbon en el centro de Oaxaca. Se quedo viuda con 4 hijos hace casi 30 anos y saco a su familia adelante sin que nadie le ensenara a hacer tlayudas, las perfecciono ella sola noche tras noche. Netflix grabo su puesto para Street Food Latinoamerica y una votacion viral la puso por encima del ceviche peruano y el choripan argentino. Desde entonces tiene fila de turistas cada noche, pero ella sigue haciendo lo mismo que hacia antes de ser viral.",
+    "hooks": [
+      "Netflix la hizo viral. Ella ni sabia que existia Netflix.",
+      "Esta senora se volvio la comida callejera mas famosa de Latinoamerica sin buscarlo. Y sigue haciendo lo mismo que hacia hace casi 30 anos.",
+      "La tlayuda mas famosa del mundo la hace una viuda que nadie le enseno a cocinar."
+    ],
+    "datos": [
+      "Calle de Nuno del Mercado 209 esquina con 20 de Noviembre, Centro Historico de Oaxaca, junto al Mercado 20 de Noviembre.",
+      "Abre lunes a sabado de 8pm a 12:30-1am. No se reserva, es fila fisica. Tlayuda grande con carne ronda 130-140 pesos.",
+      "Insider: se comenta que se puede pedir doble quesillo por unos 10 pesos extra [VERIFICAR EN SITIO], no lo confirma ninguna resena ni el menu."
+    ],
+    "pedir": [
+      {
+        "name": "Tlayuda con tasajo",
+        "why": "la carne mas pedida del puesto, se dora directo en el comal de carbon"
+      },
+      {
+        "name": "Tlayuda con cecina enchilada",
+        "why": "para quien quiere el golpe de picor, la version con mas caracter"
+      },
+      {
+        "name": "Tlayuda chica sencilla",
+        "why": "asiento, frijol, quesillo, col y salsa, la base sin carne para entender el punto"
+      }
+    ],
+    "preguntas": [
+      {
+        "role": "A dona Brigida",
+        "texto": "Como aprendio a hacer las tlayudas asi de sabrosas"
+      },
+      {
+        "role": "A dona Brigida",
+        "texto": "Como fue el dia que se entero que salio en Netflix"
+      },
+      {
+        "role": "A dona Brigida",
+        "texto": "Le ha costado trabajo seguir al mismo ritmo con tanta gente nueva llegando cada noche"
+      }
+    ],
+    "candidatura_status": "si",
+    "candidatura_razon": "Recomendado sin reservas, comida entrega y sabor real de carbon, con el matiz de llegar temprano por la fila de turistas.",
+    "angulo": "Aniol entra pensando en grabar la tlayuda mas famosa de Netflix, pero descubre que la historia real es la resistencia de una viuda que no cambio su ritmo aunque el mundo entero le toco la puerta.",
+    "alertas": [
+      "[verificar en sitio] cuantos anos exactos lleva viuda, las fuentes varian entre 28 y 29 anos",
+      "[verificar en sitio] si dan ficha o turno en hora pico para la fila",
+      "Domingo con horario reducido o cerrado [verificar en sitio]",
+      "[VERIFICAR EN SITIO] doble quesillo por 10 pesos extra, dato insider no confirmado en menu ni resenas"
+    ],
+    "audio_url": "/audio/tlayudas-la-chinita-preparacion-mental.mp3",
+    "audio_duration_s": 1310,
+    "emocion_target": "resistencia",
+    "frase_ancla": "Netflix la hizo viral. Ella ni sabia que existia Netflix.",
+    "tesis_central": "Dona Brigida lleva casi 30 anos sola frente al mismo comal de carbon, y aunque Netflix la volvio viral hace mas de cinco anos, sigue haciendo exactamente lo mismo que hacia antes de la fama. La verdadera historia no es la tlayuda, es la resistencia de una viuda que no cambio su ritmo aunque el mundo entero le toco la puerta. [VERIFICAR EN SITIO]",
+    "prepared_at": "2026-07-11"
+  },
+  "ox-15": {
+    "id": "dox-15",
+    "restaurant_id": "ox-15",
+    "historia": "Alejandro Ruiz puso a Oaxaca en el mapa con Casa Oaxaca y su reconocimiento de la Guia Michelin, pero su historia empieza en La Raya, Zimatlan, sembrando milpa con su papa mientras su mama cocinaba en fogon de lena. Perdio a su madre a los 12 anos, siendo el mayor de 5 hermanos, y ahi empezo a cocinar para sostener a la familia. En 2019 regreso a la tierra que heredo de sus abuelos y la convirtio en huerto y cocina de lena, pero quien manda en ese fogon es su tia, dona Mercedes, y el colectivo de cocineras de los Valles.",
+    "hooks": [
+      "Ella lleva veinte anos sosteniendo este fuego. El llega los fines de semana, con el Michelin a cuestas.",
+      "Todo mundo conoce Casa Oaxaca. Casi nadie conoce a la mujer que la hizo posible.",
+      "Este huerto no es el rancho de un chef famoso. Es donde una tia siguio cocinando despues de que su hermana murio y dejo a un nino de 12 anos al frente de 5 hermanos."
+    ],
+    "datos": [
+      "Ubicacion en La Raya, municipio de Zimatlan de Alvarez, 30-40 min en coche desde la ciudad de Oaxaca. Direccion exacta [verificar en sitio].",
+      "Reserva por WhatsApp o telefono 951 654 1979 (respaldo 951 308 8677 / 951 188 7887) con un dia de anticipacion; tambien en OpenTable como Portozuelo Cocina de Lena.",
+      "Solo abre viernes a domingo de 10am a 6pm. Desayuno 410 MXN por persona, comida 550 MXN, mezcal aparte.",
+      "Sabado es dia de carnitas, domingo de barbacoa oaxaquena sacada de la tierra en vivo.",
+      "Insider: el mole verde lleva caldo de pollo con piel para el cuerpo, el coloradito se espesa con galletas de animalitos y los jitomates van directo a las brasas antes de molerse."
+    ],
+    "pedir": [
+      {
+        "name": "Barbacoa oaxaquena (domingo)",
+        "why": "plato insignia, cocida bajo tierra desde la madrugada, ritual comunitario"
+      },
+      {
+        "name": "Carnitas (sabado)",
+        "why": "la otra cara del fin de semana"
+      },
+      {
+        "name": "Amarillo de conejo",
+        "why": "poco comun fuera de Oaxaca, aqui lo tienen con regularidad"
+      },
+      {
+        "name": "Quesadillas grandes de quesillo y flor de calabaza",
+        "why": "la flor sale del mismo terreno donde estas sentado"
+      }
+    ],
+    "preguntas": [
+      {
+        "role": "A dona Mercedes",
+        "texto": "Por que te quedaste tu cuando el se fue"
+      },
+      {
+        "role": "A dona Mercedes",
+        "texto": "Como era la comida de tu hermana cuando Alejandro era nino aqui"
+      },
+      {
+        "role": "A dona Mercedes",
+        "texto": "Hay algo que solo se hace aqui y no en Casa Oaxaca"
+      }
+    ],
+    "candidatura_status": "watch",
+    "candidatura_razon": "Historia fuerte y verificada, pero hay resenas reales de porciones limitadas, carne con exceso de hueso, servicio lento y consistencia variable; falta confirmar si Alejandro Ruiz esta presente el dia del rodaje.",
+    "angulo": "Aniol entra pensando que va a conocer el rancho del chef reconocido por la Guia Michelin. Sale entendiendo que el chef es el que regresa de visita a la casa de su tia; el giro invierte la jerarquia esperada.",
+    "alertas": [
+      "[verificar en sitio] no hay direccion exacta publicada, se confirma ubicacion por WhatsApp al reservar",
+      "[verificar en sitio] precio exacto de barbacoa y carnitas de fin de semana, puede variar del prefijado",
+      "Resenas reales hablan de porciones limitadas para el precio, carne con exceso de hueso y grasa, y una queja de servicio lento sin acompanamientos",
+      "[VERIFICAR EN SITIO] si Alejandro Ruiz esta presente el fin de semana del rodaje, el hook asume su regreso periodico, no una visita fija"
+    ],
+    "audio_url": "/audio/portozuelo-preparacion-mental.mp3",
+    "audio_duration_s": 809,
+    "emocion_target": "origen",
+    "frase_ancla": "Ella lleva veinte anos sosteniendo este fuego. El llega los fines de semana, con el Michelin a cuestas.",
+    "tesis_central": "Portozuelo no es el rancho de un chef famoso, es la tierra donde Alejandro Ruiz perdio a su madre a los 12 anos y de donde se fue a los 15 a buscar futuro. Quien sostiene el fuego desde entonces es su tia, dona Mercedes, y el colectivo de cocineras de los Valles; el chef regresa los fines de semana a la mesa que ella nunca dejo de encender. [VERIFICAR EN SITIO]",
+    "prepared_at": "2026-07-11"
+  },
+  "ox-16": {
+    "id": "dox-16",
+    "restaurant_id": "ox-16",
+    "historia": "Ricardo Arellano estudio arquitectura en Oaxaca, se fue a Estados Unidos en 2004 a trabajar en cocinas y panaderias, y en 2010 lo deportaron tras seis anos alla. Volvio sin plan. Su hermano le abrio la puerta a Pujol, de ahi paso a Criollo y a Ticuchi. Su papa fue panadero toda la vida y fallecio mientras Ricardo andaba lejos, y fue esa perdida, mas que un plan de carrera, lo que lo trajo de vuelta a abrir Crudo en 2021: una barra de 6 sillas donde el mismo cocina y sirve.",
+    "hooks": [
+      "Estudio arquitectura. Lo deportaron de Estados Unidos. Volvio a construir esto con seis sillas.",
+      "Perdio el camino en Estados Unidos. Perdio a su papa mientras estaba lejos. Volvio a Oaxaca a reconstruirse.",
+      "Seis lugares. Un chef. La historia mas fuerte que se ha grabado en Oaxaca."
+    ],
+    "datos": [
+      "Direccion: Av. Benito Juarez #309, Centro, Oaxaca de Juarez, se llega caminando desde el Zocalo.",
+      "Omakase estimado entre 1000 y 1500 MXN por persona sin bebida, deposito obligatorio del 50% al reservar [verificar precio actual al reservar].",
+      "Solo 6 lugares en la barra principal, reserva por CoverManager/OpenTable o llamada directa, martes a domingo con turnos a las 3, 5, 7 y 9pm.",
+      "Insider: hay tres experiencias distintas en el mismo lugar, la barra de 6 con Ricardo, el menu casa llevado por su equipo, y la carta a la carta. Para grabar, reservar especificamente el cuarto con el chef."
+    ],
+    "pedir": [
+      {
+        "name": "Ostion a la horchata",
+        "why": "la version mas clara de su idea, crudo del mar vestido de sabor oaxaqueno"
+      },
+      {
+        "name": "Tataki de atun con mayonesa de chicatana y gusano de maguey",
+        "why": "Japon y Oaxaca en el mismo bocado, sin que ninguno le gane al otro"
+      },
+      {
+        "name": "Sando de jaiba en pan de arroz crujiente",
+        "why": "la textura es el chiste, no el relleno"
+      },
+      {
+        "name": "Handroll de anguila con pure de agave ahumado dulce",
+        "why": "el guino mas directo a su formacion nikkei oaxaquena"
+      }
+    ],
+    "preguntas": [
+      {
+        "role": "Al chef",
+        "texto": "Que se siente volver a Oaxaca sin plan despues de que te deportaron?"
+      },
+      {
+        "role": "Al chef",
+        "texto": "Que ibas buscando afuera, y que fue lo que encontraste al volver?"
+      },
+      {
+        "role": "Al chef",
+        "texto": "Por que seis sillas y no un restaurante grande como los que trabajaste antes?"
+      }
+    ],
+    "candidatura_status": "si",
+    "candidatura_razon": "Historia real y ejecucion solida, aunque las porciones son chicas para el precio y hay que avisar antes de ir.",
+    "angulo": "Parece que va a ser una historia de sushi fusion, pero es la reconstruccion de identidad de Ricardo: no mezcla dos cocinas por moda, usa la tecnica que aprendio afuera y el ingrediente que siempre tuvo en casa.",
+    "alertas": [
+      "[VERIFICAR EN SITIO] Confirmar con el chef en persona antes de grabar cualquier mencion del padre: fecha y circunstancias exactas, con tacto.",
+      "[VERIFICAR EN SITIO] Horario cerrado lunes.",
+      "[VERIFICAR EN SITIO] Precio del menu omakase (1000 a 1500 MXN) al reservar.",
+      "Porciones de degustacion, no de hambre real: avisar antes si el invitado espera cantidad."
+    ],
+    "audio_url": "/audio/crudo-preparacion-mental.mp3",
+    "audio_duration_s": 1255,
+    "emocion_target": "reinvencion",
+    "frase_ancla": "El tipo que perdio el camino afuera, perdio a su papa mientras estaba lejos, y encontro su propia voz al volver a su tierra.",
+    "tesis_central": "Crudo no es un restaurante de sushi fusion, es la reconstruccion de la identidad de Ricardo Arellano despues de que lo deportaron de Estados Unidos y perdio a su papa estando lejos. En una barra de solo 6 sillas junta la tecnica que aprendio afuera con el ingrediente oaxaqueno que siempre tuvo en casa. Es caro para el estandar de la ciudad y las porciones son de degustacion, asi que hay que avisar a quien va esperando llenarse. [VERIFICAR EN SITIO]",
+    "prepared_at": "2026-07-11"
+  },
+  "ox-17": {
+    "id": "dox-17",
+    "restaurant_id": "ox-17",
+    "historia": "Pedro Montano teje desde los ocho anos, heredero de cinco generaciones de telar de pedal, y su hijo Diego ya teje a su lado. Carina Santiago cocina con el mismo peso de herencia, aprendio de su madre y de su suegra, y dirige el restaurante ademas de la Cocina de Humo, donde el mole se hace sobre comal y metate como siempre se ha hecho. Su hija Alicia ya esta aprendiendo lo que Carina aprendio de ellas: es una casa entera sosteniendo dos oficios zapotecos a la vez.",
+    "hooks": [
+      "Vine por el mole y me fui pensando en un telar.",
+      "Aqui una misma casa guarda dos oficios que casi nadie junta.",
+      "Esto parece parada de tour, hasta que encuentras lo que esta detras."
+    ],
+    "datos": [
+      "Direccion: Av. Benito Juarez No. 175, Teotitlan del Valle, a 30 km / 30-40 min en coche desde el centro de Oaxaca [verificar en sitio, otra fuente cita No. 39].",
+      "No hay reserva online confirmada, llamar al 951 166 6160 antes de ir, sobre todo en temporada Guelaguetza.",
+      "Horario: lunes 1pm a 7pm, martes a domingo 9:30am a 7pm [una fuente dice diario 9am-7pm, confirmar en sitio].",
+      "Precio medio alto para el pueblo segun resenas, aunque accesible para lo que es [verificar rango exacto en sitio].",
+      "Insider: el restaurante y la galeria de tapetes son el mismo espacio, pide mesa cerca de los tapetes de Pedro y pregunta si te dejan asomarte a la Cocina de Humo, el espacio aparte donde Carina cocina sobre comal."
+    ],
+    "pedir": [
+      {
+        "name": "Mole coloradito",
+        "why": "el mas mencionado y elogiado, si solo pruebas un mole aqui es este"
+      },
+      {
+        "name": "Mole de Castilla",
+        "why": "especialidad que varias fuentes destacan aparte del coloradito, vale pedir los dos para comparar"
+      },
+      {
+        "name": "Tamales de mole amarillo",
+        "why": "el amarillo casi nunca se ve fuera de Oaxaca"
+      },
+      {
+        "name": "Duo de moles, coloradito y negro",
+        "why": "la forma mas rapida de entender la gama completa en un plato"
+      }
+    ],
+    "preguntas": [
+      {
+        "role": "A Pedro",
+        "texto": "Te acuerdas del primer tapete que hiciste solo, sin que nadie te ayudara?"
+      },
+      {
+        "role": "A Carina",
+        "texto": "Que te ensenaron tu mama y tu suegra de este mole que le estas ensenando a Alicia?"
+      },
+      {
+        "role": "A Diego",
+        "texto": "Que es lo que tu papa te dice que tienes que hacer bien si o si en el telar?"
+      }
+    ],
+    "candidatura_status": "watch",
+    "candidatura_razon": "Historia familiar solida con respaldo de resenas y prensa, pero hay que verificar en sitio si se siente autentico o empaquetado para tour, y confirmar direccion, horario y precio exactos.",
+    "angulo": "Parece un restaurante mas con pared bonita de tapetes, del tipo que ya aparece en tours combinados con un palenque de mezcal y el Arbol del Tule. Pero detras de esa fachada hay una casa donde dos oficios zapotecos, el hilo y el fuego, se transmiten en paralelo generacion tras generacion, y la Cocina de Humo, que el turista promedio ni sabe que existe, es la prueba de que la comida es solo la puerta de entrada.",
+    "alertas": [
+      "[VERIFICAR EN SITIO] Direccion y horario tienen discrepancias entre fuentes: direccion citada como No. 175 o No. 39, horario como lunes 1pm-7pm y martes a domingo 9:30am-7pm segun una fuente, o diario 9am-7pm segun otra.",
+      "[VERIFICAR EN SITIO] Precio exacto a confirmar, el posicionamiento real puede ser mas alto de lo esperado segun resenas.",
+      "[VERIFICAR EN SITIO] Riesgo de sentirse empaquetado para tour, ya que se combina con palenque de mezcal y Arbol del Tule en itinerarios, confirmar en sitio si se siente autentico.",
+      "[VERIFICAR EN SITIO] Es probable que el turista promedio no sepa que existe la Cocina de Humo, pero esto no esta confirmado con una segunda fuente."
+    ],
+    "audio_url": "/audio/tierra-antigua-preparacion-mental.mp3",
+    "audio_duration_s": 1217,
+    "emocion_target": "herencia",
+    "frase_ancla": "No es un restaurante con decoracion bonita de tapetes, es una casa entera sosteniendo dos oficios zapotecos a la vez, con la siguiente generacion ya haciendolo enfrente de ti.",
+    "tesis_central": "Tierra Antigua no es solo un restaurante con pared de tapetes, es una casa familiar donde Pedro Montano teje y Carina Santiago cocina mole, dos oficios zapotecos transmitidos en paralelo a la siguiente generacion. Detras de la fachada que parece parada de tour esta la Cocina de Humo, donde el mole se hace sobre comal y metate como siempre. El mole coloradito tiene consenso fuerte en resenas, pero hay que confirmar en sitio si el lugar se siente autentico o empaquetado para grupos, ademas de direccion, horario y precio exactos. [VERIFICAR EN SITIO]",
+    "prepared_at": "2026-07-11"
+  },
+  "ox-18": {
+    "id": "dox-18",
+    "restaurant_id": "ox-18",
+    "historia": "Almu es la cocina de humo de la familia Angeles, la dinastia de San Martin Tilcajete que saco el tallado de copal del borde de la desaparicion y puso sus alebrijes en el Smithsonian, el National Museum of Mexican Art de Chicago y los Museos Vaticanos. Ricardo Angeles Mendoza, hijo de Jacobo y Maria Angeles, dirige hoy el taller familiar; se reporta que abrio Almu en pandemia para dar trabajo a gente del pueblo [VERIFICAR EN SITIO]. La frase tesis de la casa: entendimos que el problema no era nuestro arte, sino como lo valorabamos. La cocina esta bajo palapa, entre los mismos arboles de copal que la familia talla: comer aqui es comer dentro del proyecto de arte, no al lado.",
+    "hooks": [
+      "Esta familia tiene alebrijes en el Vaticano. Y te cocinan mole en un fogon de tierra.",
+      "El Smithsonian les compra el arte. Aqui te lo sirven en un plato.",
+      "Ya habia venido a este lugar. Lo que no sabia es de quien era."
+    ],
+    "datos": [
+      "Calle Progreso s/n, San Martin Tilcajete, junto al taller de Jacobo y Maria Angeles, a 30-45 min del centro de Oaxaca",
+      "Martes a domingo de 9:00 a 18:00, cerrado lunes [VERIFICAR EN SITIO en Guelaguetza]",
+      "Precio verificado 2026: 300-500 MXN por persona, solo efectivo [VERIFICAR EN SITIO]",
+      "Michelin seleccion 2025 (no estrella, no afirmar estrella en camara)",
+      "Existe segunda sede Almu Oaxaca en el Centro (Rufino Tamayo 810), pero la historia y el fogon estan en Tilcajete",
+      "REVISITA: @tacotios ya publico TikTok de Almu (~nov 2025); el angulo nuevo es la familia y el oficio, no el descubrimiento del lugar"
+    ],
+    "pedir": [
+      {
+        "name": "Trilogia de moles (negro, coloradito, amarillo)",
+        "why": "el plato firma, con pollo, puerco o costilla"
+      },
+      {
+        "name": "Memelas y tlayudas de queso local",
+        "why": "salen del comal al fogon de lena, consenso de resenas"
+      },
+      {
+        "name": "Tasajo al fogon",
+        "why": "carne seca ahumada y asada en el mismo fuego que ves"
+      }
+    ],
+    "preguntas": [
+      {
+        "role": "A Ricardo (o a quien cocine)",
+        "texto": "Que cambio el dia que entendieron como valorar su arte?"
+      },
+      {
+        "role": "A Ricardo",
+        "texto": "Por que abrir una cocina y no otro taller? Que tienen que ver un alebrije y un mole?"
+      },
+      {
+        "role": "A quien este al fogon",
+        "texto": "Quien le enseno a cocinar en esta familia?"
+      }
+    ],
+    "candidatura_status": "si",
+    "candidatura_razon": "Historia de dinastia verificada (alebrijes Smithsonian/Vaticano) con hueco Anti-Guia claro: los creators que lo cubren muestran el lugar bonito, nadie ha contado a la familia. Es revisita, asi que el angulo nuevo es obligatorio, no opcional.",
+    "angulo": "Aniol cree que vuelve a un restaurante que ya conoce (ya le dedico un TikTok). Sale entendiendo que es la cocina de una dinastia que revalorizo su oficio: la misma familia que enseno al mundo a pagar por un alebrije ahora cocina mole con esa filosofia. Plano de manos doble obligatorio: manos tallando copal en el taller, manos al fogon en Almu. Los platos llegan despues de que la familia sea protagonista.",
+    "alertas": [
+      "[VERIFICAR EN SITIO] Quien cocina el dia a dia: no atribuir presencia de Ricardo Angeles sin verla. Llamar al 951 327 0343 (hay segundo numero 951 462 2545, confirmar cual vive).",
+      "[VERIFICAR EN SITIO] Reserva durante Guelaguetza y horario real esos dias.",
+      "[VERIFICAR EN SITIO] Precio exacto 2026 y si sigue siendo solo efectivo.",
+      "Riesgo de sentirse de circuito turistico (se combina con visita al taller); tomarlo por lo que es: experiencia de campo, no restaurante de manteles.",
+      "No confundir con La Cocina de Humo del Centro (Thalia Barrios): son proyectos distintos. Tampoco con la sucursal Almu Oaxaca del Centro."
+    ],
+    "audio_url": "/audio/almu-preparacion-mental.mp3",
+    "audio_duration_s": 1484,
+    "emocion_target": "orgullo",
+    "frase_ancla": "Aqui el arte y la comida salen de la misma raiz.",
+    "tesis_central": "La familia que enseno al mundo a valorar un alebrije ahora te da de comer con la misma filosofia: valorar lo propio. Almu no es un restaurante con historia prestada, es la mesa de una dinastia.",
+    "prepared_at": "2026-07-20"
+  },
+  // <<< OAXACA-GUELA AUTO (dossiers)
+  "ru-01": {
+    id: "dru-01", restaurant_id: "ru-01",
+    historia: "Omar Gomez no es chef italiano: es repostero y chocolatero. Nacio en Sonora, se formo en el Claustro de Sor Juana, trabajo el chocolate con Jose Ramon Castillo y en La Casa Tropical de Hector Galvan, lidero Primos nueve anos y creo la heladeria de autor Nomada, donde habla del comportamiento quimico y el origen de cada ingrediente. Rufus es su salto a emprender: cocina italiana sin clasicos, rescatando tecnicas de las abuelas italianas, alimentada por sus viajes a Londres, Madrid y Nueva York.",
+    hooks: ["Este tio es repostero de Sonora y monto un italiano donde estan prohibidos los clasicos.", "Le pregunte por que prohibio los clasicos. No me respondio.", "El mejor plato de este italiano no es pasta ni pizza. Y lo hace un repostero."],
+    datos: ["Pizza napolitana fermentada entre 48 y 100 horas, pasta fresca a diario.", "El gelato de pistache viene de su heladeria Nomada: es el hilo conductor de toda su cocina.", "Reservas solo por DM en Instagram @rufusmexico. Precio alto (~500 MXN por plato)."],
+    pedir: [{ name: "Gelato de pistache", why: "El plato unanime. De otro nivel. Es de donde viene Omar." }, { name: "Pulpo con romesco, feta y nduja", why: "El salado mas redondo de la carta." }, { name: "Pizza napolitana", why: "Masa fermentada hasta 100 horas. El oficio se nota." }],
+    preguntas: [{ role: "Al chef", texto: "Por que prohibiste los clasicos?" }, { role: "Al chef", texto: "Vienes de la reposteria. El gelato de pistache es tu forma de no soltar eso?" }],
+    candidatura_status: "watch", candidatura_razon: "Resenas mixtas: el salado divide, el postre y la atencion son unanimes. La historia humana es fuerte.",
+    angulo: "La fuga del repostero. Omar monto un italiano para escapar de ser repostero, y el restaurante lo delata. El silencio tras la pregunta por los clasicos es el contenido.",
+    alertas: ["Reserva solo por DM @rufusmexico.", "Precio alto, gestionar expectativa del salado.", "Verificar cierre lunes en sitio."],
+    audio_url: "/audio/rufus-preparacion-mental.mp3",
+    audio_duration_s: 1329,
+    emocion_target: "admiracion",
+    frase_ancla: "El dulce no es el final. Es de donde viene.",
+    tesis_central: "Rufus parece otro italiano caro de la Roma. Pero lo monto un repostero y chocolatero del desierto de Sonora que se prohibio a si mismo hacer los clasicos. El plato que todos coinciden que es de otro nivel es el postre, el gelato de pistache que trae de su heladeria Nomada. El dulce no es el remate del menu: es su origen, y es lo que explica todo el lugar. [VERIFICAR EN SITIO]",
+    prepared_at: "2026-06-15",
+  },
+  "ve-01": {
+    id: "dve-01", restaurant_id: "ve-01",
+    historia: "Versalles 19 es mariscos estilo Sinaloa y Mazatlan en el corazon de la colonia Juarez, abierto a finales de 2025. Detras esta el chef Carlos Hernandez Gonzalez, con sello nortenno y la costumbre de salir a las mesas a saludar. Su lema lo dice todo: no tenemos nombre, tenemos hambre. Lo importante no es el letrero, es lo que llega al plato.",
+    hooks: ["El mariscos del que todos hablan por la razon equivocada.", "Vieron aqui a un politico con guaruras y se hizo famoso. Pero la verdad es otra.", "No tenemos nombre, tenemos hambre."],
+    datos: ["Mariscos frescos estilo Sinaloa y Mazatlan trasplantados a la Juarez.", "El chef Carlos sale a las mesas a saludar, marca la diferencia.", "Ambiente relajado, no buchon. Reservas por Instagram @versalles.19."],
+    pedir: [{ name: "Tostada de atun", why: "La mejor de la casa segun cata propia." }, { name: "Callo", why: "Buenisimo, producto fresco." }, { name: "Pesca incendiada", why: "El momento WOW del menu. Te vas para atras." }],
+    preguntas: [{ role: "Al chef", texto: "De donde eres y como traes Mazatlan a la Juarez?" }, { role: "Al chef", texto: "Por que sales a las mesas?" }],
+    candidatura_status: "si", candidatura_razon: "Producto fresco, chef con sello propio, momento WOW claro. Aniol ya fue dos veces.",
+    angulo: "El morbo es ruido. Se hizo famoso por farandula, pero la verdad es un chef nortenno que sale a tu mesa y una pesca incendiada que te tira para atras.",
+    alertas: ["No entrar por el chisme politico como gancho, solo para desmontarlo.", "El ceviche es normalito, no forzarlo.", "Verificar precio y horarios en sitio."],
+    audio_url: "/audio/versalles-19-preparacion-mental.mp3",
+    audio_duration_s: 867,
+    emocion_target: "ganas de ir",
+    frase_ancla: "No tenemos nombre, tenemos hambre.",
+    tesis_central: "Versalles 19 se hizo famoso por morbo: vieron ahi a un politico con guaruras y las redes lo posicionaron como el mariscos que Contramar no quiere que sepas. Pero el morbo es ruido. La historia real es un chef sinaloense que sale a las mesas a saludar y una pesca incendiada que te tira para atras. El norte en la Juarez, sin pose. [VERIFICAR EN SITIO]",
+    prepared_at: "2026-06-15",
+  },
+  "to-01": {
+    id: "dto-01", restaurant_id: "to-01",
+    historia: "Taller de Ostiones es el escaparate en la Juarez de FISM, la casa detras de la granja Bendito Mar en La Paz. El que importa es Luis Baquedano: mexicano de Guerrero, buzo desde nino, paso diez anos en hoteleria y lo dejo todo cuando se mudo a La Paz y descubrio una granja marina. Ahi entendio el giro que cambia todo: la ostricultura no vacia el mar, lo restaura. Se asocio con Alan Espinoza Gorozave (hijo de biologo marino de Isla Natividad) para montar Bendito Mar como granja proveedora, y Taller de Ostiones como su ventana en CDMX. La carta rota cada dos dias segun lo que llega del Pacifico.",
+    hooks: ["Estos son de los ostiones mas caros de la ciudad. Y el que los trae no quiere sacarlos del mar: quiere devolverselo.", "Cada uno de estos ostiones limpio litros de agua del Pacifico antes de llegar a mi mesa.", "Era buzo. Trabajo diez anos en hoteles. Lo dejo todo para cultivar esto."],
+    datos: ["Versalles 113, Col. Juarez. Carta que cambia cada 2 dias segun lo que llega del Pacifico.", "Lunes ostion a $20 vs ~$650/persona promedio: el lujo tiene una puerta para el local.", "Ronqueo de atun en vivo los miercoles. Granja propia Bendito Mar (La Paz), premio Pesca y Acuacultura Sustentables 2026. IG @tallerdeostionesbyfism, tel 55 1038 5788."],
+    pedir: [{ name: "Docena de ostiones (pregunta que llego hoy)", why: "La carta rota cada 2 dias: el de hoy es el del Pacifico de esta semana." }, { name: "Sandwich de ostion frito", why: "El antojo que mas se menciona en resenas." }, { name: "Almeja chocolata", why: "Producto del Mar de Cortes, textura y profundidad." }],
+    preguntas: [{ role: "A Luis Baquedano", texto: "Cual fue el momento exacto en La Paz en que entendiste que la granja restaura el mar?" }, { role: "En cocina", texto: "Que llego hoy del Pacifico y de donde?" }],
+    candidatura_status: "si", candidatura_razon: "Historia humana fuerte y verificada (buzo de Guerrero, ostricultura regenerativa, premio Bendito Mar 2026). Paradoja de acceso (lunes $20) muy Anti-Guia. Conecta con el episodio La Paz de La Vuelta.",
+    angulo: "Comer que sana el mar. No es el hotspot ostionero de moda: es un buzo que dejo la hoteleria para regenerar el Pacifico, y cada ostion del plato filtro el agua antes de llegar. El lujo no era el precio, era la conciencia.",
+    alertas: ["Precio alto (~$650/persona): nombrar el matiz y resolverlo con el tip del lunes a $20.", "Confianza media: anclar el arco en lo verificado (Baquedano + Bendito Mar); la trayectoria del chef Christian Herrera esta incompleta.", "Llamar antes (55 1038 5788) para confirmar quien cuenta la historia en sitio y el dia del ronqueo."],
+    audio_url: "/audio/taller-de-ostiones-preparacion-mental.mp3",
+    audio_duration_s: 785,
+    emocion_target: "asombro",
+    frase_ancla: "No vacia el mar. Lo sana.",
+    tesis_central: "Taller de Ostiones parece el hotspot ostionero de la Juarez: lugar de moda, $650 la cuenta. Pero detras hay un buzo de Guerrero, Luis Baquedano, que dejo diez anos de hoteleria y se fue a La Paz, donde entendio que cultivar ostiones puede restaurar el oceano en vez de vaciarlo. Su granja Bendito Mar regenera el estero de donde salen, y la carta cambia cada dos dias segun lo que llega del Pacifico. Lo que comes no vacia el mar: lo sana. [VERIFICAR EN SITIO]",
+    prepared_at: "2026-06-28",
+  },
+  "ka-01": {
+    id: "dka-01", restaurant_id: "ka-01",
+    historia: "Minae Seo nacio en Gimcheon, Corea del Sur, en una familia de comerciantes que compraban producto chino y lo revendian en Mexico. Aprendio a cocinar viendo a su madre, en una cultura donde dar de comer es una forma de querer. Pero ella sonaba con algo mas: no revender lo ajeno, sino crear lo suyo. Kasina, que en coreano significa nina, es su ruptura con el oficio familiar. Lo construyo de cero, y cada rincon cuenta una historia.",
+    hooks: ["Su familia vendia lo que otros hacian. Ella quiso hacer algo suyo.", "En coreano, el nombre de este lugar significa nina. Y la nina es ella.", "Viene de una familia de comerciantes. Es la primera que decidio crear."],
+    datos: ["Kasina empezo como pasteleria asiatica y evoluciono a restaurante coreano con Korean BBQ en la terraza.", "Kasina significa nina en coreano, dialecto de la region de Gimcheon.", "Para Minae, las cocinas coreana y mexicana se encuentran en lo picante, las sopas y la tradicion."],
+    pedir: [{ name: "Korean BBQ (terraza)", why: "El plato social, a la parrilla en mesa." }, { name: "Basque cheesecake", why: "Su sueno repostero hecho postre. Su verdad mas dulce." }, { name: "Bibimbap", why: "Tradicion coreana con producto local." }],
+    preguntas: [{ role: "A la chef", texto: "Tu familia compraba y revendia. Por que tu quisiste hacer algo tuyo?" }, { role: "A la chef", texto: "Que te enseno tu madre sobre dar de comer?" }],
+    candidatura_status: "si", candidatura_razon: "Historia humana excepcional, core value limpio (crear vs revender), tesis HERENCIA directa. Storynomics 8 de 8.",
+    angulo: "La nina que no revende. De hija de comerciantes a fundadora de un lenguaje propio. Protagonista absoluta Minae, Aniol como anfitrion.",
+    alertas: ["Sensible: el negocio es fragil (info privada). Tratar como valentia, nunca como lastima ni obituario.", "No abrir con avales (Four Seasons, Aeromexico): la vuelven overdog y matan la empatia.", "Verificar precios y si la terraza BBQ requiere reserva."],
+    audio_url: "/audio/kasina-cafe-preparacion-mental.mp3",
+    audio_duration_s: 896,
+    emocion_target: "ternura",
+    frase_ancla: "Su familia vendia lo que otros hacian. Ella quiso hacer algo suyo.",
+    tesis_central: "Kasina parece un cafe coreano de moda en la Roma. Pero lo monto Minae Seo, hija de una familia de comerciantes que se ganaban la vida revendiendo producto chino en Mexico. Ella quiso lo contrario: dejar de vender lo ajeno y crear algo propio. Lo construyo de cero, cada rincon con su historia, y lo llamo Kasina, que en coreano significa nina. La nina que soño mas alla del comercio familiar. [VERIFICAR EN SITIO]",
+    prepared_at: "2026-06-15",
+  },
+
+  "pm-01": {
+    id: "dpm-01", restaurant_id: "pm-01",
+    historia: "antojeria mexicana contemporanea",
+    hooks: ["El comal que siempre llevaban dentro era el que no veian."],
+    datos: ["Audio Aniol generado por megamax_pipeline.", "Verificar direccion, horario y chef en sitio."],
+    pedir: [{ name: "Lo que el lugar es famoso por", why: "Verificar en sitio." }],
+    preguntas: [{ role: "Al encargado", texto: "Cuanto tiempo lleva el lugar abierto? Quien empezo todo?" }],
+    candidatura_status: "watch", candidatura_razon: "Pre-visita por megamax_pipeline. Validar in-situ.",
+    angulo: "Por definir tras visita.",
+    alertas: ["Generado por megamax_pipeline — verificar y enriquecer manualmente tras visita."],
+    audio_url: "/audio/comal-oculto-preparacion-mental.mp3",
+    audio_duration_s: 759,
+    emocion_target: "reverencia",
+    frase_ancla: "El comal que siempre llevaban dentro era el que no veian.",
+    tesis_central: "Un catering de hotel llamado Fragmento que la pandemia rompio en 2020, reinventado por la misma pareja como antojeria pequena en un espacio que antes fue torteria, acabo recibiendo el Bib Gourmand de Michelin. No escondian una ambicion de alta cocina: cocinaron alrededor del comal sin pretension, y el comal los devolvio a lo que eran.",
+    prepared_at: "2026-05-23",
+  },
+
   // === OMEGA CDMX DOSSIERS ===
   "o-01": {
+    viral_score_predicted: 82,
+    guion_escaleta: "Hook paradoja (taco Michelin que perdio la estrella) -> que es -> la gaonera (SHARE) -> debate $5 (open loop) -> mantra + CTA",
+    guion_beats: [{"t_s": 0.0, "desc": "HOOK: el unico taco Michelin del mundo, y se la quitaron hace 3 semanas"}, {"t_s": 5.0, "desc": "Que es: San Rafael, 1968, 4 tacos, de pie; la estrella 2024"}, {"t_s": 25.0, "desc": "SHARE: la gaonera (filete a la plancha) + primer mordisco en camara lenta"}, {"t_s": 50.0, "desc": "Tension: $5 un taco + por que le quitaron la estrella (open loop)"}, {"t_s": 70.0, "desc": "Cierre: mantra 'lo mandaria a mi mejor amigo' + CTA estrella-o-estafa"}],
+    hook_principal: "Este es el unico taco del mundo que gano una estrella Michelin. Y hace tres semanas se la quitaron.",
+    zona_silencio_narrativo: [{"t_s": 24.0, "dur_s": 1.0}],
+    newsletter_resumen: "El Califa de Leon: el puesto de tacos de San Rafael que en 2024 gano la primera estrella Michelin del mundo para una taqueria, y en mayo 2026 la perdio. Cuatro tacos, sin mesas, la gaonera de filete a la plancha. La pregunta no es por que la gano, sino por que se la quitaron.",
     id: "do-01", restaurant_id: "o-01",
     historia: "El Califa de Leon es la taqueria que puso a los tacos de plancha en el mapa mundial. Una estrella Michelin por un taco de $82 pesos. 56 anos en San Rafael, mismo puesto, misma familia, misma receta. Arturo Rivera Martinez lleva decadas detras de la plancha — es el taquero mas condecorado de Mexico.",
     hooks: ["Un taco de $82 pesos con estrella Michelin. 56 anos sin cambiar nada. El Califa de Leon.", "El taquero mas condecorado de Mexico tiene 56 anos haciendo lo mismo. Su secreto? No cambiar nada."],
@@ -1367,6 +2219,12 @@ export const dossiers: Record<string, Dossier> = {
     candidatura_status: "si", candidatura_razon: "Estrella Michelin. $82 MXN. 56 anos. La historia del taco mexicano en un solo lugar.",
     angulo: "El contraste entre estrella Michelin y puesto callejero de $82 pesos. Hook visual: plano del taco → plano de la placa Michelin. Formato 90-120s.",
     alertas: ["Filas largas desde la estrella Michelin — ir entre semana temprano.", "No aceptan tarjeta. Llevar efectivo.", "Pedir permiso para filmar — son amables pero hay mucha gente."],
+    audio_url: "/audio/el-califa-de-leon-preparacion-mental.mp3",
+    audio_duration_s: 1388,
+    prepared_at: "2026-05-25",
+    tesis_central: "El Califa de Leon parece una taquería de barrio más en San Rafael, con sus 82 pesos por taco y su plancha de toda la vida. Pero es el único lugar en México con estrella Michelin donde el producto sigue siendo exactamente el mismo de hace 56 años. La razón: nadie aquí quiso impresionar a ninguna guía. Siguieron haciendo lo que siempre hicieron, con la misma carne, la misma plancha, el mismo mostrador. Michelin llegó a ellos, no al revés. Eso cambia todo lo que crees saber sobre qué merece reconocimiento en cocina. [VERIFICAR EN SITIO]",
+    frase_ancla: "La estrella Michelin más barata del mundo vale 82 pesos.",
+    emocion_target: "orgullo"
   },
   "o-02": {
     id: "do-02", restaurant_id: "o-02",
@@ -1500,6 +2358,12 @@ export const dossiers: Record<string, Dossier> = {
     candidatura_status: "si", candidatura_razon: "Score 9.5, tier Legend. El restaurante espanol mas antiguo de Mexico. Patrimonio Historico. Contenido visual excepcional — escaleras, murales, salones.",
     angulo: "La historia de la inmigracion espanola contada a traves de un edificio de 163 anos. El contraste entre el caos del Centro y el silencio del Casino al cruzar la puerta. Hook visual: plano exterior caos → puerta → escaleras → salon. Transicion temporal.",
     alertas: ["Reservar siempre. No aceptan walk-in.", "Codigo de vestimenta — no shorts, no chanclas.", "Los mejores planos se hacen subiendo las escaleras con luz natural de manana."],
+    audio_url: "/audio/casino-espanol-preparacion-mental.mp3",
+    audio_duration_s: 639,
+    prepared_at: "2026-05-25",
+    tesis_central: "Casino Español parece un museo donde nadie come. Pero es uno de los comedores más cargados de historia real de toda la Ciudad de México, donde la cocina española se sirve bajo frescos del siglo XIX y escaleras de mármol que pisaron exiliados, diplomáticos y cocineros que cruzaron el Atlántico con sus recetas en la maleta. La razón: este lugar lo fundaron inmigrantes españoles en 1863 no para impresionar, sino para tener un sitio propio en una ciudad que no era la suya. Eso cambia cómo sabe la comida. Cuando un lugar fue construido por nostalgia, cada plato carga ese peso. [VERIFICAR EN SITIO]",
+    frase_ancla: "El restaurante más español de México lo construyeron personas que extrañaban España.",
+    emocion_target: "orgullo"
   },
   "e-03": {
     id: "de-03", restaurant_id: "e-03",
@@ -1509,6 +2373,12 @@ export const dossiers: Record<string, Dossier> = {
     pedir: [{ name: "Lo que recomiende Fran", why: "En una barra asi, confias en el chef. Pregunta que tiene hoy." }],
     preguntas: [{ role: "A Fran", texto: "Que producto extranas de Espana que no puedes conseguir aqui?" }],
     candidatura_status: "si", candidatura_razon: "Michelin-mentioned. Chef espanol con criterio. La barra como formato es visual.", angulo: "El espanol detras de la barra — su relacion con el producto, que importa, que adapta. Formato barra = camara fija.", alertas: ["Ir a la barra, no a mesa. La experiencia cambia."],
+    audio_url: "/audio/la-barra-de-fran-preparacion-mental.mp3",
+    audio_duration_s: 1239,
+    prepared_at: "2026-05-25",
+    tesis_central: "La Barra de Fran parece un guiño español en medio de Polanco, otro sitio con jamón y pimentón para clientela de oficina. Pero es algo más incómodo y más honesto que eso: un cocinero que tomó el formato más humilde de la gastronomía española —la tapa, la barra, el bocado sin protocolo— y lo trabajó con criterio de autor sin perder la informalidad que lo hace real. La razón: el producto español llega aquí sin disfraz, sin fusión forzada, tratado con el respeto que normalmente solo se ve en casa de alguien que sabe lo que tiene entre las manos. La mención Michelin no es el punto; el punto es que Fran parece cocinar como si la guía no existiera. Eso, en Polanco, es casi un acto de resistencia. [VERIFICAR EN SITIO]",
+    frase_ancla: "Tapas de autor en Polanco: sin glamour falso, con producto de verdad.",
+    emocion_target: "respeto"
   },
   "e-04": {
     id: "de-04", restaurant_id: "e-04",
@@ -1642,12 +2512,12 @@ export const dossiers: Record<string, Dossier> = {
     angulo: "Una flor del Pais Vasco que se cuelga en las puertas para que no pase nada malo. Un vasco que lleva casi treinta anos en Polanco vigilando que no se pierda su cocina. Y un ritual de sidra que cae en cascada. Las tres cosas se llaman Ekilore. Estructura reel: TXOTX abre s0-15 (cascada del kupela), Pablo en pantalla s30-45 sin hablar 7-10s, eguzkilore como remate emocional s60-75. Emocion target: asombro con cola de nostalgia. NO mencionar precio en cara - anclar en tiempo (28 anos), no en pesos.",
     alertas: ["Cierra temprano entre semana (19:00 lun-mar).", "Reservar via telefono o OpenTable.", "Polanco: precio medio-alto $800/persona promedio.", "Validacion previa con Pablo recomendada antes de filmar el angulo eguzkilore."],
     audio_url: "/audio/ekilore-preparacion-mental.mp3",
-    audio_duration_s: 824,
+    audio_duration_s: 794,
     notebook_url: "https://notebooklm.google.com/notebook/ffb60062-a1bf-48a2-b2c0-f472c510aefd",
     emocion_target: "asombro",
     frase_ancla: "Una flor antigua protege la casa. La custodia un vasco que lleva casi treinta anos aqui.",
     tesis_central: "Ekilore parece otro asador vasco caro de Polanco. Pero es una casa protegida por una flor mitica vasca (eguzkilore = flor del sol que ahuyenta espiritus malignos), custodiada hace casi 30 anos por Pablo San Roman, que circula entre mesas como guardian de la cocina vasca en CDMX. La razon: no es un restaurante, es una embajada cultural disfrazada de asador con 80% del menu naturalmente sin gluten porque la cocina vasca siempre fue asi.",
-    prepared_at: "2026-05-09",
+    prepared_at: "2026-05-25",
   },
   "e-21": {
     id: "de-21", restaurant_id: "e-21",
@@ -1720,6 +2590,12 @@ export const dossiers: Record<string, Dossier> = {
   },
   // === LSDT DOSSIER ===
   "r-02": {
+    viral_score_predicted: 91,
+    guion_escaleta: "Hook paradoja (taller de dia / pastor de noche) -> que es (Narvarte, Mecauto) -> el nombre VIPSITO->VILSITO (open loop) -> 1s silencio -> SHARE (coche al fondo + trompo + gringa que se deshace) -> aval Netflix+Michelin -> mantra + CTA",
+    guion_beats: [{"t_s": 0.0, "desc": "HOOK: de dia te reparan el coche, de noche uno de los mejores pastores de la CDMX (corte seco taller->taqueria)"}, {"t_s": 5.0, "desc": "Que es: Narvarte, taller Mecauto; el dueno abrio tacos para que sus clientes comieran esperando el coche"}, {"t_s": 16.0, "desc": "Open loop: casi se llama como VIPS; lo demandaron y cambiaron la P por la L -> Vil-sito"}, {"t_s": 24.0, "desc": "1s de silencio: solo trompo y cuchillo, la camara se acerca a la torre de pastor con pina"}, {"t_s": 25.0, "desc": "SHARE: plano imposible coche-al-fondo + trompo girando + taquero rebanando sobre tortilla con queso; primer mordisco a la gringa que se deshace"}, {"t_s": 45.0, "desc": "Aval (open loop principal): salio en Las Cronicas del Taco de Netflix y Michelin le dio el Bib Gourmand 2024, a un taller mecanico. Taco $22-44"}, {"t_s": 62.0, "desc": "Cierre: mantra 'lo recomendaria a mi mejor amigo' + CTA etiqueta con quien vendrias"}],
+    hook_principal: "De dia, aqui te reparan el coche. De noche, este garaje sirve uno de los mejores pastores de la Ciudad de Mexico.",
+    zona_silencio_narrativo: [{"t_s": 24.0, "dur_s": 1.0}],
+    newsletter_resumen: "El Vilsito: el taller mecanico de la Narvarte que cada noche se transforma en una de las taquerias de pastor mas legendarias de la CDMX. Salio en Las Cronicas del Taco de Netflix y recibio el Bib Gourmand de la Guia Michelin 2024, y sigue siendo un garaje. Pastor con tortilla dorada y base de queso, trompos girando entre los coches. La pregunta no es como sabe, es como un taller termina en la guia mas elitista del planeta.",
     id: "d-01",
     restaurant_id: "r-02",
     historia:
@@ -1989,6 +2865,12 @@ export const dossiers: Record<string, Dossier> = {
     candidatura_status: "si", candidatura_razon: "Top 10 mundial. Cocina mexicana sin caricatura. La cumbre del producto endemico. Es el dossier obligatorio de cualquier antiguia honesta.",
     angulo: "Lo que cuesta llegar al numero 6 del mundo desde una cocina mexicana. Hook visual: plato de chicatana → ranking 50 Best en pantalla. Formato 90-120s, narrativa de orgullo sin chovinismo.",
     alertas: ["Reservacion con 2-3 meses de antelacion. Pedirla por web, no por telefono.", "Codigo de vestir: smart casual. Polanco serio.", "Filmar requiere permiso explicito del manager — pedir antes de la reserva por correo."],
+    audio_url: "/audio/quintonil-preparacion-mental.mp3",
+    audio_duration_s: 645,
+    prepared_at: "2026-05-25",
+    tesis_central: "Quintonil parece el restaurante mexicano más premiado del mundo, el lugar donde van los cocineros cuando viajan a CDMX. Pero es algo más incómodo que eso: es el sitio donde Jorge Vallejo lleva años preguntándose qué significa cocinar mexicano sin romantizar la pobreza ni copiar a Europa. La razón: usa insectos, quelites y maíces olvidados no como provocación ni como moda, sino porque son el ingrediente más honesto que existe en este país. Un chapulín no necesita contexto histórico. Ya lo tiene. La pregunta real no es si Quintonil merece ser top 3 del mundo. Es si el mundo merece entender lo que Quintonil está diciendo. [VERIFICAR EN SITIO]",
+    frase_ancla: "El restaurante más famoso de México que cocina lo que nadie quería comer.",
+    emocion_target: "orgullo"
   },
   "o-13": {
     id: "do-13", restaurant_id: "o-13",
@@ -2000,6 +2882,12 @@ export const dossiers: Record<string, Dossier> = {
     candidatura_status: "si", candidatura_razon: "Restaurante que cambio la cocina mexicana. Mole Madre es contenido cinematografico. Reservacion competitiva = exclusividad real.",
     angulo: "El tiempo como ingrediente. Hook visual: olla del Mole Madre + numero de dias en pantalla. Formato 120s con narrativa Olvera-Bourdain (cocina como archivo vivo).",
     alertas: ["Reservar con 2-3 meses de antelacion. Cancelaciones se anuncian por mailing list — vale la pena estar suscrito.", "El menu degustacion de tacos en la barra es mas barato y igual de bueno para contenido.", "Filmar dentro requiere permiso del PR. Escribir antes de la reserva."],
+    audio_url: "/audio/pujol-preparacion-mental.mp3",
+    audio_duration_s: 1120,
+    prepared_at: "2026-05-25",
+    tesis_central: "Pujol parece el restaurante más premiado de México, un lugar de listas y rankings. Pero es algo más raro: un sitio donde un cocinero lleva 25 años hablando con el mismo mole. No cambiándolo, no perfeccionándolo hacia afuera, sino dejándolo vivir. El mole madre de Enrique Olvera tiene capas que acumulan años como los árboles acumulan anillos. Nadie puede replicarlo porque nadie puede robar el tiempo. Eso no es técnica, es obsesión honesta. Pujol no es el mejor restaurante del mundo. Es el único lugar donde un guiso lleva más años vivo que algunos cocineros llevan cocinando.",
+    frase_ancla: "El mole que nadie puede copiar porque lleva 25 años sin terminar.",
+    emocion_target: "respeto"
   },
   "o-16": {
     id: "do-16", restaurant_id: "o-16",
@@ -2012,10 +2900,36 @@ export const dossiers: Record<string, Dossier> = {
     angulo: "El viaje de la trajinera + la cena en la chinampa. Hook visual: cosecha al amanecer → plato esa noche. Formato largo (3-5 min YouTube), no reel — necesita el viaje.",
     alertas: ["Reservacion con bastante antelacion — solo abre 2-3 dias por semana segun temporada.", "Llevar bloqueador, gorra y abrigo (cae la noche en el agua, baja temperatura).", "Cobrar 4-5h de cobertura, no 1h. Es viaje completo."],
   },
+  "o-20": {
+    id: "do-20", restaurant_id: "o-20",
+    historia: "ARRRCO abrio entre marzo y abril de 2025 en Lisboa 3, Col. Juarez. Lo fundaron Alvaro Vasquez (chef peruano formado en Central de Virgilio Martinez, Astrid y Gaston de Gaston Acurio y Pujol de Enrique Olvera) y Alex Duran (curador con mas de 15 anos en galerias e instituciones de arte latinoamericano, colabora con Proyecto H que tiene sedes en CDMX y Madrid). NO es un restaurante con arte en las paredes. Es una residencia artistica con cocina dentro. Cada 7 semanas un artista visual diferente interviene TODO el espacio: paredes, mobiliario, tazas de cafe. El chef interpreta la obra y crea un menu de 4 tiempos que es extension comestible de la exposicion. El nombre ARRRCO viene de ARCO (simbolo de conexion, transicion, transformacion) mas la repeticion (RR) que suena a co-crear. El menu inaugural con el artista Andres Monnier fue un arco completo: Origen, Mar, Tierra, Muerte. La estructura del lugar es la estructura del nombre es la estructura del menu. Tesis hecha edificio.",
+    hooks: ["El chef peruano paso por Central, Pujol y Astrid y Gaston. Y abrio en CDMX un lugar donde no firma: co-firma. ARRRCO.", "Cada 7 semanas este lugar es de otro. Otro artista, otras paredes, otro menu, otras tazas. ARRRCO no es restaurante: es residencia donde se come.", "El nombre ARRRCO es un arco. El menu de 4 tiempos es un arco: Origen, Mar, Tierra, Muerte. La estructura del lugar es la estructura del nombre es la estructura del menu."],
+    datos: ["Lisboa 3, Col. Juarez, CDMX (cerca Metrobus Glorieta de Colon). Mar-Sab 8-18h y 19-01h, Dom 8-17h, Lun cerrado.", "Co-fundadores: Alvaro Vasquez (chef, limeno, ex-Central/Astrid y Gaston/Rafael/El Mercado/Pujol/Caracol de Mar) y Alex Duran (curador, 15+ anos en arte latinoamericano).", "Operacion: cada 7 semanas un artista visual interviene TODO el espacio (paredes, obra, mobiliario, tazas de cafe). El chef crea menu de 4 tiempos como extension comestible de la exposicion.", "Artista inaugural (abril 2025): Andres Monnier con 'Viviendo en Automatico' (escultura, ceramica, ilustracion, tema: fragilidad de la existencia).", "Menu Monnier por Alvaro: T1 Origen (tempura negro de papa y hongos con alioli ahumado), T2 El Mar (ceviche de robalo, crema de parmesano, alioli de tinta, chicharron de tinta, aceite verde), T3 La Tierra (cerdo con chile, pure de elote, pure de huitlacoche), T4 Espiritual/Muerte (mousse de chocolate con caramelo de chile pasilla).", "Tambien desayunos, lunch, vinos naturales y talleres de ceramica y cuero. Colabora con Proyecto H (galeria con sedes en CDMX desde 2013 y Madrid desde 2016) para seleccionar artistas residentes.", "Cita ancla del artista Andres Monnier: 'estamos vivos todos los dias, pero solo morimos una vez'.", "Google: 4.6 estrellas con 90 resenas. Instagram: @_arrrco con 11.2k seguidores. Ticket categoria $$$."],
+    pedir: [{ name: "Menu de 4 tiempos del artista residente actual", why: "Es la unica forma honesta de entender el lugar. El menu cambia con cada artista cada 7 semanas, por lo que comerlo no es comer comida del chef: es comer una traduccion de la obra que esta colgada en la pared." }, { name: "Vino natural curado para el ciclo actual", why: "La carta de vinos naturales esta curada con el mismo criterio que el menu. Pedir lo que el sommelier recomiende para este artista." }, { name: "Cafe con pan (si vas de dia)", why: "Aun en el formato casual de cafeteria, la taza esta intervenida por el artista residente. Si no puedes ir a cena, esta es la entrada minima al concepto." }],
+    preguntas: [{ role: "A Alex Duran (co-fundador, curador)", texto: "Pasaste 15 anos en galerias. Que hace una galeria que un restaurante no puede hacer? Y al reves?" }, { role: "A Alex Duran", texto: "Cuando seleccionas al proximo artista, buscas alguien cuya obra pueda traducirse a comida, o eso viene despues?" }, { role: "A Alvaro Vasquez (chef)", texto: "Pasaste por Central, Pujol y Astrid y Gaston. Por que no abriste tu restaurante? Por que uno donde firmas con otro?" }, { role: "A Alvaro", texto: "El menu de Monnier fue Origen, Mar, Tierra, Muerte. Empiezas leyendo la obra o probando platos?" }, { role: "Al artista residente actual", texto: "Cuando viste por primera vez tu obra interpretada como plato, que pensaste?" }],
+    candidatura_status: "si",
+    candidatura_razon: "Concepto unico en CDMX: residencia artistica con cocina interpretativa. Chef tier-1 (Central + Pujol + Astrid y Gaston) que se borra para co-firmar con otros creadores. Encaja con tesis HERENCIA (don sobre tecnica, comensal como invitado). El menu cambia cada 7 semanas: la resena de platos caduca, pero la tesis del lugar no.",
+    angulo: "El chef que no firma porque cada 7 semanas el lugar es de otro. Hook visual: paredes intervenidas + plato que dialoga con la obra. Formato 90-120s con foco en el acto curatorial, no en el chef como rockstar. NO resenar platos (caducan). SI documentar la mecanica de traduccion arte-comida.",
+    alertas: ["Reserva probable por DM en Instagram @_arrrco o por OpenTable. Verificar disponibilidad antes de ir.", "El menu actual depende del artista residente AHORA, no del inaugural (Monnier fue abril 2025, ya han rotado al menos 8 artistas). Revisar Instagram el dia antes para saber quien esta.", "Pedir permiso a Alex Duran o al manager antes de filmar la obra: es curaduria, no decoracion. Tratar como visita a galeria, no a restaurante.", "Si Alex Duran esta el dia de la visita, sentarse 5 min con el aporta mas que 30 min con el chef. La historia de fondo del proyecto es curatorial, no culinaria."],
+    prepared_at: "2026-05-27",
+    tesis_central: "ARRRCO parece un restaurante cool con paredes pintadas por artistas. Pero es algo mas raro: una residencia artistica con cocina dentro, donde cada 7 semanas todo cambia porque cambia el artista. El nombre ARRRCO viene de arco (conexion, transformacion) y co-crear. El menu de 4 tiempos es literalmente un arco: Origen, Mar, Tierra, Muerte. La estructura del nombre es la estructura del menu es la estructura del lugar. Un chef peruano formado en Central, Pujol y Astrid y Gaston decidio no abrir su restaurante sino uno donde firma con otro creador cada siete semanas. Eso no es concepto: es operacion entera. El acto de borrarse profesionalmente para que la obra hable es lo que hace que comer ahi se sienta mas a entrar en una galeria que en un restaurante. [VERIFICAR EN SITIO QUIEN ES EL ARTISTA ACTUAL]",
+    frase_ancla: "El chef que no firma porque cada 7 semanas el lugar es de otro.",
+    emocion_target: "asombro",
+    audio_url: "/audio/arrrco-preparacion-mental.mp3",
+    audio_duration_s: 698,
+  },
 
   // === OAXACA — TIER S MUNDIAL ===
   "ox-01": {
+    viral_score_predicted: 91,
+    guion_escaleta: "Hook paradoja (la cocinera mas famosa cocina de rodillas en una piedra) -> quien es / Teotitlan zapoteco -> grandeza (NYT/Bourdain/Bellas Artes) -> open loop UNESCO -> metate -> 1s silencio -> SHARE (35 chiles, 2 semanas, a mano) -> HERENCIA (la tia: observa) -> pago open loop (Paris, atole) -> mantra + CTA de identidad",
+    guion_beats: [{"t_s": 0.0, "desc": "HOOK: la cocinera mexicana mas famosa del mundo no tiene estrella Michelin; cocina de rodillas, sobre una piedra"}, {"t_s": 6.0, "desc": "Quien/donde: Abigail Mendoza, Teotitlan del Valle, zapoteco; Tlamanalli abierto en 1990 con sus hermanas"}, {"t_s": 18.0, "desc": "Grandeza dicha bajito: NYT 1993, Bourdain, Premio Nacional de Artes 2022 en Bellas Artes (1a cocinera tradicional)"}, {"t_s": 34.0, "desc": "Open loop: el dia que la cocina mexicana entro a la UNESCO, Abigail no estaba en Mexico"}, {"t_s": 42.0, "desc": "Construccion al share: todo empieza en el metate; maiz, cacao, chiles molidos a mano"}, {"t_s": 52.0, "desc": "1s SILENCIO -> SHARE: el mole lleva 35 chiles y tarda mas de 2 semanas (macro de las manos y la masa)"}, {"t_s": 66.0, "desc": "HERENCIA: nadie le enseno con recetas; la tia 'si quieres aprender, observa'; 5 anos al empezar a moler"}, {"t_s": 82.0, "desc": "Pago del open loop: ese dia estaba en Paris sirviendo atole; mujer zapoteca dandole de comer al mundo"}, {"t_s": 94.0, "desc": "Cierre: comida de dioses molida a mano + mantra 'se lo confio a mi mejor amigo' + CTA de identidad (que cocina de tu casa nadie te enseno con recetas)"}],
+    hook_principal: "La cocinera mexicana que enamoro a Anthony Bourdain y al New York Times no tiene estrella Michelin. Cocina de rodillas, sobre una piedra.",
+    zona_silencio_narrativo: [{"t_s": 51.0, "dur_s": 1.0}],
+    newsletter_resumen: "Tlamanalli, en Teotitlan del Valle (Oaxaca), es el restaurante de Abigail Mendoza, cocinera tradicional zapoteca que abrio en 1990 con sus hermanas. El New York Times la puso en el mapa en 1993, Bourdain comio ahi, y en 2023 recibio el Premio Nacional de Artes y Literatura en Bellas Artes: la primera cocinera tradicional en lograrlo. Su mole lleva ~35 chiles y mas de dos semanas, todo molido a mano en metate. El dia que la cocina mexicana entro a la UNESCO, ella servia atole en Paris.",
     id: "dox-01", restaurant_id: "ox-01",
+    audio_url: "/audio/tlamanalli-preparacion-mental.mp3",
+    audio_duration_s: 1245,
     historia: "Tlamanalli esta en Teotitlan del Valle, un pueblo zapoteco a 30 minutos de la ciudad de Oaxaca. Lo lleva Abigail Mendoza junto a sus hermanas. Cocina prehispanica zapoteca pura — molienda en metate, comal de barro, lena. Abigail fue la primera cocinera tradicional indigena en sentarse a mesa con chefs Michelin del mundo, antes de que existiera ninguna conversacion sobre cocina ancestral mexicana. Llevaba decadas haciendolo cuando el mundo se entero.",
     hooks: ["Abigail Mendoza estaba moliendo en metate cuando el mundo todavia no sabia que la cocina ancestral existia. Tlamanalli, Teotitlan del Valle.", "Sin gas. Sin electricidad en la cocina. Solo lena, comal de barro, metate. Y una de las cocineras vivas mas importantes del planeta."],
     datos: ["Premio Nacional de Artes y Tradiciones Populares 2010 — primera cocinera tradicional indigena en recibirlo.", "Aparece en libros como '1.001 Restaurants You Must Eat At Before You Die' — la unica taqueria/fonda zapoteca en la lista.", "Solo abre comidas (no cenas), reservacion obligatoria, tres hermanas Mendoza cocinan al unisono."],
@@ -2027,6 +2941,8 @@ export const dossiers: Record<string, Dossier> = {
   },
   "ox-02": {
     id: "dox-02", restaurant_id: "ox-02",
+    audio_url: "/audio/levadura-de-olla-preparacion-mental.mp3",
+    audio_duration_s: 916,
     historia: "Levadura de Olla es de Thalia Barrios Garcia, chef mixteca de San Mateo Yucutindoo. Abrio en el centro de Oaxaca en 2019 cocinando guisos de su pueblo en formato restaurante urbano. En 2024 recibio Estrella Verde Michelin — el reconocimiento por sostenibilidad. Cocina mixteca contemporanea: tasajo, mole de Castilla, tamales de chepil, tlayudas. Producto del campo mixteco, plato de mantel blanco.",
     hooks: ["Thalia Barrios cocina lo mismo que su abuela. La diferencia es que ahora tiene Estrella Michelin.", "Estrella Verde Michelin. Mixteca pura. Levadura de Olla es la prueba de que la cocina del pueblo cabe en el mantel blanco."],
     datos: ["Estrella Verde Michelin 2024 (sostenibilidad y producto local) — primera mujer mixteca en recibirla.", "Trabajan directamente con productores de su pueblo natal en la Mixteca alta — tasajo, frijol negro, hoja santa, chepil.", "El nombre Levadura de Olla viene de la fermentacion natural que se hace en olla de barro — masa madre prehispanica."],
@@ -2038,6 +2954,8 @@ export const dossiers: Record<string, Dossier> = {
   },
   "ox-04": {
     id: "dox-04", restaurant_id: "ox-04",
+    audio_url: "/audio/casa-oaxaca-preparacion-mental.mp3",
+    audio_duration_s: 1002,
     historia: "Casa Oaxaca lo abrio Alejandro Ruiz Olmedo en el ano 2000. Restaurante de terraza con vista al ex-convento de Santo Domingo — la postal de la ciudad. Es el lugar que fijo lo que despues se llamaria 'cocina oaxaquena contemporanea': moles que respetan la base ancestral pero servidos con plato cuidado, vinos del Valle, manos de servicio. Si Quintonil es el embajador CDMX en el mundo, Casa Oaxaca lo es para Oaxaca.",
     hooks: ["Cenas con vista a Santo Domingo. Comes los siete moles. Y llevas 24 anos siendo el restaurante que define Oaxaca. Casa Oaxaca.", "Alejandro Ruiz partio Oaxaca en dos: lo que era la cocina oaxaquena antes de Casa Oaxaca y lo que vino despues."],
     datos: ["Abrio en 2000 — uno de los primeros restaurantes en formalizar la cocina oaxaquena en formato fine dining sin perder el alma.", "Multiples reconocimientos: 50 Best Latin America, recomendado en guias internacionales todos los anos.", "La terraza tiene vista directa al templo de Santo Domingo — postal mas reconocible de la ciudad."],
@@ -2075,6 +2993,8 @@ export const dossiers: Record<string, Dossier> = {
   // === PUEBLA ===
   "pu-01": {
     id: "dpu-01", restaurant_id: "pu-01",
+    audio_url: "/audio/augurio-preparacion-mental.mp3",
+    audio_duration_s: 980,
     historia: "Augurio es de Angel Vazquez, chef poblano que volvio a Puebla despues de pasar por Nueva York y Madrid. Centro historico, esquina de calle 5 Oriente. Cocina poblana contemporanea con foco en mole — el suyo lleva 40 ingredientes y se cocina dos dias. Tambien chiles en nogada en temporada (julio-septiembre): los granos son frescos, la nogada se muele a la hora, la granada es real. Si quieres entender la cocina poblana en formato restaurante, Augurio.",
     hooks: ["Mole con 40 ingredientes que se cocina dos dias. Chiles en nogada con granada real. Augurio, Puebla.", "Angel Vazquez se fue a Nueva York y Madrid, y cuando volvio a Puebla abrio el restaurante que define la cocina poblana de hoy."],
     datos: ["El mole de la casa lleva 40 ingredientes y se cocina en dos jornadas — el chef lo describe como 'molienda lenta + tueste lento'.", "Chiles en nogada solo en temporada (julio-septiembre): receta tradicional con granada de Calpan y nuez de Castilla fresca, no enlatada.", "Angel Vazquez trabajo en Nueva York y Madrid antes de regresar — la cocina mezcla tecnica europea con producto poblano puro."],
@@ -2284,7 +3204,7 @@ export const dossiers: Record<string, Dossier> = {
     emocion_target: "respeto",
     frase_ancla: "Cocino al lado de Enrique Olvera. Despues se vino a abrir su restaurante a una ciudad que aun no era destino.",
     tesis_central: "Nemi parece otro fine dining contemporaneo de provincia. Pero es un cocinero que paso 9 anios al lado de Enrique Olvera en Pujol y 3 en Celler de Can Roca, dos de los restaurantes mas importantes del mundo. Y en lugar de quedarse en Mexico City o abrirse algo en una capital, en 2019 decidio venirse a La Paz - cuando nadie consideraba la ciudad destino gastronomico - para abrir su primer restaurante propio. Reconocido por Food & Wine Espanol 2021, 120 Mejores 2021/2022/2023, Guia Mexico Gastronomico 5 anios seguidos. La razon: cuando alguien deja el top mundial para venir a una ciudad que aun no se siente destino, esa decision tiene un porque que vale la pregunta off-camera.",
-    prepared_at: "2026-05-18",
+    prepared_at: "2026-05-23",
   },
 
   "lp-10": {
@@ -2316,14 +3236,20 @@ export const dossiers: Record<string, Dossier> = {
     angulo: "Plano del horno tatemado. Conversacion con Hugo Israel sobre cargar el legado. Plano del consomé separado. Frase nuclear: 'El hombre que cambió cómo México come birria murió hace nueve anios. Su nieto sigue cocinando.'",
     alertas: ["Verificar in-situ qué sucursal es la matriz histórica (carretera Chapala km 17.5 o Tlaquepaque).", "Personaje central fallecido, narrativa pasa por 3ra generación - verificar si Hugo Israel acepta cámara."],
     audio_url: "/audio/el-chololo-preparacion-mental.mp3",
-    audio_duration_s: 617,
+    audio_duration_s: 1011,
     emocion_target: "respeto",
     frase_ancla: "El hombre que cambió cómo México come birria murió hace nueve anios. Su nieto sigue cocinando la misma receta.",
     tesis_central: "El Chololo parece otra birriería más. Pero es donde Javier Torres Ruiz cambió cómo México come birria en los 60: sacó la carne del caldo y la expuso al calor seco. La quesabirria viral 2020 en LA, la birria ramen en Tokio, el fenómeno global del platillo - todos son consecuencias indirectas. Su nieto Hugo Israel sigue guardando la receta de 100+ anios incluido vinagre fermentado de pina 3 meses. La razón: El Chololo es al taco lo que Charlie Parker al jazz - cambió las reglas sin que muchos lo supieran.",
-    prepared_at: "2026-05-17",
+    prepared_at: "2026-05-26",
   },
 
   "gdl-02": {
+    viral_score_predicted: 74,
+    guion_escaleta: "Hook paradoja (mas rapido del mundo / platillo que mas tarda) -> record Guinness 13.5s/14 personas (open loop: como) -> que es carne en su jugo + el truco (la carne lleva horas) -> SHARE: cronometro en vivo, plato aterriza -> mantra + CTA le ganarias a los 13s",
+    guion_beats: [{"t_s": 0.0, "desc": "HOOK: el restaurante mas rapido del mundo cocina el platillo que mas tiempo tarda"}, {"t_s": 3.0, "desc": "Record: Santa Tere 1970; Guinness 1996 = menu completo para 14 personas en 13.5s (open loop: como)"}, {"t_s": 22.0, "desc": "Que es carne en su jugo + el truco (la carne lleva horas, los meseros hablan por senas)"}, {"t_s": 50.0, "desc": "SHARE: lo cronometran en vivo, 1s de silencio y el plato aterriza humeando (el frame que se manda)"}, {"t_s": 72.0, "desc": "Cierre: mantra 'lo mandaria a mi mejor amigo' + CTA le ganarias a los 13 segundos"}],
+    hook_principal: "Este es el restaurante mas rapido del mundo. Y cocina el platillo que mas tiempo tarda en hacerse.",
+    zona_silencio_narrativo: [{"t_s": 56.0, "dur_s": 1.0}],
+    newsletter_resumen: "Karne Garibaldi: el restaurante de Santa Tere (Guadalajara, desde 1970) que en 1996 gano el Record Guinness al servicio mas rapido del mundo, sirviendo un menu completo para 14 personas en 13.5 segundos, marca que nadie ha batido en ~30 anos. La paradoja: lo que sirven tan rapido es carne en su jugo, un platillo que lleva horas en la olla. La velocidad es el show; la tradicion familiar es el corazon.",
     id: "dgdl-02", restaurant_id: "gdl-02",
     historia: "Fundado en 1970 por Néstor Flores Michel ('Don Néstor') y su esposa Dona Jita, con cuatro mesas en la esquina de Garibaldi y Clemente Orozco, Santa Teresita. Récord Guinness 31 agosto 1996: servicio completo en 13.5 segundos. Lo que empezó como un juego entre meseros - quién llegaba primero a las mesas - se volvió cultura de empresa y eventualmente récord mundial. Don Néstor falleció octubre 2019. Hoy lo gestiona la 2da generación, con Néstor Irving Flores Crotté como director (nieto).",
     hooks: ["13.5 segundos. Récord Guinness mundial nacido como juego entre meseros.", "El restaurante mexicano más cubierto internacionalmente después de los de Enrique Olvera.", "55 anios y nadie ha logrado superar el récord."],
@@ -2334,11 +3260,11 @@ export const dossiers: Record<string, Dossier> = {
     angulo: "Plano de la luz verde encendiendo. Cronómetro en pantalla durante 13.5s. Senas con las manos de los meseros. Conversación con Néstor Irving sobre cargar el legado. Plano final de la cazuela vacía.",
     alertas: ["RIESGO PENDIENTE: verificar si la venta 2014 mencionada por Crónica de Jalisco fue efectiva. Si la familia Flores Michel ya no es propietaria, cambia narrativa.", "Sobreexposición mediática - hay que ofrecer angulo distinto al récord."],
     audio_url: "/audio/karne-garibaldi-preparacion-mental.mp3",
-    audio_duration_s: 537,
+    audio_duration_s: 1122,
     emocion_target: "asombro",
     frase_ancla: "Trece segundos y medio. Lo que empezó como un juego entre meseros se convirtió en récord mundial.",
     tesis_central: "Karne Garibaldi parece otro restaurante de carne en su jugo más. Pero tiene el récord más absurdo y maravilloso de la gastronomía mundial: 13.5 segundos para servir un menú completo. Y nació como JUEGO entre meseros. Don Néstor murió en 2019. Su nieto Néstor Irving carga ahora con el peso de mantener un récord mundial que nació por accidente. 55 anios después sigue siendo el restaurante mexicano más cubierto internacionalmente después de Pujol.",
-    prepared_at: "2026-05-17",
+    prepared_at: "2026-05-26",
   },
 
   "gdl-03": {
@@ -2352,11 +3278,11 @@ export const dossiers: Record<string, Dossier> = {
     angulo: "Plano del barrio Las Nueve Esquinas. Conversación con Enrique sobre los 5 escalones de la transmisión familiar. Plano del horno y del proceso clásico. Contraste con El Chololo (mismo plato, dos filosofías).",
     alertas: ["Verificar gentrificación del barrio in-situ.", "Confirmar que la receta sigue siendo exactamente la de 1930 o si ha habido ajustes."],
     audio_url: "/audio/el-paisano-preparacion-mental.mp3",
-    audio_duration_s: 1526,
+    audio_duration_s: 1134,
     emocion_target: "ternura",
     frase_ancla: "Cinco generaciones en el mismo barrio. Casi cien anios cocinando el mismo chivo. Nadie se ha ido.",
     tesis_central: "El Paisano parece otra birriería más de Las Nueve Esquinas. Pero es la PRIMERA. En 1930 un inmigrante del sur de Jalisco llamado Basilio Hernández Bernardino llegó en tren a Guadalajara desde Zacoalco de Torres. Encontró a sus 'paisanos' en el barrio de Mexicaltzingo y se instaló. Sin saberlo fundó lo que hoy es el barrio birriero más famoso de México. Cinco generaciones de la misma familia han cocido el mismo chivo durante 96 anios. La quinta generación sigue ahi.",
-    prepared_at: "2026-05-17",
+    prepared_at: "2026-05-26",
   },
 
   "gdl-04": {
@@ -2370,11 +3296,11 @@ export const dossiers: Record<string, Dossier> = {
     angulo: "Aniol vuelve por tercera vez ('volví'). Conversación con los 6 hijos. La pregunta nuclear: ¿cómo se decide entre 10 hermanos quién carga el oficio?",
     alertas: ["Confirmar cuáles de los 6 hijos están activamente cocinando vs solo administrando."],
     audio_url: "/audio/tripitas-don-ramon-preparacion-mental.mp3",
-    audio_duration_s: 916,
+    audio_duration_s: 610,
     emocion_target: "ternura",
     frase_ancla: "Don Ramón murió en 2013 y dejó diez hijos. Seis decidieron quedarse.",
     tesis_central: "Tripitas Don Ramón parece otro puesto de tacos de visceras más. Pero Don Ramón fue pionero del taco de visceras en Guadalajara cuando no era platillo 'de moda'. Convirtió lo que muchos consideraban descarte de la res en el platillo insignia de su barrio. Murió en 2013 dejando 10 hijos y la pregunta de continuar o cerrar. Seis decidieron quedarse. La tripa dorada es un oficio - no cualquiera la trabaja bien.",
-    prepared_at: "2026-05-17",
+    prepared_at: "2026-05-23",
   },
 
   "gdl-05": {
@@ -2388,11 +3314,11 @@ export const dossiers: Record<string, Dossier> = {
     angulo: "Plano de Carmen Castorena (foto de archivo) en el restaurante. Cocina del pozole con los hijos. Conversación sobre el premio mundial 'que ella nunca supo'. Plano final del comensal con el pozole.",
     alertas: ["2 sucursales - elegir la del Centro (Corona 126) por densidad histórica del barrio La Perla.", "Verificar si los hijos actuales aceptan camara."],
     audio_url: "/audio/la-chata-preparacion-mental.mp3",
-    audio_duration_s: 1004,
+    audio_duration_s: 1037,
     emocion_target: "ternura",
     frase_ancla: "En 1942 una mujer vendía dulces en su barrio. En 2025 su nieto recibió el premio al mejor pozole del mundo.",
     tesis_central: "La Chata parece otro restaurante de comida tapatía. Pero en 2025 Taste Atlas lo declaró EL MEJOR RESTAURANTE DEL MUNDO PARA COMER POZOLE. La historia detrás del titular es mejor que el titular mismo: en 1942 Carmen Castorena empezó vendiendo leche y dulces en La Perla con sazón heredada de su madre. Los vecinos la convencieron de abrir fonda. 83 anios después, su nieto recibe el reconocimiento mundial en nombre de una abuela que jamás supo lo que era Taste Atlas.",
-    prepared_at: "2026-05-17",
+    prepared_at: "2026-05-26",
   },
 
   "gdl-06": {
@@ -2431,6 +3357,168 @@ export const dossiers: Record<string, Dossier> = {
     prepared_at: "2026-05-17",
   },
 
+  "r-07": {
+    id: "dr-07", restaurant_id: "r-07",
+    historia: "Tacos Mundo es un tuk-tuk en Av. Miguel Hidalgo y Costilla 3266, Col. Lomas de Guevara, Guadalajara. Un solo hombre prepara todo. Sin equipo visible, sin cadena, sin marca. Horario irregular real: los habituales le llaman 'una loteria' — abre cuando puede, cierra cuando ya no. Especialidad en CUERNO (el cartilago en la base del cuerno del bovino), una pieza atipica en taquerias urbanas que casi nadie ofrece. Tambien lengua, labio, carnaza y cabeza. Aniol @tacotios documento el lugar dos veces en TikTok (2024 y 2025) — lo metio en su top 3 personal GDL en lengua, labio y cuerno. Nunca aparece en listas editoriales de prensa local. Su reputacion es completamente organica: foodbloggers de barrio + dos publicaciones de Aniol. Sin Michelin, sin PR, sin Instagram conocido. El sitio existe porque la gente que lo conoce lo protege.",
+    hooks: ["El horario es una loteria. El cuerno es lo unico seguro.", "Un solo hombre, un tuk-tuk, cuerno de bovino. Si lo encuentras abierto ya ganaste.", "Tres veces aqui. Sigue siendo top 3 de mi vida en lengua, labio y cuerno."],
+    datos: ["Av. Miguel Hidalgo y Costilla 3266, Col. Lomas de Guevara, GDL 44690.", "Horario nominal: M-V 19:30-23h. S 19:30-24h. L y D cerrado. Horario REAL irregular - llamar antes o ir asumiendo loteria.", "Especialidad: cuerno (cartilago base del cuerno bovino, atipico en taquerias urbanas).", "Otros cortes: lengua, labio, carnaza, cabeza.", "Tacos 25-40 MXN. ~100-200 MXN/persona. Solo efectivo.", "Sin Instagram conocido. Sin PR. Sin entrevistas en medios.", "Aniol @tacotios documento dos veces en TikTok (2024, 2025). Top 3 personal GDL lengua/labio/cuerno."],
+    pedir: [{ name: "Taco de cuerno", why: "La pieza atipica. Cartilago base del cuerno bovino. Casi nadie lo ofrece en GDL urbano." }, { name: "Taco de lengua", why: "Top 3 personal de Aniol GDL." }, { name: "Taco de labio", why: "Top 3 personal de Aniol GDL." }, { name: "Cabeza completa", why: "Si quieres entender el oficio entero del lugar." }],
+    preguntas: [{ role: "Al taquero", texto: "¿Por que CUERNO? ¿Quien le ensenio a cocinarlo asi?" }, { role: "Al taquero", texto: "¿Por que el horario cambia? ¿Que decide cuando abre y cuando no?" }, { role: "Al taquero", texto: "Aniol ya estuvo dos veces aqui. Tercera vez. ¿Que le falta entender del lugar?" }, { role: "A un habitual en fila", texto: "¿Cuanto tiempo llevas viniendo? ¿Como supiste que era de loteria el horario?" }],
+    candidatura_status: "si", candidatura_razon: "Score 8/10. Aniol ya estuvo dos veces y el lugar sigue siendo top 3 personal GDL en lengua/labio/cuerno. Tercer reel = angulo OBLIGATORIAMENTE nuevo (riesgo auto-repeticion). Hipotesis ganadora: el horario como protagonista (loteria) o la pieza cuerno como tesis (lo unico seguro en la loteria).",
+    angulo: "Tercer reel. No mostrar lo obvio (ya conte tacos dos veces). Plano del tuk-tuk cerrado primero (si fui y no abrio = capturar). Cuando abre: plano corte cuerno en plancha. Voz off Aniol: 'Tercera vez. Sigue siendo top 3 de mi vida.' Zona silencio s40-55 con plano fila y manos del taquero. Frase ancla: 'El horario es una loteria. El cuerno es lo unico seguro.'",
+    alertas: ["RIESGO ALTO de auto-repeticion: Aniol ya tiene DOS reels (2024+2025). Tercer reel obligatoriamente angulo nuevo - NO repetir 'descubrimiento'.", "Horario real es loteria. Verificar con vecinos / waze comments antes de cruzar la ciudad.", "Nombre del taquero NO documentado en fuentes publicas - extraer respetuosamente en sitio.", "Sin Instagram conocido. Si pide no aparecer a camara, sostener reel con narracion + plano fila + cuerno + zona silencio.", "El sitio se protege a si mismo organicamente. NO usar lenguaje que 'descubra para el mundo' - eso seria traicion. Aniol llega como tercer regreso, no como influencer revelador."],
+    audio_url: "/audio/tacos-mundo-preparacion-mental.mp3",
+    audio_duration_s: 527,
+    emocion_target: "admiracion",
+    frase_ancla: "El horario es una loteria. El cuerno es lo unico seguro.",
+    tesis_central: "Tacos Mundo parece otro puesto callejero de tacos de cabeza en Guadalajara. Pero es un tuk-tuk donde un solo hombre prepara TODO sin equipo, en horario irregular que los habituales llaman 'una loteria'. Tres detalles lo separan del resto: especialidad en CUERNO (el cartilago en la base del cuerno del bovino, atipico en taquerias urbanas), Aniol @tacotios lo metio en su top 3 personal GDL en lengua, labio y cuerno tras dos visitas documentadas (2024 y 2025), y nunca aparece en listas editoriales de prensa local. Su reputacion es completamente organica: foodbloggers de barrio y dos publicaciones de Aniol. Sin Michelin, sin PR, sin marca. Solo gente que cruza la ciudad de noche con la apuesta de que hoy si esta abierto. El sitio existe porque protege a alguien que no quiere ser industria.",
+    prepared_at: "2026-05-23",
+  },
+
+  "r-11": {
+    id: "dr-11", restaurant_id: "r-11",
+    historia: "Tacos Don Jose, conocido popularmente como 'Don Panela', es un puesto de birria con mas de 50 anos en Calle Argentina 595 esquina Vidrio, Col. Americana, Guadalajara. La marca del lugar no es la birria sino el queso panela: una rueda entera del queso encima del comal de la que cortan generosas capas para cada taco, junto a la birria tatemada. Esa combinacion no es habitual en Jalisco, donde la birria reina sola. El apodo 'Don Panela' le gano al nombre del fundador, lo que sugiere que en algun momento el ingrediente secundario desplazo el protagonismo del cocinero. Tres versiones de birria (res, chivo, cerdo). En 2025 El Informador incluyo el lugar en el top 5 de birrierias GDL segun resenas Google. Aniol @tacotios documento el sitio en TikTok personal en 2024 - esta visita es regreso con otro ojo, no descubrimiento.",
+    hooks: ["El apodo le gano al fundador. Aqui le dicen Don Panela.", "Una secundaria que volvio estrella: en Jalisco la birria reina sola, aqui la panela manda.", "Vuelvo. Hace un ano conte lo obvio. Hoy regreso porque me perdi lo principal."],
+    datos: ["Argentina 595 esq. Vidrio, Col. Americana, GDL.", "L-S 8-16h. Domingo cerrado.", "50+ anos de tradicion familiar.", "Birria en 3 versiones: res, chivo, cerdo, mas panela tatemada de rueda entera.", "Top 5 El Informador 2025 (resenas Google). Aniol ya documento el sitio en TikTok personal 2024."],
+    pedir: [{ name: "Birria de cerdo tatemada con panela", why: "Combinacion identitaria del sitio." }, { name: "Guiso del dia", why: "Preguntar al mostrador. Suele rotar." }, { name: "Enfrijolada si la hay", why: "Tortilla dorada con frijol y queso." }],
+    preguntas: [{ role: "Al que atiende", texto: "¿Usted es familia de Don Jose? ¿Es el original?" }, { role: "Al que atiende", texto: "¿De donde salio la idea de poner la panela encima? ¿Quien la propuso primero?" }, { role: "Al cocinero", texto: "¿Que hacia su padre o abuelo distinto a lo que hacen ustedes hoy, o todo sigue igual?" }],
+    candidatura_status: "si", candidatura_razon: "Score 8/10. Caso de marca-por-secundaria (apodo Don Panela). Visita segunda - permite arco Storynomics 'volvi por la razon que no entendi la primera vez'. Contraste perfecto vs Birrieria David (misma jornada GDL): visibilidad mediatica vs invisibilidad.",
+    angulo: "Vuelvo a Don Jose. Hace un ano fui sin entender. Hoy regreso por la panela: la secundaria que volvio estrella y le puso apodo al fundador. Plano de la rueda de panela al comal. Conversacion provocando '¿usted es familia de Don Jose?'. Cierre: el ingrediente desplaza al cocinero.",
+    alertas: ["Hay 3 'Don Jose' en GDL. Confirmar en sitio que es Argentina 595.", "Aniol ya documento esto en TikTok 2024 - obligatorio angulo nuevo (la panela como tesis, no como detalle).", "Nombre del fundador y de quien atiende NO documentado en fuentes publicas - extraer en sitio.", "Si entrevista cuesta, sostener con narracion + zona silencio narrativo + plano corte panela."],
+    audio_url: null,
+    audio_duration_s: null,
+    emocion_target: "asombro",
+    frase_ancla: "El apodo le gano al fundador. Aqui le dicen Don Panela.",
+    tesis_central: "Tacos Don Jose parece otra birrieria mas de la Col. Americana. Pero es el lugar donde el queso panela, ingrediente secundario en cualquier birrieria jalisciense, se convirtio en el argumento principal. Una rueda entera de panela sobre el comal de la que cortan generosas capas para cada taco. La gente le dice 'Don Panela' al sitio - el apodo le gano al nombre del fundador. Eso es la tesis: en algun momento, un ingrediente secundario fue tan dominante que desplazo el protagonismo del cocinero. 50+ anos. Tres versiones de birria (res, chivo, cerdo) que existen como contexto para la panela. Aniol ya estuvo aqui en 2024 contando lo obvio. Hoy regresa contando lo principal.",
+    prepared_at: "2026-05-21",
+  },
+
+  "r-08": {
+    id: "dr-08", restaurant_id: "r-08",
+    historia: "Fonda Doña Mica abrio hace mas de 65 anos en San Isidro, Zapopan, una zona que entonces era rural y hoy esta absorbida por la mancha urbana de Guadalajara. La fundo Mica, junto a su esposo, ambos llegados desde un rancho llamado San Cristobal. Empezo como cenas y menudo de noche para los vecinos del barrio desde su propia casa rentada. Tres generaciones de mujeres han sostenido la fonda. Mica (fundadora, ya fallecida) le paso la cocina a su hija, que mantuvo el sazon. Hoy la nieta esta al frente y la ha llevado a su momento de mayor visibilidad publica - sin reubicarse, sin modernizarse para ser consumible, sin entrar a un mercado central. Las tortillas siguen hechas a mano en metate con masa de nixtamal, cocidas sobre carbon. El toque a carbon en la costra es el detalle que la gente repite. El plato emblema son los 'huevos Abelina' (huevo encamisado dentro de una tortilla hecha a mano) y el chicharron. En 2024 recibieron el Premio MUST PLAYERS Restaurant's Choice como uno de los mejores desayunos de Guadalajara. En febrero 2025 Culinary Backstreets publico un articulo. Aniol @tacotios ya documento el lugar en TikTok del Premio MUST. La nieta tiene presencia online discreta. Sin entrevistas de profundidad en medios.",
+    hooks: ["Tres generaciones. Sesenta y cinco anios. Las tortillas siguen al carbon.", "Una fonda que el pueblo absorbio. Y que se nego a rendirse a la ciudad.", "Vinieron de un rancho llamado San Cristobal. Llevan dos generaciones cocinando lo que trajeron."],
+    datos: ["Carretera a San Esteban 115 (algunas fuentes 22, verificar en sitio), Col. San Isidro, Zapopan 45133.", "L-D 7:30-13h. La cocina termina antes de cerrar puerta. Llegar antes de 10am para evitar fila.", "Tres generaciones: Mica (fundadora ya fallecida, originaria del rancho San Cristobal), hija, nieta al frente hoy.", "Tortillas a mano en metate con masa de nixtamal sobre carbon. El toque a carbon es el sello.", "Plato signature: huevos Abelina (huevo encamisado en tortilla a mano). Chicharron emblema ~$130-150 media/entera.", "Premio MUST PLAYERS Restaurant's Choice 2024. Culinary Backstreets feb 2025. ~$130-200 MXN/persona."],
+    pedir: [{ name: "Huevos Abelina", why: "El plato emblema. Huevo encamisado dentro de tortilla a mano. La sintesis del lugar." }, { name: "Chicharron (media o entera)", why: "Lo otro que tiene nombre en el lugar. ~$130-150." }, { name: "Tortilla recien hecha sobre carbon", why: "Pedirla sola, sin nada. El sabor a carbon de la costra es lo que defiende el lugar." }, { name: "Menudo si hay disponible", why: "El proyecto empezo como menudo nocturno hace 65 anios. Cerrar el circulo." }],
+    preguntas: [{ role: "A la nieta", texto: "Tu abuela Mica vino del rancho San Cristobal. ¿Que de ese rancho sigue cocinandose exactamente igual aqui?" }, { role: "A la nieta", texto: "Tu mama te paso esta fonda. ¿Que aprendiste que tu abuela no le habia ensenado a ella?" }, { role: "A la nieta", texto: "¿Cuantas veces estuvieron a punto de cerrar?" }, { role: "A una cliente habitual", texto: "¿Cuanto tiempo llevas viniendo aqui? ¿Tu mama o abuela ya venian?" }],
+    candidatura_status: "si", candidatura_razon: "Score 8/10. Tres generaciones de mujeres + 65 anios + tortillas al carbon + origen rural (rancho San Cristobal) + Premio MUST 2024 + presencia organica. Riesgo: Aniol ya documento en TikTok 2024 - tercer reel debe tener angulo NUEVO. Propuesta: transmision generacional como tesis (no descubrimiento).",
+    angulo: "Plano de las manos de la nieta haciendo tortilla en metate. Plano del comal sobre carbon. Plano detalle del huevo Abelina. Voz off Aniol: 'Tres generaciones. Sesenta y cinco anios. Las tortillas siguen al carbon.' Zona silencio narrativo: 15-20s con el sonido del carbon + el comal + el metate. Conversacion con la nieta sobre el rancho San Cristobal. Cierre con la fonda llena de gente desayunando.",
+    alertas: ["VERIFICAR DIRECCION en sitio: 115 vs 22 (fuentes contradictorias).", "VERIFICAR identidad de 'Dona Ave' o Abelina (no claro si es la hija, una cocinera, o el huevo se llama asi por otra razon).", "Nombre completo de Mica (apodo de Micaela o Enriqueta) NO documentado.", "Aniol ya tiene reel/TikTok previo (Premio MUST 2024). RIESGO ALTO de auto-repeticion. Angulo nuevo OBLIGATORIO.", "NO usar 'descubrimiento'. Lugar ya tiene presencia organica + Premio + Culinary Backstreets. Trasmision generacional es la tesis."],
+    audio_url: "/audio/fonda-dona-mica-preparacion-mental.mp3",
+    audio_duration_s: 1122,
+    emocion_target: "ternura",
+    frase_ancla: "Tres generaciones. Sesenta y cinco anios. Las tortillas siguen al carbon.",
+    tesis_central: "Fonda Dona Mica parece una fonda mas en Zapopan. Pero es la cocina de un rancho llamado San Cristobal trasplantada al pueblo de San Isidro, hoy absorbido por la mancha urbana de Zapopan, sostenida durante mas de 65 anos por tres generaciones de mujeres de la misma familia. Las tortillas siguen hechas a mano en metate con masa de nixtamal y cocidas sobre carbon - el toque a carbon en la costra es el detalle que la gente repite. El plato emblema son los 'huevos Abelina' (huevo encamisado dentro de una tortilla hecha a mano). Sin reubicarse, sin modernizarse para ser consumible, sin entrar a un mercado central. Es lo que sobrevive cuando el pueblo se rinde a la ciudad pero la fonda no se rinde al pueblo. Premio MUST PLAYERS Restaurant's Choice 2024 (mejores desayunos de GDL) y articulo Culinary Backstreets feb 2025.",
+    prepared_at: "2026-05-24",
+  },
+
+  "gdl-15": {
+    id: "dgdl-15", restaurant_id: "gdl-15",
+    historia: "Nejayote Molino abrio en 2022 en Herrera y Cairo 1392, Santa Teresita, Guadalajara, a metros del restaurante Xokol (1375). Los duenos son los mismos: Xrysw Ruelas Diaz (Guadalajara) y Oscar Segundo (comunidad Mazahua de Santa Maria Citendeje, Estado de Mexico). Nejayote no es un proyecto separado: es la extension del mismo cuando Xokol se reubico y crecio. Funciona como proveedor interno de masa para el restaurante y punto de venta directo al barrio y a chefs externos. La historia que sostiene Nejayote no esta en una escuela de cocina. Esta en el patio de la casa de Juana Segundo, madre de Oscar, en Citendeje. Ahi Xrysw aprendio a nixtamalizar, viendo a Juana cocinar al fuego de lena entre perales y manzanos, con la salsa en molcajete. Cita textual de Xrysw: 'Cuando conoci a la familia de Oscar conoci realmente lo que es una milpa'. El maiz criollo viene de la familia Casimiro en Citendeje (familia directa de Oscar) y de Raul Gutierrez en Tuxpan, Jalisco. Sin intermediarios. La diferencia con los molinos de autor de Ciudad de Mexico (Maizajo, Molino El Pujol) es radical: aqui el vinculo con la milpa NO es 'chef-descubrio-productor'. Es comunidad-que-ya-tenia-el-conocimiento-y-lo-trajo-a-la-ciudad. Oscar no encontro a la familia Casimiro: es su familia.",
+    hooks: ["El maiz cruza dos veces. De la milpa Mazahua al barrio tapatio. De la madre de Oscar a la cocina de Xrysw.", "Aqui el molinero no descubrio al maicero. El maicero ES su familia.", "Nixtamalizan de madrugada cinco maices criollos. Azul, rojo, rosa, amarillo y negro. Todos vienen del patio de la madre de uno de los duenos."],
+    datos: ["Herrera y Cairo 1392, Col. Santa Teresita, Guadalajara 44600. A metros de Xokol (1375).", "L-S 8:30-13h. Nixtamalizacion de madrugada.", "Duenos: Xrysw Ruelas Diaz (GDL) + Oscar Segundo (comunidad Mazahua, Santa Maria Citendeje, Edomex).", "Maiz criollo (azul, rojo, rosa, amarillo, negro) de la familia Casimiro en Citendeje (familia directa de Oscar) y de Raul Gutierrez en Tuxpan Jalisco.", "Hibrido molino + fonda. Venden: masa al kilo, tortillas, tlacoyos, tetelas, tamales, atoles, salsas, gorditas.", "Abrio 2022 al expandirse Xokol. Email: contacto@xokol.com.mx."],
+    pedir: [{ name: "Tortilla recien salida del comal", why: "Pedir cualquier color. La diferencia con tortilla industrial es brutal y debe sentirse." }, { name: "Tlacoyo o tetela del dia", why: "La masa hecha aqui en formato lleno (frijol, requeson, hongos segun temporada)." }, { name: "Masa al kilo para llevar", why: "Pedir un color especifico - permite contar la trazabilidad hasta la milpa." }, { name: "Atole de la temporada", why: "Bebida fermentada/cocida de maiz - cierra el circulo del producto." }],
+    preguntas: [{ role: "A Xrysw", texto: "Cuando viste por primera vez a la mama de Oscar cocinar en el patio, que cambio en tu cabeza?" }, { role: "A Oscar", texto: "Tu mama sigue cultivando este maiz. Cuando vienes aqui, que cocinas que te recuerda mas a su mesa?" }, { role: "A Xrysw u Oscar", texto: "La diferencia con los molinos de autor de CDMX es que ustedes tienen vinculo de sangre con la milpa. Como cambia eso lo que haces en el comal?" }, { role: "Al equipo de molienda", texto: "Que pasa de madrugada aqui que nadie del barrio ve?" }],
+    candidatura_status: "si", candidatura_razon: "Score 9/10. Vinculo de sangre con la milpa Mazahua (Oscar+familia Casimiro). Nixtamalizacion criolla 5 colores. Diferenciador radical vs Maizajo/Pujol CDMX. Encaja perfecto con tesis HERENCIA. Cita 'cuando conoci a la familia de Oscar conoci realmente lo que es una milpa' es golden.",
+    angulo: "Plano del molino de madrugada (si Aniol va temprano). Plano de la masa azul sobre el comal. Plano de las manos amasando. Voz off Aniol: 'El maiz cruza dos veces. De la milpa Mazahua al barrio tapatio.' Zona silencio narrativo durante la nixtamalizacion: solo molino + agua + maiz + vapor. Conversacion con Xrysw sobre la primera vez en el patio de Juana. Cierre con cita: 'Oscar no encontro a la familia Casimiro. ES su familia. Eso le da una textura distinta.'",
+    alertas: ["Confirmar horario de nixtamalizacion - si es de madrugada, llegar a las 8:30am es DEMASIADO tarde para capturar.", "Pareja socios. Coordinar con anticipacion si ambos estaran disponibles o solo uno.", "NO usar 'gourmet', 'alta cocina', 'molino de autor'. Ellos NO usan ese lenguaje.", "Si Aniol va a Xokol Y Nejayote en la misma jornada, decidir orden: Nejayote primero (origen) → Xokol despues (resultado).", "Cita textual de Xrysw debe verificarse en sitio si va a aparecer en reel/copy externo."],
+    emocion_target: "reverencia",
+    frase_ancla: "El maiz cruza dos veces. De la milpa Mazahua al barrio tapatio.",
+    tesis_central: "Nejayote Molino parece la tortilleria del restaurante Xokol al lado. Pero es el corazon operativo y filosofico de todo el proyecto: el lugar donde el maiz cruza dos veces - de la milpa Mazahua de la familia Segundo en Santa Maria Citendeje al barrio tapatio Santa Tere, y de la cocina ancestral de Juana Segundo (madre de Oscar) al comal de Xrysw Ruelas (cocinera tapatia formada en barcos de cruceros que se pregunto que sabia ella de su propio pais). Nixtamalizan de madrugada con maiz azul, rojo, rosa, amarillo y negro criollo de la familia Casimiro en Citendeje (familia directa de Oscar) y de Raul Gutierrez en Tuxpan Jalisco. Sin intermediarios. La diferencia con los molinos de autor de CDMX (Maizajo, Molino El Pujol) es que aqui el vinculo con la milpa no es 'chef-descubrio-productor' - es comunidad-que-ya-tenia-el-conocimiento-y-lo-trajo-a-la-ciudad. Oscar no encontro a la familia Casimiro: es su familia. Eso le da al proyecto una textura distinta.",
+    prepared_at: "2026-05-24",
+    audio_url: "/audio/nejayote-preparacion-mental.mp3",
+    audio_duration_s: 599,
+  },
+
+  "gdl-14": {
+    id: "dgdl-14", restaurant_id: "gdl-14",
+    historia: "La Tequila abrio sus puertas en 1995 en Av. Mexico 2830, Col. Ladron de Guevara, Guadalajara. La fundaron dos hermanos: Iñaki Diaz de Leon y su hermano. Empezaron desde 'un profundo amor por la gastronomia mexicana y sus origenes'. Treinta anos despues siguen ahi, en la misma casona, sin haberse partido la sociedad ni el oficio. En el camino se convirtieron en algo raro: el primer restaurante del MUNDO en recibir el Distintivo T del Consejo Regulador del Tequila, el primer en Jalisco con la distincion Tesoros de Mexico, y un modelo unico de operacion que mezcla restaurante + destileria + museo + huerto propio + activismo del agave. Sobrevivieron crisis economicas, la pandemia, mudanzas. No se rindieron. Hoy organizan 'Tertulias del Agave' con academicos y ambientalistas para discutir sostenibilidad del cultivo de agave en Jalisco. 'Noches de cosecha' con ingredientes que solo crecen aqui. Las hormigas chicatanas vienen de reservas naturales con cosecha controlada. El maiz es nativo. El chef ejecutivo es Julio Cesar Chavez. Tienen una segunda sede en Leon, Plaza Mayor, con arquitectura disenada por Leon Orraca. Una pieza extranya: nunca soltaron la palabra 'Tequila' del nombre. Le pusieron el destilado al apellido del restaurante en 1995 y desde ahi todo lo demas se ordeno alrededor.",
+    hooks: ["Treinta anos defendiendo el agave como si fuera su apellido.", "Primer restaurante del MUNDO con Distintivo T. Dos hermanos. Una sola sede en Guadalajara. Treinta anos.", "Aqui el restaurante es museo. Y destileria. Y huerto. Y aula. Y todavia es restaurante."],
+    datos: ["Av. Mexico 2830, Col. Ladron de Guevara (Terranova), Guadalajara 44689.", "Fundado 1995 por los hermanos Iñaki Diaz de Leon y hermano. Negocio familiar de 30 anos.", "Primer restaurante del MUNDO con Distintivo T del Consejo Regulador del Tequila.", "Primer en Jalisco con Tesoros de Mexico.", "Chef ejecutivo: Julio Cesar Chavez.", "Modelo unico: restaurante + destileria + museo del agave + huerto propio + Tertulias del Agave anuales.", "Hormigas chicatanas de reservas naturales con cosecha controlada. Maiz nativo.", "Sucursal 2: Leon, Plaza Mayor (arquitectura Leon Orraca)."],
+    pedir: [{ name: "Caldo de piedra", why: "Plato signature ancestral oaxaqueno que ellos rescatan en GDL. Pedirlo con la calentada en piedra en mesa - es el momento show del lugar." }, { name: "Birria de hongos", why: "Plato original de la casa. La tesis del agua-tierra-fuego adaptada al maiz y al monte." }, { name: "Mole", why: "Receta familiar, version contemporanea sin destruir el original. Pedir cual de los moles esta hoy." }, { name: "Chile relleno con tres quesos", why: "Otra creacion original de la casa. Para entender que 'cocina contemporanea' significa aqui." }, { name: "Probador de mezcales o tequilas con explicacion", why: "El verdadero plato es el agave. Pedir al sommelier que cuente de donde viene cada destilado." }],
+    preguntas: [{ role: "A Iñaki o a su hermano", texto: "Treinta anos. Dos hermanos. ¿Cuantas veces estuvieron a punto de no abrir al dia siguiente? ¿Que les hizo abrir?" }, { role: "A Iñaki", texto: "¿En que momento entendieron que esto NO era solo restaurante, sino museo del agave?" }, { role: "A Iñaki", texto: "El Distintivo T los hizo primeros del mundo. ¿Que cambio en la cocina y en la familia despues de ese reconocimiento?" }, { role: "A Julio Cesar Chavez (chef)", texto: "¿Que receta de los Diaz de Leon es la mas dificil de no traicionar?" }, { role: "Al equipo de huerto", texto: "¿Que ingrediente del huerto NO podria crecer en ningun otro lado de Mexico?" }],
+    candidatura_status: "si", candidatura_razon: "Score 9/10. Distintivo T MUNDIAL + Tesoros de Mexico + 30 anos negocio familiar de dos hermanos sin franquicia agresiva + modelo unico restaurante-museo-huerto-destileria + activismo agave. Material humano denso. Riesgo: lugar muy mediatico ya, hay que evitar caer en 'turistico' - el angulo debe ser la trinchera familiar y la decision de no abandonar.",
+    angulo: "Plano de la fachada en Av. Mexico (la casona). Plano de la barra de tequila/mezcales. Plano de las botellas del museo. Voz off Aniol: 'Treinta anos. Dos hermanos. Una sola trinchera.' Zona silencio narrativo durante el caldo de piedra (la piedra hirviendo entrando al caldo es el momento - 15-20s ambiente puro). Conversacion en barra con Iñaki sobre las veces que estuvieron a punto de cerrar. Plano de manos en el huerto cortando algo. Cierre con Tertulia del Agave si hay material o con la frase ancla.",
+    alertas: ["RIESGO HYPE: lugar mediatico y turistico ya. NO hacer 'descubrimiento' - es honesto reconocer su recorrido publico. El angulo debe ser la trinchera familiar de 30 anos.", "Nombre completo del hermano de Iñaki Diaz de Leon NO documentado en fuentes publicas (posiblemente Federico segun ArchDaily) - confirmar en sitio.", "Ano exacto del Distintivo T NO documentado publicamente - preguntar.", "Lenguaje brand-safe: NO usar 'turistico', 'must-try', 'destino imprescindible'. Filtro mejor amigo: lo recomendarias a tu mejor amigo en GDL como una de las pocas trincheras autenticas del agave? Si.", "Si Iñaki o el hermano no estan: chef Julio Cesar Chavez o equipo de huerto sostienen narrativa."],
+    emocion_target: "orgullo",
+    frase_ancla: "Treinta anos defendiendo el agave como si fuera su apellido.",
+    tesis_central: "La Tequila parece otro restaurante turistico de cocina mexicana en Av. Mexico de Guadalajara. Pero es el PRIMER restaurante del MUNDO en recibir el Distintivo T del Consejo Regulador del Tequila, el primer en Jalisco en obtener Tesoros de Mexico, y un negocio familiar de dos hermanos (Iñaki Diaz de Leon + hermano) que en 30 anos no han abandonado ni dividido la trinchera. Operan en una misma logica: el restaurante es museo, destileria, huerto propio y aula del agave. Tienen 'Tertulias del Agave' anuales con expertos academicos y ambientales sobre sustentabilidad del cultivo, 'noches de cosecha' con ingredientes que solo crecen aqui, hormigas chicatanas de reservas naturales con cosecha controlada, maiz nativo, mole, barbacoa, caldo de piedra y platos originales como birria de hongos y chile relleno con tres quesos. La tesis no es la cocina contemporanea. La tesis es que dos hermanos decidieron, hace 30 anos, que su apellido iba a ser sinonimo de defender el agave como patrimonio biocultural de Mexico. Y aqui siguen.",
+    prepared_at: "2026-05-23",
+    audio_url: "/audio/la-tequila-preparacion-mental.mp3",
+    audio_duration_s: 605,
+  },
+
+  "gdl-11": {
+    id: "dgdl-11", restaurant_id: "gdl-11",
+    historia: "Allium abrio en 2014 en Providencia, Guadalajara. Lo fundo el chef Adolfo Galnares despues de un camino que pocos chefs jovenes mexicanos terminan: el Culinary Institute of America en Nueva York (graduado con honores en 2010), practicas en Akelarre San Sebastian, el tres estrellas Michelin de Pedro Subijana, regreso a Mexico como chef ejecutivo en Bresca CDMX y reconocimiento como 'mejor joven maestro' en Millesime Mexico 2012. Con ese curriculum lo logico era quedarse en la capital. Adolfo decidio no hacerlo y abrir en Guadalajara. Maria Ortega entra al proyecto como chef-socia paralela: CESSA Mexico, practicas en NOBU, paso por Huset y Sole. No es esposa-que-apoya. El sitio la describe con 'etica de trabajo incomparable, gran creatividad y sensibilidad en la cocina'. Mas de 10 anos despues, Allium sigue en la misma posicion. Sin segunda sede, sin franquicia, sin podcast mediatico, sin entrevistas de profundidad. El huerto en la azotea, los quesos de QuesArt Atotonilco, las verduras de Ajijic y los mariscos de Nayarit. La filosofia declarada de Adolfo cabe en una linea: 'cocina de sabores sencillos pero contundentes basados en el producto'. No habla de tecnica. Habla de producto. Eso es una posicion.",
+    hooks: ["Tres estrellas Michelin en el curriculum. Y eligio Guadalajara, no la capital.", "Diez anos sin abrir segunda sede, sin podcast, sin entrevistas. El plato habla solo.", "Ella estudio en CESSA y paso por NOBU. El se formo en el Akelarre de Pedro Subijana. Cocinan juntos en una azotea de Providencia."],
+    datos: ["Av. Providencia 2411, Local 106, Plaza Leben Providencia, Guadalajara.", "M-S 14:30-23h. D 14:30-17h. Lunes cerrado. Reservar con anticipacion.", "Adolfo Galnares: CIA Nueva York (2010 honores), practicas Akelarre San Sebastian 3* Michelin, ex-chef ejecutivo Bresca CDMX, 'mejor joven maestro' Millesime Mexico 2012.", "Maria Ortega: CESSA Mexico, practicas en NOBU, paso por Huset y Sole. Chef-socia paralela.", "Huerto propio en azotea. 100% ingredientes mexicanos. Quesos QuesArt Atotonilco, verduras Ajijic, mariscos Nayarit.", "50 Best Discovery Latin America + premio Marco Beteta multiples anos. Ticket ~$1,800-2,500 MXN/persona."],
+    pedir: [{ name: "Tostadas de escamoles sobre brioche", why: "Signature. Producto local (escamol del campo) sobre tecnica europea (brioche). La tesis del restaurante en un bocado." }, { name: "Risotto de huitlacoche", why: "El cruce mas obvio entre Akelarre y la milpa mexicana. Tecnica italiana, producto puro de aqui." }, { name: "Tabla de quesos QuesArt Atotonilco", why: "Productor artesanal especifico. Pedir al mesero que cuente quien hace cada queso." }, { name: "Lo que el chef recomiende del huerto del dia", why: "El huerto en azotea cambia segun temporada. Es la unica forma de probar el ingrediente que esta vivo arriba." }],
+    preguntas: [{ role: "A Adolfo", texto: "Cuando saliste del Akelarre con 24 anos y volviste a Mexico, todo el mundo te imaginaba en CDMX. Por que Guadalajara y no la capital?" }, { role: "A Adolfo", texto: "Tu filosofia oficial es 'sabores sencillos pero contundentes basados en el producto'. Llevas 12 anos repitiendola. Que aprendiste del producto que no sabias en Akelarre?" }, { role: "A Maria", texto: "Pasaste por NOBU y Huset antes de llegar a Allium. Cuando entras a esta cocina, que se cocina aqui que no podias cocinar en ningun otro lado?" }, { role: "A Adolfo y Maria", texto: "Diez anos en la misma posicion sin abrir segunda sede ni convertirse en marca. Cuantas veces les han ofrecido franquiciar y por que han dicho que no?" }, { role: "Al equipo de huerto", texto: "Que ingrediente que crece en esta azotea no podria crecer en ningun otro lado de Mexico?" }],
+    candidatura_status: "si", candidatura_razon: "Score 9/10. Curriculum 3 Michelin (Akelarre) + rechazo a CDMX + 10 anos de continuidad sin ruido + huerto propio + chef-socia paralela documentada. Contrapeso narrativo perfecto en jornada GDL vs Xokol (maiz-criollo de raiz) y Birrieria David (oficio invisible). Aniol llega con la pregunta exacta: 'por que Guadalajara y no CDMX'.",
+    angulo: "Plano de los premios y articulos en la pared (Marco Beteta, 50 Best Discovery) → corte seco a Adolfo en la cocina sin discurso. Zona de silencio narrativo durante el plato del huerto (15-20s solo ingrediente + manos + ambiente, Aniol calla). Plano de manos: corte vegetal del huerto a producto plateado. Conversacion en barra con Adolfo sobre 'por que Guadalajara'. Maria entra desde plancha sin avisar, frase corta. Cierre: 'Tres estrellas Michelin en el curriculum. Y eligio Guadalajara, no la capital.'",
+    alertas: ["Verificar in-situ horario de temporada del menu (puede variar). Llamar a confirmar reserva.", "Nombre completo de Maria Ortega no documentado en fuentes publicas - extraer en sitio.", "Origen geografico de Adolfo y Maria no documentados - preguntar pero respetar si no quieren detallar.", "Allium tiene posicionamiento discreto deliberado. Si en sitio prefieren no aparecer a camara, sostener reel con narracion + huerto + manos + B-roll del plato. No forzar entrevista frontal.", "Riesgo Sobre-elogio: el curriculum (Akelarre, Michelin, Millesime) puede tirar el tono hacia 'autoridad por credencial'. La voz tiene que volver al producto y a la decision de Guadalajara. Filtro mejor amigo activo."],
+    audio_url: "/audio/allium-preparacion-mental.mp3",
+    audio_duration_s: 1175,
+    emocion_target: "respeto",
+    frase_ancla: "Tres estrellas Michelin en el curriculum. Y eligio Guadalajara, no la capital.",
+    tesis_central: "Allium parece otro restaurante de autor mas en Providencia. Pero es un chef con formacion de tres estrellas Michelin (Akelarre San Sebastian) y reconocimiento Millesime 2012 que en 2014 decidio NO quedarse en CDMX y construir en Guadalajara. Lleva mas de 10 anos en la misma posicion sin abrir segunda sede ni convertirse en marca, sin podcast mediatico ni entrevistas de profundidad. Cocina de huerto propia en azotea, ingredientes 100% mexicanos, productores artesanales locales. Maria Ortega como chef-socia paralela, no esposa-que-apoya. La filosofia declarada de Adolfo es corta y dice todo: 'cocina de sabores sencillos pero contundentes basados en el producto'. No habla de tecnica. Habla de producto. Eso es una posicion. 50 Best Discovery + premio Marco Beteta multiples anos. Tipo de chef que no hace ruido y deja que el plato hable.",
+    prepared_at: "2026-05-22",
+  },
+
+  "gdl-12": {
+    id: "dgdl-12", restaurant_id: "gdl-12",
+    historia: "Cremería Atemajac de Brizuela empezó hace ~50 anios en el pueblo Atemajac de Brizuela, en la sierra del sur de Jalisco. La fundó Heliodoro León Ortega como cremería rural: leche, queso, jocoque, panela, conservas. Hace ~30 anios la familia abrió sucursal en Av. 8 de Julio 502, en el Centro de Guadalajara, para llegar a la ciudad sin perder la proveeduría del pueblo. Desde 2013 administra el hijo, Heliodoro León Castro. En algún momento la cremería mutó: la tienda de lácteos se convirtió en templo del lonche. Lonches gigantes (hasta ~55 cm) armados sobre plancha con 20+ ingredientes frescos diarios. Lonche Revolución signature (todas las carnes encima del queso porto), Jumbo Lonche. Fila constante a cualquier hora del día. Los lácteos del pueblo siguen llegando: panela doble crema, jocoque, crema, chongos, capulines, duraznos en conserva. El nombre 'Cremería' es el pasado familiar y el origen rural; el lonche es el presente urbano. Cero cobertura editorial profunda en prensa — la fama se construyó por boca-a-boca y filas.",
+    hooks: ["Una cremería del pueblo que mutó en templo del lonche en pleno Centro de Guadalajara.", "Lonches de medio metro. 20 ingredientes frescos diarios. Fila a cualquier hora.", "El nombre dice 'Cremería' por el pasado familiar. La gente viene por los lonches."],
+    datos: ["Av. 8 de Julio 502 (sucursal principal) / 480, Zona Centro, Guadalajara.", "Familia León. Fundador Heliodoro León Ortega (pueblo Atemajac de Brizuela, sierra sur de Jalisco). Hijo Heliodoro León Castro administra desde 2013.", "~50 anios en el pueblo, ~30 anios sucursal GDL (años 90).", "Lonche Revolución (todas las carnes + queso porto) y Jumbo Lonche signature. Hasta ~55 cm.", "20+ ingredientes diarios: chuleta, chorizo, salami, lomo, queso porto, milanesa de pollo, mayonesa, aguacate, tomate, cebolla morada, chile serrano.", "Lácteos artesanales mandados desde el pueblo: panela doble crema, jocoque, crema, chongos, capulines, duraznos en conserva."],
+    pedir: [{ name: "Lonche Revolución", why: "El signature. Todas las carnes encima del queso porto. La torta-tesis del lugar." }, { name: "Jumbo Lonche", why: "El doble de tamaño que un lonche normal. Si vienes en plan demostración, este." }, { name: "Panela doble crema con miel", why: "El producto del pueblo. Lo que sostiene la línea rural-urbana de la familia León." }, { name: "Jocoque seco", why: "Producto artesanal mandado desde Atemajac de Brizuela. Cremero original del lugar." }],
+    preguntas: [{ role: "A Heliodoro León Castro (administrador, hijo)", texto: "¿Cuándo dejó de ser cremería y empezó a ser lonchería? ¿Quién armó el primer lonche grande?" }, { role: "A Heliodoro hijo", texto: "Su papá empezó en el pueblo. ¿Sigue llegando la leche y el queso desde Atemajac de Brizuela hoy o ya cambiaron de proveedor?" }, { role: "Al cocinero de la plancha", texto: "¿Cuántos lonches armas en un día normal? ¿Y en un sábado?" }, { role: "A un cliente de la fila (joven)", texto: "¿Vienes por los lácteos o por el lonche? ¿Te queda la idea de que esto es una cremería?" }, { role: "A un cliente mayor", texto: "¿Cómo era esto hace 20 anios? ¿Igual de fila o cremería tranquila?" }],
+    candidatura_status: "si", candidatura_razon: "Score 8/10. Hilo familiar tres generaciones (padre fundador + hijo administrador + nietos potenciales). Mutación cremería rural → templo lonche urbano = tesis narrativa fuerte. Proveeduría rural a tienda urbana = línea geográfica visible. Fila constante = prueba social. NO es taquería pero el lonche tapatío como categoría merece lugar en la Vuelta 80 Tacos GDL.",
+    angulo: "Plano de la plancha humeando con 20 ingredientes a la vista al inicio (hook visual). Conversación con Heliodoro hijo sobre cuándo la cremería se convirtió en lonchería. Plano de manos armando el Lonche Revolución (cenital cerrado, sin voz Aniol). Zona de silencio narrativo: 15-20s de la fila avanzando + plancha + cliente recibiendo lonche. Revelación: el nombre dice 'Cremería' pero la mutación fue otra. Cierre: 'El pueblo manda la leche. La ciudad come, en cola, lo que el campo manda.'",
+    alertas: ["Verificar in-situ nombre exacto y rol de Heliodoro hijo (puede haber otros familiares en barra). Confirmar si nietos ya entran al negocio.", "Tamano del lonche varía según fuente (55 cm vs 'un metro'). Medir en sitio si es posible.", "Cuántos productos lácteos llegan directo del pueblo hoy vs cuántos son de proveedores externos = pregunta delicada, no presionar.", "NO es taquería — angulo es mutación rural-urbana + escala lonche + proveeduría del pueblo. No comparar con Karne Garibaldi ni Don Panela.", "Av. 8 de Julio 502 vs 480 — sucursales cercanas, confirmar cuál visita Aniol. Probablemente 502 (la principal según prensa).", "Riesgo voz: 'lonche del tamano de tu antebrazo' es cliché que ya circula. Aniol debe encontrar la imagen propia (¿brazo del cocinero como medida? ¿el pan como navaja?). Filtro mejor amigo activo."],
+    audio_url: "/audio/cremeria-atemajac-preparacion-mental.mp3",
+    audio_duration_s: 700,
+    emocion_target: "asombro",
+    frase_ancla: "Lo que era una cremería del pueblo de Atemajac mutó en templo del lonche en pleno Centro de Guadalajara. Lonches de medio metro. Filas que no paran.",
+    tesis_central: "Cremería Atemajac parece otra tienda de lácteos del Centro de Guadalajara. Pero esconde una historia rural-urbana de tres generaciones: la familia León viene del pueblo Atemajac de Brizuela, en la sierra del sur de Jalisco. Heliodoro León Ortega abrió la cremería en el pueblo hace 50 anios. Hace 30 abrió la sucursal en Av. 8 de Julio 502 para llegar a la ciudad. Y ocurrió la mutación: lo que era una tienda de quesos se convirtió en templo del lonche. Lonches de hasta medio metro armados con 20 ingredientes frescos diarios sobre una plancha que humea desde la manana. Lonche Revolución con todas las carnes encima del queso porto. Filas a la una de la tarde y filas a las ocho de la noche, en cualquier dia. Hoy administra el hijo, Heliodoro León Castro, desde hace 13 anios. El nombre 'Cremería' es el pasado familiar; el lonche es el presente urbano. El pueblo de Atemajac de Brizuela sigue mandando la leche, el queso, el jocoque. Y la ciudad come, en cola, lo que el campo manda.",
+    prepared_at: "2026-05-23",
+  },
+
+  "gdl-13": {
+    id: "dgdl-13", restaurant_id: "gdl-13",
+    historia: "Tortas Ahogadas Don José \"El de la Bicicleta\" empezó en 1960 cuando Don José tomó su bicicleta y salió a recorrer la Calzada Independencia chiflando para llamar a los trabajadores de las empresas a la hora del desayuno. 66 años de tradición. Don José no inventó la torta ahogada — ese mérito es de Luis de la Torre \"El Güero\" en el Jardín de San Francisco hacia 1920-1930, y de su hijo Ignacio Saldaña \"El Güerito\" que formalizó el primer local en 1959 en Madero esquina Puerto, en San Juan de Dios. Don José trabajó con El Güerito, aprendió el oficio, y luego tomó una decisión que cambió la torta ahogada para siempre: sacarla del local. Para transportarla en bicicleta tuvo que envolverla. Primero en papel estraza. Después, para más comodidad de los clientes, en bolsa de plástico. Esa bolsa convirtió la torta ahogada en street food móvil — comible de pie, en cualquier esquina, con los dedos llenos de salsa. La forma en que se come torta ahogada en Guadalajara HOY (en bolsa) la inventó Don José en su bicicleta. Cuando Enrique Alfaro fue alcalde de Guadalajara y lanzó el programa 'Banquetas Libres' para retirar vendedores ambulantes, Don José abrió local fijo en Mexicaltzingo (Nicolás Régules 107, junto al mercado) y la bicicleta quedó colgada dentro como símbolo. Hoy 4 sucursales en GDL. La carne signature es el cachete. Dos salsas: tomate crudo de selección + chile de Yahualica. Bolillo SALADO (único de GDL, no aceptable cambiar). Tortas servidas en bolsa de plástico hasta hoy. Visitantes notables documentados: Adán Augusto López, Eva Longoria, Mick Jagger, La Arrolladora Banda El Limón. Frase oficial: 'Venir a Guadalajara y no comer una torta ahogada, es no haber venido'.",
+    hooks: ["Don José no inventó la torta ahogada. Inventó la torta ahogada en bolsa. Y eso cambió todo.", "1960. Un señor con bicicleta. Recorría las calles de Guadalajara chiflando para llamar a los trabajadores.", "La forma en que comes una torta ahogada en bolsa la inventó él. Por una razón simple: tenía que caber en una bici.", "66 años. Empezó a los doce. La bicicleta sigue colgada en el local."],
+    datos: ["Fundada 1960 por Don José. 66 anios de tradición.", "Sucursal histórica: Nicolás Régules 107 esq. Mexicaltzingo (junto al mercado de Mexicaltzingo).", "4 sucursales en total: Nicolás Régules 107 + Mexicaltzingo 27 + Gante 150 (Las Conchas) + Av. 5 de Febrero 180 (San Carlos). Tel 33-3596-1614.", "Don José aprendió con Ignacio Saldaña 'El Güerito' (hijo de Luis de la Torre 'El Güero', creador histórico de la torta ahogada en 1920-1930).", "La torta en bolsa de plástico fue innovación de Don José para vender en bicicleta — convirtió la torta en street food móvil.", "Precio torta 2025: $65 MXN. Tacos dorados $10. Tacos carne $35. Bebidas $25. Flan $40. Combos $100-400.", "Dos salsas: tomate crudo + chile de Yahualica. Bolillo SALADO (único de GDL).", "Cuando Alfaro fue alcalde abrió local fijo (Banquetas Libres) pero conservó la bicicleta colgada como símbolo.", "Visitas documentadas: Adán Augusto López (2023), Eva Longoria, Mick Jagger, La Arrolladora Banda El Limón."],
+    pedir: [{ name: "Torta ahogada de cachete", why: "La signature. La carne estrella del lugar. Si solo pides una, es esta." }, { name: "Torta ahogada surtida (carne + buche + cachete)", why: "Para entender el rango de la casa. Lo que pediría un local de toda la vida." }, { name: "Pídela ahogada en bolsa", why: "Es la forma que inventó Don José. NO en plato. La bolsa es parte del rito y de la tesis del lugar." }, { name: "Salsa de Yahualica al lado", why: "La picante de verdad. Probar antes de bañar la torta entera." }, { name: "Taco dorado de frijol", why: "Acompañamiento clásico, $10 MXN." }],
+    preguntas: [{ role: "A Don José (si todavía atiende) o al hijo/nieto al mando", texto: "¿En qué momento decidió pasar de la bicicleta al local? ¿Le costó cambiar?" }, { role: "Al de la barra", texto: "¿Cuándo se inventó lo de la bolsa? ¿Quién la pidió primero, el cliente o ustedes?" }, { role: "Al hijo o sucesor", texto: "¿Su papá todavía pasa por aquí? ¿Sigue agarrando la bicicleta para algo?" }, { role: "Al de la salsa", texto: "El chile de Yahualica — ¿por qué ese y no otro? ¿Quién lo eligió primero?" }, { role: "A un cliente con torta en bolsa, parado en la banqueta", texto: "¿Por qué no se la lleva a la mesa? ¿Cuál es la diferencia?" }],
+    candidatura_status: "si", candidatura_razon: "Score 9/10. Tesis narrativa fuerte: NO inventó la torta ahogada, inventó la torta ahogada en bolsa (la forma de comerla hoy). Hilo de oficio (aprendió con El Güerito) + innovación callejera (bicicleta como vehículo + bolsa como envase) + sucesión generacional + bicicleta colgada como objeto narrativo perfecto. Visitas notables (Mick Jagger, Eva Longoria, Adán Augusto) prueban relevancia cultural. Filtro mejor amigo: SÍ se la mando a mi mejor amigo cuando venga a GDL. NO confundir con Cantina La Fuente (gdl-06, otra bicicleta colgada, otra historia, otro lugar).",
+    angulo: "Hook visual: bicicleta colgada en local + plano de la bolsa de plástico con la torta dentro + salsa goteando por la bolsa transparente. Conversación con el hijo o sucesor sobre 'cuándo decidió papá pasar de la bicicleta al local'. Plano de manos: el armado de la torta — bolillo salado + carne de cachete + baño en salsa de tomate crudo + chile de Yahualica al lado. Zona de silencio narrativo (s75-95): cliente parado en la banqueta comiendo la torta en bolsa, salsa cayendo, gente pasando. La revelación: Don José no inventó la torta. Inventó la forma de comerla. Cierre con la bicicleta y la frase oficial: 'Venir a Guadalajara y no comer una torta ahogada, es no haber venido'.",
+    alertas: ["NO confundir con Cantina La Fuente (gdl-06, también tiene bicicleta colgada pero es otra historia, otro lugar, otra época). Esto es DIFERENTE. NO mezclar.", "Confirmar in-situ si Don José todavía vive y está activo. Las fuentes prensa 2023-2025 hablan en presente — pero verificar al llegar. Si ya no está, el angulo es el hijo/nieto manteniendo el oficio.", "Mexicaltzingo (Nicolás Régules 107) es la sucursal histórica. Las otras 3 son posteriores. SI es posible, ir a Mexicaltzingo para que la historia tenga peso geográfico.", "La torta ahogada se come en BOLSA, no en plato — esa es la tradición que Don José inventó. Pedirla en bolsa, NO en plato (aunque haya opción de plato).", "Bolillo SALADO obligatorio — si no lo tiene salado, no es la verdadera torta ahogada tapatía. Verificar in-situ.", "Origen completo de la torta ahogada: Luis de la Torre 'El Güero' (~1920-1930) → Ignacio Saldaña 'El Güerito' (1959, San Juan de Dios) → Don José aprendiz, luego en bicicleta (1960). Don José es ESLABÓN, no inicio. Reconocer eso en el reel evita reclamos de otros tortavendedores históricos.", "Riesgo voz: NO repetir clichés tipo 'la mejor torta ahogada de GDL' — el angulo es histórico-narrativo, no rating. Filtro mejor amigo activo."],
+    audio_url: "/audio/tortas-ahogadas-don-jose-bicicleta-preparacion-mental.mp3",
+    audio_duration_s: 1403,
+    emocion_target: "orgullo",
+    frase_ancla: "Don José no inventó la torta ahogada. Inventó la torta ahogada en bolsa. Y eso cambió todo.",
+    tesis_central: "Tortas Ahogadas Don José \"El de la Bicicleta\" parece otra torteria histórica de Guadalajara. Pero esconde una invención silenciosa que cambió la torta ahogada para siempre. En 1960 Don José, que había aprendido el oficio con Ignacio Saldaña 'El Güerito' (heredero del creador histórico Luis de la Torre 'El Güero'), tomó la decisión que ningún otro había tomado: sacar la torta del local. Para llevarla en bicicleta por la Calzada Independencia tuvo que envolverla. Primero en papel estraza. Después en bolsa de plástico. Y esa bolsa cambió la categoría: convirtió la torta ahogada en street food móvil, comible de pie, en cualquier esquina, con los dedos llenos de salsa. La forma en que se come torta ahogada en Guadalajara HOY la inventó Don José en su bicicleta. 66 años después la bicicleta sigue colgada dentro del local de Mexicaltzingo como símbolo, pero el verdadero invento no fue la bicicleta — fue la bolsa. Don José no creó la torta. Creó la forma de comerla.",
+    prepared_at: "2026-05-23",
+  },
+
+  "gdl-09": {
+    id: "dgdl-09", restaurant_id: "gdl-09",
+    historia: "Birrieria David es un puesto de birria de ternera dentro del Mercado Alcalde, en el centro historico de Guadalajara. Mas de 50 anos de tradicion. Padre e hijo, ambos llamados David, llevan el negocio. El puesto empezo en la calle, en el exterior de lo que hoy es el Mercado Alcalde, aproximadamente 20 anos antes de que el edificio del mercado se construyera (1985). Cuando el mercado se levanto, el puesto quedo integrado dentro. Cero presencia mediatica documentada: sin entrevistas en prensa, sin TripAdvisor reclamado, Instagram inactivo, excluidos del top 5 de El Informador 2025 que si lista a Don Jose, El Chololo y Las 9 Esquinas. A pesar de eso tienen 210 resenas Google con 4.6/5 sin haberlas pedido. El metodo es tatemado tradicional en horno de piedra - la carne sale crujiente exterior y el caldo queda limpio, atipico en birria de mercado donde el caldo suele ser turbio. 4 cortes disponibles: carnaza, chamorro, costilla, espaldilla. Machito tambien (tripa enrollada con higado, descrito 'el mas suave probado'). Tortillas y salsa ilimitadas sin costo extra. Sin agua de frutas - los locales compran jugo de pina en los puestos vecinos del mercado. Los locales hacen fila aqui mientras los 2 puestos vecinos de birria del mismo pasillo tienen mesas vacias.",
+    hooks: ["Los puestos de al lado estan vacios. La fila es aqui.", "Padre e hijo, ambos se llaman David. Cero entrevistas en 50 anos.", "Birria de TERNERA, no de chivo, en pleno Jalisco. Casi una herejia."],
+    datos: ["Mercado Alcalde, Joaquin Angulo 188 E, Col. Centro Barranquitas, GDL.", "L-V 10-15h. S-D 10-14h. Llegar a las 10 evita fila larga.", "Padre e hijo ambos David. ~1965 inicio callejero. Mercado se edifico 1985.", "Birria de ternera tatemada. 4 cortes: carnaza, chamorro, costilla, espaldilla.", "210 resenas Google 4.6/5. Excluido del top 5 El Informador 2025. Cero presencia mediatica."],
+    pedir: [{ name: "Birria de ternera tatemada", why: "Lo signature. Apartarse del canon de chivo es la tesis del lugar." }, { name: "Machito (tripa con higado)", why: "Descrito como 'el mas suave probado'." }, { name: "Caldo aparte para evaluar limpieza", why: "Caldo limpio es atipico en birria de mercado." }],
+    preguntas: [{ role: "A David padre o hijo", texto: "¿Por que ternera y no chivo? ¿Quien lo decidio primero?" }, { role: "A David", texto: "Los puestos de al lado estan vacios. ¿Por que la gente viene aqui?" }, { role: "A David", texto: "Su papa empezo en la calle antes del mercado. ¿Como era esto antes de 1985?" }, { role: "A David", texto: "Veo que no salen en prensa. Cuando les ofrecen entrevistas, ¿que dicen?" }],
+    candidatura_status: "si", candidatura_razon: "Score 9/10. Hilo dual (padre+hijo ambos David). Birria de ternera vs canon chivo = diferenciador tecnico raro. Cero presencia mediatica = exclusiva narrativa. Contraste perfecto vs Don Jose (visibilidad) y vs El Paisano (chivo canonico 5 generaciones).",
+    angulo: "Plano de contraste: dos puestos vecinos vacios vs fila David. Sin palabras. La imagen lo dice. Conversacion 'son los dos David'. Plano del horno tatemado abriendose. Cucharon de caldo claro. Cierre: 'El Informador hizo el top 5 de birrierias de Guadalajara este ano. David no esta. Aqui esta la fila.'",
+    alertas: ["Hay direccion alternativa registrada en Yelp (Herrera y Cairo 413) sin verificar. Puede ser sucursal o homonimo.", "Nombre completo de David padre y hijo no documentado. Extraer en sitio.", "Cero citas suyas en medios - cualquier respuesta en camara es PRIMERA documentada. Tratar como exclusiva.", "Si dicen 'no foto/no video' respetar. Reel se sostiene con narracion + zona silencio narrativo + plano de fila."],
+    audio_url: "/audio/birrieria-david-preparacion-mental.mp3",
+    audio_duration_s: 960,
+    emocion_target: "admiracion",
+    frase_ancla: "Los puestos de al lado estan vacios. La fila es aqui.",
+    tesis_central: "Birrieria David parece un puesto mas del Mercado Alcalde. Pero es el unico que tiene fila. Padre e hijo, ambos David, hacen birria de TERNERA en lugar de chivo, contrariando el canon jalisciense. Metodo tatemado tradicional, caldo limpio (raro en birria de mercado), 50+ anos. Cero presencia mediatica - sin entrevistas, sin Instagram activo, sin TripAdvisor reclamado, excluidos del top 5 de El Informador 2025. Aun asi tienen 210 resenas Google con 4.6/5 sin haberlas pedido y la fila es aqui mientras los puestos vecinos estan vacios. El oficio que no quiso ser famoso y lleva siendo elegido durante medio siglo sin pedir nada a cambio.",
+    prepared_at: "2026-05-22",
+  },
+
   "gdl-08": {
     id: "dgdl-08", restaurant_id: "gdl-08",
     historia: "Xokol abrio en 2018 en barrio Polanco de Guadalajara como antojeria de maiz criollo. Lo fundaron Xrysw Ruelas Diaz (Guadalajara, considero estudiar medicina antes de la cocina) y Oscar Segundo (Santa Maria Citendeje, Estado de Mexico, comunidad Mazahua). Se conocieron en la escuela de cocina; ambos se formaron en tecnicas francesas y japonesas hasta que se preguntaron por que entregaban su atencion a lo extranjero antes de conocer sus propias raices. La familia de Oscar sigue cultivando maiz en el patio de su casa en Santa Maria Citendeje. Cuando Xrysw visito por primera vez vio a la madre de Oscar cocinar al fuego de lena entre arboles frutales. Eso cambio el proyecto. La mision original fue democratica: demostrar que una buena tortilla de maiz criollo deberia estar al alcance de cualquier persona, no solo de comensales de restaurante de lujo. Resistencia inicial: clientes guadalajarenses rechazaban las tortillas azules creyendo que el color significaba menor calidad. En 2024 figuraron en The Best Chef Awards (Dubai). Hoy operan en Santa Tere (Herrera y Cairo 1375) con molino propio Nejayote (1392) a metros.",
@@ -2441,11 +3529,354 @@ export const dossiers: Record<string, Dossier> = {
     candidatura_status: "si", candidatura_razon: "Score historia 9/10. Pareja real, origen Mazahua verificable, nixtamal propio, cocina de humo, vinculo directo con la milpa familiar. Filtro mejor amigo cumplido. Encaja con tesis HERENCIA (memoria + dignidad oficio + masa = lengua heredada).",
     angulo: "Angulo B 'La milpa dentro del restaurante'. Plano de masa amasandose en Nejayote. Plano de Oscar trabajando en cocina de humo. Conversacion con Xrysw narrando su primera visita al patio Mazahua. Frase nuclear: 'El maiz azul que nadie queria comer en Guadalajara es el mismo que la mama de Oscar lleva generaciones sembrando.' Zona de silencio narrativo: 15-20s ambiente del molino sin voz.",
     alertas: ["Confirmar sede exacta antes de rodar: 1375 (restaurante) vs 1392 (molino Nejayote). Misma calle.", "Menu cambia semanal/mensualmente. Ir dispuesto a narrar lo que haya, no lo que aparece en internet.", "Pareja socios. No asumir que ambos estaran disponibles. Coordinar con anticipacion.", "NO usar 'gourmet', 'alta cocina', 'fusion', 'reinterpretacion contemporanea'. Ellos se llaman antojeria.", "Verificar nivel Michelin exacto antes de hablar de ello en camara."],
-    audio_url: null,
-    audio_duration_s: null,
+    audio_url: "/audio/xokol-preparacion-mental.mp3",
+    audio_duration_s: 611,
     emocion_target: "respeto con rabo de melancolia dulce",
     frase_ancla: "El maiz azul que nadie queria comer en Guadalajara es el mismo que la mama de Oscar lleva generaciones sembrando.",
     tesis_central: "Xokol parece una antojeria de barrio, y en algun sentido lo es. Pero es el lugar donde Oscar Segundo cocina exactamente lo que su madre hace en el patio de su casa en el Estado de Mexico, solo que ahora lo hacen juntos en Guadalajara, con maiz que la propia familia de Oscar cultiva, sin intermediarios, cosechado una vez al ano. La razon por la que esto importa no es tecnica: es que hay dos personas que tomaron la decision, en pleno siglo XXI, de no separar el restaurante de la milpa, la ciudad del campo, la pareja de la tradicion familiar. La masa que se amasa en Xokol viene de la misma tierra que la que amaso la madre de Oscar. Xrysw lo vio por primera vez en ese patio y entendio algo que no esta en ningun libro de cocina. Eso es lo que se sirve aqui: no un homenaje al maiz nativo, sino el maiz nativo mismo, sin mediacion. En un momento donde muchos restaurantes rescatan ingredientes ancestrales desde una distancia estetica, Xokol los cocina desde adentro, porque uno de los dos chefs es de donde vienen esos ingredientes. Eso no es cuento. Es la diferencia.",
-    prepared_at: "2026-05-19",
+    prepared_at: "2026-05-22",
+  },
+  "gdl-10": {
+    id: "dgdl-10", restaurant_id: "gdl-10",
+    historia: "Carlos Espinosa nacio en Guadalajara en 1985. Padres uno de Ciudad de Mexico y otro de Oaxaca: la herencia bicultural esta en su sangre, no es marketing. Trabajo en hoteles grandes (Camino Real, Hilton GDL), italiano fine dining y charcuteria artesanal en Buceras Nayarit. Despues se fue a hacer practicas a Hacienda Benazuza, en Sanlucar la Mayor (Sevilla), el restaurante del grupo elBullihotels y legado directo de El Bulli de Ferran Adria. Cocino en Tenerife (2011, 2014), en el festival Mistura de Lima (2013), fue semifinalista region occidente en Chef of the Year Mexico 2015, y en 2016 viajo a Guatemala como chef invitado a la residencia del Embajador de Mexico. Volvio a Guadalajara. Abrio Ayuuk (palabra mixe, lengua originaria oaxaquena) en el barrio tradicional de Santa Tere. Funciono. Se mudo a una casa historica de Colonia Americana y la llamo Tikuun: palabra maya que significa reparar / transformar. Cocina menu degustacion de 8 tiempos rotativo cada 2 meses, mexicana contemporanea de raiz con toques asiaticos puntuales. Su filosofia declarada: cocina mexicana en evolucion, segun viajes, aprendizajes, tecnicas nuevas, recuerdos e ideas. Pertenece a La Chaine des Rotisseurs Guadalajara.",
+    hooks: [
+      "Un cocinero que paso por el legado de El Bulli en Sevilla, cocinando lo que su mama le hacia en Guadalajara.",
+      "Aprendio la vanguardia en Sanlucar la Mayor y volvio a la Americana a cocinar la memoria de sus padres.",
+      "El proyecto anterior se llamaba Ayuuk (mixe). Este se llama Tikuun (maya): reparar. Dos nombres en lenguas que Mexico olvido.",
+      "Padres uno de CDMX y otro de Oaxaca. La cocina importante no la aprendio en Benazuza. La aprendio antes."
+    ],
+    datos: [
+      "Carlos Espinosa, nacido en Guadalajara 1985. Padres CDMX + Oaxaca.",
+      "Practicas en Hacienda Benazuza (Sanlucar la Mayor, Sevilla), legado directo de El Bulli.",
+      "Tenerife 2011 y 2014. Mistura Lima 2013. Semifinalista Chef of the Year Mexico 2015 region occidente. Guatemala 2016 (cena Embajador de Mexico).",
+      "Proyecto previo: Ayuuk en Santa Tere (palabra mixe). Tikuun (palabra maya = reparar / transformar) abrio 2016 en casa historica de Colonia Americana.",
+      "Menu degustacion 8 tiempos, rotativo cada 2 meses. 4.7/5 OpenTable, 4.6/5 Tripadvisor (#63 de 1236 GDL).",
+      "Direccion: Calle Emeterio Robles Gil 50, Colonia Americana. Reservas: 33 3825 0117."
+    ],
+    pedir: [
+      { name: "Menu degustacion 8 tiempos", why: "El formato signature. El menu cambia cada 2 meses, por eso solo aqui se entiende donde esta el chef ahora mismo." },
+      { name: "Pulpo (si esta en menu)", why: "Plato signature recurrente. Las resenas lo elogian por la textura y el balance." },
+      { name: "Duck flat iron beef (si esta en menu)", why: "Otro signature recurrente en varios menus. Corte poco visto en cocina mexicana." },
+      { name: "Postre de chocolate", why: "Mencionado en multiples resenas como el cierre del menu. Test final del chef." }
+    ],
+    preguntas: [
+      { role: "A Carlos", texto: "El lugar se llama Reparar en maya. Que quieres reparar exactamente?" },
+      { role: "A Carlos", texto: "Estuviste en Benazuza, el legado directo de El Bulli. Que te trajiste de Sanlucar y que decidiste dejar alli?" },
+      { role: "A Carlos", texto: "Tu padre y tu madre, uno de CDMX y otro de Oaxaca. Que plato concreto de la casa sigue vivo en la cocina de Tikuun ahora mismo?" },
+      { role: "A Carlos", texto: "Ayuuk era mixe. Tikuun es maya. Por que las dos veces escogiste palabras de lenguas originarias?" },
+      { role: "A Carlos", texto: "Esta casa antigua, como la encontraste, que vio el cuerpo cuando entraste por primera vez?" }
+    ],
+    candidatura_status: "si",
+    candidatura_razon: "Score historia alto. El nombre del lugar ES la tesis (reparar / transformar). Espejo invertido potente con Aniol (mexicano que fue a Espana vs espanol que vino a Mexico). Doble lengua originaria (mixe + maya) en proyectos consecutivos. Filtro mejor amigo cumplido: si un tapatio con paladar formado lleva a su mejor amigo de fuera a entender por que Guadalajara importa en gastronomia mexicana ahora, este es el sitio.",
+    angulo: "El chef que aprendio en el laboratorio donde se invento el mundo (Hacienda Benazuza, legado El Bulli) y volvio a Guadalajara a cocinar lo que su mama le hacia cuando tenia 8 anos. El lugar se llama Reparar. Switch del reel en s30 con pregunta directa: que quieres reparar exactamente. Si responde personal hay GN humano. Si responde cliche, plan B con metafora de la casa. Estructura: hook paradoja (s0-5), GN visual plato (s5-15), setup casa + nombre maya (s15-30), pregunta (s30-45), respuesta + reaccion Aniol (s45-75), zona silencio narrativo con plano manos (s75-95), cierre + anchor de save (s95-105). Emocion target: admiracion con subcapa de ternura.",
+    alertas: [
+      "Reservar con anticipacion: lugar pequeno, alta demanda. Telefono 33 3825 0117.",
+      "Preguntar al reservar si Carlos estara en cocina ese dia.",
+      "Menu rota cada 2 meses. NO mencionar platos por nombre antes de confirmar in situ.",
+      "NO usar 'experiencia culinaria', 'destino gastronomico', 'gourmet', 'el genio detras de Tikuun'. Decir Carlos a secas.",
+      "NO comparar con Pujol o Quintonil. Es otra cosa, otra ciudad, otra escala.",
+      "Precio del degustacion: confirmar in situ (no publico)."
+    ],
+    audio_url: "/audio/tikuun-preparacion-mental.mp3",
+    audio_duration_s: 796,
+    emocion_target: "admiracion",
+    frase_ancla: "Aprendio la vanguardia para volver a la memoria.",
+    tesis_central: "Tikuun parece otro restaurante de cocina mexicana contemporanea en la Americana, made for cool. Pero es un chef nacido en Guadalajara que se fue a hacer practicas a Hacienda Benazuza, el legado directo de El Bulli en Sevilla, y volvio a su ciudad a cocinar la memoria de sus padres (CDMX y Oaxaca). El nombre del lugar ya es la tesis: TIKUUN es palabra maya que significa reparar, transformar. Su proyecto anterior se llamaba AYUUK, palabra mixe, lengua originaria oaxaquena de su padre. Dos nombres en lenguas originarias mexicanas. Aprendio toda la vanguardia europea y eligio la memoria. Hay espejo invertido con Aniol: Carlos es el mexicano que fue a Espana y volvio a la memoria materna. Aniol es el espanol que vino a Mexico a contar lo que su Iaia Encarna nunca cocino. Se encuentran en una casa que se llama Reparar.",
+    prepared_at: "2026-05-23",
+  },
+  "az-01": {
+    id: "daz-01", restaurant_id: "az-01",
+    historia: null,
+    hooks: [
+      "En las escuelas de cocina de México no enseñaban cocina mexicana. Le preguntó a su maestro por qué. Le dijo: eso se aprende con una tía, con una abuela. Ahí empezó todo.",
+      "Cuarenta años después, Ricardo Muñoz Zurita escribió el diccionario más completo de la gastronomía mexicana. No porque alguien se lo pidiera. Porque nadie más lo iba a hacer.",
+    ],
+    datos: [
+      "Ubicado en el patio del Hotel Downtown Mexico, Isabel la Católica 30, Centro Histórico, CDMX.",
+      "Chef Ricardo Muñoz Zurita. Autor del Diccionario Enciclopédico de la Gastronomía Mexicana.",
+      "Cuatro décadas de investigación de campo por todas las regiones de México.",
+    ],
+    pedir: [
+      { name: "Mole negro", why: "La complejidad de México en un solo plato. Verificar disponibilidad in situ." },
+      { name: "Tamales regionales", why: "Cada tamale es un archivo vivo de una técnica que casi nadie más documenta." },
+      { name: "Plato del día de mercado", why: "Lo que Ricardo cocina ese día revela dónde tiene la atención puesta ahora." },
+    ],
+    preguntas: [
+      { role: "A Ricardo", texto: "Llevas cuarenta años documentando lo que otros olvidaron documentar. ¿Qué receta te duele más haber llegado tarde?" },
+      { role: "A Ricardo", texto: "Tu maestro te dijo que la cocina mexicana se aprende con una abuela. ¿Qué abuela te enseñó a ti?" },
+      { role: "A Ricardo", texto: "El diccionario tiene miles de entradas. ¿Cuál es la que más te costó escribir?" },
+    ],
+    candidatura_status: "si",
+    candidatura_razon: "Ricardo Muñoz Zurita es el hombre que sistematizó lo que México estaba perdiendo. La tesis de la abuela vs la escuela conecta directamente con la narrativa HERENCIA de Aniol. Filtro mejor amigo cumplido: si alguien quiere entender por qué la cocina mexicana es patrimonio cultural antes de serlo legalmente, este es el sitio.",
+    angulo: "Hook paradoja: en las escuelas de cocina de México no enseñaban cocina mexicana. Setup del chef-archivista: cuatro décadas de campo, el diccionario que nadie más iba a escribir. Zona silencio narrativo con plano del libro sobre la mesa. Pregunta nuclear: qué receta te duele haber llegado tarde. Estructura propuesta: hook (s0-5), paradoja escuela (s5-20), diccionario como acto de amor no de academia (s20-40), pregunta (s40-55), respuesta + reacción Aniol (s55-85), cierre con frase ancla (s85-100).",
+    alertas: [
+      "Confirmar horarios y disponibilidad del chef antes de visitar.",
+      "NO usar 'alta cocina' ni 'gourmet'. Es cocina tradicional documentada con rigor académico.",
+      "El contexto del patio del hotel puede distraer visualmente. Enfocar en Ricardo y el plato.",
+    ],
+    tesis_central: "En México dijeron durante décadas que la cocina tradicional se aprendía con una abuela, no en una escuela. Este hombre pasó cuarenta años demostrando que estaban equivocados.",
+    frase_ancla: "En las escuelas de cocina de México no enseñaban cocina mexicana. Le pregunté a mi maestro por qué. Me dijo: eso se aprende con una tía, con una abuela. Ahí empezó todo.",
+    emocion_target: "orgullo",
+    audio_url: "/audio/azul-historico-preparacion-mental.mp3",
+    audio_duration_s: 550,
+    prepared_at: "2026-05-29",
+  },
+  "az-02": {
+    id: "daz-02", restaurant_id: "az-02",
+    historia: null,
+    hooks: [
+      "Llevaba diez años queriendo abrir este restaurante. Porque nadie le iba a hacer un lugar a la comida de esta ciudad si no lo hacía él.",
+      "La enchilada de mercado, la quesadilla sin queso, el tamal capitalino. La cocina que desaparece de las mesas mientras todos miran para otro lado.",
+    ],
+    datos: [
+      "Venustiano Carranza 57, Centro, CDMX.",
+      "Chef Ricardo Muñoz Zurita. Propuesta centrada en la cocina tradicional de la Ciudad de México.",
+      "Antojería: enchiladas, quesadillas, chalupas, tamales capitalinos. La versión urbana y popular de la investigación de Azul Histórico.",
+    ],
+    pedir: [
+      { name: "Enchiladas verdes o rojas", why: "La enchilada capitalina tiene su propia lógica. Aquí la hacen como se hacía antes de que los restaurantes la uniformizaran." },
+      { name: "Quesadillas sin queso", why: "La paradoja que define la cocina de la CDMX. Aquí no hay que explicarla." },
+      { name: "Tamales capitalinos", why: "Distintos a los del resto del país. Aquí es donde sobreviven." },
+    ],
+    preguntas: [
+      { role: "A Ricardo", texto: "La cocina de la Ciudad de México está desapareciendo de las mesas. ¿Cuándo lo notaste por primera vez?" },
+      { role: "A Ricardo", texto: "De todo lo que has documentado en México, ¿qué es lo que más te duele que la propia ciudad haya olvidado de sí misma?" },
+      { role: "A Ricardo", texto: "Una enchilada de mercado vs una enchilada de restaurante. ¿Qué se pierde en el camino?" },
+    ],
+    candidatura_status: "si",
+    candidatura_razon: "La cocina de la Ciudad de México como objeto de rescate activo. La deuda personal del chef con su propia ciudad. Ángulo de memoria urbana que conecta con el perfil de audiencia CDMX de Aniol. Complementario a Azul Histórico: mismo chef, otra escala, otra urgencia.",
+    angulo: "Hook de ausencia: la comida que desaparece mientras todos miran para otro lado. Setup de la deuda personal del chef con su ciudad. Plano de la enchilada o la quesadilla sin queso como objeto narrativo. Pregunta nuclear: qué es lo que más te duele que la ciudad haya olvidado de sí misma. Emoción target: reconocimiento de lo propio antes de perderlo.",
+    alertas: [
+      "Confirmar horarios antes de visitar. Zona Centro puede tener variaciones de apertura.",
+      "NO comparar con Azul Histórico como 'la versión menor'. Son proyectos distintos con urgencias distintas.",
+      "La quesadilla sin queso es plato político en CDMX. Tratar con naturalidad, no con humor de turista.",
+    ],
+    tesis_central: "Azulísimo es la respuesta a una deuda personal: la cocina de la ciudad que lo acogió estaba desapareciendo de las mesas, y el único que podía hacer algo al respecto era él.",
+    frase_ancla: "Llevaba diez años queriendo abrir este restaurante. Porque nadie le iba a hacer un lugar a la comida de esta ciudad si no lo hacía él.",
+    emocion_target: "reconocimiento",
+    audio_url: "/audio/azulisimo-preparacion-mental.mp3",
+    audio_duration_s: 1161,
+    prepared_at: "2026-05-29",
+  },
+  "pu-09": {
+    id: "dpu-09", restaurant_id: "pu-09",
+    historia: "Doña Luz aprendió el oficio a los 14 años en el Mercado La Victoria. Lleva 37 años al frente de Semitas Beto, dentro de La Acocota, el mercado que en Puebla nadie llama por su nombre oficial. En 2026 su cemita entró a la Guía Michelin con un Bib Gourmand, pero el barrio cemitero es más viejo que cualquier guía: en 1852 ya había cemiteros registrados en esta misma calle. En el mismo mercado hay un horno de piso donde la semita se hornea directo sobre el ladrillo caliente, un oficio en extinción. Si ese horno es de Beto o de otro puesto [verificar en sitio]: eso define si son una historia o dos.",
+    hooks: ["Esta cemita de mercado tiene Bib Gourmand Michelin y cuesta 90 pesos.", "Todos te enseñan la cemita ya armada. Nadie te enseña de dónde sale el pan.", "Vine por la cemita Michelin y me quedé mirando un horno donde el pan se hornea directo sobre el suelo."],
+    datos: ["Abre diario de 9:30 a 17:30. Solo efectivo.", "Cemita clásica de 90 a 105 pesos según relleno; una alcanza para dos.", "Calle 16 Norte 401, dentro del mercado [verificar en sitio: otra nota da el 605]. Tel. 222 246 3469 [verificar vigencia]."],
+    pedir: [{ name: "Cemita de milanesa de cerdo", why: "La clásica que entró a la Guía Michelin 2026: quesillo, pápalo, aguacate y chipotle o rajas." }, { name: "Cemita de pata en escabeche", why: "La otra cara del puesto, con caldillo de chipotle." }, { name: "Cemita de piso recién salida", why: "El pan de agua con ajonjolí horneado sobre el suelo del horno de leña. Si tocas tanda, es otra cosa." }],
+    preguntas: [{ role: "A doña Luz", texto: "¿Cómo fue empezar a los 14 años en La Victoria, y qué cambió (o no) desde lo de Michelin?" }, { role: "A la señora del horno de piso", texto: "¿Desde cuándo está aquí el horno, quién le enseñó a cargarlo y a qué hora sale la primera tanda?" }],
+    candidatura_status: "si", candidatura_razon: "Doña Luz y sus 37 años de puesto están verificados por prensa; el horno de piso es el ángulo extra por confirmar en sitio.",
+    angulo: "El Michelin de 100 pesos escondido en un mercado de barrio. Pero la parte que nadie graba pasa antes: el horno de piso donde la semita se hornea sobre el ladrillo, un saber que ya existía en esta calle en 1852. La medalla no la pone Michelin: la pone el horno y quien lo carga.",
+    alertas: ["Nunca decir estrella Michelin: es Bib Gourmand, Guía Michelin México 2026.", "Confirmar si el horno de piso es de Semitas Beto o de otro puesto antes de conectarlos en cámara.", "Nombre y edad de la señora del horno sin confirmar; el apellido de Luz solo lo da un medio [verificar en sitio].", "Conflicto de numeración 16 Norte 401 vs 605 y combustible del horno (leña o diésel) [verificar en sitio]. Solo efectivo."],
+    audio_url: "/audio/mercado-la-acocota-preparacion-mental.mp3",
+    audio_duration_s: 875,
+    emocion_target: "orgullo",
+    frase_ancla: "La medalla no la pone Michelin: la pone el horno y quien lo carga.",
+    tesis_central: "La Guía Michelin acaba de premiar con Bib Gourmand 2026 una cemita de 90-105 pesos que se paga en efectivo en un puesto de mercado de barrio, no en un mantel largo. Pero la parte que nadie graba pasa antes: en el mismo mercado hay un horno de piso donde la semita se hornea directo sobre el ladrillo caliente, un oficio en extinción que ya existía en esta calle en 1852. La resolución: la medalla no la puso Michelin, la puso el saber que ya estaba en La Acocota, Luz con sus 37 años de puesto y el horno que sostiene el pan. El mercado no necesitaba la medalla; la medalla necesitaba al mercado.",
+    prepared_at: "2026-07-09",
+  },
+  "pu-10": {
+    id: "dpu-10", restaurant_id: "pu-10",
+    historia: "El Barrio del Carmen lleva cinco siglos de vida gastronómica: el convento carmelita se estableció en 1562 y el parque fue cementerio hasta el Porfiriato. Frente a ese parque hay un puesto que fríe molotes, el antojito que Puebla inventó, con registro escrito desde 1831 en El Cocinero Mexicano. El negocio formal en esa dirección aparece en prensa como Antojitos El Zaguán, pero la historia humana no está documentada en ningún lado: quién está detrás del comal, cuántos años lleva y de quién viene la receta [verificar en sitio]. Aquí no hay menú impreso ni letrero grande. Hay alguien haciendo lo mismo que hacía su madre o su abuela.",
+    hooks: ["Puebla presume el platillo más sofisticado de México. Pero lo que los poblanos comen todos los días no es eso.", "No vine a Puebla por los chiles en nogada. Vine por esto.", "Hay un antojito que Puebla inventó y que fuera de aquí casi nadie sabe nombrar."],
+    datos: ["Diario de 8:00 a 20:00, solo efectivo [horario de agregador, verificar en sitio].", "Av. 16 de Septiembre 1507, frente al Parque del Carmen; la referencia es el templo de ladrillo y talavera.", "El molote tiene registro escrito desde 1831; la palabra viene del náhuatl moloctic, bulto o paquete."],
+    pedir: [{ name: "Molote", why: "El antojito que Puebla inventó: masa nixtamalizada en torpedo, frito, con crema, lechuga y queso. Relleno estrella [verificar en sitio]." }, { name: "Pelona", why: "La otra especialidad del rumbo; fue la favorita de El Arturito en su visita." }],
+    preguntas: [{ role: "A la persona del comal", texto: "¿Cómo aprendió a hacerlos y de quién es la receta?" }, { role: "A la persona del comal", texto: "¿Cómo cuidan el aceite del frito? ¿Tienen una manera propia de hacerlo?" }],
+    candidatura_status: "watch", candidatura_razon: "El barrio y el antojito cargan cinco siglos de historia, pero la historia humana del puesto está entera por descubrir en sitio.",
+    angulo: "El chile en nogada es Puebla para el mundo; el molote es Puebla para los poblanos. Hay dos cocinas: la que sale en los libros y la que alimenta a quienes los escriben. El Carmen lleva generaciones friendo la segunda, sin menú, sin letrero y sin turistas.",
+    alertas: ["Confirmar si el puesto es Antojitos El Zaguán o un puesto informal adyacente frente al parque.", "El Arturito grabó ahí en abril 2025 y criticó el aceite como rehusado, con polémica en prensa poblana: preguntar por el frito con tacto, es punto de diferenciación.", "Precio real, relleno estrella y nombre de quien atiende sin documentar [verificar en sitio].", "El chileatole no está confirmado en ninguna fuente: no mencionarlo sin verlo en el puesto."],
+    audio_url: "/audio/molotes-el-carmen-preparacion-mental.mp3",
+    audio_duration_s: 710,
+    emocion_target: "orgullo",
+    frase_ancla: "El chile en nogada es para el mundo; el molote es para los poblanos.",
+    tesis_central: "Puebla presume al mundo su platillo más sofisticado, el chile en nogada, pero lo que los poblanos comen a diario frente al Parque del Carmen es un molote frito de masa nixtamalizada. La contradicción se resuelve entendiendo que hay dos cocinas: la que sale en los libros y la que alimenta a quienes los escriben. El molote, con registro escrito desde 1831 en El Cocinero Mexicano, es la Puebla que no necesita explicarse: el Carmen lleva generaciones friéndolo sin menú, sin letrero y sin turistas.",
+    prepared_at: "2026-07-09",
+  },
+  "pu-11": {
+    id: "dpu-11", restaurant_id: "pu-11",
+    historia: "En esta esquina se dora tripa desde 1994 [el año, confirmarlo de boca del protagonista]. Tres cosas en la plancha: tripa, suadero y longaniza. Cuatro noches por semana, de miércoles a sábado, solo efectivo. Quién es el Don Pablo del nombre no está confirmado: si es persona viva, si está presente o si es el padre de quien atiende [verificar en sitio]. Más de 30 años haciendo lo mismo, con horario de artesano y no de negocio.",
+    hooks: ["Vine a Puebla por el plato más barroco de México. Termino la noche frente a una tripa doradita.", "Este puesto solo abre cuatro noches a la semana desde 1994. Y no es por falta de clientes.", "En Puebla a la tripa delgada bien dorada le dicen machito. Yo no lo sabía."],
+    datos: ["Miércoles a sábado, 18:00 a 00:00. Solo efectivo.", "12 Poniente esquina 5 Norte. Unos 100 a 200 pesos por persona.", "Google 4.7 con 516 reseñas. Tel. 222 813 8604 [reconfirmar en sitio]."],
+    pedir: [{ name: "Taco de tripa doradita", why: "La especialidad de la casa desde 1994; pedirla bien dorada." }, { name: "Taco de suadero", why: "La segunda de las tres únicas cosas que hacen aquí." }, { name: "Taco de longaniza", why: "Completa el trío. No hay más menú, y eso es la tesis del lugar." }],
+    preguntas: [{ role: "Al taquero", texto: "¿Desde cuándo están en esta esquina y quién es el Don Pablo del nombre?" }, { role: "Al taquero", texto: "¿Por qué solo cuatro noches a la semana?" }],
+    candidatura_status: "watch", candidatura_razon: "El ángulo de la constancia es fuerte, pero quién es Don Pablo y el año 1994 hay que oírlos en sitio.",
+    angulo: "En la ciudad del plato más barroco de México, la maestría es lo contrario: una tripa dorándose lenta desde 1994, tres cosas en la plancha y horario de artesano. Quien abre solo cuando puede hacerlo bien no está limitando su negocio: está protegiendo su oficio.",
+    alertas: ["NO usar la historia de 1978, la glorieta Rey Coliman y los tres hijos con tres puestos: pertenece a un Tacos Don Pablo de Colima, no al de Puebla.", "Conflicto de colonia: RestaurantGuru e Instagram dicen La Libertad, el itinerario verificado dice Centro [verificar en sitio].", "Solo abre mié-sáb 18:00 a 00:00: el sábado noche es la única ventana del viaje.", "Solo efectivo. Nombre y rol de quien atiende [verificar en sitio]."],
+    audio_url: "/audio/tacos-don-pablo-preparacion-mental.mp3",
+    audio_duration_s: 1071,
+    emocion_target: "admiracion",
+    frase_ancla: "En la ciudad del plato más barroco, la perfección es una tripa doradita.",
+    tesis_central: "Puebla presume el plato más barroco de México: el chile en nogada, con sus 30 ingredientes y su temporada de peregrinación. Y sin embargo, el lugar al que los poblanos vuelven desde 1994 es lo contrario: una esquina donde una tripa se dora lenta sobre la plancha, solo efectivo, solo cuatro noches por semana. La resolución es que la maestría no está en la complejidad sino en la constancia: más de 30 años haciendo tres cosas (tripa, suadero, longaniza) con horario de artesano, no de negocio. Quien abre solo cuando puede hacerlo bien no está limitando su negocio: está protegiendo su oficio.",
+    prepared_at: "2026-07-09",
+  },
+  "pu-12": {
+    id: "dpu-12", restaurant_id: "pu-12",
+    historia: "Calpan no es un restaurante: es un pueblo campesino a la falda del Popocatépetl donde los frailes del convento franciscano plantaron en el siglo XVI unos de los primeros nogales de Castilla de América. Casi quinientos años después, la nogada sigue saliendo de esos huertos: nuez pelada a mano, pera lechera, manzana panochera y durazno criollo. Las que la sostienen son cocineras sin guía; la referencia es la cooperativa Guardianes de Calpan, de Hilda Cruz y su hija Jessica [protagonista definitiva y apellidos, verificar en sitio]. Además de cocinar, guardan la semilla criolla del chile poblano frente a la semilla de fábrica que la desplaza. El origen del platillo está disputado con el convento de Santa Mónica en Puebla capital; lo que Calpan tiene sin disputa son los nogales.",
+    hooks: ["El platillo más barroco de México no nació en un restaurante. Nació en un pueblo campesino a la falda del Popo.", "Vine pensando que el chile en nogada era un plato de temporada para la foto. Me fui entendiendo otra cosa.", "Aquí pelan la nuez de Castilla una por una, a mano. Cuando sabes por qué, el bocado cambia."],
+    datos: ["Temporada de julio a septiembre; el punto óptimo son las primeras semanas de agosto, cuando madura la nuez.", "Feria del Chile en Nogada: fines de semana de agosto en la explanada del palacio municipal, desde las 11:00 [edición y fechas 2026, verificar en sitio].", "El chile rondó 250 a 350 pesos en la feria 2025 [precio 2026, verificar en sitio]. Desde Puebla son unos 45 minutos pasando Cholula."],
+    pedir: [{ name: "Chile en nogada de Calpan", why: "Capeado y con la nogada tradicional sin crema ni harina: nuez de Castilla, leche, queso de cabra y un poco de jerez." }, { name: "Nieve de nogada", why: "El extra del pueblo; rondaba 50 pesos en 2025 [verificar en sitio]." }],
+    preguntas: [{ role: "A la cocinera", texto: "¿Por qué siguen pelando la nuez a mano si es tan lento?" }, { role: "A la cocinera", texto: "Si mañana ya no hubiera semilla criolla, ¿seguiría llamándose chile en nogada de Calpan?" }],
+    candidatura_status: "si", candidatura_razon: "La historia de las guardianas de la semilla criolla está documentada por prensa y fuentes oficiales; solo falta cerrar protagonista y permiso de cámara.",
+    angulo: "Los guardianes del sabor original. No es dónde está el mejor chile en nogada: es que en el pueblo donde tiene raíz hay cocineras peleando por que siga siendo de verdad, guardando la semilla criolla mientras una de fábrica la desplaza. El plato es el vehículo; la pelea por el ingrediente es la historia. Cada chile en nogada es alguien que decidió no rendirse.",
+    alertas: ["Hablar de huerto franciscano del siglo XVI sin fijar el año 1539: la fecha no cuadra con el inicio de obra del convento en 1548. El origen del platillo se trata como disputa (Santa Mónica vs Calpan), no como dato cerrado.", "El chile en nogada NO es patrimonio UNESCO propio: 2010 fue la inscripción de la cocina mexicana en general. El convento sí lo es (1994), y su interior no se visita: es telón de fondo, no protagonista.", "La cifra de dos chiles criollos por cada mil va sin fuente confirmada: no sacarla a cámara como dato duro.", "Protagonista y permiso de cámara pendientes vía Liz (la web de Guardianes bloqueó la verificación). La visita de domingo por la mañana puede caer antes del punto óptimo de la nuez."],
+    audio_url: "/audio/calpan-preparacion-mental.mp3",
+    audio_duration_s: 1345,
+    emocion_target: "orgullo",
+    frase_ancla: "Cada chile en nogada es alguien que decidió no rendirse.",
+    tesis_central: "El platillo más barroco y patriótico de México no nació en un palacio ni en un restaurante de mantel largo: nació en un pueblo campesino a la falda del Popocatépetl, donde los frailes del convento franciscano plantaron en el siglo XVI unos de los primeros nogales de Castilla de América. Casi quinientos años después, la nogada sigue saliendo de esos huertos: nuez de Castilla pelada a mano, pera lechera, manzana panochera y durazno criollo. Y quienes la defienden son cocineras sin guía Michelin que guardan la semilla criolla del chile poblano frente a la semilla de fábrica que la desplaza. Cada chile en nogada de Calpan no es un plato de temporada para la foto: es un acto de resistencia.",
+    prepared_at: "2026-07-09",
+  },
+  "pu-13": {
+    id: "dpu-13", restaurant_id: "pu-13",
+    historia: "El Cosme del Razo es el mercado municipal de San Pedro Cholula, a una cuadra del zócalo. Más de un millón de personas al año suben a la pirámide más grande del mundo y fotografían las 365 iglesias; casi nadie cruza la cuadra que las separa del mercado. Dentro, la cecina natural se orea a la vista, sin refrigeración, con una técnica anterior a cualquier turismo. Quién es la marchanta con más años en el oficio de la cecina, su puesto exacto y su historia [verificar en sitio].",
+    hooks: ["Fui a Cholula a ver la pirámide más grande del mundo. Me quedé en el mercado de una cuadra más allá.", "La Cholula más antigua no está en la piedra. Está en unas manos que orean carne cada mañana.", "Un millón de turistas al año en este pueblo. Casi nadie cruza esta cuadra."],
+    datos: ["Calle 5 Norte 109, Centro de San Pedro Cholula, a una cuadra del zócalo; también se entra por la Av. 2 Poniente.", "Abre diario de 8:00 a 20:00; mejor por la mañana, cuando se orea la carne [hora exacta del oreado, verificar en sitio].", "A unos 20 minutos de Puebla centro; funciona como parada de camino a Calpan."],
+    pedir: [{ name: "Cecina natural", why: "La especialidad verificada del mercado: oreada a la vista, sin refrigeración." }, { name: "Guisados de fonda", why: "La otra palanca del Cosme del Razo; elegir el puesto con más locales sentados." }],
+    preguntas: [{ role: "A la cecinera", texto: "¿A qué hora orea la carne y quién le enseñó a hacerlo así?" }, { role: "A la cecinera", texto: "¿Cuántos años lleva en este puesto y qué cambió con tanto turista en el zócalo?" }],
+    candidatura_status: "watch", candidatura_razon: "La cecina oreada es un ángulo real y verificado, pero la cecinera y su historia están enteras por descubrir en sitio.",
+    angulo: "La ciudad viva más antigua de América no guarda su tradición más viva en un monumento, sino en el oficio de una marchanta que corta y orea la carne cada mañana. La Cholula milenaria no está en la pirámide: está en el mercado, en las manos.",
+    alertas: ["El ángulo real es la cecina, no la nogada: el dossier previo apostaba por un puesto de chiles en nogada que ninguna fuente documenta. Confirmar en sitio si algún puesto sirve nogada de temporada.", "Cholula son dos municipios (San Pedro y San Andrés): el mercado es el Cosme del Razo, en San Pedro.", "Nombre y años de la cecinera, puesto exacto y precios [verificar en sitio].", "Visita de paso el domingo por la mañana camino a Calpan: ir temprano para alcanzar el oreado."],
+    audio_url: "/audio/mercado-cholula-preparacion-mental.mp3",
+    audio_duration_s: 884,
+    emocion_target: "reverencia",
+    frase_ancla: "La Cholula más antigua no está en la pirámide: está en el mercado.",
+    tesis_central: "Cholula es el Pueblo Mágico más visitado de Puebla: más de un millón de personas al año suben a la pirámide más grande del mundo y fotografían sus 365 iglesias. Casi nadie cruza la cuadra que separa el zócalo del Cosme del Razo, donde la cecina natural se orea a la vista, sin refrigeración, con una técnica anterior a cualquier turismo. La contradicción se resuelve ahí dentro: la ciudad viva más antigua de América no guarda su tradición más viva en un monumento, sino en el oficio de una marchanta que corta y orea la carne cada mañana. La Cholula milenaria no está en la piedra: está en las manos.",
+    prepared_at: "2026-07-09",
+  },
+  "pu-14": {
+    id: "dpu-14", restaurant_id: "pu-14",
+    historia: "Gustavo Macuitl crecio en San Jeronimo Tecuanipan con sus abuelos campesinos; su abuela era la cocinera del pueblo. Paso por cocinas finas de Puebla y, en sus propias palabras, ahi solo cumplia. La pandemia lo mando de vuelta y junto a su socia Leticia Paleta empezo vendiendo tortillas y memelas en una caseta. Hoy Macuitl es granja, molino y comedor en un mismo sitio: la familia cultiva siete variedades de maiz nativo y produce cerca del 85% de lo que sirve [verificar en sitio]. Food & Wine lo nombro Best New Chef 2023. Dicen que en su dia libre se va con todo su equipo a cocinar con su mama al pueblo [verificar en sitio].",
+    hooks: ["Un chef premiado por Food & Wine que en su dia libre no descansa: se va a cocinar con su mama al pueblo.", "Paso por las cocinas finas y no sintio nada. Lo encontro todo en una caseta de tortillas.", "Crei que ya entendia el maiz en Mexico. Hasta que vi salir las tortillas azules y coloradas de este comal."],
+    datos: ["Calle El Carmen 81, Cuautlancingo, cerca de Cholula, a media hora del centro de Puebla.", "Abre miercoles a lunes, cierra martes. El cierre baila entre 15:00 y 17:00 segun la fuente: llegar antes de las 13:30 y confirmar ultima mesa al 222 215 4360 [verificar en sitio].", "Comedor de 35 lugares y cocina de humo para 16 con degustacion de 5 tiempos que rota cada mes; rango 300-700 MXN por persona [verificar en sitio]."],
+    pedir: [{ name: "Taco de quelites con pepitas y queso anejo", why: "El plato que resume la casa: quelite, pepita y maiz nativo hecho a mano." }, { name: "Mole poblano con dobladas de guajolote", why: "Receta familiar de unos 80 anos, segun el chef [verificar en sitio]." }, { name: "Tortillas bicolor al momento", why: "Salen azules y coloradas del comal. El color del maiz de verdad." }],
+    preguntas: [{ role: "Gustavo Macuitl", texto: "Quien te enseno a estar en un molino?" }, { role: "Gustavo Macuitl", texto: "En tu dia libre te vas a cocinar con tu mama. Que te da su cocina que no te dio ninguna cocina premiada?" }],
+    candidatura_status: "si", candidatura_razon: "Historia humana fuerte y verificada: un chef premiado (Best New Chef 2023) que volvio al maiz de su pueblo.",
+    angulo: "El maiz que volvio a casa. Un chef premiado renuncio a las cocinas finas donde solo cumplia para volver al molino de su familia. No complico el maiz, lo protegio: el molino no es concepto de autor, es apellido y herencia de su abuelo.",
+    alertas: ["Son SIETE variedades de maiz nativo, no ocho: el dossier viejo decia ocho, las fuentes buenas dicen siete. Confirmar en sitio.", "Horario de cierre en conflicto (15:00 vs 17:00): llegar hacia las 13:30 y confirmar al 222 215 4360.", "El dato del dia libre con su mama viene de un solo creador: confirmarlo con Gustavo antes de narrarlo.", "No confundir con Maizante (2021), proyecto origen del mismo chef. Verificar si Leticia Paleta sigue como socia activa."],
+    audio_url: "/audio/macuitl-molino-preparacion-mental.mp3",
+    audio_duration_s: 847,
+    emocion_target: "orgullo",
+    frase_ancla: "No gourmetizó el maíz: lo devolvió a casa, al molino de su abuelo.",
+    tesis_central: "Un chef premiado (Best New Chef 2023 de Food & Wine, Chef Revelación 2024) renunció a las cocinas finas donde 'solo cumplía' para volver al molino de su familia en San Jerónimo Tecuanipan. La contradicción: el lugar más celebrado de la cocina poblana no está en la capital ni gourmetiza nada; es granja, molino y comedor a la vez, donde la familia cultiva siete variedades de maíz nativo y casi todo lo que comes creció a treinta minutos del plato. La resolución: Gustavo no complicó el maíz, lo protegió. El molino no es un concepto de autor, es apellido y herencia de su abuelo.",
+    prepared_at: "2026-07-09",
+  },
+  "pu-15": {
+    id: "dpu-15", restaurant_id: "pu-15",
+    historia: "Lizette Galicia dirigio once anos la cocina de El Mural de los Poblanos, uno de los grandes de Puebla, antes de abrir casa propia. En 2021 nacio Salon Mezcalli y en septiembre de 2024 lo mudo a Analco, el barrio obrero al otro lado del rio donde nacio la Puebla que trabaja. El nombre viene del nahuatl mexcalli, agave cocido: cocina poblana de raiz con una de las colecciones de agave mas grandes de la region detras de la barra. En temporada, de julio a septiembre, su chile en nogada se hace con nuez de castilla que le llega directo del productor. Tambien es duena de la mezcaleria Miel de Agave.",
+    hooks: ["Este plato desaparece en octubre. Y no vuelve hasta el ano que viene.", "Vine a Analco por la cocinera que dirigio once anos la cocina de otro, hasta que abrio la suya al otro lado del rio.", "Nadie te dice por que el chile en nogada solo existe en verano. Ella si: el arbol manda."],
+    datos: ["8 Sur 501, Barrio de Analco. Abre martes a domingo de 8:00 a 23:00, cierra lunes [verificar horario de temporada en sitio]. Tel 222 337 1116.", "Chile en nogada solo en temporada, julio a septiembre: la nuez de castilla y la granada solo se cosechan en esos meses.", "Carta de mas de 40 platos y una coleccion de unos 90 mezcales de varios estados [verificar numero en sitio]. Precio 2026 [verificar en sitio]."],
+    pedir: [{ name: "Chile en nogada de temporada", why: "Con nuez de castilla directa del productor. Solo existe tres meses al ano." }, { name: "Mole manchamanteles con lechon", why: "El plan fuera de temporada; los moles son la otra bandera de la casa." }, { name: "Chipotle en nogada de queso de cabra", why: "La variante de temporada que casi nadie conoce [verificar disponibilidad en sitio]." }],
+    preguntas: [{ role: "Lizette Galicia", texto: "De donde te llega la nuez de castilla y como conociste al productor?" }, { role: "Lizette Galicia", texto: "Cual es la version del origen del chile en nogada que se cuenta en tu cocina?" }],
+    candidatura_status: "si", candidatura_razon: "Protagonista con trayectoria verificada, plato de temporada con tension real y aliada local de toda la edicion Puebla.",
+    angulo: "El plato que desaparece en octubre vive en Analco. Lizette dejo once anos en cocina ajena para abrir la suya en el barrio obrero, y trata el chile en nogada como patrimonio: existe tres meses porque la cosecha manda, no el marketing.",
+    alertas: ["Lizette Galicia es la aliada local del viaje; no confundir con Liz del equipo @tacotios.", "El articulo de Gourmet de Mexico (2023) describe la sede anterior en el Hotel Cartesiano; desde septiembre 2024 el restaurante esta en Analco.", "Mencion en Guia Michelin sin verificacion directa (la ficha bloqueo el acceso): no afirmarla como vigente sin confirmar.", "Verificar en sitio: precio 2026, numero real de mezcales y variantes de temporada disponibles el dia del rodaje."],
+    audio_url: "/audio/salon-mezcalli-preparacion-mental.mp3",
+    audio_duration_s: 1282,
+    emocion_target: "ganas_de_ir",
+    frase_ancla: "El plato que desaparece en octubre vive en Analco, al otro lado del río.",
+    tesis_central: "Lizette Galicia dirigió once años la cocina de El Mural de los Poblanos, uno de los grandes de Puebla, hasta que abrió casa propia en Analco, el barrio obrero 'al otro lado del río' donde nació la Puebla que trabaja. La contradicción: su plato bandera, el chile en nogada, solo existe tres meses al año, no por marketing sino porque la nuez de castilla y la granada solo se cosechan en verano. La resolución: ella lo trata como patrimonio vivo, con nuez que le llega directo del productor, en un salón donde la cocina poblana convive con una de las colecciones de agave más grandes de la región.",
+    prepared_at: "2026-07-09",
+  },
+  "pu-16": {
+    id: "dpu-16", restaurant_id: "pu-16",
+    audio_url: "/audio/tacos-el-chino-preparacion-mental.mp3",
+    audio_duration_s: 948,
+    historia: "El taco arabe no lo inventaron libaneses: lo crearon familias iraquies caldeas que llegaron a Puebla en los anos veinte huyendo tras la Primera Guerra Mundial. Trajeron el trompo del shawarma, cambiaron el cordero caro por cerdo y una poblana invento la salsa de chipotle que hoy lo define. Decadas despues esa tecnica viajo a Ciudad de Mexico y nacio el taco al pastor. En la 4 Sur, El Chino sostiene esa herencia desde un local de barrio, sin sucursales ni rankings. Al frente estaria Rafael Gonzalez Mignon, con unos 35 anos en el mismo trompo [verificar en sitio: nombre, antiguedad y origen del apodo].",
+    hooks: ["El taco al pastor no es tan mexicano como crees. Nacio en Puebla, de una familia iraqui que llego huyendo.", "La Oriental presume 42 sucursales. Este senor lleva decadas con un solo trompo en la 4 Sur.", "Le dicen El Chino y nadie sabe por que. Fui a preguntarselo."],
+    datos: ["4 Sur 708, Centro Historico. No confundir con el otro El Chino de La Margarita (Calle 61 Oriente).", "Abre lunes a sabado hasta las 23:30, cierra domingo. La hora de apertura baila entre 11:30 y 13:00 [verificar en sitio].", "Taco arabe entre 17 y 25 MXN segun resenas, dato posiblemente viejo [verificar precio en sitio]."],
+    pedir: [{ name: "Taco arabe", why: "El canon: pan de trigo, cerdo del trompo y la salsa de chipotle que invento una poblana." }, { name: "Taco arabe con las dos salsas", why: "Chipotle mas yogur, la que si viene de alla [verificar si tienen la blanca]." }, { name: "Torta arabe", why: "El mismo trompo en pan entero, para comparar la textura [verificar en sitio]." }],
+    preguntas: [{ role: "Rafael, el taquero", texto: "De donde viene el apodo El Chino?" }, { role: "Rafael, el taquero", texto: "Quien te enseno a hacer el taco arabe y que diferencia el tuyo del de La Oriental o Bagdad?" }],
+    candidatura_status: "watch", candidatura_razon: "La historia del taco arabe es oro verificado, pero el humano del lugar (nombre, apodo, 35 anos) es fuente unica por confirmar.",
+    angulo: "El taco mas famoso del mundo tiene abuelo y vive escondido en el Centro de Puebla. Mientras La Oriental y Bagdad presumen sucursales y aniversarios, El Chino sostiene la misma herencia iraqui a precio de calle. Emocion: asombro.",
+    alertas: ["Direccion confirmada: 4 Sur 708, Centro. NO confundir con el homonimo de La Margarita (Calle 61 Oriente).", "Nombre del taquero, apodo y los 35 anos vienen de un solo video (Trafico Puebla en TikTok): verificar en sitio antes de publicar.", "Horario con discrepancia (apertura 11:30 vs 13:00) y precio posiblemente desactualizado: confirmar en sitio.", "Primera parada del duelo de taco arabe del martes (despues viene Acuca): comer poco para aguantar la comparacion."],
+    emocion_target: "asombro",
+    frase_ancla: "El taco más famoso del mundo nació en Puebla, de un iraquí que llegó huyendo.",
+    tesis_central: "Todos creen que el taco árabe es de libaneses y que el pastor es el taco más mexicano; es al revés: el árabe lo crearon familias iraquíes caldeas que llegaron a Puebla huyendo tras la Primera Guerra Mundial, y el pastor es su nieto. Mientras La Oriental presume 42 sucursales y Bagdad sus 90 años, El Chino sostiene esa misma herencia desde un local de barrio en la 4 Sur, sin rankings y a precio de calle. El taco más famoso del mundo tiene abuelo, y ese abuelo vive escondido en el Centro de Puebla.",
+    prepared_at: "2026-07-09",
+  },
+  "pu-17": {
+    id: "dpu-17", restaurant_id: "pu-17",
+    audio_url: "/audio/la-especial-de-acuca-preparacion-mental.mp3",
+    audio_duration_s: 1242,
+    historia: "El taco arabe nacio en Puebla en los anos treinta: familias del Medio Oriente trajeron el trompo, la receta de cordero se volvio de cerdo y la carne se sirvio en pan de trigo con salsa de chipotle. La ruta turistica lo busca en La Oriental; los poblanos lo comen en Acuca, una taqueria de barrio del Boulevard Atlixco donde el trompo lleva mas de tres decadas girando [verificar en sitio]. La familia fundadora detras del rotulo no tiene nombre confirmado [verificar en sitio]. El unico humano nombrado en resenas es Jesus, un mesero citado por su trato cercano. En abril de 2025 un video viral les lleno el local y los poblanos respondieron haciendo fila.",
+    hooks: ["El taco al pastor conquisto el mundo. Su abuelo sigue girando en un trompo de Puebla donde no miran los turistas.", "Los turistas hacen fila en La Oriental. Yo vine a donde comen los poblanos.", "Este taco existe desde antes que el pastor. Pan en vez de tortilla, chipotle en vez de adobo."],
+    datos: ["Blvd. Atlixco 2113, Col. Belisario Dominguez, fuera del casco turistico.", "Abre martes a viernes 10:00 a 20:00, sabado y domingo 10:00 a 22:00, cierra lunes. Solo efectivo.", "Rango de 100 a 200 MXN por persona segun resenas [verificar precio del taco 2026 en sitio]."],
+    pedir: [{ name: "Taco arabe", why: "El canon poblano: carne del trompo, pan arabe y salsa de chipotle." }, { name: "Quesadilla arabe", why: "La sorpresa que repiten las resenas de los que ya fueron." }, { name: "Cebollitas asadas", why: "El acompanante que le da el toque, segun los locales." }],
+    preguntas: [{ role: "quien corta en el trompo", texto: "Cuantos anos lleva este trompo girando y de quien es la receta?" }, { role: "la familia o Jesus, el mesero", texto: "Que paso el dia que el video se hizo viral y se les lleno el local?" }],
+    candidatura_status: "watch", candidatura_razon: "El angulo local contra turistico es fuerte, pero la familia fundadora y los anos exactos siguen sin nombre ni fecha confirmados.",
+    angulo: "La alternativa local al circuito turistico del taco arabe. No es el mas famoso: es donde comen los poblanos cuando La Oriental esta llena de turistas. El original no desaparecio, solo dejo de estar donde miran los turistas. Emocion: curiosidad.",
+    alertas: ["Solo efectivo, sin tarjeta.", "Efecto Arturito (viral de abril 2025): puede haber fila a la hora de la comida.", "Verificar en sitio: nombre de la familia fundadora, anos exactos, si hacen su propio pan arabe y precio 2026.", "Segunda parada del duelo del taco arabe tras El Chino: comer poco en cada uno, la comparacion es el juego."],
+    emocion_target: "curiosidad",
+    frase_ancla: "El pastor conquistó el mundo; su abuelo sigue girando en un trompo de Puebla.",
+    tesis_central: "El taco al pastor conquistó el mundo, pero tiene un abuelo que casi nadie ha probado: el taco árabe, nacido en Puebla en los años treinta, servido en pan de trigo y con salsa de chipotle. La ruta turística lo busca en La Oriental; los poblanos lo comen en Acuca, una taquería de barrio del Boulevard Atlixco donde el trompo lleva más de tres décadas girando sin coreografía. El original no desapareció: solo dejó de estar donde miran los turistas.",
+    prepared_at: "2026-07-09",
+  },
+  "pu-18": {
+    id: "dpu-18", restaurant_id: "pu-18",
+    audio_url: "/audio/moyuelo-preparacion-mental.mp3",
+    audio_duration_s: 722,
+    historia: "Moyuelo es el salvado mas fino del trigo, la parte que casi se tira y el origen del pan de la cemita poblana. Con ese nombre humilde, el proyecto nacio en 2014 y llego a la Guia Michelin como Bib Gourmand. El chef Fernando Hernandez se formo con Martin Berasategui en San Sebastian y fue parte del equipo que ayudo a esa casa a conseguir su tercera estrella. Volvio a Puebla a hacer lo contrario de copiar Europa: cocina poblana de raiz, la de la cemita y el mole, con tecnica de alta cocina. Su menu degustacion se llama La Otra Puebla. En temporada sirve chile en nogada [verificar version 2026 en sitio].",
+    hooks: ["Este restaurante esta en la Guia Michelin. Y se llama como la parte del trigo que se tira a la basura.", "El chef ayudo a ganar la tercera estrella de Berasategui en Espana. Volvio a Puebla a hacer cemitas.", "Ya vine una vez. Y volvi. Eso es lo unico que necesitas saber."],
+    datos: ["Av. 7 Poniente 312, Centro, a unas 3 cuadras del zocalo. Abre martes a domingo 14:00 a 22:30, cierra lunes.", "Reservar: 222 232 4270 o en moyuelo.com.mx/reservar.", "Cheque promedio reportado en prensa 2022 de 450 a 520 MXN por persona; asumir mas en 2026 [verificar precio en sitio]."],
+    pedir: [{ name: "Chile en nogada de temporada", why: "El broche del viaje: la nogada pasada por cocina de autor [verificar en carta el dia de la visita]." }, { name: "Cemita de rabo de toro", why: "El puente entre la calle y la vanguardia, la razon de ser del nombre." }, { name: "Menu degustacion La Otra Puebla", why: "La tesis completa de la casa, si vas con tiempo." }],
+    preguntas: [{ role: "Fernando Hernandez", texto: "Por que le pusiste al restaurante el nombre de la parte del trigo que se tira?" }, { role: "Fernando Hernandez", texto: "Que aprendiste con Berasategui que hoy usas en un chile en nogada?" }],
+    candidatura_status: "si", candidatura_razon: "Historia verificada (Berasategui, Bib Gourmand, el nombre como manifiesto) y Aniol ya fue y repite.",
+    angulo: "No es Michelin contra tradicion: es la tradicion con el traje de Michelin puesto. La paradoja del nombre, lo mas humilde del trigo en la Guia Michelin, abre el video. La pregunta que lo gobierna: un chile en nogada de autor sigue sabiendo a Puebla?",
+    alertas: ["Bib Gourmand, NO estrella Michelin: no decir estrella en ningun texto publicado.", "Aniol repite (fue en febrero 2026): la expectativa no debe convertir el video en elogio automatico.", "Confirmar que el chile en nogada este en carta el dia de la visita y su precio 2026.", "Existe una referencia a otra sede en Av. Juarez: confirmar sede exacta antes de rodar."],
+    emocion_target: "asombro",
+    frase_ancla: "No es Michelin contra tradición: es la tradición con el traje de Michelin puesto.",
+    tesis_central: "Un chef que ayudó a ganar la tercera estrella de Martín Berasategui volvió a Puebla y le puso a su restaurante el nombre de la parte del trigo que casi se tira: el moyuelo, origen del pan de la cemita. La contradicción del broche del viaje es esa: un chile en nogada pasado por cocina de autor no debería seguir sabiendo a Puebla, y la pregunta es si el de Fernando Hernández lo consigue. Aniol ya se sentó en esta mesa y repite, porque aquí la vanguardia no pelea con la tradición: la cuenta con la mejor técnica sin perder el alma.",
+    prepared_at: "2026-07-09",
+  },
+  "ox-05": {
+    id: "dox-05", restaurant_id: "ox-05",
+    historia: "Criollo lo dirige Luis Arellano, no Enrique Olvera. Es de familia panadera. Su papa, Refugio, le enseno el oficio de nino, con las manos en la masa antes que con un cuchillo. Trabajo nueve anos en Casa Oaxaca con Alejandro Ruiz, luego se fue con Olvera a Pujol y ayudo a abrir restaurantes hasta 2015, pero eligio regresar a Oaxaca. En 2016 abrio Criollo como socio creativo junto a Olvera y el arquitecto Javier Sanchez, y hoy es quien arma el menu cada semana con lo que encuentra en el Mercado Central. Tambien publico Refugio, un libro de 43 panes tradicionales dedicado a la memoria de su padre.",
+    hooks: ["El pan que vas a probar tiene el nombre de un hombre que nunca piso esta cocina.", "Todos vienen a Criollo por el nombre de Olvera. Casi nadie pregunta quien cocina de verdad aqui.", "Este chef pudo quedarse construyendo el imperio de Pujol en la Ciudad de Mexico. Se regreso a Oaxaca por esto."],
+    datos: ["Menu degustacion de 6-7 tiempos que cambia cada semana segun el Mercado Central. Sin carta fija, no hay dos visitas iguales.", "Sociedad de tres desde 2016: Luis Arellano, Enrique Olvera y el arquitecto Javier Sanchez. Olvera es socio fundador, pero quien cocina cada semana es Arellano.", "La Mesa del Chef: 7 tiempos, maximo 4 personas, 1h45, dentro de la cocina.", "Arellano tambien dirige Casamata y publico Refugio, un libro de 43 panes tradicionales dedicado a su padre."],
+    pedir: [{ name: "Menu degustacion de 6-7 tiempos", why: "Cambia cada semana segun lo que trajo el mercado; no hay dos visitas iguales." }, { name: "Pan de la ventana de la entrada", why: "Eco directo del libro Refugio, la version mas honesta de la casa antes del aparato del menu de noche." }, { name: "La Mesa del Chef", why: "7 tiempos dentro de la cocina, maximo 4 personas, ideal para grabar manos y proceso de cerca." }],
+    preguntas: [{ role: "Luis Arellano (chef)", texto: "Tu papa se llamaba Refugio. Que te ensenaba primero, el pan o la paciencia?" }, { role: "Luis Arellano (chef)", texto: "Tuviste la puerta abierta para quedarte en la Ciudad de Mexico con Olvera. Que te trajo de vuelta?" }],
+    candidatura_status: "watch", candidatura_razon: "La historia de Arellano es real y toca, y el lugar merece un reel por la pregunta de identidad de la Guelaguetza. Pero las resenas de comensales estan divididas: varios dicen que el menu se siente plano para el precio. El filtro real no es el nombre en la fachada, sino si Arellano esta cocinando esa semana y que tan de temporada llego el menu, asi que va como candidato condicionado, no como si automatico.",
+    angulo: "Entras pensando que vas al restaurante de Olvera en Oaxaca y sales entendiendo que Olvera abrio la puerta como socio fundador, pero quien decide cada semana, y quien le puso el nombre de su papa a un libro de panes, es Arellano. Formato reel: hook con la paradoja del pan de nombre ajeno, presentacion de Arellano, plano de manos amasando sin voz, un beat en camara donde el articula por que volvio a Oaxaca, los platos como consecuencia de la historia y cierre con pregunta abierta sobre que significa cocina de identidad. Incluir en camara el valle honesto: no todos salen encantados.",
+    alertas: ["Confirmar en sitio: precio del menu degustacion de noche. Las fuentes no cuadran y varios comensales reportan que no se avisa antes de sentarse. Llamar el mismo dia al +52 951 351 1908.", "Confirmar en sitio: horario. Es contradictorio entre fuentes. Confirmar por telefono el mismo dia.", "Confirmar en sitio: si Luis Arellano esta en cocina esa semana antes de reservar. El menu se arma con su presencia, no es fijo.", "Confirmar en sitio: el pan con jamon serrano del servicio de desayuno. Es dato insider no verificado en la carta actual. Preguntar directo por 'el pan de la manana' al llegar.", "Resenas de comensales divididas: algunos describen el menu como plano y caro para lo que ofrece. No es unanime, meter el matiz en camara."],
+    audio_url: "/audio/criollo-preparacion-mental.mp3",
+    audio_duration_s: 1068,
+    emocion_target: "Herencia",
+    frase_ancla: "La identidad no viene del nombre en la fachada.",
+    tesis_central: "La cocina de identidad oaxaquena no viene del nombre grande en la fachada sino de quien decide el menu cada semana; la respuesta esta en una ventana de pan, no en la mesa elegante.",
+    prepared_at: "2026-07-11",
+  },
+  "ox-06": {
+    id: "dox-06", restaurant_id: "ox-06",
+    historia: "Alfonsina es de Jorge Leon, al que le dicen Moles. Empezo lavando platos y haciendo mandados en Casa Oaxaca, donde el chef Alejandro Ruiz lo tomo bajo su ala, y de ahi paso seis anos con Enrique Olvera, incluido Pujol, ayudando a afinar el mole madre con su propia receta familiar de mole negro con chiles chilhuacle. Tambien ayudo a abrir Cosme en Nueva York y Manta en Los Cabos. En 2018 lo dejo todo y volvio a su pueblo a abrir Alfonsina en el patio de la casa familiar, nombrada en honor a su abuela, tambien cocinera. Ahi cocina con su mama, dona Elvia, y sus tres hermanos.",
+    hooks: ["Este senor ayudo a afinar uno de los platos mas famosos de Mexico y lo dejo todo por esto.", "El restaurante mas dificil de encontrar en Oaxaca lo hizo a proposito un cocinero que pudo trabajar donde quisiera.", "El menu de hoy no existia esta manana. Se decidio en el mercado."],
+    datos: ["Solo 4 mesas y 12 lugares en total; se entra unicamente con reservacion previa.", "No tiene letrero ni redes sociales; esta en un pueblo a 30-40 minutos del centro de Oaxaca, cerca del aeropuerto.", "El menu degustacion de 5 tiempos cambia cada dia segun lo que Jorge y dona Elvia compraron esa manana en la Central de Abastos.", "Reconocido con Michelin Bib Gourmand 2025, 50 Best Discovery y New Worlder Restaurant of the Year."],
+    pedir: [{ name: "Mole negro con chiles chilhuacle", why: "Es la receta familiar de Jorge, la misma que termino integrada en el mole madre de Pujol." }, { name: "Menu degustacion de 5 tiempos", why: "No hay carta fija; se define con lo que encontraron en el mercado esa misma manana." }, { name: "Tamal relleno de ejotes con especias", why: "Tecnica de alta cocina aplicada a un ingrediente de rancho." }],
+    preguntas: [{ role: "a Jorge", texto: "Por que Alfonsina, por que el nombre de tu abuela. Que le paso." }, { role: "a Jorge", texto: "Hubo un momento en Nueva York o en Los Cabos en que dudaste, en que casi no vuelves. Que te hizo decidir en ese momento exacto." }],
+    candidatura_status: "si", candidatura_razon: "Tiene un arco de vida completo y verificable (lavaplatos, Pujol, Nueva York, regreso) y un corazon humano tangible: una abuela que murio joven, una madre que aprendio a cocinar por necesidad y un hijo que volvio a poner esa historia en una mesa. El matiz de las reviews mixtas se resuelve mostrandolo con honestidad en camara, no escondiendolo.",
+    angulo: "Un cocinero que pudo quedarse en Pujol, Nueva York y Los Cabos y eligio volver al patio de su casa a cocinar el mole de su abuela con su mama. Formato: presentar a Jorge y a dona Elvia primero, los platos llegan despues como consecuencia, y el beat de la abuela Alfonsina se protege por encima de cualquier toma de comida.",
+    alertas: ["Confirmar en sitio: precio vigente del menu (la cena degustacion y la comida de mediodia varian entre fuentes).", "Confirmar en sitio: horarios y dias de servicio por turnos y el cierre en martes.", "Confirmar en sitio: telefono/WhatsApp de reserva +52 951 204 8137 y si aplica reserva por covermanager.", "Confirmar en sitio: el lugar no tiene senalizacion propia y el ultimo tramo es terraceria.", "Confirmar en sitio: reviews recientes reportan servicio lento (hasta 20 minutos entre platos), mosquitos en el patio y bano ecologico sin descarga; mostrar el matiz en camara.", "Confirmar en sitio: reviews mixtas cuestionan la relacion precio-sabor; la ejecucion parece variar segun lo que hubo en el mercado ese dia."],
+    audio_url: "/audio/alfonsina-preparacion-mental.mp3",
+    audio_duration_s: 1568,
+    emocion_target: "Ternura",
+    frase_ancla: "Esto es volver al origen.",
+    tesis_central: "Un hombre que eligio ser menos famoso para ser mas el mismo.",
+    prepared_at: "2026-07-11",
+  },
+  "ox-08": {
+    id: "dox-08", restaurant_id: "ox-08",
+    historia: "Los Danzantes tiene una Estrella Michelin y una Estrella Verde Michelin 2024, pero el corazon de la historia es Dona Candy, una cocinera tradicional que no sale en ninguna guia. Ella le enseno a Alex Burgos, el chef que hoy lleva la cocina, a hacer los moles como se hacen en los Valles Centrales de Oaxaca. Burgos es poblano, se formo en Cuernavaca, tiene unos treinta anos y cinco al frente del menu, y en vez de inventar un mole de autor se sento a aprender de ella. Detras hay un huerto propio en San Agustin Etla, a 1600 metros de altura, de donde sale el 80% de lo que llega al plato. La estrella la puso una guia francesa. La esencia la puso una senora en su cocina.",
+    hooks: ["Este restaurante tiene Estrella Michelin. La receta se la dio una senora que nunca ha pisado Francia.", "Le pregunte al chef quien le enseno su plato mas famoso y no dijo un nombre de escuela. Dijo Dona Candy.", "Todo mundo viene por la estrella. Yo vine por la senora que hizo posible esa estrella."],
+    datos: ["1 Estrella Michelin mas Estrella Verde Michelin 2024", "El chef Alex Burgos es poblano, se formo en Cuernavaca, tiene unos treinta anos y cinco al frente del menu; aprendio los moles de Dona Candy, cocinera tradicional de los Valles Centrales", "Huerto propio en San Agustin Etla a 1600 metros de altura, de donde sale el 80% de lo que llega al plato", "Esta en Macedonio Alcala #403, Centro Historico, en pleno andador de Alcala, a distancia caminable del Zocalo"],
+    pedir: [{ name: "Moles Los Danzantes (degustacion de 5 moles)", why: "Negro, amarillo, rojo, chichilo y manchamanteles con chochoyotes de platano macho. Es literal la receta de Dona Candy, no una version de escuela" }, { name: "Hoja santa con queso de cabra y salsa de tomatillo", why: "El plato que mejor resume el huerto propio en un bocado" }, { name: "Pay de queso de guayaba y mezcal de la casa", why: "Cierre dulce con mezcal propio, no generico" }],
+    preguntas: [{ role: "chef Alex Burgos", texto: "Como fue el dia que Dona Candy te enseno el primer mole? Te costo ganarte su confianza?" }, { role: "chef Alex Burgos", texto: "Que le dirias a alguien que piensa que un restaurante con estrella ya no cocina como en las casas?" }],
+    candidatura_status: "si", candidatura_razon: "La cadena completa (huerto en San Agustin Etla, Dona Candy, Alex Burgos y el plato) es verificable y tiene sustancia real detras del marketing, coherente con viajar como local. El unico matiz es el precio: es fine dining de gama alta y hay que decirlo de frente.",
+    angulo: "Aniol entra pensando que va a grabar un restaurante con Estrella Michelin y sale entendiendo que la estrella la trae puesta una senora que ni sale en el menu. Desarma el prejuicio de restaurante fancy igual a receta inventada por chef de escuela. Formato sugerido: reel con hook de paradoja a camara, plano de manos trabajando el mole en silencio, B-roll del huerto, y los platos mostrados solo como consecuencia de la historia.",
+    alertas: ["Confirmar en sitio: horario (en fuente aparece 13:00 a 22:30 h) y posibles cambios por temporada Guelaguetza antes de grabar", "Confirmar en sitio: rango de precio / cuenta promedio; la fuente solo indica gama alta, sin cifra confirmada", "Confirmar en sitio: si Dona Candy o alguien del huerto puede aparecer en camara, porque ahi esta el protagonista real; si no puede estar, el reel se construye sobre su ausencia, nunca fingiendo que esta", "Confirmar en sitio: si hubo algun cambio de chef ejecutivo de grupo relevante en el ultimo ano; no hay fuente confiable, se verifica directo con el equipo del restaurante"],
+    audio_url: "/audio/los-danzantes-preparacion-mental.mp3",
+    audio_duration_s: 1050,
+    emocion_target: "RAIZ",
+    frase_ancla: "La estrella la puso una guia francesa. La esencia la puso una senora en su cocina.",
+    tesis_central: "Detras de la Estrella Michelin no hay un mole de autor de escuela, sino la receta de Dona Candy y un huerto propio: la esencia la pone la persona que cocina, no la guia que reparte estrellas.",
+    prepared_at: "2026-07-11",
   },
 };

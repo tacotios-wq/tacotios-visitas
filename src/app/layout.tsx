@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const SITE_URL = "https://tacotios-visitas.vercel.app";
@@ -32,14 +33,7 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     locale: "es_MX",
-    images: [
-      {
-        url: "/og-default.png",
-        width: 1200,
-        height: 630,
-        alt: "La Anti-Guia gastronómica de Mexico — @tacotios",
-      },
-    ],
+    // Sin images: Next usa el opengraph-image.tsx generado (el og-default.png no existia).
   },
   twitter: {
     card: "summary_large_image",
@@ -47,11 +41,16 @@ export const metadata: Metadata = {
     creator: "@tacotios",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: ["/og-default.png"],
+    // Sin images: hereda el opengraph-image.tsx generado.
   },
   robots: {
     index: true,
     follow: true,
+  },
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
   },
 };
 
@@ -72,6 +71,7 @@ export default function RootLayout({
     <html lang="es" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-bg-primary text-text-primary font-body">
         {children}
+        <Analytics />
       </body>
     </html>
   );

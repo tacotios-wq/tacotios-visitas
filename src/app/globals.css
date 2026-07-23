@@ -1,0 +1,717 @@
+@import "tailwindcss";
+
+/*
+ * Estilo Apple/editorial — paleta light, Helvetica Neue.
+ * Inspiracion: un-proyecto-de-vida.vercel.app
+ * Sin webfonts: Helvetica Neue es system font en macOS/iOS;
+ * fallback Helvetica → Arial → sans-serif para Windows/Android.
+ */
+
+@theme inline {
+  /* ── Colores Apple Light ── */
+  --color-bg-primary: #ffffff;
+  --color-bg-surface: #f5f5f7;
+  --color-bg-elevated: #fafafa;
+
+  /* Acento = texto Apple. Reservamos un dorado calido SOLO para tier-S. */
+  --color-accent: #1d1d1f;
+  --color-accent-hover: #000000;
+  --color-accent-soft: rgba(29, 29, 31, 0.06);
+  --color-accent-border: rgba(29, 29, 31, 0.16);
+  --color-accent-glow: rgba(29, 29, 31, 0.04);
+
+  /* Texto Apple — dos pesos de gris reales (jerarquia + margen WCAG AA) */
+  --color-text-primary: #1d1d1f;
+  --color-text-secondary: #5c5c61;
+  --color-text-muted: #6e6e73;
+
+  /* Lineas finas Apple */
+  --color-border-subtle: rgba(0, 0, 0, 0.08);
+  --color-border-card: rgba(0, 0, 0, 0.1);
+
+  /* Status semanticos discretos */
+  --color-green: #1d1d1f;
+  --color-green-soft: rgba(29, 29, 31, 0.06);
+  --color-amber: #985d11;
+  --color-amber-soft: rgba(184, 115, 26, 0.1);
+
+  /* Acento calido reservado para tier-S y micro-momentos.
+     warm = texto/badge legible AA (4.9:1). warm-fill = solo fills graficos grandes (marker, dot). */
+  --color-warm: #985d11;
+  --color-warm-fill: #b8731a;
+  --color-warm-soft: rgba(184, 115, 26, 0.1);
+  --color-warm-border: rgba(152, 93, 17, 0.3);
+
+  /* Estados seleccionados/activos NO tier-S */
+  --color-interactive: #1d1d1f;
+  --color-interactive-soft: rgba(29, 29, 31, 0.06);
+  --color-interactive-border: rgba(29, 29, 31, 0.18);
+
+  /* ── Tipografia Helvetica Neue (estilo Apple/editorial) ── */
+  --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-editorial: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Every element earns its place. Nothing decorates. */
+
+/* ═══════ CUSTOM PROPERTIES ═══════ */
+
+:root {
+  /* Escala tipografica editorial — Apple-grade */
+  --text-hero: clamp(3rem, 7vw, 5.5rem);
+  --text-stat: clamp(2.25rem, 5vw, 4rem);
+  --text-h1: clamp(2rem, 4vw, 3.5rem);
+  --text-h2: clamp(1.4rem, 2.6vw, 2rem);
+  --text-body: clamp(0.95rem, 1.2vw, 1.125rem);
+  --text-caption: clamp(0.75rem, 1vw, 0.875rem);
+
+  /* Easing Apple */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Duraciones */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-scroll: 700ms;
+
+  /* Stagger */
+  --stagger-delay: 60ms;
+
+  /* Escala de espaciado — ritmo intencional, saltos no lineales */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-xl: 3.5rem;
+  --space-2xl: clamp(4rem, 8vw, 7rem);
+  --space-3xl: clamp(6rem, 12vw, 11rem);
+
+  /* Elevacion Apple en capas (tinte neutro frio) */
+  --shadow-card: 0 1px 1px rgba(17, 17, 20, 0.04),
+                 0 4px 12px -4px rgba(17, 17, 20, 0.06);
+  --shadow-raised: 0 1px 0 rgba(0, 0, 0, 0.04),
+                   0 8px 20px -8px rgba(17, 17, 20, 0.1),
+                   0 24px 48px -24px rgba(17, 17, 20, 0.1);
+  --shadow-featured: 0 1px 0 rgba(0, 0, 0, 0.04),
+                     0 12px 32px -12px rgba(152, 93, 17, 0.14);
+}
+
+/* ═══════ BASE ═══════ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg-primary);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior-y: none;
+}
+
+::selection {
+  background: rgba(29, 29, 31, 0.92);
+  color: #fff;
+}
+
+/* ═══════ SCROLLBAR (discreta) ═══════ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+/* Scrollers horizontales sin barra (chips de ciudad, filtros activos) */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ═══════ "GLASS" ahora = blanco translucido Apple ═══════ */
+
+.glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border: 1px solid var(--color-border-card);
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.glass-featured {
+  border-color: var(--color-warm-border);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-featured);
+}
+
+.glass-header {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* ═══════ COLLAPSIBLE (grid-rows trick) ═══════ */
+
+.collapsible-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--duration-slow) var(--ease-out);
+}
+.collapsible-wrapper[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+.collapsible-wrapper > div {
+  overflow: hidden;
+}
+
+/* Curtain colapsible — grid-rows para altura + fade de opacidad (compositor) del contenido */
+.collapse-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms var(--ease-out);
+}
+.collapse-wrapper[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+.collapse-wrapper > .collapse-inner {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 200ms var(--ease-out);
+}
+.collapse-wrapper[data-open="true"] > .collapse-inner {
+  opacity: 1;
+}
+
+/* ═══════ KEYFRAMES ═══════ */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes sheetRise {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes backdropFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes counterPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* ═══════ ANIMATION UTILITIES ═══════ */
+
+.animate-fade-up {
+  animation: fadeUp 700ms var(--ease-out) both;
+}
+
+/* Variante agil para items de lista interactivos y repetidos (no 700ms) */
+.animate-fade-up-item {
+  animation: fadeUp 420ms var(--ease-out) both;
+}
+
+.animate-slide-right {
+  animation: slideFromRight 400ms var(--ease-out) both;
+}
+
+.animate-sheet-rise {
+  animation: sheetRise 300ms var(--ease-out) both;
+}
+
+.animate-backdrop {
+  animation: backdropFade 200ms var(--ease-out) both;
+}
+
+/* Reveal-on-scroll (estilo un-proyecto-de-vida) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms var(--ease-out),
+              transform 700ms var(--ease-out);
+}
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════ HOVER (desktop only) — Emil Kowalski rules ═══════ */
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift {
+    transition: transform 240ms var(--ease-out),
+                border-color 240ms var(--ease-out),
+                box-shadow 240ms var(--ease-out);
+    will-change: transform;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0, 0, 0, 0.18);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04),
+                0 18px 42px -18px rgba(0, 0, 0, 0.16);
+  }
+
+  .card-image-zoom {
+    transition: transform 700ms var(--ease-out);
+  }
+  .hover-lift:hover .card-image-zoom {
+    transform: scale(1.04);
+  }
+
+  .tab-button {
+    transition: color 150ms var(--ease-out);
+  }
+}
+
+/* Active scale */
+.btn-press {
+  transition: transform 100ms var(--ease-out);
+}
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+/* ═══════ FOCUS RINGS — A11Y ═══════ */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #1d1d1f;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* ═══════ TAB UNDERLINE ANIMATION ═══════ */
+
+.tab-underline {
+  position: relative;
+  overflow: visible;
+}
+.tab-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: var(--color-text-primary);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 280ms var(--ease-out);
+}
+.tab-underline[data-active="true"]::after {
+  transform: scaleX(1);
+}
+
+/* ═══════ SEARCH OVERLAY ENTRANCE ═══════ */
+
+@keyframes searchOverlayIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-search-overlay {
+  animation: searchOverlayIn 220ms var(--ease-out) both;
+  transform-origin: top center;
+}
+
+/* ═══════ MICRO-MOMENTOS DE DELEITE (signature) ═══════ */
+
+/* Share → "Copiado": el check entra con pop spring. Es el growth loop. */
+@keyframes sharePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-share-pop {
+  animation: sharePop 280ms var(--ease-spring) both;
+}
+
+/* Play del audio reproduciendo: respira con un pulso de sombra + anillo tenue.
+   (box-shadow en vez de pseudo-elemento para no perderse bajo el stacking
+   context del backdrop-blur del contenedor del player.) */
+.play-btn.is-playing {
+  animation: playPulse 2400ms var(--ease-in-out) infinite;
+}
+@keyframes playPulse {
+  0%,
+  100% {
+    box-shadow: 0 8px 24px -6px rgba(29, 29, 31, 0.18),
+                0 0 0 0 rgba(29, 29, 31, 0);
+  }
+  50% {
+    box-shadow: 0 10px 28px -4px rgba(29, 29, 31, 0.3),
+                0 0 0 7px rgba(29, 29, 31, 0.05);
+  }
+}
+
+/* ═══════ SCROLL REVEAL (legacy data-visible) ═══════ */
+
+[data-visible] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-scroll) var(--ease-out),
+              transform var(--duration-scroll) var(--ease-out);
+}
+[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════ EDITORIAL TYPOGRAPHY (Apple-grade tracking) ═══════ */
+
+.font-editorial {
+  font-family: var(--font-editorial);
+  letter-spacing: -0.022em;
+  font-weight: 600;
+}
+
+.editorial-display {
+  font-family: var(--font-editorial);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--color-text-primary);
+  text-wrap: balance;
+}
+
+/* Prosa editorial larga: evita huerfanas + micro-tightening Helvetica */
+.prose-editorial {
+  text-wrap: pretty;
+  letter-spacing: -0.011em;
+}
+
+.editorial-italic {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  letter-spacing: -0.015em;
+}
+
+/* Eyebrow (label uppercase fino) — estilo Apple */
+.eyebrow {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-feature-settings: "tnum";
+}
+
+/* Quote editorial 38px — peso 400, color secondary. Momento emocional (frase ancla). */
+.quote {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.5rem, 3.5vw, 2.375rem);
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -0.018em;
+  color: var(--color-text-secondary);
+  text-wrap: balance;
+  hanging-punctuation: first last;
+}
+
+/* Alternancia de superficies + ritmo vertical */
+.section-surface {
+  background: var(--color-bg-surface);
+}
+.section-padded {
+  padding-top: clamp(4rem, 12vw, 11rem);
+  padding-bottom: clamp(4rem, 12vw, 11rem);
+}
+
+/* ═══════ TIER BADGES (sutiles, papel sobre papel) ═══════ */
+
+.tier-s {
+  background: var(--color-warm-soft);
+  color: var(--color-warm);
+  border: 1px solid var(--color-warm-border);
+}
+.tier-a {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--color-text-secondary);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.tier-b {
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--color-text-muted);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.tier-c {
+  background: rgba(0, 0, 0, 0.02);
+  color: var(--color-text-muted);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ═══════ DOT RATING ═══════ */
+
+.rating-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+.rating-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+.rating-dot.filled {
+  background: var(--color-text-primary);
+}
+.rating-dot.featured.filled {
+  background: var(--color-warm);
+}
+
+/* ═══════ HERO STATS ═══════ */
+
+.stat-number {
+  font-family: var(--font-editorial);
+  font-weight: 600;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  font-variant-numeric: tabular-nums lining-nums;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  color: var(--color-text-primary);
+}
+
+/* ═══════ MAP MARKERS (light) ═══════ */
+
+.tacotios-marker {
+  --marker-color: #1d1d1f;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--marker-color);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15),
+              0 4px 12px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 160ms var(--ease-spring),
+              box-shadow 200ms var(--ease-out);
+}
+.tacotios-marker[data-featured="true"] {
+  --marker-color: #b8731a;
+  width: 16px;
+  height: 16px;
+}
+.tacotios-marker:hover {
+  transform: scale(1.35);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25),
+              0 6px 16px rgba(0, 0, 0, 0.22);
+}
+.tacotios-marker[data-selected="true"] {
+  transform: scale(1.55);
+  box-shadow: 0 0 0 2px var(--marker-color),
+              0 0 0 5px #ffffff,
+              0 6px 18px rgba(0, 0, 0, 0.25);
+}
+.tacotios-marker:active {
+  transform: scale(1.1);
+}
+
+.tacotios-city-label {
+  font-family: var(--font-editorial);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1d1d1f;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.tacotios-popup .maplibregl-popup-content {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--color-border-card);
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+}
+.tacotios-popup .maplibregl-popup-tip {
+  border-top-color: rgba(255, 255, 255, 0.96) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.96) !important;
+}
+.tacotios-popup .tp-title {
+  font-family: var(--font-editorial);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--color-text-primary);
+  margin-bottom: 3px;
+}
+.tacotios-popup .tp-meta {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+.tacotios-popup .tp-cuisine {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.tacotios-map-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px 7px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--color-border-card);
+  color: var(--color-text-secondary);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 150ms var(--ease-out),
+              border-color 150ms var(--ease-out),
+              background 150ms var(--ease-out);
+}
+.tacotios-map-pill:hover {
+  color: var(--color-text-primary);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+.tacotios-map-pill[data-active="true"] {
+  color: var(--color-text-primary);
+  border-color: rgba(0, 0, 0, 0.22);
+  background: #ffffff;
+}
+.tacotios-map-pill .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  transition: background 150ms var(--ease-out);
+}
+.tacotios-map-pill[data-active="true"] .dot {
+  background: var(--color-text-primary);
+}
+
+.maplibregl-ctrl-attrib {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(8px);
+  color: rgba(29, 29, 31, 0.55) !important;
+  font-size: 9px !important;
+}
+.maplibregl-ctrl-attrib a {
+  color: rgba(29, 29, 31, 0.75) !important;
+}
+.maplibregl-ctrl-group {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid var(--color-border-card) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.maplibregl-ctrl-group button {
+  background: transparent !important;
+  color: var(--color-text-primary) !important;
+}
+.maplibregl-ctrl-group button:hover {
+  background: rgba(0, 0, 0, 0.04) !important;
+}
+.maplibregl-ctrl-group button + button {
+  border-top: 1px solid var(--color-border-card) !important;
+}
+
+/* ═══════ REDUCED MOTION ═══════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
