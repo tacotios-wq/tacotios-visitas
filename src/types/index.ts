@@ -37,6 +37,16 @@ export interface ZonaSilencio {
   dur_s: number;
 }
 
+export interface Diamante {
+  titulo: string;
+  porque: string;
+  dato_ancla: string;
+  tension: string;
+  persona: string;
+  estado: "CONFIRMADO_PRIMARIO" | "AFIRMADO_DOSSIER" | "POR_VERIFICAR";
+  fuente: string;
+}
+
 export interface Dossier {
   id: string;
   restaurant_id: string;
@@ -65,6 +75,7 @@ export interface Dossier {
   guion_beats?: Beat[];
   hook_principal?: string | null;
   zona_silencio_narrativo?: ZonaSilencio[];
+  diamantes?: Diamante[];
   newsletter_resumen?: string | null;
 }
 

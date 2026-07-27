@@ -10,6 +10,7 @@ import { getTier, tierClassName, tierLabel } from "@/lib/tier";
 import { resolveScore100 } from "@/lib/score";
 import { ev } from "@/lib/analytics";
 import { openMaps, shareRestaurant } from "@/lib/share";
+import { DiamantesSection } from "./DiamantesSection";
 import { RestaurantImagePlaceholder } from "./RestaurantImagePlaceholder";
 
 interface RestaurantPageProps {
@@ -212,6 +213,8 @@ export function RestaurantPage({
             </h3>
           </div>
         )}
+
+        <DiamantesSection diamantes={dossier?.diamantes} />
 
         {/* ── GUION (escaleta @tacotios) ── */}
         {hasGuion && (

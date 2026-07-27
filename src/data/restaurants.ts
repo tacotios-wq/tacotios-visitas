@@ -999,6 +999,34 @@ export const restaurants: Restaurant[] = [
     viral_score: 8, notes: "Familia Angeles (alebrijes en Smithsonian y Vaticano), Michelin seleccion 2025. LIAM 75. REVISITA: ya hay TikTok @tacotios (~nov 2025)", content_links: [], visited_at: null,
     created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
   },
+  {
+    id: "ox-19", name: "Bodaega", slug: "bodaega", zone: "Centro Historico", city: "Oaxaca",
+    cuisine: "panaderia de masa madre, danesa-oaxaquena", status: "visitado",
+    image_url: null,
+    viral_score: 9, notes: "Rafael Villalobos (Casa Oaxaca -> Copenhague, Meyers Bageri) y Catherine Schmidt. Trigo de la Mixteca. MexBest 2024. REVISITA: short @tacotios feb-2025 (38K); El Arturito hizo 5.6M", content_links: [], visited_at: "2026-07-24T08:42:18.505369",
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
+  },
+  {
+    id: "ox-20", name: "Tierra del Sol / La Atoleria", slug: "tierra-del-sol-la-atoleria", zone: "Centro, Reforma 411", city: "Oaxaca",
+    cuisine: "mixteca, atoleria y panaderia", status: "pendiente",
+    image_url: null,
+    viral_score: 9, notes: "Slot S5, martes 28 de julio, desayuno. Llegada 07:45 a la puerta. Es el cierre del viaje y el reel principal candidato. Veredicto LIAM: GRABAR_CONDICIONAL, confianza MEDIA. Guion en estado BORRADOR_BLOQUEADO: la pieza depende de dos verbatims de Olga que solo existen si ella está y habla en cámara (la herida y el cierre), más la reacción real al probar y el precio confirmado contra la carta del dí", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
+  },
+  {
+    id: "ox-21", name: "Fonda Florecita", slug: "fonda-florecita", zone: "Mercado La Merced, Centro", city: "Oaxaca",
+    cuisine: "fonda de mercado, cocina oaxaquena", status: "pendiente",
+    image_url: null,
+    viral_score: 8, notes: "Slot S2, lunes 27 de julio, 08:00. Estado: GRABAR_CONDICIONAL con guion en BORRADOR_BLOQUEADO. Los tres datos duros verificados ya están (dirección e interior 37, cierre de martes por surtido, doña Priscila fundadora con Lucila y Pedro al frente). Lo que falta es el 45 por ciento del audio: las cuatro intervenciones de Lucila. Sin ella con micrófono no hay reel, hay B-roll para story. Orden de rod", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
+  },
+  {
+    id: "ox-22", name: "Taqueria Chefinita", slug: "taqueria-chefinita", zone: "Barrio de La China, Centro", city: "Oaxaca",
+    cuisine: "taqueria nocturna de calle", status: "pendiente",
+    image_url: null,
+    viral_score: 7, notes: "Estado: GRABAR_CONDICIONAL, confianza MEDIA. Slot S4 del lunes 27 de julio de 2026, 21:00, noche del segundo Lunes del Cerro. Segunda parada posible de ese slot: Lechoncito de Oro, solo si la llamada confirma que abre lunes.\n\nGATE ÚNICO: el protagonista no está verificado. Cero fuentes primarias sobre quién es Chefinita y quién lleva la cazuela hoy. La pieza existe solo si la persona detrás del pu", content_links: [], visited_at: null,
+    created_at: now, updated_at: now, series: [SERIES_OAXACA], has_dossier: true,
+  },
   // <<< OAXACA-GUELA AUTO (restaurantes)
   // === PUEBLA (8) ===
   {
@@ -1629,6 +1657,98 @@ export const restaurants: Restaurant[] = [
 ];
 
 export const dossiers: Record<string, Dossier> = {
+  "ox-19": {
+    id: "ox-19",
+    restaurant_id: "ox-19",
+    historia: "Rafael Villalobos fue 7 anos jefe de cocina en Casa Oaxaca. En 2017 Rosio Sanchez, ex-Noma, lo invito a Copenhague a abrir su cantina; ahi, de rebote, encontro el pan de masa madre danesa en Meyers Bageri y conocio a Catherine. Pero no volvio a Oaxaca a montar una panaderia nordica de moda: volvio a usar la tecnica danesa para dignificar el trigo de la Mixteca que su propia tierra habia dejado de sembrar. El pan danes es el vehiculo; el grano olvidado de su casa es la historia.",
+    hooks: ["Se fue a Copenhague a aprender pan y volvio a rescatar el trigo de su tierra."],
+    datos: [
+      "Miguel Hidalgo 1203, Centro Historico, a 10 min caminando del Zocalo. Fachada azul electrico, imposible de perder",
+      "No aceptan reservacion, es orden de llegada. Una sola mesa comunal que se satura; puede haber fila de hasta 40 min",
+      "Horario en conflicto entre fuentes (unas dicen que cierra miercoles, otras martes; aprox 8am a 3-5pm). Confirmar en su IG @bodaega.oax el dia antes [VERIFICAR EN SITIO]",
+      "Ir temprano, 8-9am: hornean pocas veces al dia con trigo de la Mixteca que no siempre alcanza; si llegas tarde puede que ya no quede",
+      "Precio alto para panaderia (The Infatuation lo pone en el nivel mas caro). Llevar efectivo",
+      "Gano el premio MexBest 2024 a la mejor panaderia de Mexico",
+    ],
+    pedir: [
+      { name: "Croissant de almendra", why: "el mas querido por los clientes, el clasico bien hecho" },
+      { name: "Danes de ruibarbo con hibisco", why: "el que mas resume la casa: tecnica danesa, sabor de aca" },
+      { name: "Bollo de cardamomo", why: "la pieza mas Meyers Bageri, directa de su epoca en Copenhague" },
+      { name: "Pan de masa madre de trigo mixteco", why: "no es decoracion, es la tesis entera del negocio en una pieza" },
+      { name: "Grilled cheese", why: "el salado sorpresa; hay quien vuelve solo por el" },
+    ],
+    preguntas: [],
+    candidatura_status: "watch",
+    candidatura_razon: null,
+    angulo: "Rafael Villalobos fue 7 anos jefe de cocina en Casa Oaxaca. En 2017 Rosio Sanchez, ex-Noma, lo invito a Copenhague a abrir su cantina; ahi, de rebote, encontro el pan de masa madre danesa en Meyers Bageri y conocio a Catherine. Pero no volvio a Oaxaca a montar una panaderia nordica de moda: volvio a usar la tecnica danesa para dignificar el trigo de la Mixteca que su propia tierra habia dejado de sembrar. El pan danes es el vehiculo; el grano olvidado de su casa es la historia.",
+    alertas: [],
+    audio_url: "/audio/bodaega-preparacion-mental.mp3",
+    video_url: null,
+    audio_duration_s: 871,
+    video_duration_s: null,
+    notebook_url: "",
+    tesis_central: "Rafael Villalobos fue 7 anos jefe de cocina en Casa Oaxaca. En 2017 Rosio Sanchez, ex-Noma, lo invito a Copenhague a abrir su cantina; ahi, de rebote, encontro el pan de masa madre danesa en Meyers Bageri y conocio a Catherine. Pero no volvio a Oaxaca a montar una panaderia nordica de moda: volvio a usar la tecnica danesa para dignificar el trigo de la Mixteca que su propia tierra habia dejado de sembrar. El pan danes es el vehiculo; el grano olvidado de su casa es la historia.",
+    frase_ancla: "Se fue a Copenhague a aprender pan y volvio a rescatar el trigo de su tierra.",
+    emocion_target: "orgullo",
+    diamantes: [
+      {
+        titulo: "El horno desmembrado que rompe la estetica danesa",
+        porque: "La obstinación de Rafael y Catherine por materializar su visión escandinava en Oaxaca llegó al límite físico de tener que desmembrar el corazón de la panadería con sus propias manos y las de once aliados cuando la arquitectura colonial amenazó con frenar su apertura tras dos años de búsqueda.",
+        dato_ancla: "El horno principal no cabía por la puerta de la fachada azul y tuvieron que desarmarlo y cargarlo entre once personas para meterlo al local.",
+        tension: "Revistas como Monocle o Dapper Magazine retratan un espacio de influencia danesa donde todo converge con fluidez visual; la realidad física es que ensamblar el motor del negocio requirió trabajo pesado y fuerza bruta de once personas, alterando la narrativa de un diseño sin fricciones.",
+        persona: "Rafael Villalobos y Catherine Schmidt",
+        estado: "CONFIRMADO_PRIMARIO",
+        fuente: "ERRR Magazine, Monocle, Dapper Magazine"
+      },
+      {
+        titulo: "La burocracia que asfixia el emprendimiento",
+        porque: "Rafael sostiene una lucha emocional contra un sistema que busca desgastar el espíritu de quien emprende, cuestionando constantemente si su capacidad de soportar la soledad administrativa es más grande que su deseo de hacer pan.",
+        dato_ancla: "Rafael afirma que el proceso burocrático en México parece diseñado para aplastar la voluntad, describiendo el emprendimiento como un camino solitario donde ocho de cada diez negocios fracasan en dos años.",
+        tension: "Las guías de estilo de vida celebran la apertura de estos negocios como un triunfo de la creatividad y la técnica extranjera; la voz del fundador revela que el verdadero obstáculo no es lograr la fermentación perfecta, sino sobrevivir a la hostilidad de los trámites gubernamentales que casi matan el proyecto.",
+        persona: "Rafael Villalobos",
+        estado: "CONFIRMADO_PRIMARIO",
+        fuente: "ERRR Magazine"
+      },
+      {
+        titulo: "El desayuno de vulnerabilidad antes de la masa",
+        porque: "Rafael entiende que para lograr un producto que requiere tanto tiempo y cuidado humano, necesita despojar a sus panaderos de la jerarquía del uniforme y obligarlos a vulnerarse compartiendo una idea propia en la mesa antes de encender las máquinas.",
+        dato_ancla: "Todos los días antes de abrir, el equipo tiene una sesión donde un miembro distinto prepara el desayuno y comparte una frase o concepto central para la operación del día.",
+        tension: "Los comensales asumen que la calidad del pan proviene exclusivamente del rigor técnico que Rafael trajo de Dinamarca; la rutina interna demuestra que la consistencia se sostiene sobre la construcción diaria de empatía y conocimiento mutuo del equipo de producción.",
+        persona: "Equipo de Bodaega",
+        estado: "CONFIRMADO_PRIMARIO",
+        fuente: "ERRR Magazine"
+      },
+      {
+        titulo: "El idealismo de la mesa comunal frente a la exigencia del cliente",
+        porque: "La decisión de Rafael y Catherine de mantener una sola mesa comunal para forzar la interacción choca frontalmente con la intolerancia del cliente moderno que exige confort ininterrumpido, convirtiendo su visión hospitalaria en un punto de conflicto diario.",
+        dato_ancla: "Una reseña de una estrella en Tripadvisor de mayo de 2026 califica de trato poco profesional y falta de juicio el sistema del local al pedir a los comensales salir y hacer fila para no saturar el espacio interior.",
+        tension: "Publicaciones como The Happening romantizan la mesa comunal afirmando que el pan debe compartirse; los foros de viajeros exponen un choque con clientes reales que dejan calificaciones mínimas al sentirse expulsados, planteando si la dinámica nórdica funciona en el turismo oaxaqueño o lo repele.",
+        persona: "Rafael Villalobos y Catherine Schmidt",
+        estado: "CONFIRMADO_PRIMARIO",
+        fuente: "Tripadvisor, The Happening"
+      },
+      {
+        titulo: "La propiedad de los campos de trigo oaxaqueño",
+        porque: "Rafael viajó hasta Copenhague para aprender técnicas de panadería nórdica con la finalidad de regresar a su tierra y usar ese rigor extranjero para rescatar y comercializar el grano que su propia gente había dejado de sembrar.",
+        dato_ancla: "Diversas fuentes publican que la panadería cultiva su propio trigo de manera sustentable para sus fórmulas de raíces danesas y oaxaqueñas.",
+        tension: "Medios como Food and Pleasure afirman categóricamente que Bodaega cultiva sus propios trigos; el marco del proyecto cuestiona esta versión oficial y exige confirmar en campo si el chef realmente es agricultor de sus tierras o si mantiene un esquema de alianza con productores de la Mixteca.",
+        persona: "Rafael Villalobos",
+        estado: "POR_VERIFICAR",
+        fuente: "Food and Pleasure, [FRAMEWORK] Instrucciones internas del notebook"
+      },
+      {
+        titulo: "El desdén al premio más alto de la panadería nacional",
+        porque: "Rafael se niega a validar su propio valor técnico a través de una placa dorada, demostrando que su triunfo no es ser nombrado el mejor por las revistas, sino mantener intacta la convicción de su oficio frente al ruido superficial de la industria.",
+        dato_ancla: "Tras ganar el premio MexBest 2024 a la mejor panadería, Rafael le confesó a un medio que los premios son subjetivos y que lo importante es ponerle corazón al trabajo.",
+        tension: "Plataformas como La Revista del Sureste y creadores de contenido gastan reflectores en celebrar el galardón como el mayor certificado de calidad en el país; al recibirlo, el propio ganador desestima la autoridad del premio quitándole el peso oficial frente al esfuerzo humano cotidiano.",
+        persona: "Rafael Villalobos",
+        estado: "POR_VERIFICAR",
+        fuente: "YouTube tacotios, La Revista del Sureste"
+      }
+    ],
+    prepared_at: "2026-07-24T08:42:18.504962",
+  },
+
   // >>> OAXACA-GUELA AUTO (dossiers) -- generado por wire_oaxaca.py, re-ejecutable
   "ox-11": {
     "id": "dox-11",
@@ -1748,60 +1868,119 @@ export const dossiers: Record<string, Dossier> = {
   "ox-13": {
     "id": "dox-13",
     "restaurant_id": "ox-13",
-    "historia": "Llevan varias decadas vendiendo una sola cosa cada noche en la misma esquina del Centro Historico: lechon, salsa y una banca de plastico si hay suerte. El numero exacto de anos varia segun la fuente, entre 30 y mas de 40, y el nombre de quien esta detras tambien es incierto, entre un apellido Chavez, Mr. Apolinar o El Guero. Nadie ha resuelto quien empezo esto ni por que nunca metieron mas platillos al menu.",
+    "historia": "Hay una esquina en el Centro de Oaxaca, Libres con Murguía, que de día no existe. No hay local, no hay letrero grande, no hay nada. Y cuando cae la noche se enciende un puesto que vende una sola cosa en el mundo: lechón. En taco, en tostada o en torta, con pierna o con chicharrón, salsa verde con aguacate o la que llaman Chávez, que es la que pica. No hay carta que leer ni mesa que reservar. Hay bancas de plástico, gente comiendo de pie con el plato en la mano, billetes cambiando de mano y una fila que no baja. La historia, sin embargo, no es el lechón. La historia es la persona que está al carbón y que decidió, en algún momento de su vida, no vender nada más. Ni de día, ni otro platillo, ni otra cosa. Solo eso, solo ahí, solo de noche. Circulan reseñas que dicen que el taco, así aislado, es normal, y esa objeción no se esconde en la pieza: se le pone enfrente a quien cocina y se deja que conteste con sus palabras, sin que nadie desde fuera corone ni condene. Su nombre y los años que lleva en esa esquina no están verificados por ninguna fuente confiable y solo entran a la pieza si salen de su boca frente a la cámara. Dos creadores grandes ya grabaron el plato aquí y ninguno se detuvo a preguntarle a la persona por qué. Ese es el hueco. Y el agujero universal que deja abierto es más grande que un taco: esta esquina existe mientras esa persona siga viniendo de noche, y nadie sabe todavía quién se queda cuando ya no pueda.",
     "hooks": [
-      "Lleva decadas vendiendo UNA sola cosa. Ni una carta. Solo esto.",
-      "Este senor no ha cambiado su menu en decadas. Y la fila sigue creciendo."
+      "Te van a decir que el taco es normal. Ven de noche y entiendes.",
+      "Aquí solo venden una cosa. Ni carta, ni mesas.",
+      "Le pregunté cuántos años lleva aquí cocinando exactamente lo mismo. (Solo usable si esa noche da el número en cámara, si no, el hook queda impagado)"
     ],
     "datos": [
-      "Calle de los Libres esquina Murguia, Centro Historico de Oaxaca",
-      "Tacos como 15-16 MXN, tostada como 40 MXN, gasto total 100-200 MXN por persona, solo efectivo",
-      "Abre como 8pm, mejor ir 10-11pm cuando esta en su punto [VERIFICAR EN SITIO horario de cierre exacto]",
-      "Hay una sucursal de dia en Av. Ferrocarril, Santa Lucia del Camino, pero es otra operacion, no forma parte del ritual nocturno"
+      "Dirección: Calle de los Libres esquina Murguía, Centro Histórico, Oaxaca de Juárez. Es un puesto de calle en la esquina, no un local.",
+      "Teléfono: 951 326 4003. Llamada obligatoria antes de cruzar la ciudad.",
+      "Horario de apertura: de noche, alrededor de las 20:00. Todas las fuentes coinciden en la apertura.",
+      "Hora de cierre: NO confirmada. Las fuentes van de las 2:00 a las 5:00 y se contradicen entre ellas. [VERIFICAR EN SITIO]",
+      "Día lunes en disputa: Yelp (actualizado julio 2026), Wanderlog y RestaurantGuru dan martes a sábado. Instagram oficial y Airial/LatinoPlaces dan lunes, y ni siquiera coinciden entre sí en el cierre. Tres fuentes contra dos. [VERIFICAR EN SITIO]",
+      "Precios de referencia: taco 15 a 16 MXN, tostada alrededor de 40 MXN, gasto total 100 a 200 MXN por persona. Vienen del expediente y pueden haber cambiado en semana de Guelaguetza. [VERIFICAR EN SITIO]",
+      "Pago: solo efectivo, no hay terminal. Llevar mínimo 400 MXN.",
+      "Formato: sin reserva, sin mesas, bancas de plástico, la mayoría come de pie en plena calle.",
+      "Menú completo: solo lechón, servido en taco, tostada o torta. Variantes con pierna o con chicharrón. Salsa verde hecha con aguacate o salsa Chávez, la picosa.",
+      "Cómo llegar: está dentro del cuadro del Centro Histórico, en el cruce de Libres con Murguía. En taxi basta pedir esa esquina. [VERIFICAR EN SITIO el tiempo real a pie desde Chefinita]",
+      "Cuándo llegar: la parada está planeada a las 22:30. Preguntar al llegar si todavía queda pierna, porque se acaba primero. [VERIFICAR EN SITIO]",
+      "Si hay lechón entero a la vista o solo carne ya picada: sin confirmar, y eso decide el plano de escala y la portada. [VERIFICAR EN SITIO]",
+      "OJO: existe una sucursal en Av. Ferrocarril, Santa Lucía del Camino, que abre de día. Es otra operación y no se mezcla con este puesto."
     ],
     "pedir": [
       {
-        "name": "Tostada de lechon con chicharron y salsa verde",
-        "why": "el plato mas recomendado por mucho"
+        "name": "Tostada de lechón con chicharrón y salsa verde",
+        "why": "Si solo se pide una cosa, es esta. Consenso del dossier propio como la mejor entrada, y además es la que mejor se arma en cámara porque las capas quedan visibles y el montaje ocurre delante del lente."
       },
       {
-        "name": "Taco de lechon con pierna",
-        "why": "la version mas jugosa, carne deshebrada"
+        "name": "Torta de lechón con chicharrón",
+        "why": "The Infatuation la pone por encima del taco: el pan absorbe parte de la grasa y recomienda pedirla con trozos crujientes de chicharrón. Es el plato que ningún creador ha grabado aquí, así que es diferenciación real y no repetición del reel de Arturito."
       },
       {
-        "name": "Taco de lechon con chicharron",
-        "why": "el contraste crujiente-suave que define el lugar"
+        "name": "Taco de lechón con pierna",
+        "why": "La versión más jugosa según el dossier propio. Pedirlo temprano en la visita porque la pierna se acaba primero. Señal comunitaria pendiente de confirmar: preguntar al llegar si todavía hay."
+      },
+      {
+        "name": "Salsa Chávez aparte",
+        "why": "La versión picosa. Doble función: da la reacción real sin fabricarla y es la puerta natural al personaje, porque el apellido que nombra la salsa abre la pregunta de quién es Chávez. No se vende como secreto, hay reseñas públicas que ya la recomiendan."
       }
     ],
     "preguntas": [
       {
-        "role": "Al cocinero",
-        "texto": "Cuantos anos llevas haciendo esto, aqui, a esta hora?"
+        "role": "Al personaje",
+        "texto": "¿Cómo se llama usted, y quién le puso el nombre al puesto?"
       },
       {
-        "role": "Al cocinero",
-        "texto": "Por que nunca metieron mas platillos al menu? Lo intentaron alguna vez?"
+        "role": "Al personaje",
+        "texto": "¿Cuántos años lleva usted, aquí, en esta esquina, a esta hora? (esta respuesta es el único número de años que puede entrar al reel)"
       },
       {
-        "role": "Al cocinero",
-        "texto": "Hay una noche que nunca se te olvida de todos estos anos?"
+        "role": "Al personaje",
+        "texto": "¿Quién estuvo antes que usted aquí y qué fue lo primero que le enseñó?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Alguna vez metieron otro platillo, o intentaron abrir de día? ¿Qué pasó?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Si la respuesta sale plana tipo por tradición: ¿nunca hubo alguien en la familia que quisiera cambiarlo y no lo dejaron?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Qué se pierde el que llega a las ocho y no a la una de la mañana?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Cuál fue la noche en la que estuvo a punto de no abrir?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Mientras toda la ciudad duerme usted está aquí, ¿a qué hora se acuesta y qué hace al día siguiente?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Cuando alguien dice que el taco así solo es normal, ¿qué le contesta usted?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Quién va a estar en esta esquina cuando usted ya no pueda?"
       }
     ],
-    "candidatura_status": "si",
-    "candidatura_razon": "Recomendado sin reservas: el matiz de que el taco aislado no es el mas fino tecnicamente ya esta integrado como beat honesto en la escaleta",
-    "angulo": "Aniol entra pensando que va a grabar el mejor taco de Oaxaca. Sale entendiendo que el verdadero plato es el ritual: decadas de pie, en la calle, de noche, vendiendo una sola cosa, mientras todo el mundo le dice que deberia crecer.",
+    "candidatura_status": "watch",
+    "candidatura_razon": "Guion en BORRADOR_BLOQUEADO: ABORTO 1, la parada puede no existir. Llamar al 951 326 4003 ANTES de salir de Chefinita. Tres fuentes dan martes a sábado (Yelp actualizado julio 2026, Wanderlog, RestaurantGuru) contra dos que dan lunes y que ni entre ellas coinciden en el cierre (Instagram oficial y Airial/LatinoPlaces). Si nadie",
+    "angulo": "Todos los que han grabado este puesto grabaron el producto. Arturito le sacó 320,500 likes al taco y Robe Grill también lo tocó. Nadie ha grabado a la persona. Entramos por la puerta contraria: el plato es la consecuencia, el eje es por qué alguien decide no vender nada más en toda su vida. El segundo diferencial es el que hace la pieza honesta: el matiz de que el bocado aislado no es el más fino de Oaxaca sí entra, pero en boca del personaje y nunca del host. Se pregunta qué le contesta a quien dice que el taco es normal, y esa respuesta es el momento wow, colocado entre el segundo 45 y el 65, en el valle, no al inicio. Modo testigo de principio a fin, cero sentencia de ranking. Carril correcto según datos propios del viaje: calle y mercado por encima del comedor con mantel (Tacos del Carmen 72.4K contra Tierra Antigua 7.1K y Almú 9K). Tema virgen en la cuenta: saturación de lechón y de Oaxaca en cero sobre 88 reels.",
     "alertas": [
-      "[VERIFICAR EN SITIO] numero exacto de anos, entre 30 y mas de 40 segun la fuente, confirmar con la respuesta del cocinero en camara",
-      "[VERIFICAR EN SITIO] nombre real de quien atiende, entre apellido Chavez, Mr. Apolinar o El Guero",
-      "[VERIFICAR EN SITIO] horario de cierre, entre 2am y 3-4am segun la fuente",
-      "Resenas minoritarias dicen que el taco aislado es ordinario y la tortilla es de fabrica, matiz que se dice de frente en el reel"
+      "BLOQUEANTE 1, decide si la parada existe: el horario del lunes está en disputa y empeoró al verificar. Llamar al 951 326 4003 antes de salir de Chefinita. Si no contestan, mandar a alguien a pasar por la esquina o cancelar. No se cruza la ciudad a las 22:30 a ciegas.",
+      "BLOQUEANTE 2, personaje sin nombre verificado: primera acción al llegar, antes de sacar cámara, presentarse y preguntar cómo se llama y quién está al carbón. Si esa persona no acepta cámara, no hay reel, hay story de recomendación.",
+      "BLOQUEANTE 3, si en los primeros cinco minutos no abre ninguna de las dos puertas de conflicto (si alguna vez metieron otro platillo o intentaron abrir de día, o quién se queda cuando él ya no pueda), esto no es reel de personaje: es una recomendación honesta de 40 segundos y se dice así, sin forzar drama.",
+      "BLOQUEANTE 4, logística: mínimo 400 MXN en efectivo, no hay terminal. Verificar batería y almacenamiento antes de salir de Chefinita porque llegan gastados.",
+      "PROHIBIDO cualquier cifra de años: 30, 40, 48, décadas, media vida. El único número decible es el que diga la persona esa noche en cámara. El 48 pertenece a la publicidad de la sucursal de Ferrocarril, que es otra operación.",
+      "PROHIBIDO el nombre Gump Chávez Lu en cámara y en el copy: es el titular de la cuenta de Instagram, no está verificado que sea quien cocina. Prohibidos también Mr. Apolinar y El Güero, circulan sin respaldo.",
+      "PROHIBIDA la sentencia de ranking: el mejor taco de Oaxaca, los tacos más famosos, el número uno. Se dice mi favorito o no se dice nada.",
+      "PROHIBIDO dar hora de cierre concreta (cierran a las cinco, abierto hasta el amanecer) y prohibido decir que abre todos los días o que abre los lunes antes de la llamada: es exactamente el dato en disputa.",
+      "PROHIBIDO vender la salsa Chávez como secreto que nadie conoce: al menos una reseña pública la recomienda abiertamente.",
+      "PROHIBIDO hablar de premios o reconocimientos (no los tiene), de receta familiar de X generaciones sin que lo diga la persona, y de cifras de fila, kilos, cerdos por noche, clientes o facturación.",
+      "PROHIBIDO el framing de enemigo, de anti guía o de denuncia al fine dining oaxaqueño. Empatía y testigo siempre.",
+      "PROHIBIDA la reacción fabricada al primer bocado o repetida en segunda toma. Una sola toma, jamás repetida.",
+      "RIESGO DE PRECIO: los 15 a 16 MXN del taco y los 40 de la tostada vienen del expediente. Confirmar el precio real antes de ponerlo en pantalla, es semana de Guelaguetza.",
+      "RIESGO EDITORIAL, canibalización: Chefinita a las 21:00 y Lechoncito a las 22:30 son las dos calle nocturna con taco. Diferenciar en rodaje y no publicarlas consecutivas.",
+      "RIESGO TÉCNICO: audio del personaje en calle de noche en semana de Guelaguetza. Acercar el micro y grabar 20 segundos de ambiente limpio para poder salvar el bloque de silencio en edición."
     ],
-    "audio_url": "/audio/lechon-de-oro-preparacion-mental.mp3",
-    "audio_duration_s": 679,
-    "emocion_target": "devocion",
-    "frase_ancla": "Le dicen que deberia crecer, meter mas platillos, abrir de dia. El sigue vendiendo lo mismo, a la misma hora, en la misma esquina.",
-    "tesis_central": "El Lechoncito de Oro vende una sola cosa desde hace decadas, en la misma esquina del Centro Historico, de noche, sin carta ni mesas. El numero exacto de anos y el nombre de quien esta detras siguen siendo inciertos entre las fuentes. El punto no es la tecnica del taco, es el ritual completo: decadas de oficio resistiendo la logica de crecer y diversificar. [VERIFICAR EN SITIO]",
-    "prepared_at": "2026-07-11"
+    "audio_url": null,
+    "audio_duration_s": null,
+    "video_url": null,
+    "video_duration_s": null,
+    "notebook_url": "",
+    "emocion_target": "admiración",
+    "frase_ancla": "Aquí el taco no es el punto: el punto es alguien que decidió no vender nada más.",
+    "tesis_central": "El eje no es el lechón: es alguien que decidió no vender nada más en toda su vida, en una esquina que solo existe de noche y solo mientras esa persona siga viniendo.",
+    "hook_principal": "\"Te van a decir que el taco es normal.\" (9 palabras, 0 a 3.2 s) + segundo latido en el corte: \"Ven de noche y entiendes.\"",
+    "guion_escaleta": "HOOK: \"Te van a decir que el taco es normal.\" (9 palabras, 0 a 3.2 s) + segundo latido en el corte: \"Ven de noche y entiendes.\"\n\nEstado: BORRADOR_BLOQUEADO · duracion estimada 92s\n\n[1 · HOOK (gate 3 s) · 0 a 3.2]\nVO: Te van a decir que el taco es normal.\nIMG/SFX: Aniol caminando de noche por Libres hacia la esquina, puesto ya visible al fondo. CARA EN FRAME 1, máximo 1.5 s (ventana de oro Matrix). [ambiente de calle sube] TXT: \"DICEN QUE EL TACO ES NORMAL\"\n\n[2 · VENTANA DE ORO clip 1 · 3.2 a 6.5]\nVO: Ven de noche y entiendes.\nIMG/SFX: Corte seco a la brasa, humo cruzando la luz del puesto. [SFX carbón 1 s]\n\n[3 · VENTANA DE ORO clips 2 y 3 · 6.5 a 10]\nVO: (sin VO, 3.5 s de puro food porn)\nIMG/SFX: Clip 2: cuchillo picando lechón sobre la tabla, cerradísimo. Clip 3: el chicharrón rompiéndose. [CRUNCH limpio, del track de ambiente grabado aparte]\n\n[4 · EXPEDIENTE · 10 a 14]\nVO: Calle de los Libres esquina Murguía, [HORA REAL DE LLEGADA, dato a levantar en campo].\nIMG/SFX: Giro de establecimiento: la esquina, la fila, las bancas de plástico, gente comiendo de pie. Sticker: \"LIBRES ESQ. MURGUÍA · OAXACA\"\n\n[5 · EXPEDIENTE · 14 a 18]\nVO: Este puesto solo abre de noche. Nunca de día.\nIMG/SFX: Plano abierto: la calle apagada alrededor y la luz del puesto sola. NO decir hora de cierre, las fuentes se contradicen\n\n[6 · EXPEDIENTE · 18 a 22]\nVO: Y solo venden una cosa. Lechón, nada más.\nIMG/SFX: PLANO DE ESCALA. Si hay lechón entero a la vista, es este y es la portada. Si no lo hay, el montón de carne recién picada. [VERIFICAR EN SITIO antes de rodar]\n\n[7 · EXPEDIENTE · 22 a 26]\nVO: Taco, tostada o torta. No hay carta ni mesas.\nIMG/SFX: Bancas de plástico, gente de pie con el plato en la mano, efectivo cambiando de mano\n\n[8 · EXPEDIENTE (atribución a tercero) · 26 a 31]\nVO: Me dijeron que pidiera la torta. Que el pan se bebe la grasa.\nIMG/SFX: Armado de la torta, el pan absorbiendo. Si esa noche no hay torta, esta fila se cae entera y se recupera tiempo para el bloque del personaje\n\n[9 · EXPEDIENTE (datos duros) · 31 a 35]\nVO: Taco quince pesos, tostada cuarenta. Aquí solo hay efectivo.\nIMG/SFX: Billetes cambiando de mano, cerrado. Sticker: \"TACO $15 · TOSTADA $40 · SOLO EFECTIVO\"\n\n[10 · ENTRADA AL PERSONAJE · 35 a 39]\nVO: Le pregunté cuántos años lleva haciendo exactamente lo mismo.\nIMG/SFX: Plano medio estable de la persona al carbón. Aniol de espaldas o fuera de cuadro. Micro cerca, es el mayor riesgo técnico de la noche\n\n[11 · AUDIO DIRECTO 1 (hueco bloqueante) · 39 a 46]\nVO: [DATO A LEVANTAR EN CAMPO: la persona dice su NOMBRE y sus AÑOS, en su voz, en cámara. Ningún número entra al reel si no sale de su boca. Prohibido 30, 40, 48, décadas, media vida. El nombre de la cuenta de Instagram NO se usa.]\nIMG/SFX: Plano medio fijo, sin cortar mientras habla. TXT: subtítulo con su nombre y sus años tal cual los diga\n\n[12 · PRE PRUEBA · 46 a 50]\nVO: La salsa verde lleva aguacate. La Chávez es la que pica.\nIMG/SFX: Las dos salsas, cuchara entrando. No venderla como secreto, hay reseñas públicas que ya la recomiendan\n\n[13 · LA PRUEBA (aire obligatorio) · 50 a 54]\nVO: (silencio 4 s, mordida)\nIMG/SFX: Mordida a la tostada de pie, en la calle, plano cerrado a la cara. UNA SOLA TOMA, jamás repetida. [CRUNCH + ambiente sube, VO fuera]\n\n[14 · LA PRUEBA · 54 a 58]\nVO: Truena el chicharrón. Abajo la carne todavía humea.\nIMG/SFX: Tostada abierta, capas visibles. [AJUSTAR A LA REACCIÓN REAL: esta línea es plantilla de ritmo, se sustituye por lo que de verdad pase. No se fabrica ni se repite]\n\n[15 · LA PRUEBA · 58 a 61]\nVO: Y la salsa Chávez raspa al final.\nIMG/SFX: Primer plano de la salsa cayendo sobre la carne. Misma nota: la reacción manda sobre el guion\n\n[16 · EL WOW, la pregunta · 61 a 65]\nVO: ¿Qué le contesta al que dice que el taco es normal?\nIMG/SFX: Aniol fuera de cuadro. Plano fijo sobre la persona, cámara quieta antes de que arranque a hablar\n\n[17 · EL WOW, el pago (hueco bloqueante) · 65 a 77]\nVO: [DATO A LEVANTAR EN CAMPO: su respuesta literal. Este es el momento que paga el hook y arbitra la apuesta. Va entero, sin recortar.]\nIMG/SFX: MARKER PROTEGIDO del EDL. Plano fijo, no se acorta, no se tapa con b-roll, la pausa previa se respeta. TXT: subtítulo de su frase completa\n\n[18 · CIERRE TESTIGO · 77 a 81]\nVO: Aquí el taco no es el punto.\nIMG/SFX: Manos armando otra tostada, cerrado. Cero sentencia de ranking, ni a favor ni en contra\n\n[19 · CIERRE TESTIGO · 81 a 85]\nVO: El punto es alguien que decidió no vender nada más.\nIMG/SFX: La persona al carbón, la calle vacía detrás. TXT: \"AQUÍ NO SE VENDE NADA MÁS\"\n\n[20 · ANCLA (agujero universal) · 85 a 88.5]\nVO: Esta esquina existe mientras él siga viniendo.\nIMG/SFX: Plano abierto: la esquina con su luz sola en la noche. El comentario se cosecha aquí, no se pide\n\n[21 · CTA único (save instrumental) · 88.5 a 92]\nVO: Guárdalo para tu próxima noche en Oaxaca.\nIMG/SFX: Aniol de pie con el plato en la mano, la esquina detrás. TXT: \"DE NOCHE Y EN EFECTIVO\"\n\nABORTAR SI: ABORTO 1, la parada puede no existir. Llamar al 951 326 4003 ANTES de salir de Chefinita. Tres fuentes dan martes a sábado (Yelp actualizado julio 2026, Wanderlog, RestaurantGuru) contra dos que dan lunes y que ni entre ellas coinciden en el cierre (Instagram oficial y Airial/LatinoPlaces). Si nadie contesta, mandar a alguien a pasar por la esquina. Si no hay confirmación humana de que está abierto, NO se cruza la ciudad a las 22:30 y S4 se cierra con Chefinita. ABORTO 2, personaje. Primera acción al llegar, antes de sacar la cámara: presentarse, preguntar cómo se llama y quién está al carbón. Si esa persona no acepta cámara, NO hay reel: hay story de recomendación con B-roll y el anchor de utilidad (dónde, a qué hora, efectivo, qué pedir). ABORTO 3, sin conflicto no hay pieza de personaje. Si en los primeros cinco minutos de conversación no abre ninguna de las dos puertas (si alguna vez metieron otro platillo o intentaron abrir de día y qué pasó, o quién se queda en esa esquina cuando él ya no pueda), esto NO es reel de personaje: es una recomendación honesta de 40 segundos y se dice así, sin forzar drama. ABORTO 4, logística: mínimo 400 MXN en efectivo, no hay terminal, y verificar batería y almacenamiento antes de salir de Chefinita porque llegan gastados. QUÉ DESBLOQUEA EL ESTADO BORRADOR_BLOQUEADO Y LO PASA A LISTO, las cuatro a la vez: (1) confirmación telefónica o presencial de que abre esa noche; (2) el nombre dicho por la propia persona en cámara, jamás el de la cuenta de Instagram; (3) el número de años dicho por ella en cámara, ningún otro número de años entra a la pieza; (4) la respuesta al 'qué le contesta al que dice que el taco es normal' grabada entera y con audio usable. Con esas cuatro, se rellenan los bloques 4, 11 y 17 y el caption, y la pieza sale. Sin la 2, la 3 o la 4, esto no se publica como reel.",
+    "newsletter_resumen": "Oaxaca de Juárez, calle de los Libres esquina Murguía, ya de noche.\n\nAquí solo venden una cosa. Lechón. En taco, en tostada o en torta. No hay carta, no hay mesas, hay bancas de plástico y gente comiendo de pie en plena calle. Taco quince pesos, tostada cuarenta, y solo efectivo, así que no llegues con tarjeta. Abre de noche. De día esta esquina no existe.\n\nHay reseñas que dicen que el taco, así solo, es normal. Se lo pregunté a quien estaba al carbón, y su respuesta es lo que me llevo de esta noche: [RESPUESTA LITERAL A COLOCAR TRAS EL RODAJE, en sus palabras].\n\nLleva [AÑOS QUE ÉL DIGA EN CÁMARA] años haciendo exactamente lo mismo, a esta hora, en esta esquina. No es una historia de premios ni de listas. Es la historia de alguien que decidió no vender nada más en toda su vida, y de una esquina que existe solamente mientras él siga viniendo de noche.\n\nSi vas: de noche, con efectivo, y pregunta al llegar si todavía queda pierna.\n\n[VERIFICAR ANTES DE PUBLICAR: días y horario reales, confirmados por él en sitio. Nombre solo si él lo dice en cámara.]",
+    "prepared_at": "2026-07-27"
   },
   "ox-14": {
     "id": "dox-14",
@@ -2113,6 +2292,377 @@ export const dossiers: Record<string, Dossier> = {
     "frase_ancla": "Aqui el arte y la comida salen de la misma raiz.",
     "tesis_central": "La familia que enseno al mundo a valorar un alebrije ahora te da de comer con la misma filosofia: valorar lo propio. Almu no es un restaurante con historia prestada, es la mesa de una dinastia.",
     "prepared_at": "2026-07-20"
+  },
+  "ox-20": {
+    "id": "dox-20",
+    "restaurant_id": "ox-20",
+    "historia": "Olga Cabrera Oropeza es de Huajuapan de León, en la Mixteca, heredera de la tradición nuu savi, y empezó vendiendo comida en el mercado de su pueblo. Cuando llegó a la ciudad de Oaxaca, su cocina no se vendía. Ella lo contó así en una entrevista publicada: hacía comida típica de su región, pero no se vendía porque no era conocida. Esa frase es el centro de todo lo demás. Viene de un linaje de mujeres que cocinaron y amasaron antes que ella, bisabuela cocinera, abuela cocinera y panadera, madre panadera, y antes de este lugar sostuvo once años un comedor de dieciocho asientos, que fue otro negocio, no este. Hoy en el mismo edificio de Reforma 411 conviven tres cosas suyas: el restaurante Tierra del Sol, la panadería Masea de trigo y maíz de la Mixteca, y La Atolería, que ella describe como el primer espacio de México dedicado solo al atole y a su elaboración con maíces nativos. Ahí el maíz no se come, se bebe: grano de los Valles Centrales, de la Mixteca y de la Chinantla, sin leche comercial ni almidones, servido en vasija de barro que lo mantiene caliente hasta el último trago, con una carta que cambia. En febrero de 2026 la Guía México Gastronómico nombró a Tierra del Sol restaurante del año, pero ese no es el motivo para entrar. El motivo es la olla, y quien la mueve.",
+    "hooks": [
+      "En México el atole viene en sobre. Aquí sale de una olla de barro.",
+      "Llegó del pueblo con su comida y nadie se la quería comprar.",
+      "Aquí el maíz no se come, se bebe, y te lo sirven en barro."
+    ],
+    "datos": [
+      "Dirección: Reforma 411, Col. Centro, Oaxaca de Juárez. Confirmada por Michelin, Culinaria Mexicana, El Universal Oaxaca y varios agregadores. OJO: un agregador (Wanderboat) da Independencia 411 y es erróneo.",
+      "Horario de La Atolería: todos los días de 8:00 a 22:00 según El Universal Oaxaca. Conflicto declarado: Fundación Tortilla dice 7:30 a 22:00 y Foursquare da 7:00 a 21:00 para la panadería Masea. [VERIFICAR EN SITIO]",
+      "Cuándo llegar: 07:45 en la puerta. Las fuentes discrepan entre 7:00, 7:30 y 8:00 y el slot no admite un segundo intento.",
+      "Precio de los atoles: entre 45 y 65 pesos según ingredientes, porciones de 280 a 300 ml, servidos en vasija de barro (El Universal Oaxaca, 2026). Confirmar contra la carta del día antes de publicar cualquier cifra. [VERIFICAR EN SITIO]",
+      "La carta de atoles es rotativa, con ocho variedades disponibles. El número total de recetas está en disputa entre fuentes (8 de 19, 8 calientes y 4 fríos, 12), así que no se cita ninguna cifra salvo que la diga Olga. [VERIFICAR EN SITIO]",
+      "Variedades documentadas: maíz azul, blanco y belatobe, de tortilla, de cacao blanco, de maíz con trozos de cacao, con amaranto, ajonjolí, almendra, cacahuate, guayaba de temporada y de trigo con miel (El Universal Oaxaca).",
+      "En el mismo edificio hay tres proyectos: restaurante Tierra del Sol, panadería Masea y La Atolería. La panadería es puente de una línea, nunca el tema.",
+      "Restaurante de arriba: rango aproximado de 400 a 700 pesos según fuentes. No es el objetivo de esta visita y no se cita si no vemos carta. [VERIFICAR EN SITIO]",
+      "Cómo llegar: a pie desde el zócalo por Reforma, en el corredor del Centro histórico. Tiempo exacto de caminata y accesos [VERIFICAR EN SITIO].",
+      "Pago con tarjeta y si hay mínimo de consumo: sin fuente. [VERIFICAR EN SITIO]",
+      "Reserva para el desayuno en La Atolería: sin fuente, probablemente no aplica por ser barra de atoles. [VERIFICAR EN SITIO]",
+      "Teléfono: hay tres números distintos en tres agregadores. No se usa para afirmar nada ni para invitar a reservar. [VERIFICAR EN SITIO]",
+      "Permiso de grabación: se pide en puerta antes de sacar cámara. Bib Gourmand y premio vigente pueden implicar política de prensa. [VERIFICAR EN SITIO]",
+      "Reconocimientos, como dato de tercero y nunca como titular: Restaurante del Año 2026 de la Guía México Gastronómico (febrero 2026) y Bib Gourmand Michelin tercer año consecutivo."
+    ],
+    "pedir": [
+      {
+        "name": "Un atole de maíz nativo del día, el que ella escoja de la carta rotativa, en vasija de barro",
+        "why": "Es el héroe visual y el eje de la pieza: vapor, barro y color del grano. Que lo elija ella convierte el pedido en una escena y no en un menú."
+      },
+      {
+        "name": "Un segundo atole de otro maíz para contraste de color (azul, blanco o belatobe)",
+        "why": "El plano cenital de dos barros de colores distintos hace visible la diversidad del maíz sin que nadie la explique. Es la portada candidata número dos."
+      },
+      {
+        "name": "Lo que salga del comal en el desayuno de la casa, memelas o tetelas [VERIFICAR EN SITIO, no confirmado por fuente]",
+        "why": "Ancla el desayuno y da el sonido del comal, que sostiene la retención en el valle. Si no existe en carta a esa hora, se cae sin drama."
+      },
+      {
+        "name": "Una sola pieza de pan de Masea, de maíz o de trigo de la Mixteca",
+        "why": "Puente físico entre los tres espacios en una línea. Nunca tema: la categoría panadería ya se grabó dos veces en el corpus propio y canibaliza con Bodaega."
+      },
+      {
+        "name": "NO pedir: menú del comedor, degustación ni carta de 400 a 700 pesos",
+        "why": "Rompe el carril, sube el precio de la pieza y la manda al terreno donde los datos propios rinden peor (Tierra Antigua 7.1K y Almu 9K, contra Tacos del Carmen 72.4K)."
+      }
+    ],
+    "preguntas": [
+      {
+        "role": "Al personaje",
+        "texto": "Cuando llegó a la ciudad y su comida no se vendía porque nadie la conocía, ¿quién fue el primero que se la compró y qué pidió?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Cuál fue el día en que pensó en cerrar y volverse a Huajuapan? ¿Qué la hizo quedarse?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Qué plato de la Mixteca tuvo que quitar de la carta porque nadie lo pedía? ¿Ya volvió?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Quién le enseñó a hacer el atole y qué hacía distinto a como lo hace usted hoy?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Qué parte del atole no ve nadie? ¿A qué hora empieza y quién lo empieza?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Si mañana entra alguien y le dice que el atole es el de sobre, ¿qué le contesta?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Por qué se llama Masea? ¿Quién decía esa palabra en su casa?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "De todas las recetas de atole que tiene en la cabeza, ¿cuál no ha puesto nunca en la carta y por qué?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Su abuela sigue cocinando? ¿Qué le dice de todo esto?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Qué va a pasar con estas recetas cuando usted no esté? ¿Alguien las tiene escritas o solo están en su cabeza?"
+      }
+    ],
+    "candidatura_status": "watch",
+    "candidatura_razon": "Guion en BORRADOR_BLOQUEADO: DESBLOQUEO (las cuatro a la vez, si falta una la pieza no pasa a producción): 1) Olga Cabrera Oropeza está el martes 28 a las 8:00 y habla en cámara, con permiso de grabación pedido en puerta antes de sacar la cámara. 2) El proceso del atole es visible desde el área pública, o conceden 60 segundos d",
+    "angulo": "EL MAÍZ QUE SE BEBE. No es un reel de restaurante premiado, es un reel de una bebida que casi todo México conoce en su versión de sobre, contada por la mujer que levantó el único espacio del país dedicado solo a eso. Carril de proceso, mercado y manos, cero mantel: no se graba el comedor, ni la carta cara, ni el premio como titular. La pieza vive en tres capas. La visual es la olla y el barro, con el atole cayendo en vapor a contraluz de la mañana. La herida es la frase de Olga sobre por qué su cocina no se vendía cuando llegó a la ciudad, en plano fijo, sin música y con el silencio después. El aprendizaje es el maíz nativo de tres regiones convertido en algo que te tomas de desayuno. El premio, si aparece, va tarde o solo en caption, y siempre como dato de tercero, nunca como sentencia del host. Cierre en el mismo eje que abrió el hook: qué se pierde si el atole se vuelve polvo. Y ahí se nombra el agujero universal sin pedir nada: en casi todas las casas de México el atole lo hacía alguien, y casi nadie sabe con qué maíz.",
+    "alertas": [
+      "Sin Olga no hay pieza. No existe un segundo personaje documentado con nombre en el equipo. Si no está el martes a las 8:00, se toma café, se agradece y no se publica nada.",
+      "Sin verificar: si el proceso del atole es visible desde el área pública. Cinco fuentes leídas describen barro, maíces y precios, y ninguna dice si se prepara a la vista. Si es cocina cerrada y niegan 60 segundos de acceso, la pieza se degrada a retrato secundario y deja de ser el reel principal.",
+      "Horario en disputa: 8:00 (El Universal Oaxaca), 7:30 (Fundación Tortilla) y 7:00 para Masea (Foursquare). Llegar 07:45 y confirmar en puerta.",
+      "PROHIBIDO cualquier año de fundación. Circulan 2002, 2014, 2015 y 2017. En cámara se dice hace más de una década, o lo dice ella.",
+      "PROHIBIDO decir que este restaurante empezó con 18 sillas. Es falso: el comedor de dieciocho lugares fue un negocio anterior y distinto. Fórmula correcta: antes de esto tuvo once años un comedor de dieciocho lugares.",
+      "PROHIBIDO decir que son tres negocios y cada uno es una mujer de su familia. Solo hay dos mujeres documentadas por línea.",
+      "PROHIBIDO atribuir el atole a la madre o a la bisabuela: las fuentes discrepan. O lo dice Olga en cámara, o no existe en el video.",
+      "PROHIBIDA cualquier sentencia de ranking en boca de Aniol. Nada de el mejor restaurante de México. Se dice mi favorito, nunca el mejor. Y lo del primer espacio de México dedicado al atole se dice como declaración de ella respaldada por prensa, jamás como veredicto del host.",
+      "PROHIBIDO el número exacto de recetas de atole, la abuela de 97 años y el nombre de la madre: fuente única o en conflicto. Solo decibles si salen de su boca.",
+      "PROHIBIDO citar el teléfono: tres agregadores dan tres números distintos.",
+      "Riesgo de precio: el rango de 45 a 65 pesos de los atoles viene de una nota de 2026 y puede haber cambiado. Confirmar contra la carta del día antes de poner sticker en pantalla.",
+      "Riesgo de mantel: si el equipo sienta a Aniol en el comedor de arriba antes de tener manos, olla y grano en la lata, se corta el rodaje y se recuperan primero los planos de proceso.",
+      "Canibalización propia: la panadería ya se cobró dos veces en el corpus (Bodaega en este mismo viaje). Si la pieza deriva a pan, se pisa material propio.",
+      "Ético y de marca: no romantizar el origen humilde ni convertir el mercado de Huajuapan en postal de pobreza. Es el punto de partida de una profesional, no un adorno.",
+      "Cuentas de Instagram: escribir a @tierradelsolrestaurante y a @_laatoleria. NO a @tierradelsol.oaxaca, que se describe como centro de aprendizaje y agricultura regenerativa y no parece ser el restaurante.",
+      "Permiso de grabación explícito antes de sacar cámara. Premio vigente y Bib Gourmand pueden implicar política de prensa o de imagen."
+    ],
+    "audio_url": null,
+    "audio_duration_s": null,
+    "video_url": null,
+    "video_duration_s": null,
+    "notebook_url": "",
+    "emocion_target": "reconocimiento",
+    "frase_ancla": "Aquí el maíz no se come, se bebe, y lo sirve la mujer a la que nadie le quería comprar su comida.",
+    "tesis_central": "La misma cocina que la ciudad de Oaxaca no le compraba cuando llegó del mercado de su pueblo es hoy la razón por la que la ciudad va a buscarla, y su prueba más pequeña y más terca es un atole de maíz nativo servido en barro, en el país donde el atole se volvió un sobre de polvo.",
+    "hook_principal": "\"En México el atole viene en sobre. Aquí sale de una olla de barro.\" (14 palabras, dos frases, cae en los primeros 6 segundos partido en dos cortes)",
+    "guion_escaleta": "HOOK: \"En México el atole viene en sobre. Aquí sale de una olla de barro.\" (14 palabras, dos frases, cae en los primeros 6 segundos partido en dos cortes)\n\nEstado: BORRADOR_BLOQUEADO · duracion estimada 85s\n\n[1 · HOOK A (ventana de oro, frame 1) · 0.0 a 2.0]\nVO: En México el atole viene en sobre.\nIMG/SFX: Aniol a cámara, gesto, calle Reforma a las 8:00, luz dura. MÁXIMO 1.5 s en el corte final (regla fija Matrix). TXT: \"EL ATOLE VIENE EN SOBRE\". [SFX calle 8h sube y baja]\n\n[2 · HOOK B (los 3 clips food porn de la ventana de oro) · 2.0 a 6.5]\nVO: Aquí sale de una olla de barro.\nIMG/SFX: Tres cortes seguidos, sin VO encima del tercero: (a) MUST-GET macro del atole cayendo en el barro con vapor a contraluz, (b) manos batiendo o moviendo la olla, (c) cenital de dos barros de distinto maíz. TXT: \"aquí sale de la olla\". [SFX burbujeo + batido, grabados aparte]\n\n[3 · LA APUESTA, atribuida a ella, nunca al host · 6.5 a 13.0]\nVO: Ella dice que es el primer lugar de México solo de atole. Vinimos a las ocho de la mañana a verlo.\nIMG/SFX: Olga trabajando a media distancia, manos ocupadas, nunca sentada en pose de entrevista. TXT: \"LO DICE ELLA, NO NOSOTROS\"\n\n[4 · EXPEDIENTE 1 (el nombre y el origen, entra el humano) · 13.0 a 20.5]\nVO: Se llama Olga Cabrera y es de Huajuapan, en la Mixteca. Empezó vendiendo comida en el mercado de su pueblo.\nIMG/SFX: MUST-GET manos de ella. Corte a textura del maíz: grano crudo, mazorca, costal o frasco si están a la vista. Nada de postal de pobreza, el mercado es el punto de partida de una profesional\n\n[5 · EXPEDIENTE 2 (la grieta, entra el valle 15 a 60 s) · 20.5 a 28.0]\nVO: Cuando llegó a la ciudad de Oaxaca, su comida no se vendía. ANIOL FUERA DE CUADRO: ¿por qué no se vendía lo que usted cocinaba?\nIMG/SFX: Plano fijo, más cerrado, sin música desde aquí. Se corta el b-roll: a partir de esta pregunta manda la cara\n\n[6 · LA HERIDA (el share, el corazón de la pieza) · 28.0 a 41.0]\nVO: OLGA: [DATO A LEVANTAR EN CAMPO, su respuesta textual en cámara. No se parafrasea, no se dirige, no se repite toma]. Ancla publicada solo como PLAN B en off si ella no lo dice: en una entrevista lo contó así, hacía comida típica de su región, pero no se vendía porque no era conocida.\nIMG/SFX: Plano fijo, sin música, sin b-roll encima. [silencio 2 s después de que ella termine, no se corta]. Este es el momento que se protege en el EDL\n\n[7 · EL OBJETO (por qué esto no es polvo) · 41.0 a 50.5]\nVO: El maíz no es uno solo. Viene de los Valles, de la Mixteca y de la Chinantla. Sin leche comercial, sin almidón, sin sobre.\nIMG/SFX: Proceso: molienda, olla, el barro llenándose. Sticker: \"45 a 65 pesos\" [confirmar contra la carta del día antes de publicar]. NO se dice el número de atoles de la carta: las fuentes discrepan, solo es decible si lo dice ella\n\n[8 · LA PRUEBA (aire obligatorio) · 50.5 a 55.0]\nVO: [SIN VO, 3 s. Solo el sorbo]\nIMG/SFX: Barro en primer plano y la cara de Olga mirando. Aniol desenfocado o de espaldas. [SFX cuchara contra barro, sorbo, el ruido del lugar sube]. La reacción no se dirige y no se repite\n\n[9 · LA REACCIÓN (no se ensaya, regla dura) · 55.0 a 63.0]\nVO: [DATO A LEVANTAR EN CAMPO: la frase sale de la boca al probar, no del papel. Guía de orden, no de palabras: textura, temperatura, y a qué le sabe a él. Prohibido delicioso, increíble, espectacular, una locura]\nIMG/SFX: Cenital de los dos barros con las manos de ella entrando en cuadro, vapor. Portada candidata número dos\n\n[10 · LA PREGUNTA DE CIERRE (misma que abrió el hook) · 63.0 a 68.5]\nVO: ANIOL FUERA DE CUADRO: ¿qué se pierde si el atole se vuelve polvo de sobre?\nIMG/SFX: MUST-GET, vuelta al eje del hook: la olla y el barro en cuadro con ella\n\n[11 · VEREDICTO EN MODO TESTIGO (ella sentencia, el host testifica) · 68.5 a 79.0]\nVO: OLGA: [DATO A LEVANTAR EN CAMPO, su respuesta]. ANIOL, después de ella, nunca antes: yo vine pensando en un sobre de polvo. Me voy con una olla y con quien la mueve.\nIMG/SFX: Ella con el barro, mismo eje del arranque. TXT: \"EL MAÍZ TAMBIÉN SE BEBE\". [silencio 1 s antes de la línea de Aniol]\n\n[12 · ANCLA Y AGUJERO UNIVERSAL (nombrado, jamás pedido) · 79.0 a 85.0]\nVO: En casi todas las casas de México el atole lo hacía alguien. Y casi nadie sabe con qué maíz.\nIMG/SFX: Último plano: la olla en marcha, o Reforma 411 a las 8 con la gente pasando. Sin texto de premio en pantalla. Cero CTA en pantalla\n\nABORTAR SI: DESBLOQUEO (las cuatro a la vez, si falta una la pieza no pasa a producción): 1) Olga Cabrera Oropeza está el martes 28 a las 8:00 y habla en cámara, con permiso de grabación pedido en puerta antes de sacar la cámara. 2) El proceso del atole es visible desde el área pública, o conceden 60 segundos de cocina solo para el atole. 3) Los cuatro huecos marcados [DATO A LEVANTAR EN CAMPO] quedan llenos con material real: verbatim de la herida (bloque 6), verbatim del cierre (bloque 11), reacción no ensayada (bloque 9) y precio confirmado contra la carta del día. 4) Se llega 07:45 y se confirma en puerta la apertura, porque las fuentes discrepan entre 7:00, 7:30 y 8:00 y el slot no admite segundo intento.\n\nABORTO TOTAL, no se publica nada: si Olga no está (no hay segundo personaje documentado con nombre en el equipo, y sin personaje no hay pieza), si niegan el permiso de grabación, o si al revisar el material la respuesta al mantra \"se lo recomendaría a mi mejor amigo\" no es un sí limpio.\n\nDEGRADACIÓN, no aborto: si el proceso no es visible y niegan el acceso de 60 segundos, la pieza deja de ser el reel principal del viaje y se convierte en retrato secundario con los barros y las recetas que ella tiene en la cabeza. Si el equipo sienta a Aniol en el comedor de arriba antes de tener los planos de proceso en la lata, se corta el rodaje y se recuperan primero manos, olla y grano: la mesa se acepta solo después.\n\nBLOQUEANTE DE MADRUGADA, hoy: DM a @tierradelsolrestaurante y a @_laatoleria. No escribir a @tierradelsol.oaxaca, que es otra cuenta y no parece ser el restaurante. Sin respuesta a esos mensajes, este guion sigue siendo un borrador bloqueado.",
+    "newsletter_resumen": "Oaxaca de Juárez, ocho de la mañana, Reforma 411. En casi todo México el atole llega en un sobre de polvo. Aquí lo sirven en barro y sale de una olla.\n\nOlga Cabrera Oropeza es de Huajuapan de León, en la Mixteca. Empezó vendiendo comida en el mercado de su pueblo. Cuando llegó a la ciudad de Oaxaca, su cocina no se vendía porque casi nadie sabía lo que era. Ella lo contó así en una entrevista: hacía comida típica de su región, pero no se vendía porque no era conocida. Antes de este lugar tuvo once años un comedor de dieciocho asientos. Viene de un linaje de mujeres que cocinaron y amasaron antes que ella.\n\nHoy sostiene un espacio dedicado solo al atole. Maíz nativo de los Valles Centrales, de la Mixteca y de la Chinantla. Sin leche comercial y sin almidones. Servido en vasija de barro, que lo mantiene caliente hasta el último trago. La carta va cambiando, así que el atole de hoy no es el de mañana.\n\nEste año la Guía México Gastronómico nombró restaurante del año a Tierra del Sol. No es el motivo por el que entramos. Entramos por la olla y por lo que hay detrás de la olla.\n\nEn tu casa el atole lo hacía alguien. A su hora, con su maíz, con su cuchara. Casi nadie apuntó esa receta.",
+    "prepared_at": "2026-07-27"
+  },
+  "ox-21": {
+    "id": "dox-21",
+    "restaurant_id": "ox-21",
+    "historia": "En el interior 37 del Mercado La Merced, en la zona del pan, hay un comal que empezó a calentar doña Priscila y que hoy sostiene su hija, Lucila Ruiz. Lucila fue maestra y ya estaba jubilada, o sea que tenía la salida ganada y podía quedarse tranquila en su casa. Cuando faltó su madre eligió lo contrario: se paró frente a la olla del mole negro junto a su esposo, Pedro Ortega, y ahí sigue, sirviendo enmoladas y empanadas de amarillo a las ocho de la mañana. La fonda nació afuera, en el atrio de la iglesia de La Merced, y se metió al pasillo cuando el mercado se construyó, y en la pared llevan décadas escribiendo los que pasan por aquí. Esa es la vuelta que me interesa y que nadie ha contado: una mujer que se pasó la vida enseñando a escribir hoy tiene un muro donde escriben los demás, y el examen que ella califica cada mañana es el mole de su mamá. Hoy es el segundo Lunes del Cerro y Oaxaca entera sube al Fortín. Aquí abajo desayuna la ciudad que se quedó a trabajar, con el mismo comal, las mismas ollas y la gente que llegó antes de que abriera el pasillo. Uno viene por el mole y se va con otra pregunta en la cabeza, que en un mercado no se contesta con papeles ni con discursos: quién va a estar en ese comal cuando Lucila ya no pueda.",
+    "hooks": [
+      "Hoy toda Oaxaca está en el cerro. Aquí desayuna la que se quedó. (ELEGIDO: no depende de ningún bloqueante de campo y abre el mismo valor que cierra la pieza)",
+      "Fue maestra. Hoy la pared de su fonda es su pizarrón. (solo si la pared sigue ahí sin repintar y si ella nombra el oficio en cámara)",
+      "Dejó el salón de clases para pararse en el comal de su madre. (solo si lo dice ella primero; no va en boca de Aniol)"
+    ],
+    "datos": [
+      "Dirección: Fonda Florecita, interior 37, zona del pan, Mercado La Merced (Mercado Democracia), Av. Morelos, Centro, Oaxaca de Juárez. Fuente: expediente verificado + saborearte.com.mx + OEM/Aderezo",
+      "Teléfono: 951 513 5364. Llamar hoy a las 7:30 y preguntar tres cosas: si abren este lunes 27 pese al Lunes del Cerro, la hora real de cierre y si Lucila va a estar",
+      "Cierra los martes, confirmado por tres fuentes. Ese día lo destinan a surtir (El Sol de México, 6 de enero de 2026)",
+      "Horario en disputa: las fuentes dan 6:00 a 18:00, 7:30 a 17:30 y 8:00 a 18:00. No se publica ni se dice ninguna hora hasta leer el letrero. [VERIFICAR EN SITIO]",
+      "Precio: consumo de 100 a 200 MXN por persona (Google Maps, 199 personas). Tlayudas desde 120 MXN (expediente verificado). El dato de 60 MXN por persona es viejo y no se usa",
+      "Pago: una fuente local dice que solo aceptan efectivo, sin confirmar. Llevar suelto. [VERIFICAR EN SITIO]",
+      "Cómo llegar: el mercado da a Av. Morelos, en el Centro, caminando desde el Zócalo. Se entra por la zona del pan y desde ahí se busca el interior 37. Ruta exacta del pasillo [VERIFICAR EN SITIO]",
+      "Cuándo llegar: 7:45, con las cajas de pan entrando y antes de que el pasillo se llene. Ventana útil hoy de 7:45 a 9:30",
+      "Contexto de hoy, lunes 27 de julio: segundo Lunes del Cerro (La Octava), funciones a las 10:00 y 17:00 en el Auditorio Guelaguetza del Cerro del Fortín (Heraldo de México Oaxaca; PorEsto, 2026). Hay que subir antes de las 10:00",
+      "Permisos antes de encender cámara: el de Lucila para grabarla con micrófono y el de la administración del mercado para grabar en pasillo",
+      "Audio: mercado en día de fiesta es ruido puro. Micro de solapa o de mano pegado a ella. Sin voz limpia de Lucila la pieza no existe",
+      "Luz: mixta, fluorescente más tragaluz. Sentar la entrevista cerca de la fuente natural y fijar balance de blancos antes de la primera toma",
+      "Instagram del negocio: @fondaflorecita_oficial",
+      "Lucila Ruiz, hija de doña Priscila (la fundadora), maestra jubilada desde 2008, lleva la fonda con su esposo Pedro Ortega. Verificado en expediente, pero en cámara lo cuenta ella, no Aniol",
+      "La fonda se llama Florecita por Lucila Flor, hija de doña Priscila (saborearte.com.mx). No está claro si es la propia Lucila Ruiz o una hermana. [VERIFICAR EN SITIO]",
+      "La pared donde firman los comensales desde hace décadas (OEM/Aderezo + dossier local). Puede estar repintada. [VERIFICAR EN SITIO en los primeros dos minutos]"
+    ],
+    "pedir": [
+      {
+        "name": "Empanada de amarillo",
+        "why": "Es el plano. Masa echada al comal grande, mole amarillo, doblez y vapor: proceso, manos y escala en una sola toma sin cortar por la mitad. Candidata número uno a portada y a primer corte."
+      },
+      {
+        "name": "Enmoladas (mole negro en formato desayuno)",
+        "why": "El mole negro es el sello de la casa y las enmoladas lo ponen en la mesa a las ocho de la mañana sin forzar el horario. Es el plato donde vive la receta de doña Priscila: ahí se le pregunta a Lucila qué le cambió y qué no."
+      },
+      {
+        "name": "Chocolate de agua con pan de yema",
+        "why": "Estamos en la zona del pan del mercado. El batido, la espuma y el pan mojado son el ritual del desayuno oaxaqueño y dan el momento de calor y de silencio de la pieza."
+      },
+      {
+        "name": "Tlayuda o memela, solo si el comal ya está trabajando a esa hora",
+        "why": "Es por lo que más se les conoce, pero es plato de mediodía. Si no está saliendo, no se pide para la cámara: cocinar algo fuera de su hora es fabricar una escena. Precio verificado: tlayudas desde 120 MXN."
+      }
+    ],
+    "preguntas": [
+      {
+        "role": "Al personaje",
+        "texto": "¿Cuál fue la última clase que dio y qué hizo al día siguiente por la mañana?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Cuando faltó su mamá, ¿quién decidió que la fonda seguía: usted o ella ya lo había dejado dicho?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Hubo un día en que pensó cerrar? ¿Qué pasó ese día?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Qué extraña del salón que aquí no encuentra?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Qué le dijeron sus compañeros maestros cuando supieron que se venía al mercado?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Cuál receta de su mamá todavía no le sale igual que a ella?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Quién escribió el primer mensaje de esa pared y qué dice?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "La fonda se llama Florecita, ¿por quién? ¿Es usted o es otra persona de la familia?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿A qué hora empieza de verdad este desayuno y quién llega primero al comal?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Hoy toda la ciudad está en el cerro. ¿Usted ha subido alguna vez a ver la Guelaguetza o siempre le toca cocinar?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "¿Quién va a estar en ese comal cuando usted ya no pueda, y se lo ha dicho a esa persona? (va al final, plano fijo, dos segundos de silencio después de su respuesta)"
+      }
+    ],
+    "candidatura_status": "watch",
+    "candidatura_razon": "Guion en BORRADOR_BLOQUEADO: DESBLOQUEO (los cuatro, sin excepción): (1) Llamada al 951 513 5364 a las 7:30 con tres respuestas: que abren hoy lunes 27 pese al Lunes del Cerro, la hora real de cierre, y que Lucila va a estar. (2) Lucila en el comal, con permiso de cámara y micrófono concedido por ella, más permiso de la adminis",
+    "angulo": "El pizarrón y la pared. Toda la cobertura que existe de esta fonda la cuelga de los famosos que firmaron el muro, que es fama prestada y no está verificada de primera mano. Aquí se invierte el foco: una mujer que se pasó la vida enseñando a escribir hoy tiene una pared donde escriben los demás, y lo que califica cada mañana es el mole de su madre. El conflicto real, ya verificado en su forma dura, es que tenía carrera y jubilación ganadas y aun así eligió el comal de un mercado cuando murió doña Priscila. Todo lo demás es hipótesis que se levanta en la mesa y solo existe si sale de su boca: qué perdió al cambiar el salón por el mercado, si alguna vez pensó cerrar, y si la mujer que cocina el día de la fiesta ha subido alguna vez al Cerro. Encima está el marco del día: hoy Oaxaca entera sube al Fortín y en La Merced desayuna la ciudad que se quedó a trabajar, un contraste que hoy se graba sin explicarlo y que mañana ya no existe porque cierran los martes. Eje HERENCIA sin superlativos y sin premios. El diferencial de esta pieza frente a Doña Vale y Tía Elvia no es la herencia, es la maestra: si en la mesa no aparece el oficio anterior, esta pieza no tiene por qué existir.",
+    "alertas": [
+      "BLOQUEANTE PRINCIPAL: Lucila. Sin ella en el comal, con permiso y con micrófono, no hay reel, hay B-roll para story. Llamada obligatoria al 951 513 5364 a las 7:30",
+      "BLOQUEANTE DE RELOJ: ventana real de 7:45 a 9:30 porque la función del Cerro es a las 10:00. La entrevista va primero. Si a las 8:40 no hay entrevista grabada, se cierra solo el proceso de la empanada y se abandona el resto",
+      "BLOQUEANTE DE AUDIO: mercado en día de fiesta. Sin voz limpia de Lucila la pieza no existe, porque lo que sostiene la retención hasta el final es ella hablando, no los planos bonitos",
+      "PROHIBIDO cualquier año de fundación y cualquier cifra de antigüedad. Las fuentes se contradicen: 1963, 1965, 45 años, 48 años, más de 60 años. Ni en cámara ni en caption. El 1973 es el traslado al mercado, no la fundación, y solo se dice si ella lo confirma",
+      "PROHIBIDO nombrar a Francisco Toledo, Bono, Rodolfo Morales o a cualquier famoso de la pared como hook o como afirmación de Aniol. Es prueba social prestada y no está verificada de primera mano. Solo existe en la pieza si Lucila lo cuenta ella",
+      "PROHIBIDA la frase 'Toledo frenó el Centro de Convenciones'. Es incorrecta: su consigna literal fue sí al Centro de Convenciones, no en el cerro del Fortín, y el proyecto se reubicó, no se canceló. Si acaso, 'peleó para que no se hiciera en el cerro', y de remate al final, nunca de entrada",
+      "PROHIBIDO decir hora de apertura o de cierre. Tres versiones distintas en las fuentes: se lee el letrero en sitio o no se dice",
+      "PROHIBIDO el consumo de 60 pesos por persona. Es dato viejo y contradice el rango verificado de 100 a 200 MXN",
+      "PROHIBIDO cualquier superlativo: el mejor mole de Oaxaca, la fonda más antigua, la mejor tlayuda. Se dice 'mi favorita' o no se dice",
+      "PROHIBIDO afirmar que Lucila nunca ha visto la Guelaguetza. Es la pregunta que puede abrir la pieza, no un dato",
+      "PROHIBIDOS los números de la vida de Lucila que ella no diga: años de docencia, número de alumnos, edad, año en que murió doña Priscila",
+      "PROHIBIDO 'aquí no vienen turistas' o cualquier framing de enemigo, de anti guía o de ranking en boca del host. Modo testigo, no juez",
+      "RIESGO DE DATO: no está claro si Lucila Flor, la del nombre de la fonda, es la propia Lucila Ruiz o una hermana. No decir 'su hermana' ni 'ella misma' sin que lo aclare en cámara",
+      "RIESGO DE HOOK: la pared puede estar repintada. Verificarlo en los primeros dos minutos. Si no existe, cae el hook de la pared y se va con el del día del cerro, que es el elegido justo por eso",
+      "RIESGO DE PAGO: una fuente local dice que solo aceptan efectivo, sin confirmar. Llevar suelto",
+      "RIESGO DE CARTERA: no repetir el marco 'señora de mercado que heredó la receta', ya usado con Doña Vale y Tía Elvia en este mismo viaje. Si el ángulo de la maestra no aparece en la mesa, no se fuerza: baja a segunda parada de S3",
+      "El caption va largo por contexto y por anclaje geográfico en la primera línea, no porque tenga alcance prometido: el prior de '4.3x más shares con 500+ caracteres' no es re verificable hoy porque el pipeline trunca el campo Copy a 60 caracteres"
+    ],
+    "audio_url": null,
+    "audio_duration_s": null,
+    "video_url": null,
+    "video_duration_s": null,
+    "notebook_url": "",
+    "emocion_target": "Admiración",
+    "frase_ancla": "Vine por el mole de su mamá y me fui pensando en quién se queda en ese comal.",
+    "tesis_central": "Una maestra jubilada que podía descansar eligió pararse en el comal de su madre muerta, y la pregunta que deja no es qué se come aquí sino quién se queda en ese comal cuando ella ya no pueda.",
+    "hook_principal": "\"Hoy toda Oaxaca está en el cerro. Aquí desayuna la que se quedó.\"",
+    "guion_escaleta": "HOOK: \"Hoy toda Oaxaca está en el cerro. Aquí desayuna la que se quedó.\"\n\nEstado: BORRADOR_BLOQUEADO · duracion estimada 85s\n\n[1 · HOOK / FRAME 1 (ventana de oro) · 0-1.2]\nVO: Hoy toda Oaxaca está en el cerro.\nIMG/SFX: Aniol en la boca del interior 37, gesto y movimiento, MÁXIMO 1.2 s en pantalla (Matrix C2: cara ≤1.5 s). Sin música desde el frame 1. · TXT: \"HOY TODA OAXACA ESTÁ EN EL CERRO\"\n\n[2 · MUST-GET 1 (aire de entrada) · 1.2-3.4]\nVO: [SIN VOZ · 2.2 s]\nIMG/SFX: Corte seco a manos de Lucila sobre el comal, masa cayendo, muy cerca, vertical, sin cortes internos. [AUDIO COMAL EN CRUDO, nada encima] · Este plano NO lleva voz de Aniol, es la regla del brief.\n\n[3 · HOOK parte 2 (la apuesta) · 3.4-6]\nVO: Aquí desayuna la que se quedó.\nIMG/SFX: Empanada de amarillo doblándose sobre el comal, vapor saliendo. [SIZZLE] · Food porn 1 de 3 de la ventana de oro.\n\n[4 · ANCLAJE (dato duro 1) · 6-10]\nVO: Mercado La Merced, interior treinta y siete, en la zona del pan.\nIMG/SFX: Dos clips: cajas de pan entrando por el pasillo + chocolate de agua batiéndose con espuma [MUST-GET 6]. Food porn 2 y 3, ambos escenifican el lugar. · TXT sticker: \"MERCADO LA MERCED · INT. 37\"\n\n[5 · PRESENTACIÓN DEL PERSONAJE · 10-14]\nVO: Ella es Lucila. La fonda era de su mamá, doña Priscila.\nIMG/SFX: Retrato de Lucila en su puesto, un segundo de mirada a cámara [MUST-GET 2], pedido con permiso. · Si en la entrevista ella misma lo dice, se corta esta línea y se usa SU frase.\n\n[6 · HUECO LUCILA 1 (el oficio anterior) · 14-25]\nVO: [DATO A LEVANTAR EN CAMPO · LUCILA, en su voz, sin que Aniol lo anticipe: qué hacía antes de este comal y qué hizo la mañana siguiente a su última clase. Preguntas de LIAM 1 y 3. Aniol pregunta fuera de cámara y su pregunta se corta o se deja de un segundo.]\nIMG/SFX: Entrevista sentada junto al comal [MUST-GET 5], plano medio, micro de solapa o de mano pegado a ella por el ruido del mercado. · TXT sticker SOLO si sale de su boca: \"MAESTRA\"\n\n[7 · EL STAKE (por qué importa que se quedara) · 25-31]\nVO: Podía quedarse en su casa. Se vino al comal. [Línea condicional: si ella ya dijo en cámara que estaba jubilada, Aniol añade delante \"Estaba jubilada.\" Si no lo dijo, esa palabra NO se pone en boca de Aniol.]\nIMG/SFX: Detalle de sus manos trabajando + insert del comal grande a plena carga. Ambiente del mercado sube.\n\n[8 · HUECO LUCILA 2 (el conflicto, el valle) · 31-43]\nVO: [DATO A LEVANTAR EN CAMPO · LUCILA: quién decidió que la fonda seguía cuando faltó doña Priscila, si ella o su mamá ya lo había dejado dicho, y si hubo un día en que pensó cerrar y qué pasó ese día. Preguntas de LIAM 2 y 5. Este es el bloque que decide si hay reel.]\nIMG/SFX: Dos tamaños: plano medio de ella hablando + detalle de manos. B-roll encima solo donde no tape la mirada: olla del mole negro, cuchara removiendo. · Aquí vive el valle 15-60 s: se llena con su voz, no con relleno.\n\n[9 · EL PEDIDO · 43-48]\nVO: Le pedí la empanada de amarillo.\nIMG/SFX: Proceso completo en una sola secuencia, sin cortar por la mitad [MUST-GET 3]: masa, comal, mole amarillo, doblez, vapor. · TXT sticker: \"[DATO A LEVANTAR EN CAMPO: precio real leído del menú en sitio]\"\n\n[10 · LA MORDIDA (aire obligatorio) · 48-52]\nVO: [SIN VOZ · 4 s]\nIMG/SFX: Mordida en cámara, corte cerrado del relleno. [CRUNCH + vapor, audio real, nada encima] · Silencio de VO innegociable.\n\n[11 · LA REACCIÓN (no se ensaya) · 52-60]\nVO: [A DECIR EN SITIO, 1 o 2 tomas, sin ensayar. Estructura obligatoria: textura, luego temperatura, luego sabor, luego una comparación de calle. Prohibido \"delicioso\", \"increíble\", \"una locura\" y cualquier superlativo. La interjección real vale más que la frase construida.]\nIMG/SFX: Cara de Aniol reaccionando + primer plano de la empanada abierta. Corte de vuelta a ella mirando.\n\n[12 · DATO DURO 2 y 3 · 60-66]\nVO: Cierran los martes. Ese día lo usan para surtir. [+ hueco: el porqué del nombre Florecita, en su voz]\nIMG/SFX: Letrero e interior 37, clientela local desayunando en la barra (sin caras identificables sin permiso). · TXT sticker: \"CIERRAN LOS MARTES\" · NO decir el nombre de quién es \"Florecita\" hasta que ella lo aclare, ver notas.\n\n[13 · LA PARED (bloque condicional) · 66-72]\nVO: [DATO A LEVANTAR EN CAMPO · LUCILA: quién escribió el primer mensaje de esa pared y qué dice. Pregunta de LIAM 8. La pared solo se abre cuando ella la nombra. Aniol NO nombra a nadie en off.]\nIMG/SFX: Tilt lento y cerrado sobre letras y firmas [MUST-GET 4], sin buscar ninguna firma concreta. · Si la pared está repintada o ella no la menciona, este bloque se elimina entero y la pieza no se resiente.\n\n[14 · ARBITRAJE (voz en off, modo testigo) · 72-78]\nVO: Yo vine por el mole de su mamá. Me voy pensando en quién se queda.\nIMG/SFX: Manos de ella entregando el plato, manos de Aniol recibiendo [APOYO]. Aniol NO aparece a cámara aquí: el puente se ve, el protagonismo no se mueve.\n\n[15 · CIERRE / MARKER PROTEGIDO · 78-86]\nVO: [Pregunta de Aniol en off, cortada al mínimo: \"¿Quién va a estar en ese comal cuando usted ya no pueda?\"] + [DATO A LEVANTAR EN CAMPO · LUCILA: su respuesta, en una toma fija y sostenida] + [SILENCIO 2 s después de que ella termine]\nIMG/SFX: Plano fijo y sostenido de Lucila. Sin música encima, sin CTA hablado, sin b-roll tapándola. Último frame: ella o el comal, nunca Aniol. · TXT: \"¿QUIÉN SE QUEDA EN ESE COMAL?\" · TXT sticker final: \"LA MERCED · INT. 37 · CIERRA MARTES\"\n\nABORTAR SI: DESBLOQUEO (los cuatro, sin excepción): (1) Llamada al 951 513 5364 a las 7:30 con tres respuestas: que abren hoy lunes 27 pese al Lunes del Cerro, la hora real de cierre, y que Lucila va a estar. (2) Lucila en el comal, con permiso de cámara y micrófono concedido por ella, más permiso de la administración del mercado para grabar en pasillo, pedidos ANTES de encender. (3) Audio limpio de Lucila con micro de solapa o de mano pegado a ella: sin su voz audible por encima del mercado, esta pieza no existe, porque la palanca medida es la retención hasta el final y eso lo sostiene su voz, no los planos bonitos. (4) Los cuatro huecos [DATO A LEVANTAR EN CAMPO] llenos con sus palabras textuales: oficio anterior, quién decidió que la fonda seguía, la pared (si aplica), y quién estará en ese comal.\n\nABORTO A REEL, se rueda B-roll y se convierte en story sin publicar pieza: si Lucila no está, si no da permiso, o si no hay audio limpio de ella.\n\nABORTO PARCIAL, no mata la pieza: si la pared está repintada o ella no la menciona, se elimina el bloque 13 entero. El hook elegido no depende de la pared, por eso se eligió.\n\nABORTO POR RELOJ: si a las 8:40 no hay entrevista grabada, se cierra solo el proceso de la empanada y se abandona el resto. Hay que subir al Cerro para la función de las 10:00.\n\nDEGRADACIÓN POR CARTERA: si en la mesa el ángulo del oficio anterior de Lucila no aparece y la conversación se queda en \"señora de mercado que heredó la receta\", esta pieza canibaliza a Doña Vale y a Tía Elvia, ya grabadas en este mismo viaje. En ese caso NO se fuerza: baja a segunda parada de S3 y esta ventana se usa para B-roll y story.\n\nLOGÍSTICA QUE PUEDE TIRAR EL RODAJE: llevar efectivo suelto (una fuente local dice que solo aceptan efectivo, sin verificar) y fijar balance de blancos antes de la primera toma por la luz mixta de fluorescente más tragaluz.",
+    "newsletter_resumen": "Oaxaca de Juárez. Mercado La Merced, interior 37, en la zona del pan.\n\nHoy es el segundo Lunes del Cerro. La ciudad entera sube al Fortín, y aquí abajo se desayuna igual que cualquier otro día. Mismo comal, mismas ollas, misma gente que llegó antes de que abriera el pasillo.\n\nLa fonda la abrió doña Priscila. Hoy la lleva su hija Lucila, junto a su esposo Pedro. Lo que hacía Lucila antes de pararse en este comal se lo pregunté a ella y prefiero que lo cuente ella, porque es su historia y no la mía. [SI ELLA LO CUENTA EN CÁMARA: se completa aquí con sus palabras, no con las nuestras.]\n\nVine por el mole de su mamá y me fui con otra cosa en la cabeza. En un mercado, la pregunta de quién sigue en el comal cuando la persona que lo sostiene ya no pueda no se contesta con papeles ni con discursos. Se contesta un día cualquiera, cuando alguien se levanta más temprano de lo que le tocaba y se pone el mandil sin que nadie se lo pida. Eso es lo que estaba mirando mientras se doblaba la empanada.\n\nNo les voy a poner nota ni número. Lo único que sé decir es esto: yo volvería, y llevaría a mi gente.\n\nGuárdenselo para cuando anden por el centro de Oaxaca. Cierran los martes, y ese día lo ocupan en surtir.\n\n@fondaflorecita_oficial",
+    "prepared_at": "2026-07-27"
+  },
+  "ox-22": {
+    "id": "dox-22",
+    "restaurant_id": "ox-22",
+    "historia": "En Oaxaca nadie dice vamos por unos tacos a la esquina de 20 de Noviembre con Las Casas. Dice vamos a Chefinita. Y Chefinita no es una marca ni un menú: es el apodo de la señora que atiende el puesto, y de ese apodo salió el nombre del negocio. Eso es exactamente lo único que está escrito en algún sitio. Lo demás no existe. Quién es ella, quién le puso ese apodo y cuándo, quién le enseñó la salsa, quién estaba parado en esa banqueta antes que ella, quién se queda con la cazuela el día que no salga a poner el puesto: ni una línea, ni una fuente, ni una foto. Una ciudad entera repite un nombre propio de madrugada y la persona detrás no aparece por ningún lado. Esa es toda la historia y es suficiente. Mientras tanto la esquina hace lo que hace siempre, que es trabajar al revés: enciende el foco cuando la ciudad apaga las luces, sirve tacos, pozole y tostadas a la gente que ya terminó su jornada, y aguanta hasta que amanece. Esta noche, la del segundo Lunes del Cerro, la Guelaguetza vacía el cerro hacia el Centro y la fiesta entera aterriza aquí, a media cuadra del Mercado 20 de Noviembre, cuando todo lo demás ya cerró. No venimos a puntuar tacos ni a medir el picor de la salsa. Venimos con una sola pregunta, quién es Chefinita, y después a callarnos. Si ella contesta, hay historia. Si no contesta, se cena, se paga, se dan las gracias y se sigue, porque hay esquinas que no le deben una historia a nadie.",
+    "hooks": [
+      "En Oaxaca la gente dice vamos a Chefinita. Y nadie sabe quién es Chefinita.",
+      "Este puesto abre por la tarde y no cierra hasta la madrugada. [Variante B del test A/B, usable solo si ella confirma la hora en sitio]",
+      "Una sola pregunta en esta esquina de madrugada: quién hace esta salsa."
+    ],
+    "datos": [
+      "Dirección: esquina de 20 de Noviembre y Las Casas, barrio de La China, Centro Histórico de Oaxaca, a media cuadra del Mercado 20 de Noviembre. Confirmado por fuente primaria de 2019 más listados de directorio.",
+      "Horario declarado en la fuente de 2019: el puesto se instala desde las cinco de la tarde y cierra hacia las cuatro de la madrugada. El dato tiene siete años. [VERIFICAR EN SITIO] la hora real de apertura y de cierre de esta noche, preguntándoselo a ella.",
+      "Horario en disputa: un listado de DiDi Food marca de 10:00 a 22:00, lo que contradice el nocturno de todas las demás fuentes. Probablemente corresponde a la sucursal o a la ventana de reparto. No se usa. [VERIFICAR EN SITIO]",
+      "Qué se vende: tacos, pozole y tostadas. Confirmado por fuente primaria y por el propio nombre comercial del listado.",
+      "Rango de gasto del expediente: entre 100 y 200 MXN por persona. Los precios de 2019 (50 pesos la orden de puerco) NO se usan como precio de hoy. [VERIFICAR EN SITIO] con el ticket real de esta noche.",
+      "Formas de pago: es un puesto de calle, lo previsible es efectivo. Llevar billete chico. [VERIFICAR EN SITIO] si aceptan tarjeta o transferencia.",
+      "Cómo llegar: a pie desde el Zócalo bajando por la calle 20 de Noviembre en dirección al Mercado 20 de Noviembre, hasta el cruce con Las Casas. Se reconoce por el foco del puesto, que de noche es la única luz fuerte de la esquina. [VERIFICAR EN SITIO] los minutos exactos de caminata.",
+      "Cuándo llegar: la noche del segundo Lunes del Cerro, las 21:00 es hora pico absoluta. Si el plan es solo cenar, esa hora es la buena. Si el plan es grabar, se cena y se paga primero sin cámara grande y se pregunta en el hueco entre tandas.",
+      "Servicio: puesto de banqueta, no restaurante. [VERIFICAR EN SITIO] si hay banca, barra o se come de pie, y si hay dónde sentarse en noche de Guelaguetza.",
+      "Existe un segundo listado, Taquería Chefinita Suc. Xoxo, en Santa Cruz Xoxocotlán, según DiDi Food. No está confirmado que sea la misma familia ni el mismo negocio. [VERIFICAR EN SITIO] preguntándolo, nunca afirmándolo.",
+      "Confirmar al llegar que el puesto está efectivamente instalado esta noche. El horario nocturno converge en tres fuentes, pero todas heredan el mismo origen de 2019. [VERIFICAR EN SITIO]"
+    ],
+    "pedir": [
+      {
+        "name": "Orden de tacos de cerdo",
+        "why": "Es el producto ancla del puesto según la única fuente primaria disponible y es lo que pide el cliente local. Da el plano de plancha, vapor y manos. El precio se verifica al pagar, el dato de 2019 no se dice en cámara."
+      },
+      {
+        "name": "Pozole",
+        "why": "Aparece en el propio nombre comercial del negocio, o sea que es identidad y no antojo. Es el plato de cazuela y de madrugada: aporta el plano de vapor, cucharón y olla, que es el objeto sobre el que gira la pregunta de quién se queda con la receta."
+      },
+      {
+        "name": "Tostada",
+        "why": "Tercera pata del menú según la fuente primaria y el plato más fotogénico bajo la luz del foco. Sirve de puente mientras se espera el hueco de silencio para preguntar."
+      },
+      {
+        "name": "La salsa, pedida aparte y en cuchara",
+        "why": "Es lo único que la fuente primaria describe como el atractivo principal del lugar. Aparte y en cuchara permite el macro del hilo cayendo sobre el taco y una reacción real, no dirigida. Se prueba, no se compite: nada de reto de picante, ese registro no es Tacotíos."
+      }
+    ],
+    "preguntas": [
+      {
+        "role": "Al personaje",
+        "texto": "Perdone la pregunta directa, pero llevo todo el día buscándolo y nadie me lo sabe decir: quién es Chefinita, cómo se llama ella de verdad?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Quién le puso ese apodo, y cuándo fue la primera vez que alguien llegó a esta esquina llamándola así?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Quién estaba parado aquí antes que usted, y quién va a estar el día que usted ya no salga a poner el puesto?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Quién le enseñó la salsa, y qué le cambió usted a esa receta que la persona que se la enseñó no sabe?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Cuál fue la noche en que pensó en no salir a poner el puesto, y por qué salió igual?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Cuál es la hora más difícil de la madrugada, esa que la gente que viene a comer no ve nunca?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Qué parte del trabajo empieza cuando ya se fue el último cliente y la calle está vacía?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Qué le piden los clientes que llevan viniendo muchos años que no le piden los que llegaron ayer?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Hay otro puesto con el mismo nombre por Xoxocotlán, verdad? Quién lo abrió, es de la familia?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Esta noche, con la Guelaguetza, qué hace diferente respecto a un lunes normal?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Qué pasa con la salsa el día que usted no esté? Quién sabe hacerla igual?"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "A qué hora se instala usted aquí y a qué hora recoge esta noche?"
+      }
+    ],
+    "candidatura_status": "watch",
+    "candidatura_razon": "Guion en BORRADOR_BLOQUEADO: GATE ÚNICO, se resuelve en el bloque 40-44 y decide toda la pieza. El reel existe SOLO si la persona detrás de la cazuela, en el hueco entre tandas y después de haber cenado y pagado sin cámara grande, cumple las dos condiciones a la vez: (1) da su nombre en cámara y (2) declara su vínculo real con ",
+    "angulo": "El nombre sin cara. Nadie ha preguntado nunca en público quién es Chefinita, y esa grieta es verificable esta misma noche con una sola pregunta. No llegamos a reseñar tacos ni a medir el picor de la salsa: llegamos a preguntar por la persona que le dio su apodo a una esquina y dejamos que la esquina conteste o no conteste. Es herencia en su forma más pura, un apodo que se convirtió en dirección, y es también el único ángulo honesto disponible: cualquier otro (la salsa más picante, el clásico de la noche, tres generaciones) exige datos que no tenemos. La segunda capa, disponible sin riesgo, es el oficio invertido: la esquina empieza a trabajar cuando la ciudad termina y cierra cuando la ciudad despierta.",
+    "alertas": [
+      "GATE ÚNICO: protagonista sin verificar, cero fuentes primarias. Si nadie en la esquina da un nombre y un vínculo con la cazuela, no hay reel. Se cena, se paga, se graba B roll y salsa, se publica story y se dice sin dramatizar.",
+      "PROHIBIDO el nombre Guadalupe Martínez Carreño. Prohibición absoluta, ni dicho ni escrito ni en caption ni en notas. La única URL indexada con ese nombre es un PDF de acreedores del gobierno de Oaxaca sin relación con la taquería.",
+      "PROHIBIDO usar Josefina como nombre real de la señora. La fuente primaria no lo dice en ninguna parte: la cadena Chefinita igual a Josefina es inferencia de resúmenes de buscador. Solo se dice si ella o su familia lo dicen en cámara.",
+      "PROHIBIDO cualquier año de fundación, cifra de años en la esquina o número de generaciones. Cero fuentes. Ni lleva décadas, ni toda la vida, ni tres generaciones.",
+      "PROHIBIDO afirmar que Chefinita falleció, que sigue viva o que se retiró. No hay fuente en ninguna de las tres direcciones. El silencio es el material de la pieza, no un hueco que se rellena.",
+      "PROHIBIDO dar por buena cualquier versión dramatizada del relevo generacional antes de que alguien la cuente. Esa es justo la hipótesis que vamos a preguntar.",
+      "RIESGO DE PRECIO: los 50 pesos de la orden de puerco y los 60 de res o mixto son datos de 2019. No se presentan como precios de hoy. Se verifica el ticket o no se dice cifra.",
+      "PROHIBIDO llamar al pozole famoso o legendario: ese adjetivo sale de un resumen de buscador, no de fuente primaria. Y prohibida cualquier sentencia de ranking en boca del host (la mejor salsa, el mejor taco). Modo testigo, como mucho mi favorito.",
+      "HORARIO EN DISPUTA: DiDi Food lista 10:00 a 22:00 contra el nocturno de todas las demás fuentes. Dato no usable. Además, la sucursal de Xoxocotlán se pregunta, no se afirma como misma familia ni mismo negocio.",
+      "MOMENTO: 21:00 de un Lunes del Cerro es hora pico. Riesgo alto de un no por saturación, no por desconfianza. Comer primero sin cámara grande, pagar, y preguntar en el hueco entre tandas.",
+      "SONIDO, riesgo técnico número uno: esquina abierta, madrugada de Guelaguetza, música, tráfico y gente. Sin solapa o micro de mano cerca, la respuesta se pierde y la pieza muere aunque el personaje aparezca.",
+      "LUZ: foco duro y cenital del puesto. Sombras marcadas en la cara. Usar el foco como key, buscar el ángulo donde no queme y no sobreiluminar: se pierde la textura de calle, que es justo lo que rinde.",
+      "DISPOSICIÓN CERO VERIFICADA: nadie del equipo ha hablado con ellos. Un no a la cámara es un no y se respeta en el acto, sin insistir.",
+      "RIESGO DE MARCA: cualquier deriva hacia reto de picante, o hacia investigar quién es la señora en tono de denuncia, rompe el registro. Si la respuesta duele (murió, la familia se peleó, se retiró), se baja la cámara y se pregunta si quieren contarlo. No se explota."
+    ],
+    "audio_url": null,
+    "audio_duration_s": null,
+    "video_url": null,
+    "video_duration_s": null,
+    "notebook_url": "",
+    "emocion_target": "curiosidad",
+    "frase_ancla": "Todo Oaxaca dice vamos a Chefinita, y nadie sabe quién es Chefinita.",
+    "tesis_central": "Una esquina entera de Oaxaca repite un nombre propio de madrugada y ninguna fuente dice a quién pertenece: la pieza no va de tacos, va de la distancia entre un apodo que sobrevivió y la persona que nadie ha nombrado nunca en público, y se sostiene entera en si ella decide contestar una sola pregunta.",
+    "hook_principal": "En Oaxaca la gente dice vamos a Chefinita. Y nadie sabe quién es Chefinita.",
+    "guion_escaleta": "HOOK: En Oaxaca la gente dice vamos a Chefinita. Y nadie sabe quién es Chefinita.\n\nEstado: BORRADOR_BLOQUEADO · duracion estimada 75s\n\n[1 · HOOK (la apuesta) · 0-5]\nVO: En Oaxaca la gente dice vamos a Chefinita. Y nadie sabe quién es Chefinita.\nIMG/SFX: VENTANA DE ORO. Frame 1: cara de Aniol de noche mirando fuera de cuadro hacia la esquina, gesto de duda, máximo 1.5 s. Corte a clip food porn 1: macro de la carne en la plancha, vapor, cuchillo picando. Corte a clip food porn 2: cucharón saliendo de la olla del pozole. [SONIDO CRUDO, sin música: plancha, cuchillo, calle]. TXT: NADIE SABE QUIÉN ES CHEFINITA\n\n[2 · DESARROLLO (dónde estamos, dato confirmado) · 5-10]\nVO: Nueve de la noche, esquina de Veinte de Noviembre con Las Casas.\nIMG/SFX: Clip food porn 3 que escenifica el lugar: plano general de la esquina de noche, el foco del puesto como única fuente de luz contra la calle oscura, gente entrando y saliendo de cuadro. Este es el plano apuesta y la portada candidata. [ruido de calle sube]\n\n[3 · DESARROLLO (expediente, dato confirmado) · 10-16]\nVO: Media cuadra del mercado, en el barrio de La China. Aquí se vende pozole, tostadas y tacos.\nIMG/SFX: Llegada PoV entrando al puesto, la barra, las cazuelas en fila. Cenital corto de la olla del pozole. STICKER: POZOLE, TOSTADAS Y TACOS\n\n[4 · DESARROLLO (el oficio invertido) · 16-22]\nVO: Esto no abre para cenar. Abre cuando la ciudad ya cerró. Y aguanta hasta la madrugada. [CONFIRMAR CON ELLA ANTES DE DECIRLO EN CÁMARA: la hora real de cierre de esta noche. El dato de origen es de 2019 y no se dice sin confirmar]\nIMG/SFX: Contexto Guelaguetza: la calle llena, gente saliendo de la fiesta hacia el puesto. Contraplano de los locales ya cerrados alrededor. STICKER: [HORA DE CIERRE A LEVANTAR EN CAMPO]\n\n[5 · DESARROLLO (la grieta y el pedido) · 22-28]\nVO: El nombre del puesto es el apodo de la señora. Nadie nos sabe decir quién es.\nIMG/SFX: Rótulo del puesto o el nombre escrito donde aparezca. Manos sirviendo. Macro del hilo de salsa cayendo sobre el taco. STICKER: [PRECIO REAL DEL TICKET DE ESTA NOCHE A LEVANTAR EN CAMPO. No se usan los precios de 2019]\n\n[6 · LA PRUEBA (aire obligatorio) · 28-32]\nVO: [SILENCIO 3 s. Mordida. Aquí el guion se calla]\nIMG/SFX: Mordida en cámara, y en el mismo movimiento la cara. [CRUNCH] [cuchara en la olla] [el ruido del lugar sube]. Reacción real, no dirigida, no se guioniza: si sale interjección, se deja entera\n\n[7 · LA PRUEBA (sensorial) · 32-40]\nVO: La tortilla cruje. El cerdo escurre. El pozole quema. Y la salsa llega detrás, despacio. Sabe a calle, no a cocina de restaurante.\nIMG/SFX: Primer plano del taco abierto. Vapor del pozole contra el foco. Cuchara con salsa. [AJUSTAR A LA REALIDAD: si no cruje, no se dice. La línea sensorial se reescribe con lo que pase de verdad]\n\n[8 · EL GATE (una sola pregunta, y a callarse) · 40-44]\nVO: Perdone, ¿quién es Chefinita? ¿Cómo se llama ella de verdad?\nIMG/SFX: Plano medio de la persona detrás del puesto, cámara a la altura del pecho, micro de solapa o de mano cerca. Aniol pregunta UNA vez y se calla. No rellena el silencio. En campo se hace la versión larga y educada de la pregunta y en montaje se corta a esta. AQUÍ SE DECIDE SI HAY PIEZA\n\n[9 · EL VALLE (retrato sostenido, el corazón) · 44-59]\nVO: [VOZ DE LA PERSONA DETRÁS DE LA CAZUELA. DATO A LEVANTAR EN CAMPO: su nombre dicho por ella, su vínculo con el apodo y con la cazuela, quién le enseñó la salsa, quién estaba antes en esta esquina. Aniol no habla encima. Cero VO sobre este bloque]\nIMG/SFX: Plano fijo de ella o de su relevo hablando, sin cortar. Se deja el silencio entero después de cada respuesta. NADA de cortes rápidos: el valle se sostiene con su cara, no con montaje. B-roll solo si el habla lo pide, nunca para tapar\n\n[10 · LA COMUNIDAD (la validación no la da el host) · 59-62]\nVO: [VOZ DE UN CLIENTE EN LA BANQUETA. DATO A LEVANTAR EN CAMPO: por qué viene aquí y no a otra esquina]\nIMG/SFX: Cliente de años en la banqueta, plato en la mano, calle de fondo. Plano suelto, cámara baja, sin producción\n\n[11 · VEREDICTO (arbitra la apuesta literal, modo testigo) · 62-70]\nVO: Preguntamos quién es Chefinita. Nos contestó ella misma, detrás de la olla. (pausa) Lo que nos llevamos no es la salsa. Es su nombre.\nIMG/SFX: MARKER PROTEGIDO. Gesto del veredicto: su cara o sus manos, y solo después Aniol. Se respeta el silencio previo entero. TXT: [SENTENCIA CONDICIONAL, máximo 6 palabras, solo si ella da el nombre: CHEFINITA TIENE NOMBRE]. Si no lo da, no hay pieza y este bloque no existe\n\n[12 · CTA (uno solo, pregunta de mapa) · 70-75]\nVO: ¿Qué esquina de tu ciudad lleva nombre de persona? Vamos a ir a preguntar.\nIMG/SFX: Último frame: plano abierto de la esquina desde lejos, la ciudad ya vacía y el foco del puesto todavía encendido. Cierra en el mismo eje que abrió el hook. [el ruido de la calle baja hasta quedar solo la plancha]\n\nABORTAR SI: GATE ÚNICO, se resuelve en el bloque 40-44 y decide toda la pieza. El reel existe SOLO si la persona detrás de la cazuela, en el hueco entre tandas y después de haber cenado y pagado sin cámara grande, cumple las dos condiciones a la vez: (1) da su nombre en cámara y (2) declara su vínculo real con el apodo o con la cazuela (ella misma es Chefinita, es su relevo, es hija, nieta o aprendiz). Con eso, y solo con eso, el bloque 11 se llena y el guion sale de BORRADOR_BLOQUEADO.\n\nSE ABORTA EN EL ACTO SI: quien atiende es empleado sin vínculo ni relato; o dan un no a la cámara (un no es un no y se respeta sin insistir); o la respuesta no trae ni nombre ni vínculo. En cualquiera de esos casos se apaga la cámara, se cena, se paga, se agradece, se graba solo B-roll (manos y plancha, cazuela, salsa, plano abierto de la esquina) y se publica story sin dramatizar. No se fuerza una pieza sobre una esquina rica.\n\nSE BAJA LA CÁMARA, aunque haya material, si la respuesta duele (que ella murió, que la familia se peleó, que se retiró). Se pregunta si quieren contarlo y se acepta la respuesta. No se explota. Empatía y testigo, siempre.\n\nHUECOS QUE HAY QUE LLENAR CON DATO REAL ANTES DE PUBLICAR: nombre de la persona dicho por ella (bloques 9 y 11 y caption); hora real de cierre de esta noche confirmada por ella (bloque 4); precio real del ticket de esta noche (sticker del bloque 5); frase del cliente de la banqueta (bloque 10).\n\nPROHIBICIONES ABSOLUTAS QUE SIGUEN VIGENTES AUNQUE APAREZCA EL PERSONAJE, ni en VO, ni en caption, ni en texto en pantalla, ni en notas: el nombre Guadalupe Martínez Carreño; el nombre Josefina como nombre real de la señora (la fuente primaria no lo dice, es inferencia de buscador); cualquier año de fundación, cifra de años en la esquina o número de generaciones; afirmar que ella falleció, que sigue viva o que se retiró; los precios de 2019 presentados como precios de hoy; el pozole llamado famoso o legendario; la sucursal de Xoxocotlán dada por familia o por mismo negocio (se pregunta, no se afirma); el horario 10:00 a 22:00 de DiDi; y cualquier sentencia de ranking (mejor salsa, mejor taco, mejor de Oaxaca) en boca del host.",
+    "newsletter_resumen": "Oaxaca, esquina de Veinte de Noviembre con Las Casas, barrio de La China, a media cuadra del Mercado 20 de Noviembre.\n\nAquí nadie dice vamos por unos tacos. Dice vamos a Chefinita.\n\nChefinita es el apodo de la señora que atiende el puesto, y de ahí sale el nombre del negocio. Eso es literalmente lo único que está escrito en algún sitio. Quién es ella, quién le puso el apodo, quién le enseñó la salsa, quién estaba parado en esta esquina antes que ella y qué pasa con esa salsa el día que no salga a poner el puesto: nada de eso existe. Ni una línea. En esta esquina todo el mundo repite un nombre propio y la persona detrás no aparece por ningún lado.\n\nPor eso esta noche no venimos a puntuar tacos. Venimos con una sola pregunta y a callarnos.\n\n[RESPUESTA A LEVANTAR EN CAMPO: su nombre dicho por ella, quién le enseñó la salsa, quién estaba antes en la esquina, quién se queda con la cazuela]\n\nY si no hay respuesta, tampoco pasa nada. Se cena, se paga, se da las gracias y se sigue. Hay esquinas que no le deben una historia a nadie.\n\nLo que sí sabemos: aquí se vende pozole, tostadas y tacos, y este puesto trabaja cuando la ciudad ya se fue a dormir. [HORA DE CIERRE A CONFIRMAR CON ELLA]. El oficio al revés: empiezan cuando todos terminan y cierran cuando todos despiertan. Y esta noche, con la Guelaguetza vaciando el cerro hacia el Centro, la fiesta entera aterriza justo aquí.\n\n¿Qué esquina de tu ciudad lleva el nombre de una persona a la que nadie ha visto la cara? La vamos a ir a buscar.",
+    "prepared_at": "2026-07-27"
   },
   // <<< OAXACA-GUELA AUTO (dossiers)
   "ru-01": {
@@ -3829,21 +4379,127 @@ export const dossiers: Record<string, Dossier> = {
     prepared_at: "2026-07-09",
   },
   "ox-05": {
-    id: "dox-05", restaurant_id: "ox-05",
-    historia: "Criollo lo dirige Luis Arellano, no Enrique Olvera. Es de familia panadera. Su papa, Refugio, le enseno el oficio de nino, con las manos en la masa antes que con un cuchillo. Trabajo nueve anos en Casa Oaxaca con Alejandro Ruiz, luego se fue con Olvera a Pujol y ayudo a abrir restaurantes hasta 2015, pero eligio regresar a Oaxaca. En 2016 abrio Criollo como socio creativo junto a Olvera y el arquitecto Javier Sanchez, y hoy es quien arma el menu cada semana con lo que encuentra en el Mercado Central. Tambien publico Refugio, un libro de 43 panes tradicionales dedicado a la memoria de su padre.",
-    hooks: ["El pan que vas a probar tiene el nombre de un hombre que nunca piso esta cocina.", "Todos vienen a Criollo por el nombre de Olvera. Casi nadie pregunta quien cocina de verdad aqui.", "Este chef pudo quedarse construyendo el imperio de Pujol en la Ciudad de Mexico. Se regreso a Oaxaca por esto."],
-    datos: ["Menu degustacion de 6-7 tiempos que cambia cada semana segun el Mercado Central. Sin carta fija, no hay dos visitas iguales.", "Sociedad de tres desde 2016: Luis Arellano, Enrique Olvera y el arquitecto Javier Sanchez. Olvera es socio fundador, pero quien cocina cada semana es Arellano.", "La Mesa del Chef: 7 tiempos, maximo 4 personas, 1h45, dentro de la cocina.", "Arellano tambien dirige Casamata y publico Refugio, un libro de 43 panes tradicionales dedicado a su padre."],
-    pedir: [{ name: "Menu degustacion de 6-7 tiempos", why: "Cambia cada semana segun lo que trajo el mercado; no hay dos visitas iguales." }, { name: "Pan de la ventana de la entrada", why: "Eco directo del libro Refugio, la version mas honesta de la casa antes del aparato del menu de noche." }, { name: "La Mesa del Chef", why: "7 tiempos dentro de la cocina, maximo 4 personas, ideal para grabar manos y proceso de cerca." }],
-    preguntas: [{ role: "Luis Arellano (chef)", texto: "Tu papa se llamaba Refugio. Que te ensenaba primero, el pan o la paciencia?" }, { role: "Luis Arellano (chef)", texto: "Tuviste la puerta abierta para quedarte en la Ciudad de Mexico con Olvera. Que te trajo de vuelta?" }],
-    candidatura_status: "watch", candidatura_razon: "La historia de Arellano es real y toca, y el lugar merece un reel por la pregunta de identidad de la Guelaguetza. Pero las resenas de comensales estan divididas: varios dicen que el menu se siente plano para el precio. El filtro real no es el nombre en la fachada, sino si Arellano esta cocinando esa semana y que tan de temporada llego el menu, asi que va como candidato condicionado, no como si automatico.",
-    angulo: "Entras pensando que vas al restaurante de Olvera en Oaxaca y sales entendiendo que Olvera abrio la puerta como socio fundador, pero quien decide cada semana, y quien le puso el nombre de su papa a un libro de panes, es Arellano. Formato reel: hook con la paradoja del pan de nombre ajeno, presentacion de Arellano, plano de manos amasando sin voz, un beat en camara donde el articula por que volvio a Oaxaca, los platos como consecuencia de la historia y cierre con pregunta abierta sobre que significa cocina de identidad. Incluir en camara el valle honesto: no todos salen encantados.",
-    alertas: ["Confirmar en sitio: precio del menu degustacion de noche. Las fuentes no cuadran y varios comensales reportan que no se avisa antes de sentarse. Llamar el mismo dia al +52 951 351 1908.", "Confirmar en sitio: horario. Es contradictorio entre fuentes. Confirmar por telefono el mismo dia.", "Confirmar en sitio: si Luis Arellano esta en cocina esa semana antes de reservar. El menu se arma con su presencia, no es fijo.", "Confirmar en sitio: el pan con jamon serrano del servicio de desayuno. Es dato insider no verificado en la carta actual. Preguntar directo por 'el pan de la manana' al llegar.", "Resenas de comensales divididas: algunos describen el menu como plano y caro para lo que ofrece. No es unanime, meter el matiz en camara."],
-    audio_url: "/audio/criollo-preparacion-mental.mp3",
-    audio_duration_s: 1068,
-    emocion_target: "Herencia",
-    frase_ancla: "La identidad no viene del nombre en la fachada.",
-    tesis_central: "La cocina de identidad oaxaquena no viene del nombre grande en la fachada sino de quien decide el menu cada semana; la respuesta esta en una ventana de pan, no en la mesa elegante.",
-    prepared_at: "2026-07-11",
+    "id": "dox-05",
+    "restaurant_id": "ox-05",
+    "historia": "En la calzada Madero, fuera del cuadro turístico, hay una casa donde el menú se rehace entero cada semana con lo que aparezca ese día en el mercado tradicional. Nada se repite, ningún plato vuelve igual. La abrió en 2016 Luis Arellano junto a Enrique Olvera y el arquitecto Javier Sánchez, y el que arma la cocina es Luis. Es de la región de la Cañada y, antes que chef, fue el niño que trabajaba en la panadería de sus papás: eso lo ha contado él en entrevista, no es adorno nuestro. Cocinó con Olvera en Pujol hasta 2015 y volvió a Oaxaca. Y aquí está la cosa: en una casa donde todo cambia, hay una sola cosa que no se mueve nunca, y es la que menos se parece a un restaurante de menú largo. El pan. Cuando por fin hizo su propio libro no lo dedicó a la alta cocina, lo dedicó al pan tradicional mexicano, ese que se elabora todos los días en todas las panaderías de barrio, con recetas acompañadas de relatos de infancia, ausencia y familia. Eso es lo que venimos a buscar: no un menú de autor, sino la mano de un hijo repitiendo el único oficio que aprendió antes que cualquier técnica, en la ventana que da a la calle de su propio barrio. Si Luis no está hoy en la cocina, o si la ventana de pan no está operando, no hay historia y se dice claro: habrá una comida y un banco de imágenes, no una pieza.",
+    "hooks": [
+      "Estamos en Oaxaca. Aquí el menú cambia entero cada semana. Menos el pan.",
+      "Este chef aprendió a hacer pan de niño en la panadería de sus papás.",
+      "Aquí el menú cambia cada semana. El pan de la entrada, no. (reserva, solo si el pan sale en cámara)"
+    ],
+    "datos": [
+      "Dirección: Calzada Francisco I. Madero 129, Col. Santa María del Marquesado, Oaxaca de Juárez. Es una casa, no tiene fachada de restaurante. (Verificado: criollo.mx y expediente del proyecto)",
+      "Teléfono: +52 951 351 1908. LLAMADA OBLIGATORIA antes de salir, cuatro preguntas: abre hoy lunes, hay servicio de comida a las 13:30, está Luis Arellano en cocina hoy, cuánto cuesta el servicio de mediodía. Sin las cuatro respuestas no se sale.",
+      "Horario EN DISPUTA, tres versiones vivas y ninguna se da por buena hasta la llamada [VERIFICAR EN SITIO]: criollo.mx dice lunes a sábado de 9:00 a 21:00; Yelp y 50 Best Discovery dicen que cierra los lunes; agregadores tipo OpenTable y RestaurantGuru desglosan desayuno de lunes a viernes 9:00 a 13:00, comida diaria 13:00 a 17:00 y cena de lunes a sábado 18:00 a 21:00.",
+      "Slot de esta visita: lunes 27 de julio, 13:30, servicio de comida. A esa hora no aplica el formato de degustación de cena.",
+      "Precio: el degustación de 6 tiempos de la noche aparece en el expediente alrededor de 1,800 MXN por persona, pero ese número es de la CENA. El precio del servicio de comida no está verificado en ninguna fuente [VERIFICAR EN SITIO]. Varios comensales reportan que no se avisa el precio, así que se pregunta en la puerta antes de sentarse, sin cámara y sin drama.",
+      "Formato: menú degustación de 6 tiempos que se modifica cada semana, armado con lo que se encuentra en el mercado tradicional. (Fuente primaria: criollo.mx)",
+      "Mesa del Chef: 7 tiempos, máximo 4 personas. Es el único formato que mete la cámara dentro de la cocina. Disponibilidad al mediodía sin confirmar [VERIFICAR EN SITIO].",
+      "Ventana de pan a la calle: es el eje entero de la pieza y su operación HOY no está confirmada por ninguna fuente pública [VERIFICAR EN SITIO]. Dato insider sin confirmar: se comenta un pan con jamón serrano en servicio de mañana. Se pregunta, no se afirma.",
+      "Cómo llegar: está fuera del Centro, sobre calzada Madero. Lo práctico es taxi. Tiempo exacto desde el zócalo y si se puede caminar [VERIFICAR EN SITIO].",
+      "Reserva: llamar antes. Si aceptan entrada sin reserva al mediodía [VERIFICAR EN SITIO].",
+      "Pago: si acepta tarjeta no está confirmado [VERIFICAR EN SITIO]. Llevar efectivo, sobre todo para el pan de la ventana.",
+      "Cuándo llegar: 13:15. Quince minutos antes alcanza para preguntar el precio en la puerta y grabar la fachada y la ventana de pan con luz de mediodía, que es la portada candidata número uno.",
+      "Contexto del día: segundo Lunes del Cerro de la Guelaguetza. Ciudad llena, tráfico y posibles cierres viales [VERIFICAR EN SITIO]. Salir con margen."
+    ],
+    "pedir": [
+      {
+        "name": "El pan de la ventana de la entrada (preguntar directo por \"el pan de la mañana\")",
+        "why": "Es el eje de la pieza y el único plato que conecta con el padre. Verificar en sitio que la ventana siga operando hoy: si no existe, se cae el ángulo completo y la respuesta es no publicar."
+      },
+      {
+        "name": "El menú del servicio de comida (13:00 a 17:00), preguntando el precio ANTES de sentarse",
+        "why": "A las 13:30 no aplica el degustación de cena. El precio del mediodía no está verificado en ninguna fuente y varios comensales reportan que no se avisa. Se pregunta en la puerta."
+      },
+      {
+        "name": "Un plato de maíz, quelites o frijol local de esta semana",
+        "why": "Es la prueba física de lo que compró hoy en el mercado. Cierra el círculo mercado, mano, plato sin depender del formato degustación."
+      },
+      {
+        "name": "Café en la barra o en la ventana, no en la mesa del comedor",
+        "why": "Excusa para quedarse en la zona de pan y horno, que es donde vive el carril que rinde. Cada minuto en el comedor con mantel es un minuto en el carril que rinde peor."
+      },
+      {
+        "name": "Preguntar si la Mesa del Chef está disponible al mediodía",
+        "why": "Es el único formato que pone la cámara dentro de la cocina (7 tiempos, máximo 4 personas). Probablemente sea solo de noche, pero si estuviera resuelve el plan de manos de golpe. No forzar ni pagar de más si no hay reel."
+      }
+    ],
+    "preguntas": [
+      {
+        "role": "Al personaje",
+        "texto": "Cómo se llamaba la panadería de tus papás y a qué hora te levantaban."
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Qué fue lo primero que te dejaron tocar, la masa o el horno."
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Le pusiste a tu libro el nombre de tu papá. Por qué ese nombre y no otro. (Dejarlo hablar. No nombrar al padre tú primero, no preguntar si vive, no usar la palabra ausencia. Si él abre esa puerta, tres segundos de silencio antes de la siguiente pregunta. Si no la abre, se cierra el tema y no se vuelve.)"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Cuando escribiste esas recetas, a quién te imaginabas leyéndolas."
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Tenías la puerta abierta para quedarte construyendo en la Ciudad de México. Qué te trajo de vuelta, y qué perdiste al volver."
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Qué compraste esta mañana en el mercado que no esperabas encontrar. Me lo enseñas."
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Es el Lunes del Cerro, la ciudad está llena de gente de fuera. Qué cambia en tu mercado esta semana."
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Qué plato de los de esta semana no vas a volver a hacer igual nunca."
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Cuando alguien entra y dice el nombre del otro socio, qué te dan ganas de contestar. (Solo si el clima de la mesa lo permite y solo una vez. Si contesta corto o cambia de tema, se acabó: ese conflicto no existe y no se insiste.)"
+      },
+      {
+        "role": "Al personaje",
+        "texto": "Quién amasa el pan los días que tú no estás, y qué le estás enseñando de lo que te enseñó tu papá."
+      }
+    ],
+    "candidatura_status": "watch",
+    "candidatura_razon": "Guion en BORRADOR_BLOQUEADO: SIETE CANDADOS. Si falla uno, la pieza no existe. (1) LLAMADA OBLIGATORIA antes de salir al +52 951 351 1908 con las cuatro preguntas: abre hoy lunes / hay servicio de comida a las 13:30 / está Luis Arellano en cocina HOY / cuánto cuesta el servicio de mediodía. Sin las cuatro respuestas no se sale.",
+    "angulo": "El pan de la ventana, no el menú de la mesa. En una casa donde todo cambia cada semana, el único plato que se repite es el que Luis trae de su infancia, y se vende en la puerta al barrio de Santa María del Marquesado, sin reserva y sin cuenta de cuatro cifras. Ahí la alta cocina y la panadería de barrio son literalmente la misma mano. Eso ancla la pieza en el carril que rinde en esta audiencia (calle, mercado, proceso, manos) y la saca del comedor con mantel, que rinde peor por datos propios. Aniol no entra a juzgar un menú de autor: entra a buscar el pan de un padre dentro del restaurante de un hijo. Modo testigo, siempre.",
+    "alertas": [
+      "BLOQUEANTE 1: llamada obligatoria al +52 951 351 1908 antes de salir, con las cuatro preguntas. El horario es el dato que decide el slot y sigue contradictorio entre la fuente primaria y los agregadores.",
+      "BLOQUEANTE 2: sin Luis Arellano en cocina hoy no hay pieza. La propia casa habla de \"el chef en turno\", él lleva Casamata y sale a festivales, y no hay agenda pública suya para julio 2026. Si no está, se come y se graba banco de imágenes, no hay entrevista.",
+      "BLOQUEANTE 3: la ventana de pan tiene que estar operando hoy [VERIFICAR EN SITIO]. Es el eje entero. Si no hay pan ni acceso al horno, lo que queda es un menú caro cuyo beat ya está rodado.",
+      "BLOQUEANTE 4: colisión de eje dentro del propio viaje. Alfonsina ya tiene \"por qué volvió de Pujol al patio\" y Bodaega ya cubre \"hijo de panadero que volvió\". Si la mesa no entrega algo que ninguno de los dos tiene, no se publica aunque salga bonito.",
+      "PRECIO: cero cifras en cámara sin confirmar. Los ~1,800 MXN son del degustación de CENA. El precio del mediodía se pregunta en la puerta antes de sentarse.",
+      "HORARIO: ninguna de las tres versiones se dice como hecho hasta la llamada.",
+      "PROHIBIDO: el nombre del padre en boca de Aniol. Que lo diga Luis o no se dice. No afirmar, no insinuar y no preguntar si el padre vive o murió: el expediente no lo establece.",
+      "PROHIBIDO: \"43 panes\" y el año de publicación de Refugio. El número no lo confirma la fuente primaria y el año es inferencia, no dato.",
+      "PROHIBIDO: premios, estrellas, rankings y listas (Michelin, 50 Best) como hook, como sentencia o como argumento de calidad. El hook del logro está refutado en este proyecto.",
+      "PROHIBIDO: \"el restaurante de Olvera\", \"el mejor de Oaxaca\", \"el mejor menú de la ciudad\". Se dice \"mi favorito\" o no se dice.",
+      "PROHIBIDO: cualquier framing de enemigo, agravio o denuncia sobre el crédito entre socios. Si Luis no lo nombra él mismo, ese conflicto no existe. Por eso queda vetado el hook \"Todos entran preguntando por un nombre\": no se graba ni como prueba.",
+      "PROHIBIDO: mencionar a Jesús Saldívar como \"el otro chef de Criollo\". Aparece en un post de terceros, sin rol ni vigencia verificados.",
+      "PROHIBIDO: poner en boca de Luis un motivo emocional del regreso a Oaxaca que él no haya dicho frente a la cámara.",
+      "PROHIBIDO: números redondeados de años de oficio, de comensales, de la panadería del padre o de cuánta gente hace fila.",
+      "PERMISOS por separado y explícitos: grabar en cocina y en la zona de pan, publicar, y un permiso aparte para la pregunta del padre. Duda en cualquiera de los tres y se acaba ahí.",
+      "LOS DATOS PROPIOS EMPUJAN EN CONTRA: familia alta cocina rinde 271,552 de mediana contra 424,879 global (n=9, ratio 0.64) y familia pan 237,073 (n=6, ratio 0.56); el precedente del comedor con mantel es Tierra Antigua 7.1K y Almu 9K contra Tacos del Carmen 72.4K. No mata la idea, obliga a que la pieza viva en el horno y en la calle. Este bloque es contexto interno, no se dice en cámara.",
+      "HUECO DECLARADO: no se pudo verificar por fuentes públicas la existencia actual de la ventana de pan, el precio del servicio de comida, ni la presencia de Arellano hoy. Los tres se cierran en campo o no se cierran."
+    ],
+    "audio_url": null,
+    "audio_duration_s": null,
+    "video_url": null,
+    "video_duration_s": null,
+    "notebook_url": "",
+    "emocion_target": "ternura",
+    "frase_ancla": "El menú cambia entero cada semana. El pan no.",
+    "tesis_central": "En una casa donde el menú se reinventa entero cada semana, lo único que no cambia nunca es el oficio que Luis Arellano heredó de sus papás en una panadería de pueblo, y ese pan que se vende por la ventana a la calle es el punto exacto donde la alta cocina y la panadería de barrio son la misma mano.",
+    "hook_principal": "\"Estamos en Oaxaca. Aquí el menú cambia entero cada semana. Menos el pan.\" (13 palabras, 0 a 4 s, familia CURIOSIDAD/PARADOJA del banco, slot test A del A/B intra-tema)",
+    "guion_escaleta": "HOOK: \"Estamos en Oaxaca. Aquí el menú cambia entero cada semana. Menos el pan.\" (13 palabras, 0 a 4 s, familia CURIOSIDAD/PARADOJA del banco, slot test A del A/B intra-tema)\n\nEstado: BORRADOR_BLOQUEADO · duracion estimada 75s\n\n[1 · HOOK (la apuesta) · VO ANIOL · 0-4]\nVO: Estamos en Oaxaca. Aquí el menú cambia entero cada semana. Menos el pan.\nIMG/SFX: VENTANA DE ORO (Matrix C2): frame 1 = cara de Aniol en la calle con gesto de arranque, máximo 1.5 s. Luego 3 clips food porn que ESCENIFIQUEN el lugar: (a) pan partiéndose en la mano con vapor, (b) masa entrando al horno, (c) fachada de Calzada Madero 129 con la ventana de pan vista desde la banqueta. SFX: sonido directo de calle, cero música. TXT: \"EL MENÚ CAMBIA. EL PAN NO\". NOTA DE RODAJE: este hook se graba AL FINAL de la visita (plan de cámara 9), nunca al llegar.\n\n[2 · EXPEDIENTE (dato duro verificado) · VO ANIOL · 4-11]\nVO: Esta casa abrió en dos mil dieciséis. El menú se arma con lo que haya hoy en el mercado.\nIMG/SFX: Llegada PoV por la calle del barrio. La caja o la canasta de lo que llegó del mercado hoy, que la saque y la nombre ÉL, no Aniol. Manos sobre quelites, maíz o frijol de esta semana. TXT sticker: \"2016\" y \"SANTA MARÍA DEL MARQUESADO\". [DATO A LEVANTAR EN CAMPO: que exista caja del mercado de hoy; si no existe, este plano no se finge, se sustituye por el horno.]\n\n[3 · EXPEDIENTE (entra el personaje) · VO ANIOL · 11-18]\nVO: El que cocina aquí es Luis. Es de la Cañada. Desde niño trabajó en la panadería de sus papás.\nIMG/SFX: Luis DE PIE en su terreno: junto al horno, en la barra o con la caja del mercado. Nunca sentado en el comedor con mantel. Plano de sus manos antes que de su cara. TXT: \"LUIS ARELLANO\". SFX: ruido de cocina real, sin música. [Fuente del dato: T Magazine México, literal. No se adorna ni se amplía.]\n\n[4 · EXPEDIENTE (la pregunta que abre el SOT) · VO ANIOL · 18-24]\nVO: Le pregunté qué le dejaron tocar primero. Si la masa o el horno.\nIMG/SFX: Plano de escucha: Aniol de espaldas o fuera de foco, Luis en foco. La cámara se queda con él. SFX: golpe de masa sobre la mesa.\n\n[5 · SOT LUIS 1 (el oficio) · NO ES VO DE ANIOL · 24-32]\nVO: [DATO A LEVANTAR EN CAMPO: respuesta literal de Luis Arellano sobre el oficio del pan. Preguntas del brief, en este orden: cómo se llamaba la panadería de tus papás y a qué hora te levantaban; qué te dejaron tocar primero, la masa o el horno. NO SE ESCRIBE NADA EN SU BOCA. Presupuesto de corte: 8 s, unas 22 palabras.]\nIMG/SFX: MUST-GET del plan de cámara: manos en la masa o en el horno, plano cerrado, mínimo 10 s continuos, sin voz y sin música en el crudo (aquí se usan 8 s bajo su voz). Si este plano no existe, NO HAY PIEZA PUBLICABLE. B-roll siempre encima del habla, colocado donde toca.\n\n[6 · LA PRUEBA (la mordida, aire obligatorio) · SIN VO · 32-36]\nVO: [SILENCIO 4 s. Nadie habla. La pieza se calla aquí.]\nIMG/SFX: Pan saliendo del horno o partiéndose en la mano. Vapor. Primera mordida en cámara. SFX limpio: [CORTEZA 1s] + [SILENCIO 4s] + respiración. Sonido directo, NUNCA música encima. La cara y el silencio, sin adjetivo.\n\n[7 · LA PRUEBA (la reacción) · VO ANIOL EN SITIO · 36-43]\nVO: [SE DICTA EN SITIO, NO SE ESCRIBE ANTES. Presupuesto: 10 a 12 palabras. Forma obligatoria: interjección humana primero, luego textura, luego temperatura, luego a qué le recuerda. Prohibido \"delicioso\", \"increíble\", \"espectacular\", \"una locura\". Verbo sensorial antes que adjetivo: cruje, quema, se deshace, raspa.]\nIMG/SFX: Primer plano del pan abierto, miga a cámara. Corte a la cara de Aniol reaccionando. TXT: ninguno, este beat es de audio y cara.\n\n[8 · PUENTE AL PICO · VO ANIOL · 43-49]\nVO: Escribió un libro sobre el pan de las panaderías de barrio.\nIMG/SFX: El libro en la barra o entre harina, si está a la vista. Si no está, plano del horno cerrado. TXT sticker: \"UN LIBRO SOBRE EL PAN DE TODOS LOS DÍAS\". [Fuente: casamata.com, literal: \"una oda al pan tradicional mexicano, ese que se elabora todos los días y en todas las panaderías de barrio\". NO se dice el nombre del libro si eso revela el nombre del padre: ese nombre lo dice Luis o no se dice.]\n\n[9 · SOT LUIS 2 (el pico) · NO ES VO DE ANIOL · 49-58]\nVO: [DATO A LEVANTAR EN CAMPO: respuesta literal de Luis. Pregunta del brief: le pusiste a tu libro el nombre de tu papá, por qué ese nombre y no otro. REGLA DE CAMPO INNEGOCIABLE: no nombrar al padre tú primero, no preguntar si vive, no usar la palabra ausencia. Si él abre esa puerta, tres segundos de silencio antes de la siguiente pregunta. Si no la abre, se cierra el tema y no se vuelve, y este bloque se sustituye por la pregunta del aprendiz: quién amasa los días que tú no estás y qué le estás enseñando de lo que te enseñó tu papá. Presupuesto de corte: 9 s, unas 25 palabras.]\nIMG/SFX: Luis hablando, plano medio, quieto. CERO b-roll encima de esta respuesta: aquí el corte no se adorna. Este es el MARKER PROTEGIDO del EDL (Matrix C8): no se acorta por tiempo, no se tapa con b-roll, el silencio previo se respeta.\n\n[10 · SILENCIO PROTEGIDO · SIN VO · 58-61]\nVO: [SILENCIO 3 s después de que Luis termine de hablar. No se corta antes. Ese silencio es el cierre.]\nIMG/SFX: Su cara o sus manos, quietas. SFX: ambiente del lugar sube solo. Marker protegido, continúa.\n\n[11 · VEREDICTO (arbitraje, modo TESTIGO) · VO ANIOL · 61-68]\nVO: Vine por la cocina que cambia cada semana. (pausa) Me voy con lo único que no cambia.\nIMG/SFX: Aniol a cámara o sobre el último plano del pan. TXT: \"LO ÚNICO QUE NO CAMBIA\" (5 palabras, lee sin audio). SIN sentencia de ranking, SIN nota, SIN premio. La afirmación es de la casa, la experiencia es de Aniol.\n\n[12 · CTA (uno solo) · VO ANIOL · 68-75]\nVO: ¿Sigue abierta la panadería de tu barrio? La de toda la vida.\nIMG/SFX: Último plano: la ventana de pan desde la calle, con el barrio pasando por delante. Fade de ambiente. TXT: ninguno encima, el veredicto ya quedó escrito en el bloque 11. NO es CTA de comentario mecánico: es pregunta de mapa, instrumento de research (regla de origen del tema: comunidad). Veto V2 respetado, cero \"comenta X\".\n\nABORTAR SI: SIETE CANDADOS. Si falla uno, la pieza no existe. (1) LLAMADA OBLIGATORIA antes de salir al +52 951 351 1908 con las cuatro preguntas: abre hoy lunes / hay servicio de comida a las 13:30 / está Luis Arellano en cocina HOY / cuánto cuesta el servicio de mediodía. Sin las cuatro respuestas no se sale. Hay tres versiones contradictorias vivas del horario y ninguna se dice en cámara hasta la llamada. (2) SIN ARELLANO NO HAY PIEZA: si no está, se come y se graba banco de imágenes, no hay entrevista y este guion queda archivado. El único rescate honesto sería la persona que amasa en la ventana, con su nombre y su permiso, y aun así no se publica sin revisar. (3) LA VENTANA DE PAN tiene que estar operando hoy: es el eje entero. Si no hay pan ni acceso al horno, lo que queda es un menú caro cuyo beat ya está rodado y la respuesta es no publicar. (4) PLANO MUST-GET: manos en la masa o en el horno, cerrado, mínimo 10 s continuos. Sin ese plano no hay pieza publicable, porque es el único plano que vive en el carril que rinde. (5) COLISIÓN DE EJE, el candado más duro: Alfonsina ya tiene 'por qué volvió de Pujol al patio' y Bodaega ya cubre 'hijo de panadero que volvió'. Criollo es la intersección exacta de dos beats ya grabados. Si la mesa no entrega algo que ninguno de los dos tiene, no se publica aunque salga bonito. (6) PERMISOS por separado y explícitos: grabar en cocina y zona de pan, publicar, y un permiso aparte para la pregunta del padre. Duda en cualquiera de los tres y se acaba ahí. Si Luis no abre la puerta del padre, el bloque 9 se sustituye por la pregunta del aprendiz; si esa tampoco entrega, no se publica. (7) PRECIO ANTES DE SENTARSE, preguntado en la puerta, sin cámara y sin drama: los ~1,800 MXN son del degustación de CENA y el precio del mediodía no está verificado en ninguna fuente. Cero cifras en cámara sin confirmar. DESBLOQUEO EXACTO DEL ESTADO: este guion pasa de BORRADOR_BLOQUEADO a LISTO cuando se cierren los tres huecos declarados por LIAM (presencia de Arellano hoy, ventana de pan operando hoy, precio del servicio de comida) Y existan en el crudo el plano de manos de 10 s, el SOT del bloque 5 y el SOT del bloque 9 con su silencio de 3 s. Ninguna fuente pública resuelve los tres huecos: se cierran en campo o no se cierran.",
+    "newsletter_resumen": "Oaxaca, calzada Madero, barrio de Santa María del Marquesado. Aquí hay una casa donde el menú se rehace entero cada semana con lo que aparece ese día en el mercado. Nada se repite, nada vuelve igual, y aun así hay una sola cosa que no se mueve nunca. Es la que menos se parece a un restaurante de menú largo: el pan.\n\nEl que cocina aquí es Luis Arellano. Antes que chef fue el niño que trabajaba en la panadería de sus papás, y eso no lo digo yo, lo ha contado él en entrevista. Después escribió un libro entero sobre eso mismo. No sobre alta cocina. Sobre el pan de las panaderías de barrio, el que se hace todos los días en cualquier esquina de México y que nadie fotografía nunca.\n\nYo no vine a que me contaran un menú. Vine a preguntarle qué fue lo primero que le dejaron tocar de niño, si la masa o el horno. Y [DATO A LEVANTAR EN CAMPO: lo que respondió, literal].\n\nLo que me llevo de aquí no es un plato. Es [DATO A LEVANTAR EN CAMPO: el gesto, la frase o la persona que aparece al final, con su nombre y su permiso].\n\nLa panadería de tu barrio, la de toda la vida. ¿Sigue abierta?",
+    "prepared_at": "2026-07-27"
   },
   "ox-06": {
     id: "dox-06", restaurant_id: "ox-06",
